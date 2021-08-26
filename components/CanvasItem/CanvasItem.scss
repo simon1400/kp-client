@@ -1,0 +1,72 @@
+.canvas-item{
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  &:hover{
+    text-decoration: none;
+  }
+  &.basket-canvas-item{
+    margin-bottom: 30px;
+    .canvas-item-img{
+      width: 130px;
+      min-width: 130px;
+      max-width: 130px;
+      height: 130px;
+    }
+  }
+  .canvas-item-img{
+    width: 80px;
+    min-width: 80px;
+    max-width: 80px;
+    height: 80px;
+    overflow: hidden;
+    background-color: #fff;
+    margin-right: 10px;
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+    img{
+      object-fit: contain;
+      width: 100%;
+      margin: auto;
+    }
+  }
+  .canvas-item-content{
+    width: 100%;
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+    > div{
+      width: 100%;
+    }
+    h5{
+      margin-top: 0;
+      margin-bottom: 10px;
+    }
+    .price{
+      font-size: 18px;
+      line-height: 20px;
+      margin-bottom: 0;
+    }
+  }
+  .control-item{
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+    justify-content: space-between;
+    color: $text_color;
+    margin-top: 10px;
+    .count{
+      font-size: 18px;
+      font-family: $ff-thin;
+      font-weight: $font-light;
+      letter-spacing: .36px;
+    }
+    svg, img{
+      width: 15px;
+      color: rgba(4, 4, 5, 0.5);
+    }
+  }
+}

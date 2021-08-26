@@ -1,0 +1,75 @@
+$modal-background: rgba(0,0,0,0.7);
+$offcanvas-bar-color-mode: black;
+$offcanvas-bar-width-m: 575px;
+$offcanvas-overlay-background: $modal-background;
+$offcanvas-bar-background: white;
+$offcanvas-bar-width: 100%;
+$offcanvas-bar-background: $yellow;
+
+
+.uk-offcanvas-close{
+  position: static;
+  svg{
+    width: 26px;
+    height: 26px;
+  }
+}
+
+.canvas-buttons-wrap{
+  .button{
+    min-width: auto;
+    width: 100%;
+    padding: 0;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-size: 20px;
+    &:first-child{
+      margin-right: 10px;
+    }
+    &:last-child{
+      margin-left: 10px;
+    }
+  }
+}
+
+.canvas-head{
+  width: 100%;
+  align-items: center;
+  img, svg{
+    width: 26px;
+    color: $text_color;
+    cursor: pointer;
+  }
+}
+
+.uk-offcanvas-bar{
+  hr{
+    border-color: rgba(176, 153, 37, 0.3)
+  }
+}
+
+.canvas-table.uk-table{
+  tbody{
+    tr:last-child{
+      td{
+        padding-bottom: 20px;
+      }
+    }
+  }
+  tr{
+    td{
+      padding: 10px 0;
+      color: $text_color;
+      font-size: 18px;
+    }
+    th{
+      border-top: 1.5px solid rgba(176, 153, 37, 0.3);
+      font-family: $ff-semibold;
+      font-weight: $font_bold;
+      font-size: 18px;
+      color: $text_color;
+      padding: 20px 0;
+      text-transform: none;
+    }
+  }
+}
