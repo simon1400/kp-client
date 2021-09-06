@@ -1,6 +1,8 @@
 @import 'var';
 @import 'fonts';
 @import '../layout/Canvas/canvas';
+@import '../layout/Auth/auth';
+@import '../layout/Filter/filter';
 @import '../components/CanvasItem/CanvasItem';
 @import '../layout/Search/search';
 @import '../pages/kosik/basket';
@@ -490,48 +492,6 @@ footer{
   justify-content: space-between;
 }
 
-.catalog-filter{
-  padding-left: 0;
-  margin-bottom: 0;
-  > li{
-    list-style-type: none;
-    display: inline-block;
-    &:not(:first-child){
-      margin-left: 10px;
-    }
-
-    ul{
-      padding: 0;
-      margin: 0;
-      width: 250px;
-      background-color: $yellow;
-      padding: 10px 0;
-      box-shadow: none;
-      li{
-        list-style-type: none;
-        padding: 10px 25px;
-        label{
-          display: -webkit-flex;
-          display: -ms-flex;
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          cursor: pointer;
-          // input{
-          //
-          // }
-        }
-      }
-    }
-  }
-}
-
-.catalog-filter-wrap{
-  > ul{
-    display: inline-block;
-  }
-}
-
 .catalog-control-button{
   border-radius: 50px;
   font-size: 18px;
@@ -559,7 +519,7 @@ footer{
   }
 }
 
-.filter-selected{
+.filter-selected ul{
   margin: 0;
   padding-left: 0;
   li{

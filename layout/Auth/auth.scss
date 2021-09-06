@@ -1,0 +1,22 @@
+.form-canvas-wrap{
+  .uk-input, .uk-select:not([multiple]):not([size]){
+    height: 65px;
+  }
+  a:not(.button){
+    color: black;
+    text-decoration: underline;
+    font-size: 18px;
+    &:hover{
+      color: $accent;
+    }
+    &.link-bold{
+      font-family: $font-bold;
+      font-family: $ff-semibold;
+    }
+  }
+  p{
+    font-size: 18px;
+    line-height: 20px;
+    margin-top: 30px;
+  }
+}

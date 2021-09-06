@@ -1,0 +1,86 @@
+
+
+.filter-button{
+  font-family: $ff-semibold;
+  font-weight: $font-bold;
+  font-size: 18px;
+  color: $text-color;
+  white-space: nowrap;
+  display: block;
+  &:hover{
+    color: $accent;
+    text-decoration: none;
+  }
+  img, svg{
+    color: $accent;
+    width: 24px;
+    margin-top: -3px;
+    margin-left: 12px;
+  }
+}
+
+
+.catalog-filter .uk-accordion-content{
+  ul{
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    background-color: $yellow;
+    box-shadow: none;
+    li{
+      list-style-type: none;
+      padding: 10px 0;
+      label{
+        display: -webkit-flex;
+        display: -ms-flex;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 18px;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.uk-accordion{
+  > li{
+    padding-top: 25px;
+    padding-bottom: 25px;
+    border-bottom: 1.5px solid rgba($accent, .3);
+    &:first-child{
+      padding-top: 0;
+    }
+    a{
+      line-height: 21px;
+    }
+  }
+  .uk-open{
+    img, svg{
+      transform: rotate(180deg);
+    }
+  }
+}
+
+.uk-accordion-title{
+  font-family: $ff-semibold;
+  font-weight: $font-bold;
+  position: relative;
+
+  &:before{
+    display: none;
+  }
+  img, svg{
+    position: absolute;
+    right: 0;
+    width: 17px;
+    color: $accent;
+    transition: all .2s ease;
+    transform: rotate(0)
+  }
+}
+
+$accordion-title-font-size: 20px;
+$accordion-title-color: $text-color;
+$accordion-title-hover-color: $text-color;
+$accordion-item-margin-top: 0;

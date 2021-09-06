@@ -1,6 +1,7 @@
 import Page from '../../layout/Page'
 import PageTop from '../../components/PageTop'
 import Card from '../../components/Card'
+import Filter from '../../layout/Filter'
 
 const Category = () => {
   return (
@@ -16,47 +17,10 @@ const Category = () => {
         <div className="uk-container uk-container-large">
           <div className="catalog-control">
             <div className="catalog-filter-wrap">
-              <ul className="catalog-filter">
-                <li>
-                  <div className="uk-inline">
-                    <button className="catalog-control-button" type="button">značka <img className="uk-svg" src="/assets/angle-down.svg" uk-svg="" /></button>
-                    <ul className="uk-dropdown" uk-dropdown="mode: click; offset: 15">
-                      <li>
-                        <label>
-                          <span>Angelo Caroli</span>
-                          <input className="uk-checkbox" type="checkbox" />
-                        </label>
-                      </li>
-                      <li>
-                        <label>
-                          <span>Angelo Caroli</span>
-                          <input className="uk-checkbox" type="checkbox" />
-                        </label>
-                      </li>
-                    </ul>
-                  </div>
-                </li>
-                <li>
-                  <div className="uk-inline">
-                    <button className="catalog-control-button" type="button">značka <img className="uk-svg" src="/assets/angle-down.svg" uk-svg="" /></button>
-                    <ul className="uk-dropdown" uk-dropdown="mode: click; offset: 15">
-                      <li>
-                        <label>
-                          <span>Angelo Caroli</span>
-                          <input className="uk-checkbox" type="checkbox" />
-                        </label>
-                      </li>
-                      <li>
-                        <label>
-                          <span>Angelo Caroli</span>
-                          <input className="uk-checkbox" type="checkbox" />
-                        </label>
-                      </li>
-                    </ul>
-                  </div>
-                </li>
-              </ul>
-              <ul className="filter-selected uk-visible@m">
+              <a href="/" uk-toggle="target: #offcanvas-filter" className="filter-button">Filtrovat a třídit <img className="uk-svg" src="/assets/sliders-h.svg" uk-svg="" /></a>
+            </div>
+            <div className="filter-selected">
+              <ul>
                 <li>
                   <a href="/">Angelo Caroli <img className="uk-svg" src="/assets/times.svg" uk-svg="" /></a>
                 </li>
@@ -65,25 +29,6 @@ const Category = () => {
                 </li>
               </ul>
             </div>
-            <div className="sorting">
-              <div className="uk-inline">
-                <button className="catalog-control-button" type="button">doporučujeme <img className="uk-svg" src="/assets/angle-down.svg" uk-svg="" /></button>
-                <ul uk-dropdown="mode: click">
-                  <li><a href="/">doporučujeme</a></li>
-                  <li><a href="/">doporučujeme 222</a></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div className="mobile-filter-selected uk-hidden@m">
-            <ul className="filter-selected">
-              <li>
-                <a href="/">Angelo Caroli <img className="uk-svg" src="/assets/times.svg" uk-svg="" /></a>
-              </li>
-              <li>
-                <a href="/">Angelo Caroli <img className="uk-svg" src="/assets/times.svg" uk-svg="" /></a>
-              </li>
-            </ul>
           </div>
         </div>
       </section>
@@ -122,7 +67,7 @@ const Category = () => {
         </div>
       </section>
 
-
+      <Filter />
 
     </Page>
   )

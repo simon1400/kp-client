@@ -70,7 +70,7 @@ const Header = ({
               </ul>
               <ul className="icons-wrap">
                 <li className="uk-visible@m"><a href="/" uk-toggle="target: #search"><img className="uk-svg" src="/assets/search.svg" uk-svg=""/></a></li>
-                <li><a href="/"><img className="uk-svg" src="/assets/user.svg" uk-svg=""/></a></li>
+                <li><a href="/" uk-toggle="target: #offcanvas-auth"><img className="uk-svg" src="/assets/user.svg" uk-svg=""/></a></li>
                 <li><a href="/" uk-toggle="target: #canvas"><img className="uk-svg" src="/assets/bag.svg" uk-svg=""/></a></li>
               </ul>
             </div>

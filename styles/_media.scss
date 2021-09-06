@@ -347,4 +347,15 @@
   .blog-item-info{
     margin-bottom: 30px!important;
   }
+  .filter-button{
+    margin-bottom: 20px;
+
+  }
+  .catalog-control{
+    flex-direction: column;
+    align-items: center;
+  }
+  .filter-selected ul li{
+    margin-bottom: 10px;
+  }
 }

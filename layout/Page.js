@@ -5,6 +5,7 @@ import { useRouter } from 'next/router'
 import Header from './Header'
 import Footer from './Footer'
 import Canvas from './Canvas'
+import Auth from './Auth'
 import Search from './Search'
 
 const Page = ({
@@ -126,6 +127,7 @@ const Page = ({
       <main id={id} className={className}>{children}</main>
       <Footer />
       <Canvas />
+      <Auth />
       <Search />
     </>
   );
