@@ -5,9 +5,9 @@ const Footer = () => {
         <div className="uk-container uk-container-large">
           <h2 className="big-head">
             <span style={{paddingLeft: '0px'}}><b>Královská Péče—</b></span>
-            <span style={{paddingLeft: '100px'}}>kvalita, příběh a energie</span>
+            <span style={{paddingLeft: '10vw'}}>kvalita, příběh a energie</span>
           </h2>
-          <div className="uk-grid uk-child-width-1-3" uk-grid="">
+          <div className="uk-grid uk-child-width-1-1 uk-child-width-1-3@s" uk-grid="">
             <div className="footer-item">
               <label>Zavolejte nám</label>
               <p><a href="tel:+420702830774">+420 702 830 774</a></p>

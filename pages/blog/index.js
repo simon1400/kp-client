@@ -13,7 +13,7 @@ const Blog = () => {
 
       <section className="sec-big">
         <div className="uk-container uk-container-large">
-          <div className="uk-grid blog-item uk-child-width-1-2" uk-grid="">
+          <div className="uk-grid blog-item uk-child-width-1-1 uk-child-width-1-2@s" uk-grid="">
             <div>
               <div className="blog-item-img">
                 <img className="uk-img" src="/assets/blog.jpg" uk-img="" />
@@ -29,7 +29,7 @@ const Blog = () => {
               </div>
             </div>
           </div>
-          <div className="uk-grid blog-item uk-child-width-1-2" uk-grid="">
+          <div className="uk-grid blog-item uk-child-width-1-1 uk-child-width-1-2@s" uk-grid="">
             <div>
               <div className="blog-item-img">
                 <img className="uk-img" src="/assets/blog.jpg" uk-img="" />

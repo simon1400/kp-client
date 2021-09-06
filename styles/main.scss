@@ -10,13 +10,15 @@
 header{
   position: absolute;
   width: 100%;
-  padding-top: 15px;
-  padding-bottom: 15px;
   z-index: 99;
+  // transition: all .5s linear;
   &.small-header{
     position: static;
     background-color: $yellow;
-    padding-bottom: 35px;
+  }
+  &.activeDrop{
+    background-color: $yellow;
+    border-bottom: 1.5px solid rgba($accent, .3);
   }
   &.not-bg{
     .logo{
@@ -32,7 +34,7 @@ header{
     .nav-wrap{
       ul{
         li{
-          a{
+          > a{
             color: $text_color;
             text-shadow: none;
           }
@@ -41,6 +43,7 @@ header{
     }
   }
   .logo{
+    text-align: center;
     svg {
       path{
         &:first-child{
@@ -57,11 +60,10 @@ header{
     color: inherit;
   }
   .nav-wrap{
-    display: -webkit-flex;
-    display: -ms-flex;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
+    display: grid;
+    grid-template-columns: 2fr 1fr 2fr;
+    padding-top: 15px;
+    padding-bottom: 35px;
     ul{
       margin-bottom: 0;
       margin-top: 0;
@@ -73,7 +75,7 @@ header{
         display: inline-block;
         list-style-type: none;
         line-height: 15px;
-        a{
+        > a{
           color: white;
           display: block;
           font-size: 20px;
@@ -88,12 +90,17 @@ header{
         }
       }
     }
+    .control-menu-wrap{
+      justify-self: end;
+      align-self: end;
+    }
     .control-menu{
       display: -webkit-flex;
       display: -ms-flex;
       display: flex;
       align-items: flex-end;
       .icons-wrap{
+        margin-left: 65px;
         li{
           a{
             padding-left: 6px;
@@ -110,6 +117,7 @@ header{
 }
 
 .menu{
+  align-self: end;
   img, svg{
     width: 12px;
     color: $accent;
@@ -160,8 +168,7 @@ header{
       display: none;
     }
     .big-head{
-      text-align: left;
-      padding-top: 25%;
+      text-align: center;
       bottom: auto;
       position: relative;
       span{
@@ -242,7 +249,7 @@ h2.big-head{
     margin: auto;
   }
   h3{
-    -webkit-text-stroke: 0.6px rgba(0, 0, 0, 0.9);
+    -webkit-text-stroke: .2px rgba(0,0,0,.9);
     opacity: .7;
     font-weight: $font-light;
     color: $text-color;
@@ -264,6 +271,12 @@ h2.big-head{
 
 
 .card{
+  display: block;
+  &:hover{
+    text-decoration: none;
+    mix-blend-mode: multiply;
+    background-image: linear-gradient(to bottom, #f8f5ee, white);
+  }
   .card-img{
     img{
       width: 100%;
@@ -271,7 +284,6 @@ h2.big-head{
   }
   .card-content{
     text-align: center;
-
     h3{
       color: $text-color;
       font-family: $ff-semibold;
@@ -286,7 +298,7 @@ h2.big-head{
       font-family: $ff-thin;
       font-weight: $font-light;
       color: $text-color;
-      -webkit-text-stroke: 0.6px rgba(0, 0, 0, 0.9);
+      -webkit-text-stroke: .2px rgba(0,0,0,.9);
     }
   }
 }
@@ -301,6 +313,7 @@ h2.big-head{
   .big-head{
     color: white;
     line-height: 63px;
+    -webkit-text-stroke: 0.5px #fff;
     span{
       font-size: 61px;
       b{
@@ -353,6 +366,7 @@ footer{
       display: inline-block;
       margin-bottom: 100px;
       color: white;
+      -webkit-text-stroke: 0.5px #fff;
     }
     .footer-item{
       label{
@@ -489,37 +503,105 @@ footer{
     ul{
       padding: 0;
       margin: 0;
+      width: 250px;
+      background-color: $yellow;
+      padding: 10px 0;
+      box-shadow: none;
       li{
         list-style-type: none;
-        a{
-          display: block;
+        padding: 10px 25px;
+        label{
+          display: -webkit-flex;
+          display: -ms-flex;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          cursor: pointer;
+          // input{
+          //
+          // }
         }
       }
     }
   }
 }
 
+.catalog-filter-wrap{
+  > ul{
+    display: inline-block;
+  }
+}
+
 .catalog-control-button{
   border-radius: 50px;
-  background-color: $yellow;
   font-size: 18px;
+  background-color: transparent;
   color: $text_color;
-  font-weight: $font-medium;
+  font-weight: $font-bold;
+  font-family: $ff-semibold;
   border: none;
-  padding: 10px 25px;
   cursor: pointer;
+  margin-right: 30px;
+  transition: all .2s ease;
+  &[aria-expanded="true"]{
+    color: $accent;
+    img, svg{
+      transform: rotate(-180deg);
+      color: $text-color;
+    }
+  }
   img, svg{
     width: 10px;
-    color: $text_color;
-    margin-left: 5px;
+    color: $accent;
+    margin-left: 7px;
+    transition: all .2s ease;
+    transform: rotate(0);
+  }
+}
+
+.filter-selected{
+  margin: 0;
+  padding-left: 0;
+  li{
+    list-style-type: none;
+    display: inline-block;
+    &:not(:last-child){
+      margin-right: 10px;
+    }
+    a{
+      display: block;
+      border: 1px solid rgba(black, .1);
+      padding: 8px 14px;
+      font-size: 18px;
+      font-weight: $font-medium;
+      color: $text-color;
+      line-height: 20px;
+      &:hover{
+        text-decoration: none;
+        color: $accent;
+        img, svg{
+          transform: rotate(-180deg);
+        }
+      }
+      img, svg{
+        width: 12px;
+        color: $accent;
+        margin-left: 17px;
+        margin-top: -3px;
+        transition: all .2s ease;
+        transform: rotate(0)
+      }
+    }
   }
 }
 
 .sorting{
   .catalog-control-button {
-    background-color: transparent;
     padding-left: 0;
     padding-right: 0;
+    font-family: $ff-light;
+    font-weight: $font-medium;
+
   }
 }
 
@@ -539,15 +621,25 @@ footer{
 .additional-sec{
   padding-top: 70px;
   padding-bottom: 90px;
+  text-align: center;
   .big-head{
     margin-bottom: 70px;
-    text-align: center;
+    display: inline-block;
+  }
+  p{
+    text-align: left;
   }
 }
 
 
 .product-slider{
   position: relative;
+  > a{
+    position: absolute;
+    z-index: 100;
+    top: 0;
+    left: 0;
+  }
   .uk-slideshow{
     &:hover{
       .uk-slidenav{
@@ -579,7 +671,7 @@ footer{
   label{
     display: block;
     opacity: .7;
-    -webkit-text-stroke: 0.6px rgba(0, 0, 0, 0.9);
+    -webkit-text-stroke: .2px rgba(0,0,0,.9);
     font-size: 26px;
     font-weight: $font-light;
     font-family: $ff-thin;
@@ -630,7 +722,7 @@ footer{
   font-size: 38px;
   font-family: $ff-thin;
   font-weight: $font-light;
-  -webkit-text-stroke: 0.6px rgba(0, 0, 0, 0.9);
+  -webkit-text-stroke: .2px rgba(0,0,0,.9);
   display: block;
   margin-bottom: 15px;
 }
@@ -638,6 +730,12 @@ footer{
 .related-products{
   padding-top: 75px;
   padding-bottom: 50px;
+  text-align: center;
+  .big-head{
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 .sec-big{
@@ -652,5 +750,106 @@ footer{
   margin-bottom: 0;
 }
 
+
+.menu-dropdown{
+  width: 100%;
+  background-color: $yellow;
+  padding: 80px 0;
+  box-shadow: none;
+  margin-top: 0;
+  .dropdown-wrap{
+    display: flex;
+    justify-content: center;
+  }
+  .dropdown-item{
+    text-align: center;
+    transition: all .2s ease;
+    width: 150px;
+    margin-left: 20px;
+    margin-right: 20px;
+    &:hover{
+      text-decoration: none;
+      span{
+        color: $accent;
+      }
+    }
+    .dropdown-img{
+      width: 70px;
+      height: 70px;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 10px;
+      img{
+        width: 100%;
+        margin-left: 0;
+      }
+    }
+    span{
+      font-size: 17px;
+      font-family: $ff-semibold;
+      font-weight: $font-bold;
+      color: black;
+      transition: all .2s ease;
+    }
+  }
+}
+
+
+.variant-button-wrap{
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  justify-content: center;
+  .select-variant{
+    margin-right: 3.5px;
+    + .button{
+      margin-left: 3.5px;
+    }
+    ul{
+      background-color: $yellow;
+      box-shadow: none;
+      padding: 0;
+      li{
+        line-height: 20px;
+        opacity: 1;
+        a{
+          display: block;
+          padding: 10px 25px;
+          display: -webkit-flex;
+          display: -ms-flex;
+          display: flex;
+          justify-content: space-between;
+          text-decoration: none;
+          color: $text-color;
+          &:hover{
+            background-color: $text-color;
+            color: white;
+          }
+          span:last-child{
+            -webkit-text-stroke: .2px rgba(0,0,0,.9);
+            font-weight: $font-light;
+            font-family: $ff-thin;
+            -webkit-font-smoothing: auto;
+          }
+        }
+      }
+    }
+    .button[aria-expanded="true"]{
+      background-color: $yellow;
+      img, svg{
+        transform: rotate(-180deg);
+      }
+    }
+  }
+  .button{
+    line-height: 30px;
+    img, svg{
+      width: 10px;
+      margin-left: 10px;
+      transform: rotate(0);
+      transition: all .2s ease;
+    }
+  }
+}
 
 @import 'media';

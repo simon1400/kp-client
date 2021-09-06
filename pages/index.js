@@ -11,16 +11,15 @@ const Homepage = () => {
 
   const { loading, error, data } = useQuery(productsQuery);
 
-  console.log(data);
-
   return (
     <Page bgImg="/assets/homepage.jpg" bigHeader >
       <PageTop
         big
+        center
         head={<h1 className="big-head">
-                <span style={{paddingLeft: '150px'}}><b>Královská péče</b> díky</span>
-                <span style={{paddingLeft: '300px'}}>světové kosmetice</span>
-                <span style={{paddingLeft: '220px'}}><b>Linda Meredith</b></span>
+                <span style={{paddingLeft: '5vw'}}><b>Královská péče</b> díky</span>
+                <span style={{paddingLeft: '22vw'}}>světové kosmetice</span>
+                <span style={{paddingLeft: '5vw'}}><b>Linda Meredith</b></span>
               </h1>}
         img="/assets/homepage.jpg"
       />
@@ -30,22 +29,22 @@ const Homepage = () => {
             <span style={{paddingLeft: '0'}}><b>exluzivni</b> novinky</span>
           </h2>
           <div className="uk-grid" uk-grid="" uk-height-match="target: > div > div">
-            <div className="uk-width-1-2">
+            <div className="uk-width-1-1 uk-width-1-2@s">
               <SmallBanner />
             </div>
-            <div className="uk-width-1-4">
+            <div className="uk-width-1-2 uk-width-1-4@s">
               <Card />
             </div>
-            <div className="uk-width-1-4">
+            <div className="uk-width-1-2 uk-width-1-4@s">
               <Card />
             </div>
-            <div className="uk-width-1-4">
+            <div className="uk-width-1-2 uk-width-1-4@s">
               <Card />
             </div>
-            <div className="uk-width-1-4">
+            <div className="uk-width-1-2 uk-width-1-4@s">
               <Card />
             </div>
-            <div className="uk-width-1-2">
+            <div className="uk-width-1-1 uk-width-1-2@s">
               <SmallBanner />
             </div>
           </div>
@@ -57,7 +56,7 @@ const Homepage = () => {
       <section className="partners-logo">
         <div className="uk-container uk-container-large">
           <div className="uk-slider" uk-slider="autoplay: true">
-            <ul className="uk-slider-items uk-child-width-1-4@s uk-child-width-1-6@m uk-grid uk-grid-stack">
+            <ul className="uk-slider-items uk-child-width-1-2 uk-child-width-1-4@s uk-child-width-1-6@m uk-grid uk-grid-stack">
               <li>
                 <a href="/"><img src="/assets/logo-1.jpeg" alt="" /></a>
               </li>

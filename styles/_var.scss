@@ -35,6 +35,7 @@ body{
   font-family: $ff-light, sans-serif;
   font-weight: $font-medium;
   -webkit-font-smoothing: antialiased;
+  font-size: 16px;
   hr{
     border-top: 1.5px solid rgba(176, 153, 37, 0.6)
   }
@@ -87,6 +88,30 @@ body{
       background-image: none;
     }
   }
+  .uk-checkbox{
+    border: 2px solid $accent;
+    border-radius: 2px;
+    width: 18px;
+    height: 18px;
+    position: relative;
+    &:checked, &:indeterminate, &:checked:focus{
+      background-color: transparent;
+      border: 2px solid $accent;
+      &:after{
+        display: block;
+      }
+    }
+    &:after{
+      display: none;
+      content: '';
+      width: 10px;
+      height: 10px;
+      background-color: $accent;
+      position: absolute;
+      top: 2px;
+      left: 2px;
+    }
+  }
 }
 
 a.bare-button, .bare-button{
@@ -106,6 +131,16 @@ a.bare-button, .bare-button{
     text-decoration: none;
     img, svg{
       transform: translateX(15px);
+    }
+  }
+  &.button-reverse{
+    img, svg{
+      transform: translateX(-10px);
+    }
+    &:hover{
+      img, svg{
+        transform: translateX(-15px);
+      }
     }
   }
 }
@@ -140,7 +175,6 @@ a.button, .button{
   }
 }
 
-
 label{
   font-size: 15px;
   font-family: $ff-thin;
@@ -154,6 +188,12 @@ label{
 caption{
   font-weight: $font-bold;
   padding-bottom: 20px;
+}
+.hamburger{
+  margin-right: 10px!important;
+}
+.hamburger-box{
+  vertical-align: bottom;
 }
 
 $hamburger-padding-x           : 0;

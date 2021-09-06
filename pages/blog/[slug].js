@@ -20,7 +20,7 @@ const BlogFull = () => {
           </div>
           <h2 className="big-head uk-text-center uk-margin-large-top uk-margin-large-bottom">
             <span style={{paddingLeft: '0px'}}>dokazuje, že přírodní kosmetika</span>
-            <span style={{paddingLeft: '100px'}}>nemusí být o kompromisech.</span>
+            <span style={{paddingLeft: '6vw'}}>nemusí být o kompromisech.</span>
           </h2>
           <div>
             <p>Dlouhou dobu jsme na Královské péči hledali dekorativní kosmetiku, která by svými kvalitami spojovala dva světy. Špičkové přírodní složení bez zatěžujících látek a skvělé vlastnosti, textury, barvy, výdrž. Přírodní kosmetika nám tyto kvality nenabízela a běžná dekorativní kosmetika byla plná zatěžujících látek, na které naše pleti ihned reagovaly, povadaly a mluvily k nám nespokojenými vráskami. Objevily jsme pro sebe a pro Vás Und Gretel, unikátní berlínskou značku, která splňuje vše. Zdá se to až jako zázrak. Posuďte sami. Zveme Vás do světa bez kompromisů.</p>
