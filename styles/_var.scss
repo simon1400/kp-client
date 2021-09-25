@@ -135,6 +135,13 @@ body{
       }
     }
   }
+  strong{
+    font-family: $ff-semibold;
+    font-weight: $font-bold;
+  }
+  em{
+    color: inherit;
+  }
 }
 
 a.bare-button, .bare-button{
@@ -150,7 +157,7 @@ a.bare-button, .bare-button{
     width: 8px;
   }
   &:hover{
-    color: inherit;
+    color: $accent;
     text-decoration: none;
     img, svg{
       transform: translateX(15px);

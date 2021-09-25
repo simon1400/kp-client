@@ -25,7 +25,11 @@ const initialState = {
   user: Cookies.get('user') ? JSON.parse(Cookies.get('user')) : [],
   cookies_agree: Cookies.get('cookies_agree') ? Cookies.get('cookies_agree') : false,
   state: {
-    searchFocus: false
+    searchFocus: false,
+    Brand: [],
+    Category: [],
+    param: [],
+    sort: 'published_at:asc'
   }
 }
 

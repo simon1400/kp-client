@@ -1,4 +1,4 @@
-import { useState, useEffect, useContext } from 'react';
+import { useState, useContext } from 'react';
 import Head from 'next/head'
 import { useRouter } from 'next/router'
 
@@ -23,7 +23,10 @@ const Page = ({
   noCrawl,
   tags,
   bgImg = false,
-  bigHeader = false
+  bigHeader = false,
+  globalData = {},
+  nav = {},
+  basket = false
 }) => {
   const router = useRouter()
   const [global, setGlobal] = useState({
@@ -35,10 +38,6 @@ const Page = ({
     defaultTwitter: '@cereallarceny',
     defaultSep: ' '
   })
-
-  useEffect(() => {
-
-  }, [])
 
   const theTitle = title ? (title + global.defaultSep + global.defaultTitle).substring(0, 60) : global.defaultTitle;
   const theDescription = description ? description.substring(0, 155) : global.defaultDescription;
@@ -123,9 +122,14 @@ const Page = ({
           })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');`}} />*/}
 
       </Head>
-      <Header bgImg={bgImg} bigHeader={bigHeader} />
+      <Header
+        bgImg={bgImg}
+        bigHeader={bigHeader}
+        leftNav={nav.left_nav}
+        rightNav={nav.right_nav}
+        basket={basket} />
       <main id={id} className={className}>{children}</main>
-      <Footer />
+      {!basket && <Footer data={globalData} nav={nav.footer_nav} />}
       <Canvas />
       <Auth />
       <Search />

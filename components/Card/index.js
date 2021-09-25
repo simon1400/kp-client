@@ -1,20 +1,20 @@
 import Link from 'next/link'
+import Image from '../Image'
 
-const Card = () => {
+const Card = ({data}) => {
+
   return (
     <div>
-      <Link href="/product/sfdgsfg">
-        <a className="card">
-          <div className="card-img">
-            <img src="https://www.kralovska-pece.cz/image/cache/catalog/angelo-caroli/angelo-caroli-amore-nero-800x800.jpg" />
-          </div>
-          <div className="card-content">
-            <label>Angelo Caroli</label>
-            <h3>Emocionální kolekce - AMORE NERO</h3>
-            <span>1 550 Kč</span>
-          </div>
-        </a>
-      </Link>
+      <a href={`/product/${data.slug}`} className="card">
+        <div className="card-img">
+          <Image image={data.images[0]} />
+        </div>
+        <div className="card-content">
+          <label>{data.brand.title}</label>
+          <h3>{data.title}</h3>
+          <span>{data.price} Kč</span>
+        </div>
+      </a>
     </div>
   )
 }

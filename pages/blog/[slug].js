@@ -1,31 +1,48 @@
 import Page from '../../layout/Page'
 import PageTop from '../../components/PageTop'
+import { useQuery } from "@apollo/client";
+import blogItemQuery from '../../queries/blogItem'
+import ReactMarkdown from 'react-markdown'
+import Image from '../../components/Image'
+import {useRouter} from 'next/router'
 
 const BlogFull = () => {
+
+  const router = useRouter()
+
+  const { loading, error, data } = useQuery(blogItemQuery, {
+    variables: {slug: router.query.slug}
+  });
+
+  if(loading) {
+    return ''
+  }
+
+  let blog = data.blogs[0]
+
+  let title = blog?.title.split(' ')
+  let subTitle = blog?.add_title.split(' ')
+
   return (
-    <Page bigHeader>
+    <Page bigHeader globalData={data.global} nav={data.navigation}>
       <PageTop
         small
         head={<h1 className="big-head">
-                <span>Článek <b>lorem ipsum</b></span>
+                <span>{title[0]} <b>{title[1]} {title[2]}</b></span>
               </h1>}
       />
       <section className="sec-big">
         <div className="uk-container uk-container-small">
           <div>
-            <p>Fragrance Faoundation FIFI rozděluje vůně do dvou kategorií: MAINSTREAM a NICHE PARFÉMY. Dělení je jednoduše postaveno na počtu obchodů, ve kterých daný parfém můžete koupit. To obecně znamená, že naprostá většina vůní, se kterými se setkáváte v běžných parfumeriích, jsou parfémy z hlavního proudu, jejichž cílem je především maximalizovat tržní podíl dané značky.</p>
-            <p>Oproti tomu niche parfémy jsou vyrobeny v malých sériích a z těch nejlepších ingrediencí a k dostání jsou pouze ve vybraných buticích či exkluzivních parfumeriích. Díky této unikátní tržní pozici si mohou jejich tvůrci dovolit vytvářet originální osobité kompozice. Při sestavování kompozice niche parfému je kladen důraz na každý detail a stále se lze setkat dokonce i s ručním plněním flakónů.</p>
-            <p>Pro Královskou péči vybíráme niche parfémy podle kvality ingrediencí, podle originality a necháváme se také inspirovat příběhem, s jakým tyto olfaktorické poklady přichází na svět. Niche parfémy, to jsou originální kompozice z nejlepších ingrediencí.</p>
-            <img src="/assets/banner.jpg" />
+            <ReactMarkdown>{blog.content}</ReactMarkdown>
+            <Image image={blog.image} />
           </div>
           <h2 className="big-head uk-text-center uk-margin-large-top uk-margin-large-bottom">
-            <span style={{paddingLeft: '0px'}}>dokazuje, že přírodní kosmetika</span>
-            <span style={{paddingLeft: '6vw'}}>nemusí být o kompromisech.</span>
+            <span style={{paddingLeft: '0px'}}>{subTitle[0]} {subTitle[1]} {subTitle[2]} {subTitle[3]}</span>
+            <span style={{paddingLeft: '6vw'}}>{subTitle[4]} {subTitle[5]} {subTitle[6]} {subTitle[7]}.</span>
           </h2>
           <div>
-            <p>Dlouhou dobu jsme na Královské péči hledali dekorativní kosmetiku, která by svými kvalitami spojovala dva světy. Špičkové přírodní složení bez zatěžujících látek a skvělé vlastnosti, textury, barvy, výdrž. Přírodní kosmetika nám tyto kvality nenabízela a běžná dekorativní kosmetika byla plná zatěžujících látek, na které naše pleti ihned reagovaly, povadaly a mluvily k nám nespokojenými vráskami. Objevily jsme pro sebe a pro Vás Und Gretel, unikátní berlínskou značku, která splňuje vše. Zdá se to až jako zázrak. Posuďte sami. Zveme Vás do světa bez kompromisů.</p>
-
-            <p>Všechny produkty jsou ve kvalitě profesionálního make-upu. Vysoce pigmentované, krycí, variabilní a s dlouhou výdrží. Tato kritéria dříve nebyla u přírodní dekorativní kosmetiky možná. Und Gretel posouvá možnosti a nabízí dekorativní kosmetiku ve špičkové kvalitě, bez syntetických konzervantů a chemických látek.</p>
+            <ReactMarkdown>{blog.add_content}</ReactMarkdown>
           </div>
           <div className="button-more-wrap">
             <a href="/" className="button">nakupujte zde</a>

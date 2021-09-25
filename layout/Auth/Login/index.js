@@ -1,16 +1,16 @@
 const Login = ({handleType}) => {
   return (
     <div className="form-canvas-wrap">
-      <div class="uk-margin">
-        <label class="uk-form-label" for="form-stacked-text">e-mail</label>
-        <div class="uk-form-controls">
-          <input class="uk-input" id="form-stacked-text" type="email" />
+      <div className="uk-margin">
+        <label className="uk-form-label" htmlFor="form-stacked-text">e-mail</label>
+        <div className="uk-form-controls">
+          <input className="uk-input" id="form-stacked-text" type="email" />
         </div>
       </div>
-      <div class="uk-margin uk-margin-small-bottom">
-        <label class="uk-form-label" for="form-stacked-text">heslo</label>
-        <div class="uk-form-controls">
-          <input class="uk-input" id="form-stacked-text" type="password" />
+      <div className="uk-margin uk-margin-small-bottom">
+        <label className="uk-form-label" htmlFor="form-stacked-text">heslo</label>
+        <div className="uk-form-controls">
+          <input className="uk-input" id="form-stacked-text" type="password" />
         </div>
       </div>
       <a href="/" className="link-bold" onClick={e => handleType(e, 'forgot')}>Zapomněli jste heslo?</a>

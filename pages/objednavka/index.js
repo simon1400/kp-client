@@ -1,13 +1,12 @@
 import {useState, useEffect, useContext} from 'react'
 import { DataStateContext } from '../../context/dataStateContext'
-{/*import {AxiosAPI} from '../../restClient'*/}
 import validationForm from '../../function/validationForm'
 
 import Checkout from '../../view/Checkout'
 
 const CheckoutWrap = () => {
 
-  const [basketItems, setBasketItems] = useState([1,2])
+  const [basketItems, setBasketItems] = useState([])
   const { dataContextState } = useContext(DataStateContext)
   const [startSum, setStartSum] = useState(0)
   const [sum, setSum] = useState(0)
@@ -127,64 +126,64 @@ const CheckoutWrap = () => {
     sale: false
   })
 
-  // useEffect(() => {
-  //   setBasketItems(dataContextState.basket)
-  //   var newStartSum = 0
-  //   dataContextState.basket.map(item => {
-  //     newStartSum += +item.price * +item.count
-  //   })
-  //   if(newStartSum > 2000){
-  //     var newDeliveryMethod = [...deliveryMethod]
-  //     var newPayMethod = [...payMethod]
-  //     newDeliveryMethod.map(item => item.value = 0)
-  //     newPayMethod.map(item => item.value = 0)
-  //   }
-  //   setStartSum(newStartSum)
-  // }, [])
+  useEffect(() => {
+    setBasketItems(dataContextState.basket)
+    var newStartSum = 0
+    dataContextState.basket.map(item => {
+      newStartSum += +item.price * +item.count
+    })
+    if(newStartSum > 2000){
+      var newDeliveryMethod = [...deliveryMethod]
+      var newPayMethod = [...payMethod]
+      newDeliveryMethod.map(item => item.value = 0)
+      newPayMethod.map(item => item.value = 0)
+    }
+    setStartSum(newStartSum)
+  }, [])
 
-  // useEffect(() => {
-  //   if(sale.value){
-  //     var newSum = sum
-  //     if(sale.typ === 'procent'){
-  //       newSum = Math.round(newSum - (newSum * (sale.value / 100)))
-  //     }else if(sale.typ === 'current'){
-  //       newSum = newSum - sale.value
-  //     }
-  //     setSum(newSum)
-  //   }
-  //
-  // }, [sale.value])
+  useEffect(() => {
+    if(sale.value){
+      var newSum = sum
+      if(sale.typ === 'procent'){
+        newSum = Math.round(newSum - (newSum * (sale.value / 100)))
+      }else if(sale.typ === 'current'){
+        newSum = newSum - sale.value
+      }
+      setSum(newSum)
+    }
 
-  // useEffect(() => {
-  //   setError({...error, deliveryMethod: false})
-  //   var newPay = [...payMethod]
-  //   if(deliveryMethod[0].check || deliveryMethod[1].check){
-  //     newPay[3].disabled = true
-  //     newPay[3].check = false
-  //   }else{
-  //     newPay[3].disabled = false
-  //   }
-  //   if(deliveryMethod[2].check){
-  //     newPay[2].disabled = true
-  //     newPay[2].check = false
-  //   }else{
-  //     newPay[2].disabled = false
-  //   }
-  //   setPayMethod(newPay)
-  // }, [deliveryMethod])
-  //
-  // useEffect(() => {
-  //   setError({...error, payMethod: false})
-  // }, [payMethod])
+  }, [sale.value])
 
-  // useEffect(() => {
-  //   const checkDelivery = deliveryMethod.filter(item => item.check)[0]
-  //   const checkPayment = payMethod.filter(item => item.check)[0]
-  //   var sum = startSum
-  //   sum += +checkDelivery?.value || 0
-  //   sum += +checkPayment?.value || 0
-  //   setSum(sum)
-  // }, [deliveryMethod, payMethod])
+  useEffect(() => {
+    setError({...error, deliveryMethod: false})
+    var newPay = [...payMethod]
+    if(deliveryMethod[0].check || deliveryMethod[1].check){
+      newPay[3].disabled = true
+      newPay[3].check = false
+    }else{
+      newPay[3].disabled = false
+    }
+    if(deliveryMethod[2].check){
+      newPay[2].disabled = true
+      newPay[2].check = false
+    }else{
+      newPay[2].disabled = false
+    }
+    setPayMethod(newPay)
+  }, [deliveryMethod])
+
+  useEffect(() => {
+    setError({...error, payMethod: false})
+  }, [payMethod])
+
+  useEffect(() => {
+    const checkDelivery = deliveryMethod.filter(item => item.check)[0]
+    const checkPayment = payMethod.filter(item => item.check)[0]
+    var sum = startSum
+    sum += +checkDelivery?.value || 0
+    sum += +checkPayment?.value || 0
+    setSum(sum)
+  }, [deliveryMethod, payMethod])
 
 
   const onBlur = (type) => {

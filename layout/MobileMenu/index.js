@@ -1,8 +1,9 @@
 import MenuDropdown from '../../components/MenuDropdown'
 import {useEffect} from 'react'
 import {offcanvas} from 'uikit'
+import Link from 'next/link'
 
-const MobileMenu = ({menu, handleMenu}) => {
+const MobileMenu = ({menu, handleMenu, left, right}) => {
 
   useEffect(() => {
     if(menu) {
@@ -16,18 +17,16 @@ const MobileMenu = ({menu, handleMenu}) => {
     <div id="canvas-mobile-menu" className="uk-offcanvas" uk-offcanvas="flip: true; overlay: true">
       <div className="menu menu-mobile uk-offcanvas-bar">
         <ul>
-          <li>
-            <a href="/">produkty <img className="uk-svg" src="/assets/plus.svg" uk-svg="" /></a>
-            <MenuDropdown index="0" />
-          </li>
-          <li>
-            <a href="/">značky <img className="uk-svg" src="/assets/plus.svg" uk-svg="" /></a>
-            <MenuDropdown index="1" />
-          </li>
-          <li><a href="/">o nás</a></li>
-          <li><a href="/">kontakt</a></li>
-          <li><a href="/">salón krásy</a></li>
-          <li><a href="/">rezervace</a></li>
+          {left.map((item, index) => <li key={index}>
+            {!item.sub_nav && <Link href={item.slug}><a>{item.name}</a></Link>}
+            {!!item.sub_nav && <a href="/" onClick={e => e.preventDefault()}>{item.name} <img className="uk-svg" src="/assets/plus.svg" uk-svg="" /></a>}
+            {!!item.sub_nav && <MenuDropdown data={item.sub_nav} index={'mob_top_'+index} />}
+          </li>)}
+          {right.map((item, index) => <li key={index}>
+            {!item.sub_nav && <Link href={item.slug}><a>{item.name}</a></Link>}
+            {!!item.sub_nav && <a href="/" onClick={e => e.preventDefault()}>{item.name} <img className="uk-svg" src="/assets/plus.svg" uk-svg="" /></a>}
+            {!!item.sub_nav && <MenuDropdown data={item.sub_nav} index={'mob_bottom_'+index} />}
+          </li>)}
         </ul>
         <a className="bare-button button-reverse" onClick={e => handleMenu(e)} href="/"><img className="uk-svg" src="/assets/angle-left.svg" uk-svg="" />zavřít</a>
       </div>

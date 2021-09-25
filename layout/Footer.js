@@ -1,24 +1,37 @@
-const Footer = () => {
+import {useEffect, useState} from 'react'
+import getMenu from '../function/getMenu'
+import Link from 'next/link'
+
+const Footer = ({data, nav}) => {
+
+  const [title, setTitle] = useState([])
+  const [techMenu, setTechMenu] = useState([])
+
+  useEffect(() => {
+    setTitle(data.title_footer.split(' '))
+    setTechMenu(getMenu(nav))
+  }, [])
+
   return (
     <footer>
       <div className="footer-top">
         <div className="uk-container uk-container-large">
           <h2 className="big-head">
-            <span style={{paddingLeft: '0px'}}><b>Královská Péče—</b></span>
-            <span style={{paddingLeft: '10vw'}}>kvalita, příběh a energie</span>
+            <span style={{paddingLeft: '0px'}}><b>{title[0]} {title[1]} {title[2]}</b></span>
+            <span style={{paddingLeft: '10vw'}}>{title[3]} {title[4]} {title[5]} {title[6]}</span>
           </h2>
           <div className="uk-grid uk-child-width-1-1 uk-child-width-1-3@s" uk-grid="">
             <div className="footer-item">
               <label>Zavolejte nám</label>
-              <p><a href="tel:+420702830774">+420 702 830 774</a></p>
+              <p><a href={`tel:${data.phone}`}>{data.phone}</a></p>
             </div>
             <div className="footer-item">
               <label>Napište nám</label>
-              <p><a href="mailto:info@kralovska-pece.cz">info@kralovska-pece.cz</a></p>
+              <p><a href={`mailto:${data.email}`}>{data.email}</a></p>
             </div>
             <div className="footer-item">
               <label>Navštivte nás</label>
-              <p>Maximus Resort, Hrázní 327, Brno</p>
+              <p>{data.address}</p>
             </div>
           </div>
         </div>
@@ -27,13 +40,11 @@ const Footer = () => {
         <div className="uk-container uk-container-large">
           <div className="copytight-wrap">
             <div className="copyright">
-              <p>Královská péče s.r.o., Hrázní 327/4a, 635 00 Brno-Bystrc, IČO: 03775933, DIČ: CZ 03775933</p>
+              <p>{data.copyright}</p>
             </div>
             <div className="tech-links">
               <ul>
-                <li><a href="/">Dodaci podmínky</a></li>
-                <li><a href="/">Obchodní podmínky</a></li>
-                <li><a href="/">Ochrana osobních údajů</a></li>
+                {techMenu.map((item, index) => <li key={index}><Link href={item.slug}><a>{item.name}</a></Link></li>)}
               </ul>
               <ul className="soc-icon">
                 <li><a href="/"><img className="uk-svg" src="/assets/facebook-f.svg" uk-svg="" /></a></li>

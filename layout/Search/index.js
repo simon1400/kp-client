@@ -1,54 +1,24 @@
-import {useState, useEffect, useContext, useRef} from 'react'
-// import { DataStateContext } from '../../context/dataStateContext'
-// import sanityClient from "../../lib/sanity.js";
-// import imageUrlBuilder from "@sanity/image-url";
+import {useState, useEffect, useContext} from 'react'
 import { offcanvas, util } from 'uikit'
 import CanvasItem from '../../components/CanvasItem'
-
-// import query from '../../queries/search'
-
-// const imageBuilder = imageUrlBuilder(sanityClient);
-// const urlFor = source => imageBuilder.image(source);
+import {useLazyQuery} from '@apollo/client'
+import searchQuery from '../../queries/search.js'
 
 const Search = () => {
 
   const [searchItems, setSearchItems] = useState([])
   const [searchValue, setSearchValue] = useState('')
   const [searchNotFound, setSearchNotFound] = useState('')
-  const [loadding, setLoaading] = useState(false)
-  const input = useRef(null);
+  const [loading, setLoading] = useState(false)
 
-  // const { dataContextState } = useContext(DataStateContext)
-
-  const closeCanvas = () => {
+  const closeCanvas = (e) => {
+    e.preventDefault()
     offcanvas(util.find('#search')).hide();
   }
 
-  // useEffect(() => {
-  //   if(dataContextState.state.searchFocus){
-  //     input.current.focus()
-  //   }
-  // }, [dataContextState])
-
-  // useEffect(() => {
-  //   setSearchItems(dataContextState.search)
-  // }, [dataContextState.search])
-
   const handleSearch = async (value) => {
-    // setSearchValue(value)
-    // await setLoaading(true)
-    // if(value.length > 2){
-    //   const data = await sanityClient.fetch(query, {value: value + '*'})
-    //   if(!data?.length){
-    //     setSearchNotFound('Nic jsme nenašli, zkuste jiné slovo.')
-    //   }else{
-    //     setSearchNotFound('')
-    //   }
-    //   await setSearchItems(data)
-    // }else{
-    //   await setSearchItems([])
-    // }
-    // await setLoaading(false)
+    setSearchValue(value)
+    setLoading(true)
   }
 
   return (
@@ -56,7 +26,7 @@ const Search = () => {
       <div className="uk-offcanvas-bar">
         <div className="canvas-head uk-flex uk-flex-between">
           <h3>Vyhledávání</h3>
-          <a href="/"><img className="uk-svg" src="/assets/times.svg" uk-svg="" /></a>
+          <a href="/" onClick={e => closeCanvas(e)}><img className="uk-svg" src="/assets/times.svg" uk-svg="" /></a>
         </div>
         <hr />
 
@@ -68,11 +38,9 @@ const Search = () => {
           <div className="result-block">
             <h4>Kategorie</h4>
             <CanvasItem />
-            <CanvasItem />
           </div>
           <div className="result-block">
             <h4>Kategorie</h4>
-            <CanvasItem />
             <CanvasItem />
           </div>
         </div>

@@ -1,63 +1,63 @@
 import {useState, useEffect, useContext} from 'react'
-// import { DataStateContext } from '../../context/dataStateContext'
+import { DataStateContext } from '../../context/dataStateContext'
+import Image from '../../components/Image'
 
 import Page from '../../layout/Page'
 
 const Basket = () => {
 
-  const [basketItems, setBasketItems] = useState([1, 2])
-  // const { dataContextState, dataContextDispatch } = useContext(DataStateContext)
+  const [basketItems, setBasketItems] = useState([])
+  const { dataContextState, dataContextDispatch } = useContext(DataStateContext)
 
-  // useEffect(() => {
-  //   setBasketItems(dataContextState.basket)
-  // }, [dataContextState.basket])
+  useEffect(() => {
+    setBasketItems(dataContextState.basket)
+  }, [dataContextState.basket])
 
   const changeCount = (value, index) => {
-    // if(+value > 0){
-    //   const newBasketItems = [...basketItems]
-    //   newBasketItems[index].count = +value
-    //   dataContextDispatch({ state: newBasketItems, type: 'basket' })
-    // }
+    if(+value > 0){
+      const newBasketItems = [...basketItems]
+      newBasketItems[index].count = +value
+      dataContextDispatch({ state: newBasketItems, type: 'basket' })
+    }
   }
 
   const deleteItem = (index) => {
-    // let newBasketItems = [...basketItems]
-    // newBasketItems.splice(index, 1)
-    // dataContextDispatch({ state: newBasketItems, type: 'basket' })
+    let newBasketItems = [...basketItems]
+    newBasketItems.splice(index, 1)
+    dataContextDispatch({ state: newBasketItems, type: 'basket' })
   }
 
-
   const globalSum = () => {
-    // let sum = 0
-    // basketItems.map(item => {sum += +item.count * +item.price})
-    // return sum
+    let sum = 0
+    basketItems.map(item => {sum += +item.count * +item.price})
+    return sum
   }
 
   return (
-    <Page>
+    <Page basket>
       <div className="basket uk-position-relative">
         {!!basketItems.length ? <div className="uk-container uk-container-large">
           <div className="uk-grid" uk-grid="">
             <div className="uk-width-1-1 uk-width-2-3@s">
               <h1 className="uk-margin-large-top">Košík</h1>
-              <div className="basket-content-wrap block">
+              <div className="basket-content-wrap">
                 {!!basketItems.length && <table className="uk-table uk-table-middle uk-table-divider uk-margin-remove">
                   <thead>
                     <tr>
-                      <th className="uk-table-expand">položky</th>
-                      <th className="uk-width-small">množství</th>
-                      <th className="uk-width-small uk-text-right">cena</th>
+                      <th className="uk-table-expand">Položky</th>
+                      <th className="uk-width-small">Množství</th>
+                      <th className="uk-width-small uk-text-right">Cena</th>
                     </tr>
                   </thead>
                   <tbody>
                     {!!basketItems.length && basketItems.map((item, index) => <tr key={index} className="basket-item">
                       <td className="uk-flex uk-flex-start">
                         <div className="basket-item-img">
-                          <img src="/assets/homepage.jpg" alt={item.title} />
+                          <Image image={item.image} />
                         </div>
                         <div className="basket-item-content">
-                          <label>Angelo Caroli</label>
-                          <a href={`/${item.slug}/${item.categorySlug}`}><h5 className="uk-margin-remove">Emocionální kolekce - AMORE NERO</h5></a>
+                          <label>{item.brand}</label>
+                          <a href={`/product/${item.slug}`}>{item.nameProduct}</a>
                           {!!item.variantProduct && <span>{item.variantProduct}</span>}
                         </div>
                       </td>
@@ -72,8 +72,8 @@ const Basket = () => {
                         </div>
                       </td>
                       <td className="basket-item-price">
-                        <span className="price price-small">132 Kč</span>
-                        {/*<p className="price-color">{(item.price * item.count).toLocaleString()} Kč</p>*/}
+                        {/*<span className="price price-small">132 Kč</span>*/}
+                        <span className="price price-small">{(item.price * item.count).toLocaleString()} Kč</span>
                         <span onClick={() => deleteItem(index)}><img classNAme="uk-svg" src="/assets/times.svg" uk-svg="" /></span>
                       </td>
                     </tr>)}
@@ -103,8 +103,8 @@ const Basket = () => {
                     <tfoot>
                       <tr>
                         <th>Celková cena</th>
-                        {/*<td className="uk-text-right price-color">{sum.toLocaleString()} Kč</td>*/}
-                        <th className="uk-text-right price-color">1 387 Kč</th>
+                        <th className="uk-text-right price-color">{globalSum().toLocaleString()} Kč</th>
+                        {/*<th className="uk-text-right price-color">1 387 Kč</th>*/}
                       </tr>
                     </tfoot>
                   </table>
@@ -118,7 +118,9 @@ const Basket = () => {
           <div className="uk-grid uk-child-width-1-1" uk-grid="">
             <div className="uk-text-center uk-margin">
               <h1>Váš košík je prázdný.</h1>
-              <div className="uk-margin-large-top"><Button link="/odstavnovace" text="Zpět k nakupování" type="primary" /></div>
+              <div className="uk-margin-large-top">
+                <a className="button primary" href="/">Zpět k nakupování</a>
+              </div>
             </div>
           </div>
         </div>}

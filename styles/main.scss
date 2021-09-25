@@ -86,8 +86,10 @@ header{
           padding-right: 15px;
           text-shadow: $text-shadow;
           font-weight: $font-light;
+          transition: all .2s ease;
           &:hover{
             text-decoration: none;
+            color: $accent;
           }
         }
       }
@@ -120,12 +122,22 @@ header{
 
 .menu{
   align-self: end;
-  img, svg{
-    width: 12px;
-    color: $accent;
-    fill: $accent;
-    margin-left: 5px;
+  a{
+    &:hover{
+      .uk-svg, svg{
+        transform: rotate(180deg);
+      }
+    }
+    .uk-svg, svg{
+      width: 12px;
+      color: $accent;
+      fill: $accent;
+      margin-left: 5px;
+      transition: all .2s ease;
+      transform: rotate(0);
+    }
   }
+
 }
 
 .page-top{
@@ -387,6 +399,11 @@ footer{
         font-size: 25px;
         font-family: $ff-light;
         margin-top: 0;
+        transition: all .2s ease;
+        &:hover{
+          text-decoration: none;
+          color: $accent;
+        }
       }
       p{
         position: relative;
@@ -400,6 +417,13 @@ footer{
           bottom: 5px;
           left: 0;
           position: absolute;
+          transition: all .2s ease;
+        }
+        &:hover{
+          &:after{
+            bottom: 0;
+            background-color: $accent;
+          }
         }
       }
     }
@@ -445,9 +469,20 @@ footer{
               font-size: 17px;
               font-weight: $font-medium;
               -webkit-font-smoothing: auto;
+              transition: all .2s ease;
               img, svg{
                 height: 16px;
                 max-width: 16px;
+                color: white;
+              }
+              &:hover{
+                color: $accent;
+                text-decoration: none;
+                img, svg{
+                  height: 16px;
+                  max-width: 16px;
+                  color: white;
+                }
               }
             }
           }
@@ -472,8 +507,12 @@ footer{
               display: -webkit-flex;
               display: -ms-flex;
               display: flex;
+              transition: all .2s ease;
               img, svg{
                 margin: auto;
+              }
+              &:hover{
+                background-color: rgba($accent, 0.6);
               }
             }
           }
@@ -685,6 +724,7 @@ footer{
   -webkit-text-stroke: .2px rgba(0,0,0,.9);
   display: block;
   margin-bottom: 15px;
+  color: $text-color;
 }
 
 .related-products{
@@ -724,7 +764,7 @@ footer{
   .dropdown-item{
     text-align: center;
     transition: all .2s ease;
-    width: 150px;
+    // width: 150px;
     margin-left: 20px;
     margin-right: 20px;
     &:hover{
@@ -764,6 +804,9 @@ footer{
     margin-right: 3.5px;
     + .button{
       margin-left: 3.5px;
+      padding-left: 50px;
+      padding-right: 50px;
+      width: 150px;
     }
     ul{
       background-color: $yellow;
@@ -803,6 +846,10 @@ footer{
   }
   .button{
     line-height: 30px;
+    width: 250px;
+    white-space: nowrap;
+    padding-left: 0;
+    padding-right: 0;
     img, svg{
       width: 10px;
       margin-left: 10px;

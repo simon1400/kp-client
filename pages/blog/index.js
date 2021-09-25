@@ -1,9 +1,22 @@
 import Page from '../../layout/Page'
 import PageTop from '../../components/PageTop'
+import { useQuery } from "@apollo/client";
+import blogQuery from '../../queries/blog'
+import ReactMarkdown from 'react-markdown'
+import Image from '../../components/Image'
 
 const Blog = () => {
+
+  const { loading, error, data } = useQuery(blogQuery);
+
+  if(loading) {
+    return ''
+  }
+
+  let blogs = data.blogs
+
   return (
-    <Page bigHeader>
+    <Page bigHeader globalData={data.global} nav={data.navigation}>
       <PageTop
         small
         head={<h1 className="big-head">
@@ -13,38 +26,22 @@ const Blog = () => {
 
       <section className="sec-big">
         <div className="uk-container uk-container-large">
-          <div className="uk-grid blog-item uk-child-width-1-1 uk-child-width-1-2@s" uk-grid="">
+          {blogs.length && blogs.map((item, index) => <div key={index} className="uk-grid blog-item uk-child-width-1-1 uk-child-width-1-2@s" uk-grid="">
             <div>
               <div className="blog-item-img">
-                <img className="uk-img" src="/assets/blog.jpg" uk-img="" />
+                <Image image={item.image} />
               </div>
             </div>
             <div>
               <div className="blog-item-info">
-                <h2>Originální kompozice z nejlepších ingrediencí</h2>
+                <h2>{item.title}</h2>
                 <div>
-                  <p>Fragrance Faoundation FIFI rozděluje vůně do dvou kategorií: MAINSTREAM a NICHE PARFÉMY. Dělení je jednoduše postaveno na počtu obchodů, ve kterých daný parfém můžete koupit. To obecně znamená, že naprostá většina vůní, se kterými se setkáváte v běžných parfumeriích, jsou parfémy z hlavního</p>
+                  <ReactMarkdown>{item.content}</ReactMarkdown>
                 </div>
-                <a className="bare-button" href="/blog/item">celý článek <img className="uk-svg" src="/assets/angle-right.svg" uk-svg="" /></a>
+                <a className="bare-button" href={`/blog/${item.slug}`}>celý článek <img className="uk-svg" src="/assets/angle-right.svg" uk-svg="" /></a>
               </div>
             </div>
-          </div>
-          <div className="uk-grid blog-item uk-child-width-1-1 uk-child-width-1-2@s" uk-grid="">
-            <div>
-              <div className="blog-item-img">
-                <img className="uk-img" src="/assets/blog.jpg" uk-img="" />
-              </div>
-            </div>
-            <div>
-              <div className="blog-item-info">
-                <h2>Originální kompozice z nejlepších ingrediencí</h2>
-                <div>
-                  <p>Fragrance Faoundation FIFI rozděluje vůně do dvou kategorií: MAINSTREAM a NICHE PARFÉMY. Dělení je jednoduše postaveno na počtu obchodů, ve kterých daný parfém můžete koupit. To obecně znamená, že naprostá většina vůní, se kterými se setkáváte v běžných parfumeriích, jsou parfémy z hlavního</p>
-                </div>
-                <a className="bare-button" href="/blog/item">celý článek <img className="uk-svg" src="/assets/angle-right.svg" uk-svg="" /></a>
-              </div>
-            </div>
-          </div>
+          </div>)}
         </div>
       </section>
     </Page>

@@ -1,80 +1,70 @@
+import {useEffect, useState} from 'react'
 import Page from '../layout/Page'
-import { productsQuery } from '../lib/queries'
+import homepageQuery from '../queries/homepage'
 import { useQuery } from "@apollo/client";
 import Head from 'next/head'
 import Card from '../components/Card'
 import SmallBanner from '../components/SmallBanner'
 import PageTop from '../components/PageTop'
 import BigBanner from '../components/BigBanner'
+import Image from '../components/Image'
 
 const Homepage = () => {
 
-  const { loading, error, data } = useQuery(productsQuery);
+  const { loading, error, data } = useQuery(homepageQuery);
+
+  const [h1, setH1] = useState([])
+  const [h2, setH2] = useState([])
+
+  useEffect(() => {
+    if(!loading) {
+      setH1(data.homepage.title.split(' '))
+      setH2(data.homepage.title.split(' '))
+    }
+  }, [loading])
+
+  if(loading) {
+    return ''
+  }
 
   return (
-    <Page bgImg="/assets/homepage.jpg" bigHeader >
+    <Page bgImg="/assets/homepage.jpg" bigHeader globalData={data.global} nav={data.navigation}>
       <PageTop
         big
         center
         head={<h1 className="big-head">
-                <span style={{paddingLeft: '5vw'}}><b>Královská péče</b> díky</span>
-                <span style={{paddingLeft: '22vw'}}>světové kosmetice</span>
-                <span style={{paddingLeft: '5vw'}}><b>Linda Meredith</b></span>
+                <span style={{paddingLeft: '5vw'}}><b>{h1[0]} {h1[1]}</b> {h1[2]}</span>
+                <span style={{paddingLeft: '22vw'}}>{h1[3]} {h1[4]}</span>
+                <span style={{paddingLeft: '5vw'}}><b>{h1[5]} {h1[6]}</b></span>
               </h1>}
         img="/assets/homepage.jpg"
+        textButton={data.homepage.Button.text}
+        linkButton={data.homepage.Button.link}
       />
       <section className="sec-base">
         <div className="uk-container uk-container-large">
           <h2 className="big-head uk-text-center uk-margin-large-bottom">
             <span style={{paddingLeft: '0'}}><b>exluzivni</b> novinky</span>
           </h2>
-          <div className="uk-grid" uk-grid="" uk-height-match="target: > div > div">
+          {data.homepage.products.map((item, index) => <div key={index} className={`uk-grid ${index % 2 ? 'uk-flex-row-reverse' : ''}`} uk-grid="" uk-height-match="target: > div > div">
             <div className="uk-width-1-1 uk-width-1-2@s">
-              <SmallBanner />
+              <SmallBanner
+                brand={item.brand}
+                text={item.text}
+                link={item.button} />
             </div>
-            <div className="uk-width-1-2 uk-width-1-4@s">
-              <Card />
-            </div>
-            <div className="uk-width-1-2 uk-width-1-4@s">
-              <Card />
-            </div>
-            <div className="uk-width-1-2 uk-width-1-4@s">
-              <Card />
-            </div>
-            <div className="uk-width-1-2 uk-width-1-4@s">
-              <Card />
-            </div>
-            <div className="uk-width-1-1 uk-width-1-2@s">
-              <SmallBanner />
-            </div>
-          </div>
+            {item.products.map((product, indexProd) => <div key={indexProd} className="uk-width-1-2 uk-width-1-4@s"><Card data={product} /></div>)}
+          </div>)}
         </div>
       </section>
 
-      <BigBanner />
+      <BigBanner data={data.global.banner} />
 
       <section className="partners-logo">
         <div className="uk-container uk-container-large">
           <div className="uk-slider" uk-slider="autoplay: true">
             <ul className="uk-slider-items uk-child-width-1-2 uk-child-width-1-4@s uk-child-width-1-6@m uk-grid uk-grid-stack">
-              <li>
-                <a href="/"><img src="/assets/logo-1.jpeg" alt="" /></a>
-              </li>
-              <li>
-                <a href="/"><img src="/assets/logo-2.png" alt="" /></a>
-              </li>
-              <li>
-                <a href="/"><img src="/assets/logo-3.png" alt="" /></a>
-              </li>
-              <li>
-                <a href="/"><img src="/assets/logo-4.jpeg" alt="" /></a>
-              </li>
-              <li>
-                <a href="/"><img src="/assets/logo-5.png" alt="" /></a>
-              </li>
-              <li>
-                <a href="/"><img src="/assets/logo-6.jpeg" alt="" /></a>
-              </li>
+              {data.homepage.partners.map((image, index) => <li key={index}><Image image={image} /></li>)}
             </ul>
           </div>
         </div>

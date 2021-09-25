@@ -16,13 +16,13 @@ module.exports = (phase) => {
 
   const env = {
     APP_API: (() => {
-      if (isDev) return 'http://localhost:1337'
-      if (isProd) return 'http://admin.tulsio.cz'
+      if (isDev) return 'http://localhost:1339'
+      if (isProd) return 'https://strapi.kralovska-pece.cz'
       return 'RESTURL_SPEAKERS:not (isDev,isProd && !isStaging,isProd && isStaging)'
     })(),
     APP_DOMAIN: (() => {
       if (isDev) return 'http://localhost:3005'
-      if (isProd) return 'https://tulsio.hardart.cz'
+      if (isProd) return 'https://kralovska-pece.cz'
       return 'RESTURL_SPEAKERS:not (isDev,isProd && !isStaging,isProd && isStaging)'
     })()
   }

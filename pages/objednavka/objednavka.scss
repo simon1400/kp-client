@@ -48,11 +48,16 @@
       position: absolute;
       left: 0;
       top: 7px;
+      &:checked + span {
+        padding-left: 0;
+      }
     }
   }
 
 }
-
+.checkout{
+  padding-bottom: 100px;
+}
 .price-method{
   font-weight: $font-bold;
   font-family: $ff-semibold;

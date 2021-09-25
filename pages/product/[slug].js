@@ -1,14 +1,92 @@
+import {useContext, useState} from 'react'
 import { useRouter } from 'next/router'
-// import ErrorPage from 'next/error'
 import Page from '../../layout/Page'
 import Card from '../../components/Card'
 import BigBanner from '../../components/BigBanner'
-// import { getAllPostsWithSlug, getPostAndMorePosts } from '@/lib/api'
 import Head from 'next/head'
+import ReactMarkdown from 'react-markdown'
+import { useQuery } from "@apollo/client";
+import productQuery from '../../queries/product'
+import Image from '../../components/Image'
+import { DataStateContext } from '../../context/dataStateContext'
+import {dropdown, offcanvas} from 'uikit'
+
+var startSelectValue = {
+  name: 'vybrat variantu',
+  id: '',
+  price: ''
+}
 
 const Product = () => {
+
+  const { dataContextState, dataContextDispatch } = useContext(DataStateContext)
+  const [selectValue, setSelectValue] = useState(startSelectValue)
+  const [errorBuy, setErrorBuy] = useState(false)
+  const [addToCardGTM, setAddToCardGTM] = useState(false)
+
+  const router = useRouter()
+
+  const { loading, error, data } = useQuery(productQuery, {
+    variables: {slug: router.query.slug}
+  });
+
+  const buy = (e) => {
+    e.preventDefault()
+    if(!selectValue.id.length && !!product.Variants?.length) {
+      setErrorBuy(true)
+      return
+    }
+    let localBasket = dataContextState.basket
+    let hasItem = -1
+
+    for(var i = 0; i < localBasket.length; i++){;
+      if(localBasket[i].id === selectValue.id){
+        hasItem = i
+      }
+    }
+
+    if(hasItem >= 0) {
+      localBasket[hasItem].count += 1
+    }else{
+      var newLocalBasket = {
+        id: product.id,
+        nameProduct: product.title,
+        price: product.price,
+        count: 1,
+        image: product.images[0],
+        imageUrl: product.images[0].url,
+        brand: product.brand.title,
+        slug: product.slug
+      }
+      if(!!product.Variants?.length){
+        newLocalBasket.variantProduct = selectValue.name
+        newLocalBasket.price = selectValue.price
+        newLocalBasket.id = selectValue.id
+      }
+      localBasket.push(newLocalBasket)
+    }
+
+    // setAddToCardGTM(newLocalBasket.id)
+
+    dataContextDispatch({ state: localBasket, type: 'basket' })
+    offcanvas('#canvas').show();
+  }
+
+  const selectVariant = (e, value) => {
+    e.preventDefault()
+    setErrorBuy(false)
+    setSelectValue({name: value.nazev, id: value.id, price: value.price})
+    dropdown('#variant-select').hide(false);
+  }
+
+  if(loading) {
+    return ''
+  }
+
+  const product = data.produkties[0]
+
   return (
-    <Page>
+    <Page globalData={data.global} nav={data.navigation}>
       <section className="product-base">
         <div className="uk-container uk-container-large">
           <div className="uk-grid uk-child-width-1-1 uk-child-width-1-2@s">
@@ -17,12 +95,7 @@ const Product = () => {
                 <a className="bare-button button-reverse uk-visible@s" href="/"><img className="uk-svg" src="/assets/angle-left.svg" uk-svg="" />zpět na produkty</a>
                 <div className="uk-slideshow" uk-slideshow="ratio: 1:1">
                   <ul className="uk-slideshow-items">
-                    <li>
-                      <img className="uk-img" src="https://www.kralovska-pece.cz/image/cache/catalog/angelo-caroli/angelo-caroli-amore-nero-800x800.jpg" uk-img="" />
-                    </li>
-                    <li>
-                      <img className="uk-img" src="https://www.kralovska-pece.cz/image/cache/catalog/angelo-caroli/angelo-caroli-amore-nero-800x800.jpg" uk-img="" />
-                    </li>
+                    {product.images.map((item, index) => <li key={index}><Image image={item}/></li>)}
                   </ul>
                   <a className="uk-position-center-left uk-position-small uk-slidenav" href="#" uk-slideshow-item="previous">
                     <img className="uk-svg" src="/assets/angle-left.svg" uk-svg="" />
@@ -36,28 +109,26 @@ const Product = () => {
             </div>
             <div>
               <div className="product-info">
-                <label>Angelo Caroli</label>
-                <h1>Emocionální kolekce - TUBEROSA NERA</h1>
-                <span className="price">1 550 Kč</span>
+                <label>{product.brand.title}</label>
+                <h1>{product.title}</h1>
+                <span className="price">{product.price.toLocaleString()} Kč</span>
                 <label className="available">Skladem</label>
-                {/*<a href="/" className="button">přidat do košíku</a>*/}
-                <div className="variant-button-wrap">
+                {!product.Variants.length && <a href="/" className="button" onClick={e => buy(e)}>přidat do košíku</a>}
+                {!!product.Variants.length && <div className="variant-button-wrap">
                   <div className="select-variant">
-                    <button className="button border-button" type="button">vybrat variantu <img className="uk-svg" src="/assets/angle-down.svg" uk-svg="" /></button>
-                    <ul className="uk-dropdown" uk-dropdown="mode: click; offset: 8; pos: bottom-justify;">
-                      <li><a href="/"><span>100 ml</span><span>550 Kč</span></a></li>
-                      <li><a href="/"><span>200 ml</span><span>1 550 Kč</span></a></li>
-                      <li><a href="/"><span>400 ml</span><span>50 Kč</span></a></li>
+                    <button className={`button border-button ${errorBuy && 'uk-form-danger'}`} type="button">{selectValue.name} <img className="uk-svg" src="/assets/angle-down.svg" uk-svg="" /></button>
+                    <ul id="variant-select" className="uk-dropdown" uk-dropdown="mode: click; offset: 8; pos: bottom-justify;">
+                      {product.Variants.map((item, index) => <li key={index}><a href="/" onClick={e => selectVariant(e, item, index)}><span>{item.nazev}</span><span>{item.price} Kč</span></a></li>)}
                     </ul>
                   </div>
-                  <a href="/" className="button">přidat do košíku</a>
-                </div>
+                  <a href="/" className="button" onClick={e => buy(e)}>přidat do košíku</a>
+                </div>}
                 <ul>
-                  <li>Značka: <a href="">Angelo Caroli</a></li>
-                  <li>Kód výrobku: 2148</li>
+                  <li>Značka: <a href={`/${product.brand.slug}`}>{product.brand.title}</a></li>
+                  <li>Kód výrobku: {product.code}</li>
                 </ul>
                 <div className="description">
-                  <p>S touto vůní se vrací ateliér Cologne v roce 2014 ke svým počátkům. Vývoj vysoce kvalitní Eau de Colognes je výhradně připisován tomuto ateliéru, přičemž koncentrace Cologne Absolue je kolem 18 %. Kolekce - Originály domu - se skládá ze svěžích vůní, které jsou interpretovány nejrůznějšími způsoby. Cédrat Enivrant inspiroval Cocktail French 75 , směs šampaňského a džinu, kterou udělal Furore již v roce 1915 a v nyní se znovu dostává tato vůně do obliby v New Yorku. Vůně začíná temperamentně jako French 75, začíná cedratem, limetkou a bergamotem, je podpořena mátou a bazalkou, aby se v závěru spojila v balzamikovém Drydownu z fazolí tonka, pryskyřice elemi a vetiveru - jako krásný letní večer, kdy člověk nechce, aby skončil...</p>
+                  <ReactMarkdown>{product.content}</ReactMarkdown>
                 </div>
               </div>
             </div>
@@ -65,33 +136,22 @@ const Product = () => {
           <hr />
         </div>
       </section>
-      <section className="related-products">
+      {!!product.related.length && <section className="related-products">
         <div className="uk-container uk-container-large">
           <h2 className="big-head uk-margin-large-bottom">
             <span style={{paddingLeft: '11vw'}}>podobné produkty,</span>
-            <span style={{paddingLeft: '27vw'}}>které by vás mohli zajímat</span>
+            <span style={{paddingLeft: '14vw'}}>které by vás mohli zajímat</span>
           </h2>
           <div className="uk-grid uk-child-width-1-2 uk-child-width-1-4@s" uk-grid="">
-            <div>
-              <Card />
-            </div>
-            <div>
-              <Card />
-            </div>
-            <div>
-              <Card />
-            </div>
-            <div>
-              <Card />
-            </div>
+            {product.related.map((item, index) => <div key={index}><Card data={item} /></div>)}
           </div>
           <div className="button-more-wrap">
             <a href="/" className="button">zobrazit kolekci</a>
           </div>
         </div>
-      </section>
+      </section>}
 
-      <BigBanner />
+      <BigBanner data={data.global.banner}/>
 
     </Page>
   )
