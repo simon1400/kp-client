@@ -67,14 +67,14 @@ const CheckoutWrap = () => {
   ])
 
   const [contactInfo, setContactInfo] = useState({
-    email: dataContextState?.user?.contactInfo?.email || '',
-    phone: dataContextState?.user?.contactInfo?.phone || '',
-    name: dataContextState?.user?.contactInfo?.name || '',
-    surname: dataContextState?.user?.contactInfo?.surname || '',
-    address: dataContextState?.user?.contactInfo?.address || '',
-    city: dataContextState?.user?.contactInfo?.city || '',
-    zip: dataContextState?.user?.contactInfo?.zip || '',
-    state: dataContextState?.user?.contactInfo?.state || 'Česko',
+    email: dataContextState?.user?.email || '',
+    phone: dataContextState?.user?.phone || '',
+    name: dataContextState?.user?.name || '',
+    surname: dataContextState?.user?.surname || '',
+    address: dataContextState?.user?.address || '',
+    city: dataContextState?.user?.city || '',
+    zip: dataContextState?.user?.zip || '',
+    state: dataContextState?.user?.state || 'Česko',
   })
 
   const [anotherAddress, setAnotherAddress] = useState({

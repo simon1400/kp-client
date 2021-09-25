@@ -38,6 +38,19 @@ export const GLOBAL_SETTINGS = gql`
   }
 `;
 
+export const USER_INFO = gql`
+  fragment UserInfo on User {
+    email
+    phone
+    name
+    surname
+    address
+    city
+    zip
+    state
+  }
+`;
+
 // export const CATEGORY_BRANDS = gql`
 //   fragment CategoryBrands on Brand {
 //     title

@@ -9,6 +9,9 @@ let reducer = (state, action) => {
     case "user":
       Cookies.set('user', JSON.stringify({ ...action.state }))
       return { ...state, user: action.state }
+    case "token":
+      Cookies.set('token', action.state)
+      return { ...state, user: action.state }
     case "cookies":
       Cookies.set('cookies_agree', action.state)
       return { ...state, cookies_agree: action.state }
@@ -23,6 +26,7 @@ let reducer = (state, action) => {
 const initialState = {
   basket: Cookies.get('basket') ? JSON.parse(Cookies.get('basket')) : [],
   user: Cookies.get('user') ? JSON.parse(Cookies.get('user')) : [],
+  token: Cookies.get('token') ? Cookies.get('token') : '',
   cookies_agree: Cookies.get('cookies_agree') ? Cookies.get('cookies_agree') : false,
   state: {
     searchFocus: false,
