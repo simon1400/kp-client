@@ -50,7 +50,7 @@ const Product = () => {
     }else{
       var newLocalBasket = {
         id: product.id,
-        nameProduct: product.title,
+        title: product.title,
         price: product.price,
         count: 1,
         image: product.images[0],

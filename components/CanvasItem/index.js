@@ -1,9 +1,11 @@
-import {useContext} from 'react'
+import {useState, useContext} from 'react'
 import Link from 'next/link'
 import { DataStateContext } from '../../context/dataStateContext'
 import Image from '../Image'
 
-const CanvasItem = ({basketItem = false, data, index, basket = false}) => {
+const CanvasItem = ({basketItem = false, data, index}) => {
+
+  const [slug, setSlug] = useState('')
 
   const { dataContextState, dataContextDispatch } = useContext(DataStateContext)
 
@@ -18,17 +20,31 @@ const CanvasItem = ({basketItem = false, data, index, basket = false}) => {
      return ''
   }
 
+  const getSlug = (data) => {
+    if(data.__typename === 'Produkty') {
+      return `/product/${data.slug}`
+    }else if(data.__typename === 'Brand' || data.__typename === 'Category'){
+      return `/${data.slug}`
+    }else if(data.__typename === 'Blog'){
+      return `/blog/${data.slug}`
+    }
+    return ''
+  }
+
   return (
-    <Link href={`/`}>
+    <Link href={getSlug(data)}>
       <a className={`canvas-item ${basketItem ? 'basket-canvas-item' : ''}`}>
-        <div className="canvas-item-img">
+        {!!data.image && <div className="canvas-item-img">
           <Image image={data.image} />
-        </div>
+        </div>}
+        {!!data.images && <div className="canvas-item-img">
+          <Image image={data.images[0]} />
+        </div>}
         <div className="canvas-item-content">
           <div>
-            <label>{data.brand}</label>
-            <h5>{data.nameProduct}</h5>
-            <span className="price">{data.price} Kč</span>
+            {!!data.brand && <label>{data.brand.title || data.brand}</label>}
+            {!!data.title && <h5>{data.title}</h5>}
+            {!!data.price && <span className="price">{data.price} Kč</span>}
             {basketItem && <div className="control-item">
               <span className="count-item">{data.count} ks</span>
               <a href="/" onClick={e => deleteItem(e, index)}><img className="uk-svg" src="/assets/times.svg" uk-svg="" /></a>

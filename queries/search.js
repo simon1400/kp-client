@@ -1,24 +1,48 @@
 import { gql } from "@apollo/client";
 
-const filteredLabelQuery = gql`
-  query GetFilteredLabel(
-    $categoryId: [ID],
-    $param: [ID],
-    $brandId: [ID]
-  ) {
-    values(where: { id: $param }) {
-      id,
+const searchQuery = gql`
+  query GetSearch($search: String) {
+    categories(limit: 3, where: {title_contains: $search}) {
       title
+      slug
     }
-    categoryLabel: categories(where: {id: $categoryId}) {
-      id,
+    produkties(limit: 3, where: {
+      _or: [
+        {title_contains: $search},
+        {category: {title_contains: $search}},
+        {brand: {title_contains: $search}}
+      ]
+    }) {
       title
+      slug
+      category {
+        title
+      }
+      brand {
+        title
+      }
+      images(limit: 1) {
+        url
+      }
+      price
     }
-    brandLabel: brands(where: {id: $brandId}) {
-      id,
+    brands(limit: 3, where: {title_contains: $search}) {
       title
+      slug
+    }
+    blogs (limit: 3, where: {
+      _or: [
+        {title_contains: $search},
+        {content: $search}
+      ]
+    }) {
+      title
+      slug
+      image {
+        url
+      }
     }
   }
 `
 
-export default filteredLabelQuery
+export default searchQuery
