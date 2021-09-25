@@ -57,7 +57,7 @@ const Basket = () => {
                         </div>
                         <div className="basket-item-content">
                           <label>{item.brand}</label>
-                          <a href={`/product/${item.slug}`}>{item.nameProduct}</a>
+                          <a href={`/product/${item.slug}`}>{item.title}</a>
                           {!!item.variantProduct && <span>{item.variantProduct}</span>}
                         </div>
                       </td>

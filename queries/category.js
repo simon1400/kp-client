@@ -32,10 +32,10 @@ const categoryQuery = gql`
       parameters {
         ...CategoryParameters
       }
-      products(start: $offset, limit: $limit, sort: $sort, where: { _or: {
-        brand: { id: $brandId },
-        values: { id: $param }
-      }}) {
+      products(start: $offset, limit: $limit, sort: $sort, where: { _or: [
+        {brand: { id: $brandId }},
+        {values: { id: $param }}
+      ]}) {
         ...CategoryProducts
       }
     }
@@ -50,10 +50,10 @@ const categoryQuery = gql`
       parameters {
         ...CategoryParameters
       }
-      products(where: { _or: {
-        category: { id: $categoryId },
-        values: { id: $param }
-      }}) {
+      products(start: $offset, limit: $limit, sort: $sort, where: { _or: [
+        {category: { id: $categoryId }},
+        {values: { id: $param }}
+      ]}) {
         ...CategoryProducts
       }
     }

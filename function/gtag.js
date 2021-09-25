@@ -12,7 +12,7 @@ const gtag = data => {
     shipping: data.deliveryPrice,
     items: data.basket.map((item, index) => ({
       id: item.id,
-      name: item.nameProduct,
+      name: item.title,
       brand: "Hurom",
       variant: item.variantProduct,
       list_position: index + 1,
