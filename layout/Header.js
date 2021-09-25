@@ -1,9 +1,10 @@
 import MenuDropdown from '../components/MenuDropdown'
-import {useState, useEffect} from 'react'
+import {useState, useEffect, useContext} from 'react'
 import {util} from 'uikit'
 import Link from 'next/link'
 import MobileMenu from './MobileMenu'
 import getMenu from '../function/getMenu'
+import { DataStateContext } from '../context/dataStateContext'
 
 const Header = ({
   bgImg,
@@ -13,6 +14,7 @@ const Header = ({
   basket
 }) => {
 
+  const { dataContextState, dataContextDispatch } = useContext(DataStateContext)
   const [activeDropdown, setActiveDropdown] = useState(false)
   const [menu, setMenu] = useState(false)
 
@@ -75,7 +77,8 @@ const Header = ({
               </ul>
               <ul className="icons-wrap">
                 <li className="uk-visible@m"><a href="/" uk-toggle="target: #search"><img className="uk-svg" src="/assets/search.svg" uk-svg=""/></a></li>
-                <li><a href="/" uk-toggle="target: #auth"><img className="uk-svg" src="/assets/user.svg" uk-svg=""/></a></li>
+                {!dataContextState.user?.jwt && <li><a href="/" uk-toggle="target: #auth"><img className="uk-svg" src="/assets/user.svg" uk-svg=""/></a></li>}
+                {!!dataContextState.user?.jwt && <li><a href="/user"><img className="uk-svg" src="/assets/user.svg" uk-svg=""/></a></li>}
                 <li><a href="/" uk-toggle="target: #canvas"><img className="uk-svg" src="/assets/bag.svg" uk-svg=""/></a></li>
               </ul>
             </div>

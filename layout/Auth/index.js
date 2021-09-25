@@ -32,7 +32,6 @@ const Auth = () => {
             </h3>
             <a href="/" onClick={e => closeCanvas(e)}><img className="uk-svg" src="/assets/times.svg" uk-svg="" /></a>
           </div>
-          <button className="uk-offcanvas-close uk-close-large" type="button" uk-close=""></button>
         </div>
         <hr />
 
