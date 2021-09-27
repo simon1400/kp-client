@@ -22,11 +22,11 @@ const Header = ({
   const [right, setRight] = useState([])
 
   useEffect(() => {
-    if(!basket){
+    if(!basket && leftNav && rightNav){
       setLeft(getMenu(leftNav))
       setRight(getMenu(rightNav))
     }
-  }, [])
+  }, [leftNav, rightNav])
 
   useEffect(() => {
     util.on('.menu-dropdown', 'beforehide', () => setActiveDropdown(false));

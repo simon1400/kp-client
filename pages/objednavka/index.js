@@ -1,8 +1,18 @@
 import {useState, useEffect, useContext} from 'react'
 import { DataStateContext } from '../../context/dataStateContext'
 import validationForm from '../../function/validationForm'
-
+import {useQuery} from '@apollo/client'
+import getPayData from './payData'
+import getDeliveryData from './deliveryData'
+import contactData from './contactData'
+import firmData from './firmData'
 import Checkout from '../../view/Checkout'
+import axios from 'axios'
+
+import {stateObj, errorObj} from './objects'
+
+import payQuery from '../../queries/pay'
+import deliveryQuery from '../../queries/delivery'
 
 const CheckoutWrap = () => {
 
@@ -11,120 +21,24 @@ const CheckoutWrap = () => {
   const [startSum, setStartSum] = useState(0)
   const [sum, setSum] = useState(0)
   const [sale, setSale] = useState({value: 0, typ: ''})
-  const [deliveryMethod, setDeliveryMethod] = useState([
-    {
-      name: 'delivery',
-      label: 'Česká pošta, balík do ruky',
-      value: '130',
-      check: false
-    },
-    {
-      name: 'delivery',
-      label: 'Rozvoz po Brně',
-      value: '90',
-      check: false
-    },
-    {
-      name: 'delivery',
-      label: 'Osobní odběr, Nádražní 326, Brno',
-      value: '0',
-      check: false
-    }
-  ])
-  const [payMethod, setPayMethod] = useState([
-    {
-      name: 'payment',
-      label: 'Platební kartou online',
-      value: '0',
-      check: false,
-      disabled: false,
-      payOnline: true,
-      method: 'CARD_CZ_CSOB_2'
-    },
-    {
-      name: 'payment',
-      label: 'Bankovním převodem na účet',
-      value: '0',
-      check: false,
-      disabled: false,
-      payOnline: true,
-      method: 'BANK_ALL'
-    },
-    {
-      name: 'payment',
-      label: 'Na dobírkou při převzetí zásilky',
-      value: '30',
-      check: false,
-      disabled: false
-    },
-    {
-      name: 'payment',
-      label: 'V hotovosti na pobočce',
-      value: '0',
-      check: false,
-      disabled: false
-    }
-  ])
 
-  const [contactInfo, setContactInfo] = useState({
-    email: dataContextState?.user?.email || '',
-    phone: dataContextState?.user?.phone || '',
-    name: dataContextState?.user?.name || '',
-    surname: dataContextState?.user?.surname || '',
-    address: dataContextState?.user?.address || '',
-    city: dataContextState?.user?.city || '',
-    zip: dataContextState?.user?.zip || '',
-    state: dataContextState?.user?.state || 'Česko',
-  })
+  const {data: payData} = useQuery(payQuery)
+  const {data: deliveryData} = useQuery(deliveryQuery)
 
-  const [anotherAddress, setAnotherAddress] = useState({
-    email: dataContextState?.user?.anotherAddress?.email || '',
-    phone: dataContextState?.user?.anotherAddress?.phone || '',
-    name: dataContextState?.user?.anotherAddress?.name || '',
-    surname: dataContextState?.user?.anotherAddress?.surname || '',
-    address: dataContextState?.user?.anotherAddress?.address || '',
-    city: dataContextState?.user?.anotherAddress?.city || '',
-    zip: dataContextState?.user?.anotherAddress?.zip || '',
-    state: dataContextState?.user?.anotherAddress?.state || 'Česko',
-  })
+  const [deliveryMethod, setDeliveryMethod] = useState([])
+  const [payMethod, setPayMethod] = useState([])
 
-  const [firmInfo, setFirmInfo] = useState({
-    nameCompany: dataContextState?.user?.firmInfo?.nameCompany || '',
-    ico: dataContextState?.user?.firmInfo?.ico || '',
-    dic: dataContextState?.user?.firmInfo?.dic || ''
-  })
+  const [contactInfo, setContactInfo] = useState(contactData(dataContextState?.user))
+  const [anotherAddress, setAnotherAddress] = useState(contactData(dataContextState?.user?.anotherAddress))
+  const [firmInfo, setFirmInfo] = useState(firmData(dataContextState?.user?.firmInfo))
+
+  const [pickupData, setPickupData] = useState(false)
 
   // const [password, setPassword] = useState('')
   const [description, setDescription] = useState('')
 
-  const [state, setState] = useState({
-    deliveryAnother: false,
-    firmInfo: false,
-    createAccount: false,
-    description: false,
-    sale: false
-  })
-
-  const [error, setError] = useState({
-    deliveryMethod: false,
-    payMethod: false,
-    email: false,
-    phone: false,
-    name: false,
-    surname: false,
-    address: false,
-    city: false,
-    zip: false,
-    state: false,
-    password: false,
-    description: false,
-    nameCompany: false,
-    ico: false,
-    dic: false,
-    exist: false,
-    fields: false,
-    sale: false
-  })
+  const [state, setState] = useState(stateObj)
+  const [error, setError] = useState(errorObj)
 
   useEffect(() => {
     setBasketItems(dataContextState.basket)
@@ -142,6 +56,18 @@ const CheckoutWrap = () => {
   }, [])
 
   useEffect(() => {
+    if(payData) {
+      setPayMethod(getPayData(payData))
+    }
+  }, [payData])
+
+  useEffect(() => {
+    if(deliveryData) {
+      setDeliveryMethod(getDeliveryData(deliveryData))
+    }
+  }, [deliveryData])
+
+  useEffect(() => {
     if(sale.value){
       var newSum = sum
       if(sale.typ === 'procent'){
@@ -156,20 +82,13 @@ const CheckoutWrap = () => {
 
   useEffect(() => {
     setError({...error, deliveryMethod: false})
-    var newPay = [...payMethod]
-    if(deliveryMethod[0].check || deliveryMethod[1].check){
-      newPay[3].disabled = true
-      newPay[3].check = false
-    }else{
-      newPay[3].disabled = false
+    if(!pickupData){
+      deliveryMethod.map(item => {
+        if(item.type === 'zasilkovna' && item.check){
+          window.Packeta.Widget.pick('497b43a88a3af5e8', getPickup)
+        }
+      })
     }
-    if(deliveryMethod[2].check){
-      newPay[2].disabled = true
-      newPay[2].check = false
-    }else{
-      newPay[2].disabled = false
-    }
-    setPayMethod(newPay)
   }, [deliveryMethod])
 
   useEffect(() => {
@@ -184,7 +103,6 @@ const CheckoutWrap = () => {
     sum += +checkPayment?.value || 0
     setSum(sum)
   }, [deliveryMethod, payMethod])
-
 
   const onBlur = (type) => {
     if(validationForm(type, contactInfo, error, setError)) {
@@ -223,7 +141,6 @@ const CheckoutWrap = () => {
       return
     }
 
-
     const dataSend = {
       email: contactInfo.email,
       delivery: {
@@ -233,27 +150,39 @@ const CheckoutWrap = () => {
       payment: {
         name: checkPayment.label,
         value: checkPayment.value,
-        method: checkPayment.method
+        // method: checkPayment.method
       },
       contactInfo,
       anotherAddress,
+      firmInfo,
+      description,
       status: 'PENDING',
       payOnline: checkPayment.payOnline,
       sale,
-      firmInfo,
       check: {...state},
-      description,
       basket: basketItems,
-      sum: sum
+      sum
     }
 
-    await AxiosAPI.post(`/order`, dataSend).then(res => {
-      if(dataSend.payOnline && res.data.data.redirect !== undefined){
-        window.location.href = decodeURIComponent(res.data.data.redirect)
-      }else{
-        window.location.href = `/thank-you?refId=${res.data.data.idOrder}&dobirka=true`
-      }
+    // await AxiosAPI.post(`/order`, dataSend).then(res => {
+    //   if(dataSend.payOnline && res.data.data.redirect !== undefined){
+    //     window.location.href = decodeURIComponent(res.data.data.redirect)
+    //   }else{
+    //     window.location.href = `/thank-you?refId=${res.data.data.idOrder}&dobirka=true`
+    //   }
+    // })
+    axios.post(`/api/order`, dataSend).then(res => {
+      console.log(res);
     })
+  }
+
+  const getPickup = (data) => {
+    if(data === null) {
+      const deliveryArr = deliveryMethod
+      deliveryArr[deliveryArr.findIndex(item => item.type === 'zasilkovna')].check = false
+      setDeliveryMethod(deliveryArr)
+    }
+    setPickupData(data)
   }
 
   return (
@@ -269,6 +198,8 @@ const CheckoutWrap = () => {
       startSum={startSum}
       setState={setState}
       payMethod={payMethod}
+      getPickup={getPickup}
+      pickupData={pickupData}
       basketItems={basketItems}
       contactInfo={contactInfo}
       setFirmInfo={setFirmInfo}

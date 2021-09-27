@@ -6,7 +6,9 @@ const Method = ({
   setState,
   errorMessages,
   error,
-  name
+  name,
+  pickupData = false,
+  getPickup = () => {}
 }) => {
 
   const selectRadio = (index) => {
@@ -28,6 +30,13 @@ const Method = ({
                   <input className="uk-radio" type="radio" name={item.name} disabled={item.disabled} value={item.value} onChange={() => selectRadio(index)} checked={item.check} />
                   <span>{item.label}</span>
                </label>
+               {item.check && item.type === 'zasilkovna' && pickupData && <div>
+                 <p>Vybraná pobočka: {pickupData.name}</p>
+                 <a href="/" onClick={e => {
+                     e.preventDefault()
+                     window.Packeta.Widget.pick('497b43a88a3af5e8', getPickup)
+                   }}>Změnit pobočku</a>
+               </div>}
               </div>
               <div className="uk-text-right">
                 {item.value > 0 && <span className="price-method">{item.value} Kč</span>}

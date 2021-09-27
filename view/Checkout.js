@@ -32,7 +32,9 @@ const Checkout = ({
   setAnotherAddress,
   setFirmInfo,
   setDescription,
-  setSale
+  setSale,
+  pickupData,
+  getPickup
 }) => {
 
   const [saleCoupon, setSaleCoupon] = useState('')
@@ -42,6 +44,8 @@ const Checkout = ({
     e.preventDefault()
     setHeightProductsLits(heightProductsList === 0 ? 'auto' : 0)
   }
+
+
 
   return(
     <Page title="Objednávka" basket>
@@ -59,8 +63,22 @@ const Checkout = ({
                 <p>Vyplňte všechny povinne pole</p>
               </div>}
 
-              <Methods title="Doprava" state={deliveryMethod} setState={setDeliveryMethod} error={error} errorMessages={errorMessages} name="deliveryMethod"  />
-              <Methods title="Platba" state={payMethod} setState={setPayMethod} error={error} errorMessages={errorMessages} name="payMethod"  />
+              <Methods
+                title="Doprava"
+                state={deliveryMethod}
+                setState={setDeliveryMethod}
+                error={error}
+                errorMessages={errorMessages}
+                pickupData={pickupData}
+                name="deliveryMethod"
+                getPickup={getPickup}  />
+              <Methods
+                title="Platba"
+                state={payMethod}
+                setState={setPayMethod}
+                error={error}
+                errorMessages={errorMessages}
+                name="payMethod"  />
 
               <div className="uk-margin-medium-top">
                 <InfoForm state={contactInfo} setState={setContactInfo} name="contact" error={error} setError={setError} errorMessages={errorMessages} title="Kontatkní údaje"  />

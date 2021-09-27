@@ -15,12 +15,14 @@ const Filter = ({
   const { dataContextState, dataContextDispatch } = useContext(DataStateContext)
 
   useEffect(() => {
-    dataContextDispatch({state: {
-      [category[0]?.__typename]: router.query?.[category[0]?.__typename] ? router.query[category[0]?.__typename].split(',') : [],
-      param: router.query?.param ? router.query?.param.split(',') : [],
-      sort: router.query?.sort ? router.query.sort : 'published_at:asc'
-    }, type: 'state'})
-  }, [])
+    if(category.length) {
+      dataContextDispatch({state: {
+        [category[0]?.__typename]: router.query?.[category[0]?.__typename] ? router.query[category[0]?.__typename].split(',') : [],
+        param: router.query?.param ? router.query?.param.split(',') : [],
+        sort: router.query?.sort ? router.query.sort : 'published_at:asc'
+      }, type: 'state'})
+    }
+  }, [category])
 
   const closeCanvas = (e) => {
     e.preventDefault()

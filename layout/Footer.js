@@ -8,9 +8,11 @@ const Footer = ({data, nav}) => {
   const [techMenu, setTechMenu] = useState([])
 
   useEffect(() => {
-    setTitle(data.title_footer.split(' '))
-    setTechMenu(getMenu(nav))
-  }, [])
+    if(data?.title_footer) {
+      setTitle(data.title_footer.split(' '))
+      setTechMenu(getMenu(nav))
+    }
+  }, [data])
 
   return (
     <footer>

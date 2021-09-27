@@ -30,11 +30,11 @@ const Page = ({
 }) => {
   const router = useRouter()
   const [global, setGlobal] = useState({
-    site_url: process.env.NODE_ENV === 'development' ? 'http://localhost:3000' : 'https://hurom.cz',
+    site_url: process.env.NODE_ENV === 'development' ? 'http://localhost:3005' : 'https://kralovska-pece.cz',
     facebook_app_id: '',
     defaultTitle: 'KRALOVSKA PECE',
     defaultDescription: 'Kralovska pece',
-    defaultImage: `${process.env.NODE_ENV === 'development' ? 'http://localhost:3000' : 'https://hurom.cz'}`,
+    defaultImage: `${process.env.NODE_ENV === 'development' ? 'http://localhost:3005' : 'https://kralovska-pece.cz'}`,
     defaultTwitter: '@cereallarceny',
     defaultSep: ' '
   })
@@ -93,6 +93,8 @@ const Page = ({
         {updated && <meta name="article:modified_time" content={updated} />}
         {noCrawl && <meta name="robots" content="noindex, nofollow" />}
         {tags && <meta name="article:tag" content={tags} />}
+
+        <script src="https://widget.packeta.com/v6/www/js/library.js"></script>
 
         {/*<!-- Facebook Pixel Code -->*/}
         {/*<script dangerouslySetInnerHTML={{__html: `!function(f,b,e,v,n,t,s)
