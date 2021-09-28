@@ -14,6 +14,7 @@ const categoryQuery = gql`
     $slug: String!
   ) {
     categories(where: { slug: $slug }) {
+      id
  			title
       add_title
       content
@@ -26,6 +27,7 @@ const categoryQuery = gql`
       }
     }
     brands(where: {slug:$slug}) {
+      id
  			title
       add_title
       content

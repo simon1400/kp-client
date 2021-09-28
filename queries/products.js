@@ -13,22 +13,79 @@ const productsQuery = gql`
     $offset: Int,
     $limit: Int
   ) {
-    produkties(start: $offset, limit: $limit, sort: $sort, where: { _or: [
-      {brand: { id: $brandId }},
-      {values: { id: $param }}
-      {category: { id: $categoryId }}
-    ], category: {slug: $slug}}) {
+    productsCategory: produkties(
+      start: $offset,
+      limit: $limit,
+      sort: $sort,
+      where: {
+        _or: [
+          {
+            brand: {
+              id: $brandId
+            }
+          },
+          {
+            values: {
+              id: $param
+            }
+          }
+        ],
+        category: {
+          slug: $slug
+        }
+      }) {
       ...CategoryProducts
     }
-    produktiesConnection(where: { _or: [
-      {brand: { id: $brandId }},
-      {values: { id: $param }},
-      {category: { id: $categoryId }}
-    ], category: {slug:$slug}}) {
+    productsBrand: produkties(
+      start: $offset,
+      limit: $limit,
+      sort: $sort,
+      where: {
+        _or: [
+          {
+            category: {
+              id: $categoryId
+            }
+          },
+          {
+            values: {
+              id: $param
+            }
+          }
+        ],
+        brand: {
+          slug: $slug
+        }
+      }) {
+      ...CategoryProducts
+    }
+    productsCatCount: produktiesConnection(where: {
+      _or: [
+        {brand: { id: $brandId }},
+        {values: { id: $param }}
+      ],
+      category: {
+        slug: $slug
+      }
+    }) {
       aggregate{
         count
       }
     }
+    productsBrandCount: produktiesConnection(where: {
+      _or: [
+        {category: { id: $categoryId }},
+        {values: { id: $param }}
+      ],
+      brand: {
+        slug: $slug
+      }
+    }) {
+      aggregate{
+        count
+      }
+    }
+
   }
 `
 

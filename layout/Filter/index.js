@@ -17,7 +17,8 @@ const Filter = ({
   useEffect(() => {
     if(category.length) {
       dataContextDispatch({state: {
-        [category[0]?.__typename]: router.query?.[category[0]?.__typename] ? router.query[category[0]?.__typename].split(',') : [],
+        Brand: router.query?.Brand ? router.query.Brand.split(',') : [],
+        Category: router.query?.Category ? router.query.Category.split(',') : [],
         param: router.query?.param ? router.query?.param.split(',') : [],
         sort: router.query?.sort ? router.query.sort : 'published_at:asc'
       }, type: 'state'})
@@ -41,19 +42,27 @@ const Filter = ({
         <hr />
         <div className="catalog-filter">
           <ul className="uk-accordion" uk-accordion="multiple: true">
-            <li className="uk-open">
-              <a className="uk-accordion-title" href="#">značka <img className="uk-svg" src="/assets/angle-down.svg" uk-svg="" /></a>
+            {!!category.length && <li className="uk-open">
+              <a className="uk-accordion-title" href="#">
+                {category[0].__typename === 'Brand' && 'Značka'}
+                {category[0].__typename === 'Category' && 'Kategorie'}
+                <img className="uk-svg" src="/assets/angle-down.svg" uk-svg="" />
+              </a>
               <div className="uk-accordion-content">
                 <ul>
-                  {!!category.length && category.map((item, index) => <li key={index}>
+                  {category.map((item, index) => <li key={index}>
                     <label>
                       <span>{item.title}</span>
-                      <input onChange={e => handleState(e, item.__typename, item.id)} className="uk-checkbox" type="checkbox" checked={dataContextState.state[item.__typename].indexOf(item.id) >= 0} />
+                      <input
+                        onChange={e => handleState(e, item.__typename, item.id)}
+                        className="uk-checkbox"
+                        type="checkbox"
+                        checked={dataContextState.state[item.__typename].indexOf(item.id) >= 0} />
                     </label>
                   </li>)}
                 </ul>
               </div>
-            </li>
+            </li>}
             {!!parameters.length && parameters.map((item, index) => <li key={index}>
               <a className="uk-accordion-title" href="#">{item.title} <img className="uk-svg" src="/assets/angle-down.svg" uk-svg="" /></a>
               <div className="uk-accordion-content">

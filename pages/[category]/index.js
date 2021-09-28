@@ -27,7 +27,7 @@ const Category = () => {
   const [more, setMore] = useState(false)
   const [products, setProducts] = useState([])
   const [filter, setFilter] = useState({
-    slug: router.query.category,
+    slug: undefined,
     sort: undefined,
     param: undefined,
     brandId: undefined,
@@ -44,65 +44,81 @@ const Category = () => {
     }
   });
 
-  const [getData, {data: dataFetch}] = useLazyQuery(categoryQuery, {
-    variables: {
-      slug: router.query.category,
-      categoryId: router.query?.Category ? router.query.Category.split(',') : undefined,
-      brandId: router.query?.Brand ? router.query.Brand.split(',') : undefined,
-    }
-  });
+  const [getData, {data: dataFetch}] = useLazyQuery(categoryQuery);
 
-  const [getProducts, {data: dataProducts}] = useLazyQuery(productsQuery, {
-    variables: {
-      slug: router.query.category,
-      param: router.query?.param ? router.query.param.split(',') : undefined,
-      categoryId: router.query?.Category ? router.query.Category.split(',') : undefined,
-      brandId: router.query?.Brand ? router.query.Brand.split(',') : undefined,
-      sort: router.query?.sort ? router.query.sort : undefined,
-      offset: 0,
-      limit: 4
-    }
-  })
+  const [getProducts, {data: dataProducts}] = useLazyQuery(productsQuery)
 
   useEffect(() => {
-    getData()
-    getProducts()
-  }, [])
+    if(router.query.category){
+      getData({
+        variables: {
+          slug: router.query.category
+        }
+      })
+    }
+  }, [router.query])
 
   useEffect(() => {
     if(dataFetch){
+      const state = dataContextState.state
+
+      let variables = {
+        slug: router.query.category,
+        param: router.query?.param ? router.query.param.split(',') : undefined,
+        sort: router.query?.sort ? router.query.sort : undefined,
+        categoryId: router.query?.Category ? router.query.Category.split(',') : undefined,
+        brandId: router.query?.Brand ? router.query.Brand.split(',') : undefined,
+        offset: 0,
+        limit: 4
+      }
+
       let categoryFetch = {}
       if(dataFetch?.categories.length) {
         setCategory(dataFetch.categories[0])
         categoryFetch = dataFetch.categories[0]
-      }else if(dataFetch?.brands.length) {
+        variables.categoryId = dataFetch.categories[0].id
+        state.Category = [dataFetch.categories[0].id]
+      }else {
         setCategory(dataFetch.brands[0])
         categoryFetch = dataFetch.brands[0]
+        variables.brandId = dataFetch.brands[0].id
+        state.Brand = [dataFetch.brands[0].id]
       }
+
+      dataContextDispatch({ state: state, type: 'state' })
+      setFilter(variables)
+      getProducts({variables})
 
       if(categoryFetch?.title) setTitle(categoryFetch?.title.split(' '))
       if(categoryFetch?.add_title) setSubTitle(categoryFetch?.add_title.split(' '))
 
       setNavigation(dataFetch.navigation)
       setGlobal(dataFetch.global)
+
     }
   }, [dataFetch])
 
   useEffect(() => {
     if(dataProducts){
+      let count = 0;
+      if(category.__typename === 'Category') {
+        count = dataProducts.productsCatCount.aggregate.count
+      }else{
+        count = dataProducts.productsBrandCount.aggregate.count
+      }
+
       let productsArr = []
       if(more) {
-        productsArr = [...products, ...dataProducts.produkties]
+        productsArr = [...products, ...dataProducts[`products${category.__typename}`]]
         setMore(false)
       }else{
-        productsArr = dataProducts.produkties
+        productsArr = dataProducts[`products${category.__typename}`]
       }
       setProducts(productsArr)
-      if(dataProducts.produktiesConnection.aggregate.count === productsArr.length){
-        setButtonMore(false)
-      }else{
-        setButtonMore(true)
-      }
+
+      if(count === productsArr.length) setButtonMore(false)
+      else setButtonMore(true)
+
     }
   }, [dataProducts])
 
@@ -116,7 +132,12 @@ const Category = () => {
       categoryId: [0]
     }
 
-    filterObj.slug = router.query.category
+    if(category.__typename === "Category") {
+      filterObj.categoryId = category.id
+    }
+    if(category.__typename === "Brand"){
+      filterObj.brandId = category.id
+    }
 
     if(state?.Brand?.length){
       filterObj.brandId = state.Brand
@@ -167,11 +188,14 @@ const Category = () => {
 
   const loadMore = async (e, offset, limit) => {
     e.preventDefault()
-    let state = dataContextState.state
-    const filterObj = {...filter}
-    filterObj.slug = router.query.category
-    filterObj.offset = offset
+    let filterObj = {...filter}
+    // if(category.__typename === "Category") {
+    //   filterObj.categoryId = category.id
+    // }else{
+    //   filterObj.brandId = category.id
+    // }
     filterObj.limit = limit
+    filterObj.offset = offset
     getProducts({variables: filterObj})
     setMore(true)
   }
@@ -205,7 +229,7 @@ const Category = () => {
       <section className="catalog-list">
         <div className="uk-container uk-container-large">
           <div className="uk-grid uk-child-width-1-2 uk-child-width-1-4@s" uk-grid="">
-            {products?.length && products.map((item, index) => <div key={index}><Card data={item} /></div>)}
+            {!!products?.length && products.map((item, index) => <div key={index}><Card data={item} /></div>)}
           </div>
           {buttonMore && <div className="button-more-wrap">
             <a href="/" onClick={e => loadMore(e, products.length, products.length + 4)} className="button">načíst další</a>
@@ -216,7 +240,7 @@ const Category = () => {
 
       <section className="additional-sec">
         <div className="uk-container">
-          {subTitle.length && <h2 className="big-head">
+          {!!subTitle?.length && <h2 className="big-head">
             <span style={{paddingLeft: '14vw'}}>{subTitle[0]} {subTitle[1]} {subTitle[2]} {subTitle[3]}</span>
             <span style={{paddingLeft: '0px'}}>{subTitle[4]} {subTitle[5]} {subTitle[6]} {subTitle[7]}</span>
             <span style={{paddingLeft: '7vw'}}>{subTitle[8]} {subTitle[9]} {subTitle[10]} {subTitle[11]}</span>
