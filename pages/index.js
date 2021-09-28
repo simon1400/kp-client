@@ -28,7 +28,7 @@ const Homepage = () => {
   }
 
   return (
-    <Page bgImg="/assets/homepage.jpg" bigHeader globalData={data.global} nav={data.navigation}>
+    <Page bgImg={data.homepage.image} bigHeader globalData={data.global} nav={data?.navigation}>
       <PageTop
         big
         center
@@ -37,7 +37,7 @@ const Homepage = () => {
                 <span style={{paddingLeft: '22vw'}}>{h1[3]} {h1[4]}</span>
                 <span style={{paddingLeft: '5vw'}}><b>{h1[5]} {h1[6]}</b></span>
               </h1>}
-        img="/assets/homepage.jpg"
+        img={data.homepage.image}
         textButton={data.homepage.Button.text}
         linkButton={data.homepage.Button.link}
       />
