@@ -15,7 +15,7 @@ const productQuery = gql`
         url
         formats
       }
-      related {
+      relateds {
         title,
         slug,
         price,

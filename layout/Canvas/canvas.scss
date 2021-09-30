@@ -77,3 +77,11 @@ $offcanvas-bar-background: $yellow;
     }
   }
 }
+
+@media(max-width: 640px) {
+  .canvas-buttons-wrap{
+    .button{
+      font-size: 15px;
+    }
+  }
+}

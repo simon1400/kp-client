@@ -1,10 +1,12 @@
-import {useState, useEffect} from 'react'
+import {useState, useEffect, useRef} from 'react'
 import { offcanvas, util } from 'uikit'
 import CanvasItem from '../../components/CanvasItem'
 import {useLazyQuery} from '@apollo/client'
 import searchQuery from '../../queries/search.js'
 
 const Search = () => {
+
+  const searchInput = useRef(null)
 
   const [searchItems, setSearchItems] = useState([])
   const [searchValue, setSearchValue] = useState('')
@@ -16,6 +18,11 @@ const Search = () => {
     e.preventDefault()
     offcanvas(util.find('#search')).hide();
   }
+
+  useEffect(() => {
+    // util.on('#search', 'beforehide', () => setActiveDropdown(false));
+    util.on('#search', 'beforeshow', () => searchInput.current.focus());
+  })
 
   useEffect(() => {
     const timeoutId = setTimeout(() => {
@@ -39,15 +46,18 @@ const Search = () => {
       <div className="uk-offcanvas-bar">
         <div className="canvas-head uk-flex uk-flex-between">
           <h3>Vyhledávání</h3>
-          <a href="/" onClick={e => closeCanvas(e)}><img className="uk-svg" src="/assets/times.svg" uk-svg="" /></a>
+          <a href="/" onClick={e => closeCanvas(e)}>
+            <img className="uk-svg" src="/assets/times.svg" uk-svg="" />
+          </a>
         </div>
         <hr />
 
         <div className="input-search-wrap">
           <img className="uk-svg" src="/assets/search.svg" uk-svg="" />
-          <input onChange={e => handleSearch(e.target.value)} value={searchValue} className="uk-input" type="text" />
+          <input onChange={e => handleSearch(e.target.value)} ref={searchInput} value={searchValue} className="uk-input" type="text" />
         </div>
-        {!data && 'nejsou zadne resulty...'}
+        {!data && !!searchValue.length && 'Nic jsme nenašli, zkuste jiné slovo.'}
+        {!data && !searchValue.length && 'Zadejte hledaný text.'}
         {loading && 'Loading...'}
         {!loading && data && <div className="results">
           {!!data.categories?.length && <div className="result-block">

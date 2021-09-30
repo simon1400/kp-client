@@ -9,6 +9,11 @@
 @import '../pages/objednavka/objednavka';
 @import 'libs';
 
+
+#search, #auth, #canvas{
+  z-index: 1111;
+}
+
 header{
   position: absolute;
   width: 100%;
@@ -59,7 +64,7 @@ header{
     }
   }
   a{
-    color: inherit;
+    color: black;
   }
   .nav-wrap{
     display: grid;
@@ -178,6 +183,7 @@ header{
     height: 100vh;
     min-height: 900px;
     margin-bottom: 50px;
+    background-position: center;
     &:before{
       display: none;
     }
@@ -282,8 +288,6 @@ h2.big-head{
   }
 }
 
-
-
 .card{
   display: block;
   &:hover{
@@ -294,6 +298,7 @@ h2.big-head{
   .card-img{
     img{
       width: 100%;
+      mix-blend-mode: multiply;
     }
   }
   .card-content{
@@ -852,6 +857,7 @@ footer{
     white-space: nowrap;
     padding-left: 0;
     padding-right: 0;
+    font-family: $ff-light;
     img, svg{
       width: 10px;
       margin-left: 10px;

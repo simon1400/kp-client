@@ -8,7 +8,8 @@ const Filter = ({
   category,
   handle,
   handleState,
-  handleSort
+  handleSort,
+  removeAll
 }) => {
 
   const router = useRouter()
@@ -104,7 +105,7 @@ const Filter = ({
           </ul>
         </div>
         <div className="canvas-buttons-wrap uk-margin-top uk-flex uk-flex-between">
-          <a href="/" className="button border-button">vymazat vše</a>
+          <a href="/" className="button border-button" onClick={e => removeAll(e)}>vymazat vše</a>
           <a href="/" className="button primary" onClick={e => closeCanvas(e)}>zobrazit</a>
         </div>
       </div>

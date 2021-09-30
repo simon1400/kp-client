@@ -171,9 +171,10 @@ const CheckoutWrap = () => {
     //     window.location.href = `/thank-you?refId=${res.data.data.idOrder}&dobirka=true`
     //   }
     // })
+
     axios.post(`/api/order`, dataSend).then(res => {
       console.log(res);
-    })
+    }).catch(err => console.log(err))
   }
 
   const getPickup = (data) => {

@@ -179,6 +179,18 @@ const Category = () => {
     handleFilter(state)
   }
 
+  const removeAll = (e) => {
+    e.preventDefault()
+    let state = {
+      Brand: [],
+      Category: [],
+      param: [],
+      sort: "published_at:asc"
+    }
+    dataContextDispatch({ state: state, type: 'state' })
+    handleFilter(state)
+  }
+
   const handleSort = (value) => {
     let state = dataContextState.state
     state.sort = value
@@ -257,6 +269,7 @@ const Category = () => {
         handle={handleFilter}
         handleState={handleState}
         handleSort={handleSort}
+        removeAll={removeAll}
         />
 
     </Page>

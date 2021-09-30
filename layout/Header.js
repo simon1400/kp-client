@@ -1,6 +1,6 @@
 import MenuDropdown from '../components/MenuDropdown'
 import {useState, useEffect, useContext} from 'react'
-import {util} from 'uikit'
+import {util, offcanvas} from 'uikit'
 import Link from 'next/link'
 import MobileMenu from './MobileMenu'
 import getMenu from '../function/getMenu'
@@ -38,6 +38,13 @@ const Header = ({
     setMenu(!menu)
   }
 
+  const closeMenu = async (e, id) => {
+    e.preventDefault()
+    // setMenu(false)
+    offcanvas(id).show()
+    util.on(id, 'shown', () => setMenu(false));
+  }
+
   return (
     <header className={`header${!bgImg || menu ? ' not-bg' : ''}${!bigHeader ? ' small-header' : ''}${!!activeDropdown ? ' not-bg activeDrop' : ''}${basket ? ' basket-header' : ''}`}>
       <div className="uk-container uk-container-large">
@@ -50,7 +57,7 @@ const Header = ({
             </button>
             <div className="control-menu">
               <ul className="icons-wrap">
-                <li className="uk-hidden@m"><a href="/" uk-toggle="target: #search"><img className="uk-svg" src="/assets/search.svg" uk-svg=""/></a></li>
+                <li className="uk-hidden@m"><a href="/"  onClick={e => closeMenu(e, "#search")}><img className="uk-svg" src="/assets/search.svg" uk-svg=""/></a></li>
               </ul>
             </div>
           </div>}
@@ -76,10 +83,10 @@ const Header = ({
                 </li>)}
               </ul>
               <ul className="icons-wrap">
-                <li className="uk-visible@m"><a href="/" uk-toggle="target: #search"><img className="uk-svg" src="/assets/search.svg" uk-svg=""/></a></li>
-                {!dataContextState.user?.jwt && <li><a href="/" uk-toggle="target: #auth"><img className="uk-svg" src="/assets/user.svg" uk-svg=""/></a></li>}
+                <li className="uk-visible@m"><a href="/" onClick={e => closeMenu(e, "#search")}><img className="uk-svg" src="/assets/search.svg" uk-svg=""/></a></li>
+                {!dataContextState.user?.jwt && <li><a href="/" onClick={e => closeMenu(e, "#auth")}><img className="uk-svg" src="/assets/user.svg" uk-svg=""/></a></li>}
                 {!!dataContextState.user?.jwt && <li><a href="/user"><img className="uk-svg" src="/assets/user.svg" uk-svg=""/></a></li>}
-                <li><a href="/" uk-toggle="target: #canvas"><img className="uk-svg" src="/assets/bag.svg" uk-svg=""/></a></li>
+                <li><a href="/" onClick={e => closeMenu(e, "#canvas")}><img className="uk-svg" src="/assets/bag.svg" uk-svg=""/></a></li>
               </ul>
             </div>
           </div>}

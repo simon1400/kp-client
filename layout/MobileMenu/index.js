@@ -3,7 +3,12 @@ import {useEffect} from 'react'
 import {offcanvas} from 'uikit'
 import Link from 'next/link'
 
-const MobileMenu = ({menu, handleMenu, left, right}) => {
+const MobileMenu = ({
+  menu,
+  handleMenu,
+  left,
+  right
+}) => {
 
   useEffect(() => {
     if(menu) {

@@ -6,6 +6,7 @@ const homepageQuery = gql`
   query {
     homepage {
       title,
+      subtitle
       image {
         url
         previewUrl

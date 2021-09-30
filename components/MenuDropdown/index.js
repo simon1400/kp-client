@@ -25,7 +25,7 @@ const MenuDropdown = ({index, data}) => {
         </div>
         <a className="bare-button button-reverse uk-hidden@m" onClick={e => handleDropDown(e)} href="/">
           <img className="uk-svg" src="/assets/angle-left.svg" uk-svg="" />
-          zpet
+          zpět
         </a>
       </div>
     </div>

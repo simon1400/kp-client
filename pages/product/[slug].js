@@ -39,8 +39,13 @@ const Product = () => {
     let localBasket = dataContextState.basket
     let hasItem = -1
 
+
     for(var i = 0; i < localBasket.length; i++){;
-      if(localBasket[i].id === selectValue.id){
+      if(!!product.Variants?.length) {
+        if(localBasket[i].id === selectValue.id){
+          hasItem = i
+        }
+      }else if(localBasket[i].id === product.id){
         hasItem = i
       }
     }
@@ -111,7 +116,9 @@ const Product = () => {
               <div className="product-info">
                 <label>{product.brand.title}</label>
                 <h1>{product.title}</h1>
-                <span className="price">{product.price.toLocaleString()} Kč</span>
+                <span className="price">
+                  {selectValue.price ? selectValue.price.toLocaleString() : product.price.toLocaleString()} Kč
+                </span>
                 <label className="available">Skladem</label>
                 {!product.Variants.length && <a href="/" className="button" onClick={e => buy(e)}>přidat do košíku</a>}
                 {!!product.Variants.length && <div className="variant-button-wrap">
@@ -136,7 +143,7 @@ const Product = () => {
           <hr />
         </div>
       </section>
-      {!!product.related.length && <section className="related-products">
+      {!!product.related?.length && <section className="related-products">
         <div className="uk-container uk-container-large">
           <h2 className="big-head uk-margin-large-bottom">
             <span style={{paddingLeft: '11vw'}}>podobné produkty,</span>

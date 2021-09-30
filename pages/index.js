@@ -44,7 +44,7 @@ const Homepage = () => {
       <section className="sec-base">
         <div className="uk-container uk-container-large">
           <h2 className="big-head uk-text-center uk-margin-large-bottom">
-            <span style={{paddingLeft: '0'}}><b>exluzivni</b> novinky</span>
+            <span style={{paddingLeft: '0'}}>{data.homepage?.subtitle}</span>
           </h2>
           {data.homepage.products.map((item, index) => <div key={index} className={`uk-grid ${index % 2 ? 'uk-flex-row-reverse' : ''}`} uk-grid="" uk-height-match="target: > div > div">
             <div className="uk-width-1-1 uk-width-1-2@s">

@@ -43,7 +43,10 @@ const CanvasItem = ({basketItem = false, data, index}) => {
         <div className="canvas-item-content">
           <div>
             {!!data.brand && <label>{data.brand.title || data.brand}</label>}
-            {!!data.title && <h5>{data.title}</h5>}
+            {!!data.title && <h5>
+              {data.title}
+              {!!data.variantProduct?.length && ` - ${data.variantProduct}`}
+            </h5>}
             {!!data.price && <span className="price">{data.price} Kč</span>}
             {basketItem && <div className="control-item">
               <span className="count-item">{data.count} ks</span>

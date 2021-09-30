@@ -65,7 +65,7 @@ const Page = ({
 
         {/*<link rel="stylesheet preload prefetch" href="/fonts.css" as="style" type="text/css" crossOrigin="anonymous" />*/}
         <meta name="msapplication-TileColor" content="#ffffff" />
-        <meta name="theme-color" content="#80bd01" />
+        <meta name="theme-color" content="#000" />
 
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>{theTitle}</title>
@@ -131,7 +131,7 @@ const Page = ({
         rightNav={nav.right_nav}
         basket={basket} />
       <main id={id} className={className}>{children}</main>
-      {!basket && <Footer data={globalData} nav={nav.footer_nav} />}
+      {!basket && <Footer data={globalData} nav={nav.footer_nav} soc={nav.soc_nav} />}
       <Canvas />
       <Auth />
       <Search />

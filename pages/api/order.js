@@ -1,64 +1,77 @@
 const axios = require('axios')
 
-export default function handler (req, res) {
+export default async function handler (req, res) {
   if (req.method === 'POST') {
     console.log('POST /order');
 
-    const {
-      description,
-      contactInfo,
-      anotherAddress,
-      firmInfo,
-      check,
-      basket,
-      payment,
-      delivery,
-      sum,
-      status,
-      payOnline
-    } = req.body;
+    axios.post('https://gw.sandbox.gopay.com/api/oauth2/token', {
+      scope: 'payment-create',
+      grant_type: 'client_credentials'
+    },
+    {
+      headers: {
+        "Accept": "application/json",
+        "Content-Type": "application/x-www-form-urlencoded",
+        "Authorization": "Basic pErXZtJbwF622uXkeZsJTN7f",
+      },
+    }, {
+      scope: 'payment-create',
+      grant_type: "client_credentials"
+    }).then(res => {
+      console.log('res --- ', res);
+    }).catch(err => {
+      console.log('err --- ', err);
+    })
 
-    const order = {
-      email: contactInfo.email,
-      phone: contactInfo.phone,
-      name: contactInfo.name,
-      surname: contactInfo.surname,
-      state: contactInfo.state,
-      city: contactInfo.city,
-      address: contactInfo.address,
-      zip: contactInfo.zip,
-      anotherAddress,
-      firmInfo,
-      description,
-      basket,
-      sum,
-      idOrder: Math.floor(Math.random() * (999999 - 0)) + 0,
-      status,
-      state: 'new',
-      paymentMethod: payment.name,
-      paymentPrice: payment.value,
-      payOnline: payOnline,
-      deliveryMethod: delivery.name,
-      deliveryPrice: delivery.value
-    };
+    res.status(200);
 
-    res.status(200).json(order);
+    // const {
+    //   description,
+    //   contactInfo,
+    //   anotherAddress,
+    //   firmInfo,
+    //   check,
+    //   basket,
+    //   payment,
+    //   delivery,
+    //   sum,
+    //   status,
+    //   payOnline
+    // } = req.body;
+
+    // const order = {
+    //   email: contactInfo.email,
+    //   phone: contactInfo.phone,
+    //   name: contactInfo.name,
+    //   surname: contactInfo.surname,
+    //   state: contactInfo.state,
+    //   city: contactInfo.city,
+    //   address: contactInfo.address,
+    //   zip: contactInfo.zip,
+    //   anotherAddress,
+    //   firmInfo,
+    //   description,
+    //   basket,
+    //   sum,
+    //   idOrder: Math.floor(Math.random() * (999999 - 0)) + 0,
+    //   status,
+    //   state: 'new',
+    //   paymentMethod: payment.name,
+    //   paymentPrice: payment.value,
+    //   payOnline: payOnline,
+    //   deliveryMethod: delivery.name,
+    //   deliveryPrice: delivery.value
+    // };
+
+
+
+
 
     const resDataParse = {}
 
     if(payOnline){
 
-      axios.post('https://gw.sandbox.gopay.com/api/oauth2/token', {
-        scope: 'payment-create',
-        grant_type: 'client_credentials'
-      },
-      {
-        headers: {
-          "Accept": "application/json",
-          "Content-Type": "Content-Type",
-          "Authorization": "Content-Type",
-        },
-      })
+
 
       const paymentData = {
         // merchant: process.env.PAYED_ID,

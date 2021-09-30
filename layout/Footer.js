@@ -1,16 +1,23 @@
 import {useEffect, useState} from 'react'
 import getMenu from '../function/getMenu'
 import Link from 'next/link'
+import Image from '../components/Image'
 
-const Footer = ({data, nav}) => {
+const Footer = ({
+  data,
+  nav,
+  soc
+}) => {
 
   const [title, setTitle] = useState([])
   const [techMenu, setTechMenu] = useState([])
+  const [socMenu, setSocMenu] = useState([])
 
   useEffect(() => {
     if(data?.title_footer) {
       setTitle(data.title_footer.split(' '))
       setTechMenu(getMenu(nav))
+      setSocMenu(getMenu(soc))
     }
   }, [data])
 
@@ -48,10 +55,9 @@ const Footer = ({data, nav}) => {
               <ul>
                 {techMenu.map((item, index) => <li key={index}><Link href={item.slug}><a>{item.name}</a></Link></li>)}
               </ul>
-              <ul className="soc-icon">
-                <li><a href="/"><img className="uk-svg" src="/assets/facebook-f.svg" uk-svg="" /></a></li>
-                <li><a href="/"><img className="uk-svg" src="/assets/instagram.svg" uk-svg="" /></a></li>
-              </ul>
+              {!!socMenu.length && <ul className="soc-icon">
+                {socMenu.map((item, index) => <li key={index}><a href="/"><Image image={item.image} svg /></a></li>)}
+              </ul>}
             </div>
           </div>
         </div>

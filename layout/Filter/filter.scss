@@ -37,6 +37,10 @@
         justify-content: space-between;
         align-items: center;
         font-size: 18px;
+        -webkit-text-stroke: 0;
+        font-family: $ff-light;
+        opacity: 1;
+        font-weight: $font-medium;
         cursor: pointer;
       }
     }
