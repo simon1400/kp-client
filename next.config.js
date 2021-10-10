@@ -24,6 +24,26 @@ module.exports = (phase) => {
       if (isDev) return 'http://localhost:3005'
       if (isProd) return 'https://kralovska-pece.hardart.cz'
       return 'RESTURL_SPEAKERS:not (isDev,isProd && !isStaging,isProd && isStaging)'
+    })(),
+    GP_CLIENT_ID: (() => {
+      if (isDev) return '1436406037'
+      if (isProd) return '1436406037'
+      return 'RESTURL_SPEAKERS:not (isDev,isProd && !isStaging,isProd && isStaging)'
+    })(),
+    GP_SECRET_ID: (() => {
+      if (isDev) return 'EJ2AVkDs'
+      if (isProd) return 'EJ2AVkDs'
+      return 'RESTURL_SPEAKERS:not (isDev,isProd && !isStaging,isProd && isStaging)'
+    })(),
+    PAY_API: (() => {
+      if (isDev) return 'https://gw.sandbox.gopay.com'
+      if (isProd) return 'https://gw.sandbox.gopay.com'
+      return 'RESTURL_SPEAKERS:not (isDev,isProd && !isStaging,isProd && isStaging)'
+    })(),
+    SENDGRID_API_KEY: (() => {
+      if (isDev) return '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'
+      if (isProd) return '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'
+      return 'RESTURL_SPEAKERS:not (isDev,isProd && !isStaging,isProd && isStaging)'
     })()
   }
 

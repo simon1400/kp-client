@@ -78,7 +78,7 @@ const Filter = ({
               </div>
             </li>)}
             <li>
-              <a className="uk-accordion-title" href="#">seřadit <img className="uk-svg" src="/assets/angle-down.svg" uk-svg="" /></a>
+              <a className="uk-accordion-title" href="#">Seřadit <img className="uk-svg" src="/assets/angle-down.svg" uk-svg="" /></a>
               <div className="uk-accordion-content">
                 <ul>
                   <li>

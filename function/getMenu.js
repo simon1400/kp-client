@@ -1,29 +1,20 @@
 const combineMenu = (item) => {
-  if(item.category) {
-    return {
-      name: item.category.title,
-      slug: `/${item.category.slug}`,
-      image: item.image
-    }
-  }else if(item.brand){
-    return {
-      name: item.brand.title,
-      slug: `/${item.brand.slug}`,
-      image: item.image
-    }
-  }else if(item.blog){
-    return {
-      name: item.blog.title,
-      slug: `/blog/${item.blog.slug}`,
-      image: item.image
-    }
-  }else{
-    return {
-      name: item.name,
-      slug: item.link,
-      image: item.image
-    }
+
+  const obj = {
+    name: item.name,
+    slug: item.link,
+    image: item.image
   }
+
+  if(item.category) {
+    obj.slug = `/${item.category.slug}`
+  }else if(item.brand){
+    obj.slug = `/${item.brand.slug}`
+  }else if(item.blog){
+    obj.slug = `/blog/${item.blog.slug}`
+  }
+
+  return obj
 }
 
 const getMenu = (nav) => {

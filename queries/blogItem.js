@@ -15,6 +15,10 @@ const blogItemQuery = gql`
         previewUrl
         formats
       }
+      cta{
+        text
+        link
+      }
     }
     global {
       title_footer

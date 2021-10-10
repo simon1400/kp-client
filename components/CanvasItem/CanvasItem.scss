@@ -6,6 +6,9 @@
   margin-bottom: 20px;
   &:hover{
     text-decoration: none;
+    h5{
+      color: $accent;
+    }
   }
   &.basket-canvas-item{
     margin-bottom: 30px;
@@ -44,6 +47,7 @@
     h5{
       margin-top: 0;
       margin-bottom: 10px;
+      transition: all .5s ease;
     }
     .price{
       font-size: 18px;

@@ -1,7 +1,7 @@
 import {useState, useEffect, useContext} from 'react'
 import { DataStateContext } from '../../context/dataStateContext'
 import validationForm from '../../function/validationForm'
-import {useQuery} from '@apollo/client'
+import {useQuery, useMutation} from '@apollo/client'
 import getPayData from '../../function/objednavka/payData'
 import getDeliveryData from '../../function/objednavka/deliveryData'
 import contactData from '../../function/objednavka/contactData'
@@ -13,6 +13,7 @@ import {stateObj, errorObj} from '../../function/objednavka/objects'
 
 import payQuery from '../../queries/pay'
 import deliveryQuery from '../../queries/delivery'
+import {CreateOrder} from '../../queries/order'
 
 const CheckoutWrap = () => {
 
@@ -24,6 +25,7 @@ const CheckoutWrap = () => {
 
   const {data: payData} = useQuery(payQuery)
   const {data: deliveryData} = useQuery(deliveryQuery)
+  const [createOrder, { data }] = useMutation(CreateOrder)
 
   const [deliveryMethod, setDeliveryMethod] = useState([])
   const [payMethod, setPayMethod] = useState([])
@@ -143,46 +145,61 @@ const CheckoutWrap = () => {
 
     const dataSend = {
       email: contactInfo.email,
+      phone: contactInfo.phone,
+      name: contactInfo.name,
+      surname: contactInfo.surname,
+      address: contactInfo.address,
+      city: contactInfo.city,
+      zip: contactInfo.zip,
+      state: contactInfo.state,
+      description,
+      sum,
+      payOnline: checkPayment.payOnline,
+      // sale
+      status: "CREATED",
       delivery: {
         name: checkDelivery.label,
-        value: checkDelivery.value
+        value: checkDelivery.value,
+        type: checkDelivery.method
       },
       payment: {
         name: checkPayment.label,
         value: checkPayment.value,
-        // method: checkPayment.method
+        type: checkPayment.method
       },
-      contactInfo,
+      basketItem: basketItems.map(item => ({
+        variant: item.variantProduct,
+        brand: item.brand,
+        price: item.price,
+        slug: item.slug,
+        count: item.count,
+        idProduct: item.id,
+        title: item.title
+      })),
       anotherAddress,
-      firmInfo,
-      description,
-      status: 'PENDING',
-      payOnline: checkPayment.payOnline,
-      sale,
-      check: {...state},
-      basket: basketItems,
-      sum
+      firmInfo
     }
 
-    // await AxiosAPI.post(`/order`, dataSend).then(res => {
-    //   if(dataSend.payOnline && res.data.data.redirect !== undefined){
-    //     window.location.href = decodeURIComponent(res.data.data.redirect)
-    //   }else{
-    //     window.location.href = `/thank-you?refId=${res.data.data.idOrder}&dobirka=true`
-    //   }
-    // })
+    const dataOrder = await createOrder({variables: { input: { data: dataSend } }})
 
-    axios.post(`/api/order`, dataSend).then(res => {
-      console.log(res);
-    }).catch(err => console.log(err))
+    if(dataSend.payOnline) {
+      axios.post(`/api/payment`, dataOrder.data.createOrder.order).then(res => {
+        window.location.href = res.data.gw_url
+      }).catch(err => console.log(err))
+    }else{
+      window.location.href = `/dekujem/${btoa(dataOrder.data.createOrder.order.id)}`
+    }
+
   }
 
   const getPickup = (data) => {
+    const deliveryArr = deliveryMethod
     if(data === null) {
-      const deliveryArr = deliveryMethod
       deliveryArr[deliveryArr.findIndex(item => item.type === 'zasilkovna')].check = false
-      setDeliveryMethod(deliveryArr)
+    }else{
+      deliveryArr[deliveryArr.findIndex(item => item.type === 'zasilkovna')].label = `Zasilkovna - ${data.name}`
     }
+    setDeliveryMethod(deliveryArr)
     setPickupData(data)
   }
 

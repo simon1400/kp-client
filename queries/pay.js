@@ -5,6 +5,7 @@ const payQuery = gql`
     platbies {
       title
       price
+      type
       sale_from
     }
   }

@@ -65,7 +65,7 @@ const Search = () => {
             {data.categories.map((item, index) => <CanvasItem key={index} data={item} />)}
           </div>}
           {!!data.brands?.length && <div className="result-block">
-            <h4>Znacky</h4>
+            <h4>Značky</h4>
             {data.brands.map((item, index) => <CanvasItem key={index} data={item} />)}
           </div>}
           {!!data.produkties?.length && <div className="result-block">

@@ -6,8 +6,8 @@ export default (data) => {
       value: item.price,
       check: false,
       disabled: false,
-      payOnline: true,
-      // method: 'CARD_CZ_CSOB_2'
+      payOnline: item.type === 'online',
+      method: item.type
     }))
   }else{
     return []

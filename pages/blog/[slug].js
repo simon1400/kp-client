@@ -23,6 +23,8 @@ const BlogFull = () => {
   let title = blog?.title.split(' ')
   let subTitle = blog?.add_title.split(' ')
 
+  console.log(blog);
+
   return (
     <Page bigHeader globalData={data.global} nav={data.navigation}>
       <PageTop
@@ -39,14 +41,14 @@ const BlogFull = () => {
           </div>
           <h2 className="big-head uk-text-center uk-margin-large-top uk-margin-large-bottom">
             <span style={{paddingLeft: '0px'}}>{subTitle[0]} {subTitle[1]} {subTitle[2]} {subTitle[3]}</span>
-            <span style={{paddingLeft: '6vw'}}>{subTitle[4]} {subTitle[5]} {subTitle[6]} {subTitle[7]}.</span>
+            <span style={{paddingLeft: '6vw'}}>{subTitle[4]} {subTitle[5]} {subTitle[6]} {subTitle[7]}</span>
           </h2>
           <div>
             <ReactMarkdown>{blog.add_content}</ReactMarkdown>
           </div>
-          <div className="button-more-wrap">
-            <a href="/" className="button">nakupujte zde</a>
-          </div>
+          {blog.cta && <div className="button-more-wrap">
+            <a href={blog.cta.link} className="button">{blog.cta.text}</a>
+          </div>}
         </div>
       </section>
     </Page>
