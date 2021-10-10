@@ -9,7 +9,7 @@ import axios from 'axios'
 // import dataSend from '../../function/gtag'
 // import Head from 'next/head'
 
-import Page from "../../layout/page"
+import Page from "../../layout/Page"
 
 const ThankYou = () => {
 
