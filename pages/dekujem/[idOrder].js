@@ -32,8 +32,6 @@ const ThankYou = () => {
     }
   }, [router.query])
 
-  console.log(global);
-
   useEffect(() => {
     if(order) {
       if(!router.query.id){
@@ -57,7 +55,7 @@ const ThankYou = () => {
           }
         }).catch(err => console.log(err))
       }
-      // dataContextDispatch({ state: [], type: 'basket' })
+      dataContextDispatch({ state: [], type: 'basket' })
       // dataContextDispatch({ state: 0, type: 'basketCount' })
     }
   }, [order])

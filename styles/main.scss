@@ -14,6 +14,20 @@
   z-index: 1111;
 }
 
+.basket-icon-wrap:not(.empty-basket-icon){
+  position: relative;
+  span{
+    position: absolute;
+    display: block;
+    border-radius: 50%;
+    background-color: $accent;
+    width: 12px;
+    height: 12px;
+    top: -7px;
+    right: -7px;
+  }
+}
+
 header{
   position: absolute;
   width: 100%;

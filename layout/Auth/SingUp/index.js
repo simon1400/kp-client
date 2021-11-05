@@ -8,8 +8,12 @@ const SingUp = ({handleType}) => {
 
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
+  const [error, setError] = useState({
+    email: false,
+    password: false
+  })
   const { dataContextState, dataContextDispatch } = useContext(DataStateContext)
-  const [register, response, loading, error] = useRegister();
+  const [register, response, loading] = useRegister();
 
   const [getUser, {data: user}] = useLazyQuery(getUserQuery)
 
@@ -33,12 +37,10 @@ const SingUp = ({handleType}) => {
   }, [user])
 
   const handleOnSubmit = async (e) => {
-      e.preventDefault();
-    try {
-      await register(email, password);
-    } catch (err) {
-      console.log('err', err);
-    }
+    e.preventDefault();
+
+    await register(email, password);
+
   }
 
 
