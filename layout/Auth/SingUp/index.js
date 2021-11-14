@@ -1,21 +1,25 @@
 import {useState, useEffect, useContext} from 'react'
 import useRegister from '../useRegister'
 import { DataStateContext } from '../../../context/dataStateContext'
-import { getUserQuery } from '../../../queries/auth'
+import { getUserQuery, controlUser } from '../../../queries/auth'
 import { useLazyQuery } from '@apollo/client'
+import axios from 'axios'
+import {alert} from 'uikit'
 
 const SingUp = ({handleType}) => {
 
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
+  const [email, setEmail] = useState('pechunka11@gmail.com')
+  const [password, setPassword] = useState('d04101996d')
   const [error, setError] = useState({
     email: false,
-    password: false
+    password: false,
+    exist: false
   })
-  const { dataContextState, dataContextDispatch } = useContext(DataStateContext)
-  const [register, response, loading] = useRegister();
+  const { dataContextDispatch } = useContext(DataStateContext)
+  const [register, response, loading, errorReg] = useRegister();
 
   const [getUser, {data: user}] = useLazyQuery(getUserQuery)
+  const [controlExistUser, {data: existUser}] = useLazyQuery(controlUser)
 
   useEffect(() => {
     if(response) {
@@ -27,25 +31,49 @@ const SingUp = ({handleType}) => {
       })
       dataContextDispatch({ state: response.register.jwt, type: 'token' })
     }
+    console.log(errorReg);
   }, [response])
 
   useEffect(() => {
     if(user) {
       dataContextDispatch({ state: user.user, type: 'user' })
-      window.location.href = '/user'
+      axios.post('/api/mail/registration', {email}).then(res => {
+        window.location.href = '/user'
+      })
     }
   }, [user])
 
   const handleOnSubmit = async (e) => {
     e.preventDefault();
-
-    await register(email, password);
-
+    await controlExistUser({
+      variables: {email}
+    })
   }
 
+  const handleReg = async () => {
+    await register(email, password);
+  }
+
+  useEffect(() => {
+    if(existUser?.usersConnection.aggregate.count === 0){
+      handleReg()
+    }else if(existUser?.usersConnection.aggregate.count > 0){
+      setError({...error, exist: true})
+    }
+  }, [existUser])
+
+  const alertClose = (e) => {
+    e.preventDefault()
+    alert('#alert-exist').close()
+    setError({...error, exist: false})
+  }
 
   return (
     <div className="form-canvas-wrap">
+      {error.exist && <div id="alert-exist" className="alert uk-alert-danger" uk-alert="">
+        <a href="/" onClick={e => alertClose(e)}><img className="uk-svg" src="/assets/times.svg" uk-svg="" /></a>
+        <p>Email už se používá, <a href="/" className="link-bold" onClick={e => handleType(e, 'login')}>přihlásit se?</a></p>
+      </div>}
       <div className="uk-margin">
         <label className="uk-form-label" htmlFor="form-stacked-text">e-mail</label>
         <div className="uk-form-controls">

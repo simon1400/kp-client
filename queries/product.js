@@ -30,10 +30,18 @@ const productQuery = gql`
   			title
         slug
       }
+      category {
+  			title
+        slug
+      }
       Variants {
   			nazev
         price
         id
+      }
+      meta{
+        title
+        description
       }
     }
     global {

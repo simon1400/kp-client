@@ -7,7 +7,9 @@ import Card from '../components/Card'
 import SmallBanner from '../components/SmallBanner'
 import PageTop from '../components/PageTop'
 import BigBanner from '../components/BigBanner'
-import Image from '../components/Image'
+// import Image from '../components/Image'
+import Image from 'next/image'
+const APP_API = process.env.APP_API
 
 const Homepage = () => {
 
@@ -28,7 +30,13 @@ const Homepage = () => {
   }
 
   return (
-    <Page bgImg={data.homepage.image} bigHeader globalData={data.global} nav={data?.navigation}>
+    <Page 
+      bgImg={data.homepage.image}
+      title={data.homepage.meta?.title}
+      description={data.homepage.meta?.description}
+      bigHeader 
+      globalData={data.global} 
+      nav={data?.navigation}>
       <PageTop
         big
         center
@@ -64,7 +72,9 @@ const Homepage = () => {
         <div className="uk-container uk-container-large">
           <div className="uk-slider" uk-slider="autoplay: true">
             <ul className="uk-slider-items uk-child-width-1-2 uk-child-width-1-4@s uk-child-width-1-6@m uk-grid uk-grid-stack">
-              {data.homepage.partners.map((image, index) => <li key={index}><Image image={image} /></li>)}
+              {data.homepage.partners.map((image, index) => <li key={index}>
+                <Image src={APP_API+image.url} width="100%" height="80" layout="responsive" objectFit="contain" />
+              </li>)}
             </ul>
           </div>
         </div>

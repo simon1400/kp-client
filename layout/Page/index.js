@@ -2,11 +2,11 @@ import { useState, useContext } from 'react';
 import Head from 'next/head'
 import { useRouter } from 'next/router'
 
-import Header from './Header'
-import Footer from './Footer'
-import Canvas from './Canvas'
-import Auth from './Auth'
-import Search from './Search'
+import Header from '../Header'
+import Footer from '../Footer'
+import Canvas from '../Canvas'
+import Auth from '../Auth'
+import Search from '../Search'
 
 const Page = ({
   children,
@@ -39,8 +39,8 @@ const Page = ({
     defaultSep: ' '
   })
 
-  const theTitle = title ? (title + global.defaultSep + global.defaultTitle).substring(0, 60) : global.defaultTitle;
-  const theDescription = description ? description.substring(0, 155) : global.defaultDescription;
+  const theTitle = title ? (title + global.defaultSep + global.defaultTitle) : global.defaultTitle;
+  const theDescription = description ? description : global.defaultDescription;
   const theImage = image ? image : global.defaultImage;
 
   return (
@@ -61,11 +61,11 @@ const Page = ({
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png" />
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png" />
         <link rel="manifest" href="/favicon/site.webmanifest" />
-        <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#5bbad5" />
+        <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#b09925" />
 
         {/*<link rel="stylesheet preload prefetch" href="/fonts.css" as="style" type="text/css" crossOrigin="anonymous" />*/}
-        <meta name="msapplication-TileColor" content="#ffffff" />
-        <meta name="theme-color" content="#000" />
+        <meta name="msapplication-TileColor" content="#b09925" />
+        <meta name="theme-color" content="#b09925" />
 
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>{theTitle}</title>

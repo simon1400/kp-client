@@ -1,3 +1,7 @@
+.methods{
+  padding-bottom: 5px;
+}
+
 .checkout-item{
   width: 100%;
   max-width: 100%;
@@ -22,10 +26,6 @@
   &.disabled-check-item{
     opacity: .4;
   }
-}
-
-.methods{
-  padding-bottom: 5px;
 }
 
 .radio-wrap{
@@ -66,58 +66,5 @@
     &:hover{
       color: $accent;
     }
-  }
-}
-.checkout{
-  padding-bottom: 100px;
-}
-.price-method{
-  font-weight: $font-bold;
-  font-family: $ff-semibold;
-  font-size: 18px;
-  color: $text_color;
-}
-
-.yellow-text{
-  color: $accent;
-  font-weight: $font-bold;
-  font-family: $ff-semibold;
-  font-size: 18px;
-}
-
-.open-products-list{
-  display: block;
-  width: 100%;
-  transition: all .5s ease;
-  margin-bottom: 0;
-  position: relative;
-  font-size: 17px;
-  color: $accent;
-  img, svg{
-    width: 10px;
-    position: absolute;
-    right: 0;
-    top: 5px;
-    color: $accent;
-    transition: all .5s ease;
-    transform: rotate(0);
-  }
-  &:hover{
-    text-decoration: none;
-    color: $accent;
-  }
-  &.open{
-    margin-bottom: 35px;
-    img, svg{
-      transform: rotate(-180deg);
-    }
-  }
-}
-
-.sale{
-  .button{
-    width: 100%;
-    padding: 10px 0;
-    font-size: 18px;
   }
 }

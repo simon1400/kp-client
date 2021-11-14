@@ -1,0 +1,27 @@
+.big-banner{
+  min-height: 770px;
+  background-size: cover;
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  margin-bottom: 50px;
+  .big-head{
+    color: white;
+    line-height: 63px;
+    -webkit-text-stroke: 0.5px #fff;
+    span{
+      font-size: 61px;
+      b{
+        font-size: 64px;
+      }
+    }
+  }
+  .big-banner-info{
+    margin: auto;
+    text-align: center;
+    transform: translateY(100px);
+    .button{
+      margin-top: 70px;
+    }
+  }
+}

@@ -212,15 +212,23 @@ const Category = () => {
     setMore(true)
   }
 
+  console.log(category);
+
   return (
-    <Page bigHeader globalData={global} nav={navigation}>
+    <Page
+      title={category.meta?.title}
+      description={category.meta?.description}
+      bigHeader
+      bgImg={category.image}
+      globalData={global} 
+      nav={navigation}>
       <PageTop
         small
+        img={category.image}
         head={<h1 className="big-head">
                 <span><b>{title[0]}</b> {title[1]}</span>
               </h1>}
         />
-
       <section>
         <div className="uk-container uk-container-large">
           <div className="catalog-control">

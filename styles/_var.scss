@@ -28,15 +28,14 @@ $text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 
 }
 
-::-moz-selection { background: $accent; }
-::selection { background: $accent; }
-
 body{
   font-family: $ff-light, sans-serif;
   font-weight: $font-medium;
   -webkit-font-smoothing: antialiased;
   font-size: 16px;
-  -webkit-tap-highlight-color: none;
+  -webkit-tap-highlight-color: $accent;
+  ::-moz-selection { background: black; }
+  ::selection { background: black; }
   hr{
     border-top: 1.5px solid rgba(176, 153, 37, 0.6)
   }
@@ -156,6 +155,7 @@ a.bare-button, .bare-button{
     transition: all .5s ease;
     transform: translateX(10px);
     width: 8px;
+    margin-top: -7px;
   }
   &:hover{
     color: $accent;
@@ -182,6 +182,7 @@ a.button, .button{
   color: white;
   font-size: 20px;
   font-weight: $font-medium;
+  font-family: $ff-light;
   text-align: center;
   padding: 20px 70px;
   border: none;
@@ -202,11 +203,15 @@ a.button, .button{
       color: white;
       background-color: $accent;
     }
+    &.uk-form-danger{
+      border-color: #f0506e;
+      color: #f0506e;
+    }
   }
 }
 
 .yellow-top{
-  background-color: $yellow;
+  background-color: $yellow!important;
   .big-head{
     color: $text_color!important;
   }
@@ -226,21 +231,7 @@ caption{
   font-weight: $font-bold;
   padding-bottom: 20px;
 }
-.hamburger{
-  margin-right: 10px!important;
-}
-.hamburger-box{
-  vertical-align: bottom;
-}
 
-$hamburger-padding-x           : 0;
-$hamburger-padding-y           : 0;
-$hamburger-layer-width         : 30px;
-$hamburger-layer-height        : 2px;
-$hamburger-layer-spacing       : 8px;
-$hamburger-layer-color         : $accent;
-$hamburger-layer-border-radius : 0;
-$hamburger-hover-opacity       : 1;
 
 $dotnav-margin-horizontal: 5px;
 $dotnav-item-width: 14px;

@@ -1,11 +1,26 @@
 import React from 'react'
 import country from '../../data/country'
+import Input from '../Input'
+import Select from '../Select'
 
-const InfoForm = ({state, setState, name, title, error = {}, setError = () => {}, errorMessages, onBlur = () => {}}) => {
+const InfoForm = ({
+  state, 
+  setState, 
+  name, 
+  title, 
+  error = {}, 
+  setError = () => {}, 
+  errorMessages, 
+  onBlur = () => {}
+}) => {
 
-  const changeState = (e) => {
+  const changeState = (name, value) => {
     setError({...error, [e.target.name]: false})
     setState({...state, [e.target.name]: e.target.value})
+  }
+
+  const handleSelect = (name, value) => {
+    setState({...state, [name]: value})
   }
 
   return(
@@ -15,83 +30,92 @@ const InfoForm = ({state, setState, name, title, error = {}, setError = () => {}
         <hr />
       </div>}
       <div className="uk-grid uk-grid-small uk-child-width-1-1 uk-child-width-1-2@s" uk-grid="">
-        <div>
-          <label className="uk-form-label" htmlFor={`email_${name}`}>
-            e-mail
-            {error.email && <span className="uk-text-danger">{errorMessages.email}</span>}
-          </label>
-          <div className="uk-form-controls">
-            <input className={`uk-input ${(error.email || error.exist) && 'uk-form-danger'}`} id={`email_${name}`} type="text" name="email" onBlur={() => onBlur('email')} value={state.email} onChange={e => changeState(e)} />
-          </div>
-        </div>
-        <div>
-          <label className="uk-form-label" htmlFor={`phone_${name}`}>
-            telefon
-            {error.phone && <span className="uk-text-danger">{errorMessages.phone}</span>}
-          </label>
-          <div className="uk-form-controls">
-            <input className={`uk-input ${error.phone && 'uk-form-danger'}`} id={`phone_${name}`} type="text" name="phone" value={state.phone} onChange={e => changeState(e)} />
-          </div>
-        </div>
+        <Input 
+          label="e-mail"
+          error={error.email || error.exist}
+          errorAlert={error.email}
+          errorMessages={errorMessages.email}
+          onBlur={onBlur}
+          id={`email_${name}`}
+          name="email"
+          value={state.email}
+          handle={changeState}
+        />
+        <Input 
+          label="telefon"
+          error={error.phone}
+          errorAlert={error.phone}
+          errorMessages={errorMessages.phone}
+          onBlur={onBlur}
+          id={`phone_${name}`}
+          name="phone"
+          value={state.phone}
+          handle={changeState}
+        />
       </div>
       <div className="uk-grid uk-grid-small uk-child-width-1-1 uk-child-width-1-2@s" uk-grid="">
-        <div>
-          <label className="uk-form-label" htmlFor={`name_${name}`}>
-            jméno
-            {error.name && <span className="uk-text-danger">{errorMessages.name}</span>}
-          </label>
-          <div className="uk-form-controls">
-            <input className={`uk-input ${error.name && 'uk-form-danger'}`} id={`name_${name}`} type="text" name="name" value={state.name} onChange={e => changeState(e)} />
-          </div>
-        </div>
-        <div>
-          <label className="uk-form-label" htmlFor={`surname_${name}`}>
-            příjmení
-            {error.surname && <span className="uk-text-danger">{errorMessages.surname}</span>}
-          </label>
-          <div className="uk-form-controls">
-            <input className={`uk-input ${error.surname && 'uk-form-danger'}`} id={`surname_${name}`} type="text" name="surname" value={state.surname} onChange={e => changeState(e)} />
-          </div>
-        </div>
+        <Input 
+          label="jméno"
+          error={error.name}
+          errorAlert={error.name}
+          errorMessages={errorMessages.name}
+          id={`name_${name}`}
+          name="name"
+          value={state.name}
+          handle={changeState}
+        />
+        <Input 
+          label="příjmení"
+          error={error.surname}
+          errorAlert={error.surname}
+          errorMessages={errorMessages.surname}
+          id={`surname_${name}`}
+          name="surname"
+          value={state.surname}
+          handle={changeState}
+        />
       </div>
       <div className="uk-grid uk-grid-small uk-child-width-1-1 uk-child-width-1-2@s" uk-grid="">
-        <div>
-          <label className="uk-form-label" htmlFor={`address_${name}`}>
-            ulice a č.p.
-            {error.address && <span className="uk-text-danger">{errorMessages.address}</span>}
-          </label>
-          <div className="uk-form-controls">
-            <input className={`uk-input ${error.address && 'uk-form-danger'}`} id={`address_${name}`} type="text" name="address" value={state.address} onChange={e => changeState(e)} />
-          </div>
-        </div>
-        <div>
-          <label className="uk-form-label" htmlFor={`city_${name}`}>
-            město
-            {error.city && <span className="uk-text-danger">{errorMessages.city}</span>}
-          </label>
-          <div className="uk-form-controls">
-            <input className={`uk-input ${error.city && 'uk-form-danger'}`} id={`city_${name}`} type="text" name="city" value={state.city} onChange={e => changeState(e)} />
-          </div>
-        </div>
+        <Input 
+          label="ulice a č.p."
+          error={error.address}
+          errorAlert={error.address}
+          errorMessages={errorMessages.address}
+          id={`address_${name}`}
+          name="address"
+          value={state.address}
+          handle={changeState}
+        />
+        <Input 
+          label="město"
+          error={error.city}
+          errorAlert={error.city}
+          errorMessages={errorMessages.city}
+          id={`city_${name}`}
+          name="city"
+          value={state.city}
+          handle={changeState}
+        />
       </div>
       <div className="uk-grid uk-grid-small uk-child-width-1-1 uk-child-width-1-2@s" uk-grid="">
-        <div>
-          <label className="uk-form-label" htmlFor={`zip_${name}`}>
-            PSČ
-            {error.zip && <span className="uk-text-danger">{errorMessages.zip}</span>}
-          </label>
-          <div className="uk-form-controls">
-            <input className={`uk-input ${error.zip && 'uk-form-danger'}`} id={`zip_${name}`} type="text" name="zip" value={state.zip} onChange={e => changeState(e)} />
-          </div>
-        </div>
-        <div>
-         <label className="uk-form-label" htmlFor={`state_${name}`}>stát</label>
-         <div className="uk-form-controls">
-           <select className="uk-select" name="state" onChange={e => setState({...state, [e.target.name]: e.target.value})} value={state.state} id={`state_${name}`}>
-             {country.map((item, index) => <option key={index} value={item.name}>{item.name}</option>)}
-           </select>
-         </div>
-        </div>
+        <Input 
+          label="PSČ"
+          error={error.zip}
+          errorAlert={error.zip}
+          errorMessages={errorMessages.zip}
+          id={`zip_${name}`}
+          name="zip"
+          value={state.zip}
+          handle={changeState}
+        />
+        <Select 
+          label="stát"
+          id={`state_${name}`}
+          options={country}
+          name="state"
+          value={state.state}
+          handle={handleSelect}
+        />
       </div>
     </>
   )

@@ -1,4 +1,6 @@
 import Link from 'next/link'
+import Image from 'next/image'
+
 const APP_API = process.env.APP_API
 
 const PageTop = ({
@@ -9,8 +11,12 @@ const PageTop = ({
   textButton = false,
   linkButton = false,
 }) => {
+  console.log(!img);
   return (
-    <section className={`page-top${big ? ' big-top' : ''}${!img ? ' yellow-top' : ''}`} style={{backgroundImage: `url(${APP_API}${img.url})`}}>
+    <section className={`page-top${big ? ' big-top' : ''}${!img ? ' yellow-top' : ' img-top'}`}>
+      {img && <div className="img-wrap-bg">
+        <Image src={APP_API+img.url} layout="fill" />
+      </div>}
       <div className={`${!big ? 'uk-container ' : ''} ${center && 'uk-flex uk-flex-middle uk-height-1-1'}`}>
         {head}
       </div>

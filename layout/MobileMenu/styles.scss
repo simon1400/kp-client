@@ -1,0 +1,32 @@
+.menu-mobile{
+  background-color: $yellow;
+  width: 100vw;
+  height: 100vh;
+  padding-top: 120px;
+  text-align: right;
+  position: relative;
+  .bare-button{
+    margin-top: 125px;
+    margin-right: 30px;
+  }
+  > ul{
+    margin-bottom: 0;
+    margin-left: auto;
+    padding-left: 0;
+    margin-right: 30px;
+    display: inline-block;
+    text-align: right;
+    li{
+      list-style-type: none;
+      a{
+        font-size: 20px;
+        &:hover{
+          color: $accent;
+        }
+      }
+      &:not(:last-child){
+        margin-bottom: 30px;
+      }
+    }
+  }
+}

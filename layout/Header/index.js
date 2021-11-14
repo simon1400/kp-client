@@ -1,10 +1,10 @@
-import MenuDropdown from '../components/MenuDropdown'
+import MenuDropdown from '../../components/MenuDropdown'
 import {useState, useEffect, useContext} from 'react'
 import {util, offcanvas} from 'uikit'
 import Link from 'next/link'
-import MobileMenu from './MobileMenu'
-import getMenu from '../function/getMenu'
-import { DataStateContext } from '../context/dataStateContext'
+import MobileMenu from '../MobileMenu'
+import getMenu from '../../function/getMenu'
+import { DataStateContext } from '../../context/dataStateContext'
 
 const Header = ({
   bgImg,
@@ -46,7 +46,7 @@ const Header = ({
   }
 
   return (
-    <header className={`header${!bgImg || menu ? ' not-bg' : ''}${!bigHeader ? ' small-header' : ''}${!!activeDropdown ? ' not-bg activeDrop' : ''}${basket ? ' basket-header' : ''}`}>
+    <header className={`header${!bgImg || menu ? ' not-bg' : ''}${!bigHeader ? ' small-header' : ''}${!!activeDropdown ? ' not-bg activeDrop' : ''}`}>
       <div className="uk-container uk-container-large">
         <nav className={`nav-wrap ${menu ? 'yellow-top' : ''}`}>
           {!basket && <div className="uk-flex uk-flex-bottom uk-hidden@m">
@@ -70,9 +70,15 @@ const Header = ({
               </li>)}
             </ul>
           </div>}
+          {basket && <div className="uk-flex uk-flex-bottom">
+            <a className="bare-button button-reverse uk-visible@s" href="/">
+              <img className="uk-svg" src="/assets/angle-left.svg" uk-svg="" />zpět k nákupu
+            </a>
+          </div>}
           <div className="logo">
             <a href="/"><img className="uk-svg" src="/assets/logo.svg" uk-svg="" /></a>
           </div>
+          {basket && <div></div>}
           {!basket && <div className="control-menu-wrap">
             <div className="control-menu">
               <ul className="menu uk-visible@m">
@@ -84,8 +90,8 @@ const Header = ({
               </ul>
               <ul className="icons-wrap">
                 <li className="uk-visible@m"><a href="/" onClick={e => closeMenu(e, "#search")}><img className="uk-svg" src="/assets/search.svg" uk-svg=""/></a></li>
-                {!dataContextState.user?.jwt && <li><a href="/" onClick={e => closeMenu(e, "#auth")}><img className="uk-svg" src="/assets/user.svg" uk-svg=""/></a></li>}
-                {!!dataContextState.user?.jwt && <li><a href="/user"><img className="uk-svg" src="/assets/user.svg" uk-svg=""/></a></li>}
+                {!dataContextState?.token && <li><a href="/" onClick={e => closeMenu(e, "#auth")}><img className="uk-svg" src="/assets/user.svg" uk-svg=""/></a></li>}
+                {!!dataContextState?.token && <li><a href="/user"><img className="uk-svg" src="/assets/user.svg" uk-svg=""/></a></li>}
                 <li className={`basket-icon-wrap ${!dataContextState.basket.length && 'empty-basket-icon'}`}>
                   <a href="/" onClick={e => closeMenu(e, "#canvas")}>
                     <img className="uk-svg" src="/assets/bag.svg" uk-svg=""/>

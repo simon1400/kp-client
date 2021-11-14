@@ -88,6 +88,13 @@ const User = () => {
     }})
   }
 
+  const logout = (e) => {
+    e.preventDefault()
+    dataContextDispatch({ state: {}, type: 'user' })
+    dataContextDispatch({ state: '', type: 'token' })
+    window.location.href = '/'
+  }
+
   if(loading) return 'Loadding...'
 
   return (
@@ -125,6 +132,7 @@ const User = () => {
           <div className="uk-grid uk-child-width-1-2" uk-grid="">
             <div>
               <a href="/" className="uk-margin-top button" onClick={e => handleUserInfo(e)}>uložit změny</a>
+              <a href="/" className="uk-margin-left button border-button" onClick={e => logout(e)}>Odhlasít</a>
             </div>
           </div>
         </div>

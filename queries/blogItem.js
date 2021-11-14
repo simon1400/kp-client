@@ -19,6 +19,10 @@ const blogItemQuery = gql`
         text
         link
       }
+      meta{
+        title
+        description
+      }
     }
     global {
       title_footer

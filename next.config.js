@@ -16,7 +16,7 @@ module.exports = (phase) => {
 
   const env = {
     APP_API: (() => {
-      if (isDev) return 'https://strapi-kp.investmag.cz'
+      if (isDev) return 'http://localhost:1339'
       if (isProd) return 'https://strapi-kp.investmag.cz'
       return 'RESTURL_SPEAKERS:not (isDev,isProd && !isStaging,isProd && isStaging)'
     })(),
@@ -41,14 +41,20 @@ module.exports = (phase) => {
       return 'RESTURL_SPEAKERS:not (isDev,isProd && !isStaging,isProd && isStaging)'
     })(),
     SENDGRID_API_KEY: (() => {
-      if (isDev) return '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'
-      if (isProd) return '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'
+      if (isDev) return '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'
+      if (isProd) return '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'
       return 'RESTURL_SPEAKERS:not (isDev,isProd && !isStaging,isProd && isStaging)'
     })()
   }
 
+  const images = {
+    domains: ['localhost', 'strapi-kp.investmag.cz'],
+    deviceSizes: [320, 360, 640, 960, 1200, 1920, 2048],
+  }
+
   // next.config.js object
   return {
-    env
+    env,
+    images
   }
 }

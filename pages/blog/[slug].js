@@ -23,10 +23,13 @@ const BlogFull = () => {
   let title = blog?.title.split(' ')
   let subTitle = blog?.add_title.split(' ')
 
-  console.log(blog);
-
   return (
-    <Page bigHeader globalData={data.global} nav={data.navigation}>
+    <Page
+      title={blog.meta?.title}
+      description={blog.meta?.description}
+      bigHeader 
+      globalData={data.global} 
+      nav={data.navigation}>
       <PageTop
         small
         head={<h1 className="big-head">

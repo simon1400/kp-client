@@ -1,0 +1,126 @@
+header{
+  position: absolute;
+  width: 100%;
+  z-index: 99;
+  // transition: all .5s linear;
+  &.small-header{
+    position: static;
+    background-color: $yellow;
+  }
+  &.activeDrop{
+    background-color: $yellow;
+    border-bottom: 1.5px solid rgba($accent, .3);
+  }
+  &.not-bg{
+    .logo{
+      svg {
+        path{
+          &:not(:first-child){
+            fill: $text_color;
+            color: $text_color;
+          }
+        }
+      }
+    }
+    .nav-wrap{
+      ul{
+        li{
+          > a{
+            color: $text_color;
+            text-shadow: none;
+          }
+        }
+      }
+    }
+  }
+  .logo{
+    text-align: center;
+    svg {
+      path{
+        &:first-child{
+          color: $accent;
+        }
+        &:not(:first-child){
+          fill: white;
+          color: white;
+        }
+      }
+    }
+  }
+  a{
+    color: black;
+  }
+  .nav-wrap{
+    display: grid;
+    grid-template-columns: 2fr 1fr 2fr;
+    padding-top: 15px;
+    padding-bottom: 35px;
+    ul{
+      margin-bottom: 0;
+      margin-top: 0;
+      padding-left: 0;
+      display: block;
+      line-height: 15px;
+      white-space: nowrap;
+      li{
+        display: inline-block;
+        list-style-type: none;
+        line-height: 15px;
+        > a{
+          color: white;
+          display: block;
+          font-size: 20px;
+          line-height: 15px;
+          padding-left: 15px;
+          padding-right: 15px;
+          text-shadow: $text-shadow;
+          font-weight: $font-light;
+          transition: all .2s ease;
+          &:hover{
+            text-decoration: none;
+            color: $accent;
+          }
+        }
+      }
+    }
+    .control-menu-wrap{
+      justify-self: end;
+      align-self: end;
+    }
+    .control-menu{
+      display: -webkit-flex;
+      display: -ms-flex;
+      display: flex;
+      align-items: flex-end;
+      .icons-wrap{
+        margin-left: 65px;
+        li{
+          a{
+            padding-left: 6px;
+            padding-right: 6px;
+            img, svg{
+              height: 24px;
+              width: 22px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.hamburger{
+  margin-right: 10px!important;
+}
+.hamburger-box{
+  vertical-align: bottom;
+}
+
+$hamburger-padding-x           : 0;
+$hamburger-padding-y           : 0;
+$hamburger-layer-width         : 30px;
+$hamburger-layer-height        : 2px;
+$hamburger-layer-spacing       : 8px;
+$hamburger-layer-color         : $accent;
+$hamburger-layer-border-radius : 0;
+$hamburger-hover-opacity       : 1;

@@ -1,13 +1,15 @@
 import Link from 'next/link'
-import Image from '../Image'
+// import Image from '../Image'
+import Image from 'next/image'
+const APP_API = process.env.APP_API
 
 const Card = ({data}) => {
 
   return (
     <div>
-      <a href={`/product/${data.slug}`} className="card">
+      <a href={`/produkt/${data.slug}`} className="card">
         <div className="card-img">
-          <Image image={data.images[0]} />
+          <Image src={APP_API + data.images[0].url} width="320" height="320" />
         </div>
         <div className="card-content">
           <label>{data.brand.title}</label>

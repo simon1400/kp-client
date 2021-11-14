@@ -3,7 +3,9 @@ import PageTop from '../../components/PageTop'
 import { useQuery } from "@apollo/client";
 import blogQuery from '../../queries/blog'
 import ReactMarkdown from 'react-markdown'
-import Image from '../../components/Image'
+import Image from 'next/image'
+
+const APP_API = process.env.APP_API
 
 const Blog = () => {
 
@@ -26,10 +28,16 @@ const Blog = () => {
 
       <section className="sec-big">
         <div className="uk-container uk-container-large">
-          {blogs.length && blogs.map((item, index) => <div key={index} className="uk-grid blog-item uk-child-width-1-1 uk-child-width-1-2@s" uk-grid="">
+          {blogs.length && blogs.map((item, index) => <div key={index} className="uk-grid blog-item uk-child-width-1-1 uk-child-width-1-2@s" uk-grid="" uk-height-match="target: > div > div">
             <div>
-              <div className="blog-item-img">
-                <Image image={item.image} />
+              <div className="blog-item-img uk-position-relative">
+                <Image 
+                  src={APP_API+item.image.url} 
+                  width="100%" 
+                  height="100%" 
+                  layout="responsive" 
+                  objectFit="contain" 
+                  objectPosition="left top" />
               </div>
             </div>
             <div>

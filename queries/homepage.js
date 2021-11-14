@@ -42,6 +42,10 @@ const homepageQuery = gql`
         previewUrl
         formats
       }
+      meta{
+        title
+        description
+      }
     }
     global {
       title_footer

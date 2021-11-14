@@ -1,6 +1,7 @@
 import {useEffect, useState} from 'react'
 import {getStrapiMedia} from '../../lib/api'
 import Link from 'next/link'
+import Image from 'next/image'
 
 const BigBanner = ({data}) => {
 
@@ -15,7 +16,10 @@ const BigBanner = ({data}) => {
   return (
     <section className="sec-base">
       <div className="uk-container uk-container-large">
-        <div className="big-banner" style={{backgroundImage: `url(${getStrapiMedia(data.image)})`}}>
+        <div className="big-banner">
+          <div className="img-wrap-bg">
+            <Image src={`https://strapi-kp.investmag.cz${data.image.url}`} layout="fill" />
+          </div>
           <div className="big-banner-info">
             <h2 className="big-head">
               <span style={{paddingLeft: '13vw'}}>{title[0]} {title[1]} {title[2]} {title[3]}</span>

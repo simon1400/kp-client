@@ -1,0 +1,33 @@
+.card{
+  display: block;
+  &:hover{
+    text-decoration: none;
+    mix-blend-mode: multiply;
+    background-image: linear-gradient(to bottom, #f8f5ee, white);
+  }
+  .card-img{
+    img{
+      width: 100%;
+      mix-blend-mode: multiply;
+    }
+  }
+  .card-content{
+    text-align: center;
+    h3{
+      color: $text-color;
+      font-family: $ff-semibold;
+      font-size: 18px;
+      font-weight: $font-bold;
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+    span{
+      font-size: 18px;
+      letter-spacing: .36px;
+      font-family: $ff-thin;
+      font-weight: $font-light;
+      color: $text-color;
+      -webkit-text-stroke: .2px rgba(0,0,0,.9);
+    }
+  }
+}

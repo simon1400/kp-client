@@ -5,10 +5,11 @@ import { useLazyQuery, useMutation } from '@apollo/client'
 
 const Login = ({handleType}) => {
 
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
+  const [email, setEmail] = useState('pechunka11@gmail.com')
+  const [password, setPassword] = useState('d04101')
   const { dataContextState, dataContextDispatch } = useContext(DataStateContext)
   const [callMutation, {loading, data, error}] = useMutation(loginQuery);
+  const [exist, setExist] = useState(false)
 
   const [getUser, {data: user}] = useLazyQuery(getUserQuery)
 
@@ -26,6 +27,7 @@ const Login = ({handleType}) => {
 
   useEffect(() => {
     if(user) {
+      console.log(user)
       dataContextDispatch({ state: user.user, type: 'user' })
       window.location.href = '/user'
     }
@@ -38,11 +40,23 @@ const Login = ({handleType}) => {
         identifier: email,
         password: password
       }
-    }});
+    }}).catch(err => setExist(true));
+  }
+
+  const alertClose = (e) => {
+    e.preventDefault()
+    alert('#alert-not-exist').close()
+    setExist(false)
   }
 
   return (
     <div className="form-canvas-wrap">
+      {exist && <div id="alert-not-exist" className="alert uk-alert-danger" uk-alert="">
+        <a href="/" onClick={e => alertClose(e)}>
+          <img className="uk-svg" src="/assets/times.svg" uk-svg="" />
+        </a>
+        <p>E-mail nebo heslo je špatné</p>
+      </div>}
       <div className="uk-margin">
         <label className="uk-form-label" htmlFor="form-stacked-text">e-mail</label>
         <div className="uk-form-controls">

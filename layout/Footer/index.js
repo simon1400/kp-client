@@ -1,7 +1,7 @@
 import {useEffect, useState} from 'react'
-import getMenu from '../function/getMenu'
+import getMenu from '../../function/getMenu'
 import Link from 'next/link'
-import Image from '../components/Image'
+import Image from '../../components/Image'
 
 const Footer = ({
   data,

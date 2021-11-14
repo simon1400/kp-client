@@ -25,6 +25,13 @@ const categoryQuery = gql`
       parameters {
         ...CategoryParameters
       }
+      meta{
+        title
+        description
+      }
+      image {
+        url
+      }
     }
     brands(where: {slug:$slug}) {
       id
@@ -37,6 +44,13 @@ const categoryQuery = gql`
       }
       parameters {
         ...CategoryParameters
+      }
+      meta{
+        title
+        description
+      }
+      image {
+        url
       }
     }
     global {

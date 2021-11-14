@@ -7,9 +7,11 @@ import Head from 'next/head'
 import ReactMarkdown from 'react-markdown'
 import { useQuery } from "@apollo/client";
 import productQuery from '../../queries/product'
-import Image from '../../components/Image'
+import Image from 'next/image'
 import { DataStateContext } from '../../context/dataStateContext'
 import {dropdown, offcanvas} from 'uikit'
+import axios from 'axios'
+const APP_API = process.env.APP_API
 
 var startSelectValue = {
   name: 'vybrat variantu',
@@ -34,6 +36,7 @@ const Product = () => {
     e.preventDefault()
     if(!selectValue.id.length && !!product.Variants?.length) {
       setErrorBuy(true)
+      console.log(errorBuy);
       return
     }
     let localBasket = dataContextState.basket
@@ -91,16 +94,24 @@ const Product = () => {
   const product = data.produkties[0]
 
   return (
-    <Page globalData={data.global} nav={data.navigation}>
+    <Page
+      title={product.meta?.title}
+      description={product.meta?.description}
+      globalData={data.global} 
+      nav={data.navigation}>
       <section className="product-base">
         <div className="uk-container uk-container-large">
           <div className="uk-grid uk-child-width-1-1 uk-child-width-1-2@s">
             <div>
               <div className="product-slider">
-                <a className="bare-button button-reverse uk-visible@s" href="/"><img className="uk-svg" src="/assets/angle-left.svg" uk-svg="" />zpět na produkty</a>
+                <a className="bare-button button-reverse uk-visible@s" href={`/${product.category[0].slug}`}>
+                  <img className="uk-svg" src="/assets/angle-left.svg" uk-svg="" />{product.category[0].title}
+                </a>
                 <div className="uk-slideshow" uk-slideshow="ratio: 1:1">
                   <ul className="uk-slideshow-items">
-                    {product.images.map((item, index) => <li key={index}><Image image={item}/></li>)}
+                    {product.images.map((item, index) => <li key={index}>
+                      <Image src={APP_API+item.url} width="680" height="680" layout="responsive"/>
+                    </li>)}
                   </ul>
                   <a className="uk-position-center-left uk-position-small uk-slidenav" href="#" uk-slideshow-item="previous">
                     <img className="uk-svg" src="/assets/angle-left.svg" uk-svg="" />

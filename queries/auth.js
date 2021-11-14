@@ -84,3 +84,13 @@ export const getUserQuery = gql`
     }
   }
 `
+
+export const controlUser = gql`
+  query ControlExistUser($email: String!) {
+    usersConnection(where: {email: $email}) {
+      aggregate{
+        count
+      }
+    }
+  }
+`
