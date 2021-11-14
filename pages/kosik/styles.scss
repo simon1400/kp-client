@@ -168,29 +168,4 @@
 }
 
 
-@media(max-width: 640px) {
-  .basket-content-wrap .uk-table td{
-    width: 100%;
-    display: block;
-    text-align: center;
-    .control-product{
-      justify-content: center!important;
-    }
-    .basket-item-img{
-      margin: 0 auto;
-    }
-  }
-  .basket-content-wrap .uk-table thead{
-    display: none;
-  }
-  .basket-item .basket-item-price{
-    text-align: center;
-  }
-  .basket-rightbar{
-    position: static;
-    padding-bottom: 50px;
-    a.button, .button{
-      max-width: 100%;
-    }
-  }
-}
+

@@ -97,6 +97,43 @@
 }
 @media(max-width: $breakpoint-small) {
   // $breakpoint-small: 640px
+  .header{
+    .button-reverse.bare-button{
+      &:hover{
+        img, svg{
+          transform: translateX(0);
+        }
+      }
+      img, svg{
+        width: 15px;
+        transform: translateX(0);
+      }
+    }
+  }
+  .basket-content-wrap .uk-table td{
+    width: 100%;
+    display: block;
+    text-align: center;
+    .control-product{
+      justify-content: center!important;
+    }
+    .basket-item-img{
+      margin: 0 auto;
+    }
+  }
+  .basket-content-wrap .uk-table thead{
+    display: none;
+  }
+  .basket-item .basket-item-price{
+    text-align: center;
+  }
+  .basket-rightbar{
+    position: static;
+    padding-bottom: 50px;
+    a.button, .button{
+      max-width: 100%;
+    }
+  }
   footer .footer-bottom .copytight-wrap{
     flex-direction: column;
   }

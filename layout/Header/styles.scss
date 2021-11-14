@@ -115,22 +115,6 @@ header{
   vertical-align: bottom;
 }
 
-@media(max-width: 640px) {
-  .header{
-    .button-reverse.bare-button{
-      &:hover{
-        img, svg{
-          transform: translateX(0);
-        }
-      }
-      img, svg{
-        width: 15px;
-        transform: translateX(0);
-      }
-    }
-  }
-}
-
 $hamburger-padding-x           : 0;
 $hamburger-padding-y           : 0;
 $hamburger-layer-width         : 30px;
