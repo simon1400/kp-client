@@ -1,0 +1,1 @@
+export default (variants) => variants.reduce((prev, curr) => prev.price < curr.price ? prev : curr);

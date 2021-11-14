@@ -32,9 +32,9 @@ const InfoForm = ({
       <div className="uk-grid uk-grid-small uk-child-width-1-1 uk-child-width-1-2@s" uk-grid="">
         <Input 
           label="e-mail"
-          error={error.email || error.exist}
-          errorAlert={error.email}
-          errorMessages={errorMessages.email}
+          error={error?.email || error?.exist}
+          errorAlert={error?.email}
+          errorMessages={errorMessages?.email}
           onBlur={onBlur}
           id={`email_${name}`}
           name="email"
@@ -43,9 +43,9 @@ const InfoForm = ({
         />
         <Input 
           label="telefon"
-          error={error.phone}
-          errorAlert={error.phone}
-          errorMessages={errorMessages.phone}
+          error={error?.phone}
+          errorAlert={error?.phone}
+          errorMessages={errorMessages?.phone}
           onBlur={onBlur}
           id={`phone_${name}`}
           name="phone"
@@ -56,9 +56,9 @@ const InfoForm = ({
       <div className="uk-grid uk-grid-small uk-child-width-1-1 uk-child-width-1-2@s" uk-grid="">
         <Input 
           label="jméno"
-          error={error.name}
-          errorAlert={error.name}
-          errorMessages={errorMessages.name}
+          error={error?.name}
+          errorAlert={error?.name}
+          errorMessages={errorMessages?.name}
           id={`name_${name}`}
           name="name"
           value={state.name}
@@ -66,9 +66,9 @@ const InfoForm = ({
         />
         <Input 
           label="příjmení"
-          error={error.surname}
-          errorAlert={error.surname}
-          errorMessages={errorMessages.surname}
+          error={error?.surname}
+          errorAlert={error?.surname}
+          errorMessages={errorMessages?.surname}
           id={`surname_${name}`}
           name="surname"
           value={state.surname}
@@ -78,9 +78,9 @@ const InfoForm = ({
       <div className="uk-grid uk-grid-small uk-child-width-1-1 uk-child-width-1-2@s" uk-grid="">
         <Input 
           label="ulice a č.p."
-          error={error.address}
-          errorAlert={error.address}
-          errorMessages={errorMessages.address}
+          error={error?.address}
+          errorAlert={error?.address}
+          errorMessages={errorMessages?.address}
           id={`address_${name}`}
           name="address"
           value={state.address}
@@ -88,9 +88,9 @@ const InfoForm = ({
         />
         <Input 
           label="město"
-          error={error.city}
-          errorAlert={error.city}
-          errorMessages={errorMessages.city}
+          error={error?.city}
+          errorAlert={error?.city}
+          errorMessages={errorMessages?.city}
           id={`city_${name}`}
           name="city"
           value={state.city}
@@ -100,9 +100,9 @@ const InfoForm = ({
       <div className="uk-grid uk-grid-small uk-child-width-1-1 uk-child-width-1-2@s" uk-grid="">
         <Input 
           label="PSČ"
-          error={error.zip}
-          errorAlert={error.zip}
-          errorMessages={errorMessages.zip}
+          error={error?.zip}
+          errorAlert={error?.zip}
+          errorMessages={errorMessages?.zip}
           id={`zip_${name}`}
           name="zip"
           value={state.zip}

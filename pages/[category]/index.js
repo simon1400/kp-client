@@ -212,8 +212,6 @@ const Category = () => {
     setMore(true)
   }
 
-  console.log(category);
-
   return (
     <Page
       title={category.meta?.title}

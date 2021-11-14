@@ -121,7 +121,7 @@ const Checkout = ({
             <div className="uk-width-1-1 uk-width-1-3@s">
               <div className="basket-rightbar">
                 <h2 className="uk-h3 uk-margin-large-top">Souhrn objednávky</h2>
-                <div className="block">
+                <div>
                   <a href="/" className={`open-products-list ${!!heightProductsList && 'open'}`} aria-expanded={ heightProductsList !== 0 } aria-controls='example-panel' onClick={e => toggleProductsList(e)} >
                     {heightProductsList === 0 ? 'Zobrazit podrobnosti položek' : 'Skrýt podrobnosti položek'}
                     <img src="/assets/angle-down.svg" alt="down" uk-svg=""/>

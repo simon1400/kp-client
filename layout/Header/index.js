@@ -40,7 +40,7 @@ const Header = ({
 
   const closeMenu = async (e, id) => {
     e.preventDefault()
-    // setMenu(false)
+    setMenu(false)
     offcanvas(id).show()
     util.on(id, 'shown', () => setMenu(false));
   }
@@ -71,8 +71,8 @@ const Header = ({
             </ul>
           </div>}
           {basket && <div className="uk-flex uk-flex-bottom">
-            <a className="bare-button button-reverse uk-visible@s" href="/">
-              <img className="uk-svg" src="/assets/angle-left.svg" uk-svg="" />zpět k nákupu
+            <a className="bare-button button-reverse" href="/">
+              <img className="uk-svg" src="/assets/angle-left.svg" uk-svg="" /><span className="uk-visible@s">zpět k nákupu</span>
             </a>
           </div>}
           <div className="logo">
@@ -92,7 +92,7 @@ const Header = ({
                 <li className="uk-visible@m"><a href="/" onClick={e => closeMenu(e, "#search")}><img className="uk-svg" src="/assets/search.svg" uk-svg=""/></a></li>
                 {!dataContextState?.token && <li><a href="/" onClick={e => closeMenu(e, "#auth")}><img className="uk-svg" src="/assets/user.svg" uk-svg=""/></a></li>}
                 {!!dataContextState?.token && <li><a href="/user"><img className="uk-svg" src="/assets/user.svg" uk-svg=""/></a></li>}
-                <li className={`basket-icon-wrap ${!dataContextState.basket.length && 'empty-basket-icon'}`}>
+                <li className={`basket-icon-wrap ${!dataContextState.basket.length ? 'empty-basket-icon' : ''}`}>
                   <a href="/" onClick={e => closeMenu(e, "#canvas")}>
                     <img className="uk-svg" src="/assets/bag.svg" uk-svg=""/>
                     <span></span>

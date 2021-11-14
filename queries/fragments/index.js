@@ -16,6 +16,9 @@ export const CATEGORY_PRODUCTS = gql`
     title
     slug
     price
+    Variants {
+      price
+    }
     brand {
       title
     },

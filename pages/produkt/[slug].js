@@ -10,7 +10,7 @@ import productQuery from '../../queries/product'
 import Image from 'next/image'
 import { DataStateContext } from '../../context/dataStateContext'
 import {dropdown, offcanvas} from 'uikit'
-import axios from 'axios'
+import getMinPrice from '../../function/getMinPrice'
 const APP_API = process.env.APP_API
 
 var startSelectValue = {
@@ -87,11 +87,23 @@ const Product = () => {
     dropdown('#variant-select').hide(false);
   }
 
+  const getPrice = () => {
+    if(selectValue.price){
+      return selectValue.price.toLocaleString()
+    }else if(data.produkties[0].Variants.length) {
+      return 'od '+getMinPrice(data.produkties[0].Variants).price.toLocaleString()
+    }else{
+      return data.produkties[0].price.toLocaleString()
+    }
+  }
+
   if(loading) {
     return ''
   }
 
   const product = data.produkties[0]
+
+  console.log(product.relateds);
 
   return (
     <Page
@@ -128,7 +140,7 @@ const Product = () => {
                 <label>{product.brand.title}</label>
                 <h1>{product.title}</h1>
                 <span className="price">
-                  {selectValue.price ? selectValue.price.toLocaleString() : product.price.toLocaleString()} Kč
+                  {getPrice()} Kč
                 </span>
                 <label className="available">Skladem</label>
                 {!product.Variants.length && <a href="/" className="button" onClick={e => buy(e)}>přidat do košíku</a>}
@@ -154,17 +166,17 @@ const Product = () => {
           <hr />
         </div>
       </section>
-      {!!product.related?.length && <section className="related-products">
+      {!!product.relateds?.length && <section className="related-products">
         <div className="uk-container uk-container-large">
           <h2 className="big-head uk-margin-large-bottom">
             <span style={{paddingLeft: '11vw'}}>podobné produkty,</span>
             <span style={{paddingLeft: '14vw'}}>které by vás mohli zajímat</span>
           </h2>
           <div className="uk-grid uk-child-width-1-2 uk-child-width-1-4@s" uk-grid="">
-            {product.related.map((item, index) => <div key={index}><Card data={item} /></div>)}
+            {product.relateds.map((item, index) => <div key={index}><Card data={item} /></div>)}
           </div>
           <div className="button-more-wrap">
-            <a href="/" className="button">zobrazit kolekci</a>
+            <a href={`/${product.category[0].slug}`} className="button">zobrazit kolekci</a>
           </div>
         </div>
       </section>}

@@ -11,7 +11,6 @@ const PageTop = ({
   textButton = false,
   linkButton = false,
 }) => {
-  console.log(!img);
   return (
     <section className={`page-top${big ? ' big-top' : ''}${!img ? ' yellow-top' : ' img-top'}`}>
       {img && <div className="img-wrap-bg">

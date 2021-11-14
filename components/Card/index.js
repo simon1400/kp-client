@@ -1,9 +1,17 @@
 import Link from 'next/link'
-// import Image from '../Image'
+import getMinPrice from '../../function/getMinPrice'
 import Image from 'next/image'
 const APP_API = process.env.APP_API
 
 const Card = ({data}) => {
+
+  const getPrice = () => {
+    if(data.Variants?.length > 0) {
+      return 'od ' + getMinPrice(data.Variants).price.toLocaleString()
+    }else{
+      return data.price.toLocaleString()
+    }
+  }
 
   return (
     <div>
@@ -14,7 +22,7 @@ const Card = ({data}) => {
         <div className="card-content">
           <label>{data.brand.title}</label>
           <h3>{data.title}</h3>
-          <span>{data.price} Kč</span>
+          <span>{getPrice()} Kč</span>
         </div>
       </a>
     </div>

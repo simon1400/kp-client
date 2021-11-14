@@ -2,7 +2,6 @@ header{
   position: absolute;
   width: 100%;
   z-index: 99;
-  // transition: all .5s linear;
   &.small-header{
     position: static;
     background-color: $yellow;
@@ -114,6 +113,22 @@ header{
 }
 .hamburger-box{
   vertical-align: bottom;
+}
+
+@media(max-width: 640px) {
+  .header{
+    .button-reverse.bare-button{
+      &:hover{
+        img, svg{
+          transform: translateX(0);
+        }
+      }
+      img, svg{
+        width: 15px;
+        transform: translateX(0);
+      }
+    }
+  }
 }
 
 $hamburger-padding-x           : 0;

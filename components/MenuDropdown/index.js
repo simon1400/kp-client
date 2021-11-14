@@ -14,7 +14,7 @@ const MenuDropdown = ({index, data}) => {
   }
 
   return(
-    <div id={`dropdown_${index}`} className="menu-dropdown uk-dropdown" uk-dropdown="mode: click; boundary: .header; boundary-align: true; animation: uk-animation-slide-top-medium; duration: 500">
+    <div id={`dropdown_${index}`} className="menu-dropdown uk-dropdown yellow-top" uk-dropdown="mode: click; offset: 0; boundary: .header; boundary-align: true; animation: uk-animation-slide-top-medium; duration: 500">
       <div className="uk-container">
         <div className="dropdown-wrap">
           {data.map((item, index) => <a key={index} href={item.slug} className="dropdown-item">

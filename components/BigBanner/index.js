@@ -1,7 +1,8 @@
 import {useEffect, useState} from 'react'
-import {getStrapiMedia} from '../../lib/api'
 import Link from 'next/link'
 import Image from 'next/image'
+
+const APP_API = process.env.APP_API
 
 const BigBanner = ({data}) => {
 
@@ -18,7 +19,7 @@ const BigBanner = ({data}) => {
       <div className="uk-container uk-container-large">
         <div className="big-banner">
           <div className="img-wrap-bg">
-            <Image src={`https://strapi-kp.investmag.cz${data.image.url}`} layout="fill" />
+            <Image src={`${APP_API}${data.image.url}`} layout="fill" />
           </div>
           <div className="big-banner-info">
             <h2 className="big-head">
