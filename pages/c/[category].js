@@ -78,11 +78,13 @@ const Category = () => {
         categoryFetch = dataFetch.categories[0]
         variables.categoryId = dataFetch.categories[0].id
         state.Category = [dataFetch.categories[0].id]
-      }else {
+      }else if(dataFetch?.brands.length) {
         setCategory(dataFetch.brands[0])
         categoryFetch = dataFetch.brands[0]
         variables.brandId = dataFetch.brands[0].id
         state.Brand = [dataFetch.brands[0].id]
+      }else{
+        router.push('/404')
       }
 
       dataContextDispatch({ state: state, type: 'state' })

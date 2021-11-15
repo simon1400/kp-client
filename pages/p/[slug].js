@@ -20,7 +20,6 @@ var startSelectValue = {
 }
 
 const Product = () => {
-
   const { dataContextState, dataContextDispatch } = useContext(DataStateContext)
   const [selectValue, setSelectValue] = useState(startSelectValue)
   const [errorBuy, setErrorBuy] = useState(false)
@@ -43,7 +42,7 @@ const Product = () => {
     let hasItem = -1
 
 
-    for(var i = 0; i < localBasket.length; i++){;
+    for(var i = 0; i < localBasket.length; i++){
       if(!!product.Variants?.length) {
         if(localBasket[i].id === selectValue.id){
           hasItem = i
@@ -101,9 +100,12 @@ const Product = () => {
     return ''
   }
 
-  const product = data.produkties[0]
+  if(!data.produkties.length) {
+    router.push('/404')
+    return ''
+  }
 
-  console.log(product.relateds);
+  const product = data.produkties[0]
 
   return (
     <Page

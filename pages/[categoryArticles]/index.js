@@ -1,34 +1,52 @@
 import Page from '../../layout/Page'
 import PageTop from '../../components/PageTop'
 import { useQuery } from "@apollo/client";
-import blogQuery from '../../queries/blog'
+import articlesCategory from '../../queries/articlesCategory'
 import ReactMarkdown from 'react-markdown'
 import Image from 'next/image'
+import Error from 'next/error'
+
+import { useRouter } from 'next/router';
 
 const APP_API = process.env.APP_API
 
 const Blog = () => {
 
-  const { loading, error, data } = useQuery(blogQuery);
+  const router = useRouter()
+  const { loading, error, data } = useQuery(articlesCategory, {
+    variables: {
+      slug: router.query.categoryArticles
+    }
+  });
 
   if(loading) {
     return ''
   }
 
-  let blogs = data.blogs
+  if(!data.categoryArticles.length){
+    router.push('/404')
+    return ''
+  }
+
+  let category = data.categoryArticles[0]
 
   return (
-    <Page bigHeader globalData={data.global} nav={data.navigation}>
+    <Page 
+      title={category?.meta.title}
+      description={category?.meta.description}
+      bigHeader 
+      globalData={data.global} 
+      nav={data.navigation}>
       <PageTop
         small
         head={<h1 className="big-head">
-                <span>Blog a <b>novinky</b></span>
+                <span>{category.title}</span>
               </h1>}
       />
 
       <section className="sec-big">
         <div className="uk-container uk-container-large">
-          {blogs.length && blogs.map((item, index) => <div key={index} className="uk-grid blog-item uk-child-width-1-1 uk-child-width-1-2@s" uk-grid="" uk-height-match="target: > div > div">
+          {category.articles.length && category.articles.map((item, index) => <div key={index} className="uk-grid blog-item uk-child-width-1-1 uk-child-width-1-2@s" uk-grid="" uk-height-match="target: > div > div">
             <div>
               <div className="blog-item-img uk-position-relative">
                 <Image 

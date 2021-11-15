@@ -5,6 +5,7 @@ import blogItemQuery from '../../queries/blogItem'
 import ReactMarkdown from 'react-markdown'
 import Image from '../../components/Image'
 import {useRouter} from 'next/router'
+import Error from 'next/error'
 
 const BlogFull = () => {
 
@@ -18,10 +19,17 @@ const BlogFull = () => {
     return ''
   }
 
+  if(!data.blogs.length){
+    router.push('/404')
+    return ''
+  }
+
   let blog = data.blogs[0]
 
   let title = blog?.title.split(' ')
   let subTitle = blog?.add_title.split(' ')
+
+  
 
   return (
     <Page
@@ -40,7 +48,7 @@ const BlogFull = () => {
         <div className="uk-container uk-container-small">
           <div>
             <ReactMarkdown>{blog.content}</ReactMarkdown>
-            <Image image={blog.image} />
+            {blog.image && <Image image={blog.image} />}
           </div>
           <h2 className="big-head uk-text-center uk-margin-large-top uk-margin-large-bottom">
             <span style={{paddingLeft: '0px'}}>{subTitle[0]} {subTitle[1]} {subTitle[2]} {subTitle[3]}</span>

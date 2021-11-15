@@ -15,7 +15,7 @@ const Card = ({data}) => {
 
   return (
     <div>
-      <a href={`/produkt/${data.slug}`} className="card">
+      <a href={`/p/${data.slug}`} className="card">
         <div className="card-img">
           <Image src={APP_API + data.images[0].url} width="320" height="320" />
         </div>

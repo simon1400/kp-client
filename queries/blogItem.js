@@ -23,6 +23,7 @@ const blogItemQuery = gql`
         title
         description
       }
+      iframe
     }
     global {
       title_footer
