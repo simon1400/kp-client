@@ -1,7 +1,7 @@
 // import {useState, useEffect} from 'react'
 import {useQuery} from '@apollo/client'
 import notFoundQuery from '../queries/notFound'
-import Page from '../layout/page'
+import Page from '../layout/Page'
 import PageTop from '../components/PageTop'
 import ReactMarkdown from 'react-markdown'
 
