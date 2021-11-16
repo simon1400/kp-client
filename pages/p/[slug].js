@@ -4,13 +4,13 @@ import Page from '../../layout/Page'
 import Card from '../../components/Card'
 import BigBanner from '../../components/BigBanner'
 import Head from 'next/head'
-import ReactMarkdown from 'react-markdown'
 import { useQuery } from "@apollo/client";
 import productQuery from '../../queries/product'
 import Image from 'next/image'
 import { DataStateContext } from '../../context/dataStateContext'
 import {dropdown, offcanvas} from 'uikit'
 import getMinPrice from '../../function/getMinPrice'
+import Content from '../../components/Content'
 const APP_API = process.env.APP_API
 
 var startSelectValue = {
@@ -160,7 +160,7 @@ const Product = () => {
                   <li>Kód výrobku: {product.code}</li>
                 </ul>
                 <div className="description">
-                  <ReactMarkdown>{product.content}</ReactMarkdown>
+                  {product.content && <Content data={product.content} />}
                 </div>
               </div>
             </div>

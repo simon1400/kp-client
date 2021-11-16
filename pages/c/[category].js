@@ -7,10 +7,10 @@ import categoryQuery from '../../queries/category'
 import productsQuery from '../../queries/products'
 import { useQuery, useLazyQuery } from "@apollo/client";
 import {useRouter} from 'next/router'
-import ReactMarkdown from 'react-markdown'
 import filteredLabelQuery from '../../queries/filter'
 import { DataStateContext } from '../../context/dataStateContext'
 import changeUrl from '../../function/changeUrl'
+import Content from '../../components/Content'
 
 const Category = () => {
 
@@ -266,7 +266,7 @@ const Category = () => {
             <span style={{paddingLeft: '7vw'}}>{subTitle[8]} {subTitle[9]} {subTitle[10]} {subTitle[11]}</span>
           </h2>}
           <div>
-            <ReactMarkdown>{category?.content}</ReactMarkdown>
+            {category.content && <Content data={category.content} />}
           </div>
         </div>
       </section>

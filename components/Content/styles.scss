@@ -1,0 +1,123 @@
+.editor-content{
+  h2, h3, h4{
+    font-family: $ff-light;
+    font-weight: 300;
+    color: black;
+    -webkit-text-stroke: 0.5px #000;
+  }
+  h2{
+    font-size: 50px;
+    line-height: 61px;
+  }
+  h3{
+    font-size: 40px;
+    line-height: 49px;
+  }
+  h4{
+    font-size: 30px;
+    line-height: 37px;
+  }
+  p{
+    font-size: 20px;
+    line-height: 37px;
+    color: $text-color;
+    font-weight: 300;
+    font-family: $ff-light;
+    strong, b{
+      font-weight: 600;
+    }
+    a{
+      color: $accent;
+      &:hover{
+        color: $accent;
+      }
+    }
+    i, em{
+      font-style: normal;
+      color: $text-color;
+    }
+  }
+  ol, ul{
+    padding-left: 0;
+    li{
+      list-style: none;
+      padding-left: 22px;
+      font-size: 20px;
+      line-height: 37px;
+      position: relative;
+      &:before{
+        display: block; 
+        position: absolute;
+        left: 0;
+      }
+    }
+  }
+  ol{
+    li{
+      counter-increment: li;
+      &:before{
+        content: counter(li); 
+        color: $accent;
+        font-size: 20px;
+      }
+    }
+  }
+  ul{
+    li{
+      &:before{
+        content: '';
+        width: 12px;
+        height: 1.5px;
+        background-color: $accent;
+        top: 19px;
+      }
+    }
+  }
+  .table{
+    table{
+      width: 100%;
+      border-collapse: collapse;
+      thead, tfoot{
+        tr{
+          td{
+            font-weight: bold;
+          }
+        }
+      }
+      tr{
+        td{
+          border-bottom: 1px solid $accent;
+          font-size: 20px;
+          line-height: 37px;
+          padding-top: 7px;
+          padding-bottom: 7px;
+          text-align: center;
+          &:first-child{
+            text-align: left;
+          }
+          &:last-child{
+            text-align: right;
+          }
+        }
+      }
+    }
+  }
+  blockquote{
+    font-size: 20px;
+    font-style: normal;
+    color: $text-color;
+    line-height: 37px;
+    position: relative;
+    padding-left: 20px;
+    &:before{
+      content: '';
+      display: block;
+      height: 100%;
+      width: 1px;
+      background-color: $accent;
+      top: 0;
+      left: 0;
+      position: absolute;
+    }
+  }
+}

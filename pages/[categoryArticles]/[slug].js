@@ -2,10 +2,9 @@ import Page from '../../layout/Page'
 import PageTop from '../../components/PageTop'
 import { useQuery } from "@apollo/client";
 import blogItemQuery from '../../queries/blogItem'
-import ReactMarkdown from 'react-markdown'
 import Image from '../../components/Image'
 import {useRouter} from 'next/router'
-import Error from 'next/error'
+import Content from '../../components/Content';
 
 const BlogFull = () => {
 
@@ -47,7 +46,8 @@ const BlogFull = () => {
       <section className="sec-big">
         <div className="uk-container uk-container-small">
           <div>
-            <ReactMarkdown>{blog.content}</ReactMarkdown>
+            {blog.iframe && <div dangerouslySetInnerHTML={{__html: blog.iframe}} />}
+            <Content data={blog.content}/>
             {blog.image && <Image image={blog.image} />}
           </div>
           <h2 className="big-head uk-text-center uk-margin-large-top uk-margin-large-bottom">
@@ -55,7 +55,7 @@ const BlogFull = () => {
             <span style={{paddingLeft: '6vw'}}>{subTitle[4]} {subTitle[5]} {subTitle[6]} {subTitle[7]}</span>
           </h2>
           <div>
-            <ReactMarkdown>{blog.add_content}</ReactMarkdown>
+            <Content data={blog.add_content}/>
           </div>
           {blog.cta && <div className="button-more-wrap">
             <a href={blog.cta.link} className="button">{blog.cta.text}</a>

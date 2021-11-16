@@ -2,9 +2,8 @@ import Page from '../../layout/Page'
 import PageTop from '../../components/PageTop'
 import { useQuery } from "@apollo/client";
 import articlesCategory from '../../queries/articlesCategory'
-import ReactMarkdown from 'react-markdown'
 import Image from 'next/image'
-import Error from 'next/error'
+import Content from '../../components/Content'
 
 import { useRouter } from 'next/router';
 
@@ -62,7 +61,7 @@ const Blog = () => {
               <div className="blog-item-info">
                 <h2>{item.title}</h2>
                 <div>
-                  <ReactMarkdown>{item.content}</ReactMarkdown>
+                  <Content data={item.content}/>
                 </div>
                 <a className="bare-button" href={`/blog/${item.slug}`}>celý článek <img className="uk-svg" src="/assets/angle-right.svg" uk-svg="" /></a>
               </div>
