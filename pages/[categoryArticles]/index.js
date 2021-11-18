@@ -22,7 +22,7 @@ const Blog = () => {
     return ''
   }
 
-  if(!data.categoryArticles.length){
+  if(!data?.categoryArticles?.length){
     router.push('/404')
     return ''
   }
@@ -31,8 +31,8 @@ const Blog = () => {
 
   return (
     <Page 
-      title={category?.meta.title}
-      description={category?.meta.description}
+      title={category?.meta?.title}
+      description={category?.meta?.description}
       bigHeader 
       globalData={data.global} 
       nav={data.navigation}>
