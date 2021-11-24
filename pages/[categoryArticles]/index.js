@@ -39,31 +39,31 @@ const Blog = () => {
       <PageTop
         small
         head={<h1 className="big-head">
-                <span>{category.title}</span>
+                {category.title && <span>{category.title}</span>}
               </h1>}
       />
 
       <section className="sec-big">
         <div className="uk-container uk-container-large">
-          {category.articles.length && category.articles.map((item, index) => <div key={index} className="uk-grid blog-item uk-child-width-1-1 uk-child-width-1-2@s" uk-grid="" uk-height-match="target: > div > div">
+          {category.articles?.length && category.articles.map((item, index) => <div key={index} className="uk-grid blog-item uk-child-width-1-1 uk-child-width-1-2@s" uk-grid="" uk-height-match="target: > div > div">
             <div>
               <div className="blog-item-img uk-position-relative">
-                <Image 
+                {item.image?.url && <Image 
                   src={APP_API+item.image.url} 
                   width="100%" 
                   height="100%" 
                   layout="responsive" 
                   objectFit="contain" 
-                  objectPosition="left top" />
+                  objectPosition="left top" />}
               </div>
             </div>
             <div>
               <div className="blog-item-info">
-                <h2>{item.title}</h2>
-                <div>
+                {item.title && <h2>{item.title}</h2>}
+                {item.content && <div>
                   <Content data={item.content}/>
-                </div>
-                <a className="bare-button" href={`/blog/${item.slug}`}>celý článek <img className="uk-svg" src="/assets/angle-right.svg" uk-svg="" /></a>
+                </div>}
+                {item.slug && <a className="bare-button" href={`/blog/${item.slug}`}>celý článek <img className="uk-svg" src="/assets/angle-right.svg" uk-svg="" /></a>}
               </div>
             </div>
           </div>)}

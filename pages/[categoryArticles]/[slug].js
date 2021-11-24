@@ -54,11 +54,11 @@ const BlogFull = () => {
             <span style={{paddingLeft: '0px'}}>{subTitle[0]} {subTitle[1]} {subTitle[2]} {subTitle[3]}</span>
             <span style={{paddingLeft: '6vw'}}>{subTitle[4]} {subTitle[5]} {subTitle[6]} {subTitle[7]}</span>
           </h2>
-          <div>
+          {blog.add_content && <div>
             <Content data={blog.add_content}/>
-          </div>
+          </div>}
           {blog.cta && <div className="button-more-wrap">
-            <a href={blog.cta.link} className="button">{blog.cta.text}</a>
+            {blog.cta.link && blog.cta.text && <a href={blog.cta.link} className="button">{blog.cta.text}</a>}
           </div>}
         </div>
       </section>

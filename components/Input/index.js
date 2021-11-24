@@ -8,7 +8,7 @@ const Input = ({
   name,
   value,
   handle,
-  onBlur
+  onBlur = () => {}
 }) => {
   return (
     <div>

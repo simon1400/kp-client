@@ -15,8 +15,8 @@ const InfoForm = ({
 }) => {
 
   const changeState = (name, value) => {
-    setError({...error, [e.target.name]: false})
-    setState({...state, [e.target.name]: e.target.value})
+    setError({...error, [name]: false})
+    setState({...state, [name]: value})
   }
 
   const handleSelect = (name, value) => {

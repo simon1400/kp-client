@@ -8,8 +8,8 @@ import {alert} from 'uikit'
 
 const SingUp = ({handleType}) => {
 
-  const [email, setEmail] = useState('pechunka11@gmail.com')
-  const [password, setPassword] = useState('d04101996d')
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
   const [error, setError] = useState({
     email: false,
     password: false,

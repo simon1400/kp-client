@@ -5,8 +5,8 @@ import { useLazyQuery, useMutation } from '@apollo/client'
 
 const Login = ({handleType}) => {
 
-  const [email, setEmail] = useState('pechunka11@gmail.com')
-  const [password, setPassword] = useState('d04101')
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
   const { dataContextState, dataContextDispatch } = useContext(DataStateContext)
   const [callMutation, {loading, data, error}] = useMutation(loginQuery);
   const [exist, setExist] = useState(false)

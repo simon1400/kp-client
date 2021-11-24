@@ -84,7 +84,7 @@ const Basket = () => {
             </div>
             <div className="uk-width-1-1 uk-width-1-3@s">
               <div className="basket-rightbar">
-                <h1 className="uk-margin-large-top">Souhrn objednávky</h1>
+                <h2 className="uk-margin-large-top">Souhrn objednávky</h2>
                 <div >
                   <table className="canvas-table uk-table uk-margin-remove-vertical">
                     <tbody>

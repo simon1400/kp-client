@@ -63,7 +63,8 @@ const Product = () => {
         image: product.images[0],
         imageUrl: product.images[0].url,
         brand: product.brand.title,
-        slug: product.slug
+        slug: product.slug,
+        __typename: "product"
       }
       if(!!product.Variants?.length){
         newLocalBasket.variantProduct = selectValue.name
@@ -118,7 +119,7 @@ const Product = () => {
           <div className="uk-grid uk-child-width-1-1 uk-child-width-1-2@s">
             <div>
               <div className="product-slider">
-                <a className="bare-button button-reverse uk-visible@s" href={`/${product.category[0].slug}`}>
+                <a className="bare-button button-reverse uk-visible@s" href={`/c/${product.category[0].slug}`}>
                   <img className="uk-svg" src="/assets/angle-left.svg" uk-svg="" />{product.category[0].title}
                 </a>
                 <div className="uk-slideshow" uk-slideshow="ratio: 1:1">
@@ -159,9 +160,9 @@ const Product = () => {
                   <li>Značka: <a href={`/${product.brand.slug}`}>{product.brand.title}</a></li>
                   <li>Kód výrobku: {product.code}</li>
                 </ul>
-                <div className="description">
+                {/* <div className="description"> */}
                   {product.content && <Content data={product.content} />}
-                </div>
+                {/* </div> */}
               </div>
             </div>
           </div>

@@ -53,7 +53,7 @@ const Checkout = ({
         <div className="uk-container uk-container-large">
           <div className="uk-grid" uk-grid="">
             <div className="uk-width-1-1 uk-width-2-3@s">
-              <h1 className="uk-h3 uk-margin-large-top">Objednávka</h1>
+              <h1 className="uk-margin-large-top">Objednávka</h1>
 
               {error.exist && <div className="uk-alert-danger" uk-alert="">
                 <p>Uzivatel s timto emailem uz existuje</p>
@@ -120,7 +120,7 @@ const Checkout = ({
 
             <div className="uk-width-1-1 uk-width-1-3@s">
               <div className="basket-rightbar">
-                <h2 className="uk-h3 uk-margin-large-top">Souhrn objednávky</h2>
+                <h2 className="uk-margin-large-top">Souhrn objednávky</h2>
                 <div>
                   <a href="/" className={`open-products-list ${!!heightProductsList && 'open'}`} aria-expanded={ heightProductsList !== 0 } aria-controls='example-panel' onClick={e => toggleProductsList(e)} >
                     {heightProductsList === 0 ? 'Zobrazit podrobnosti položek' : 'Skrýt podrobnosti položek'}

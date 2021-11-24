@@ -5,6 +5,7 @@ import errorMessages from '../../data/errorMessages'
 import { useQuery, useMutation } from "@apollo/client";
 import userQuery from '../../queries/user'
 import {updateUserQuery} from '../../queries/auth'
+import {notification} from 'uikit'
 
 const Page = loadable(() => import('../../layout/Page'))
 const InfoForm = loadable(() => import('../../components/InfoForm'))
@@ -85,7 +86,17 @@ const User = () => {
         },
         data: dataSend
       }
-    }})
+    }}).then(() => notification({
+        message: 'my-message!',
+        status: 'danger',
+        pos: 'top-center',
+        timeout: 10000
+      })).catch(err => notification({
+        message: 'my-message!',
+        status: 'danger',
+        pos: 'top-center',
+        timeout: 10000
+      }))
   }
 
   const logout = (e) => {

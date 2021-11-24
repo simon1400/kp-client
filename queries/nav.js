@@ -1,5 +1,3 @@
-import { gql } from "@apollo/client";
-
 const navObj = `{
   name
   link
@@ -17,6 +15,9 @@ const navObj = `{
   blog {
     title
     slug
+    category {
+      slug
+    }
   }
   sub_nav_item{
     name
@@ -35,6 +36,9 @@ const navObj = `{
     blog {
       title
       slug
+      category{
+        slug
+      }
     }
   }
 }`

@@ -33,7 +33,7 @@ body{
   font-weight: $font-medium;
   -webkit-font-smoothing: antialiased;
   font-size: 16px;
-  -webkit-tap-highlight-color: $accent;
+  -webkit-tap-highlight-color: transparent;
   ::-moz-selection { background: black; }
   ::selection { background: black; }
   hr{
@@ -74,6 +74,9 @@ body{
     font-weight: $font-bold;
     color: $text_color;
   }
+  .uk-input, .uk-select{
+    border: 1.5px solid rgba($accent, .3);
+  }
   .uk-input,
   .uk-select,
   .uk-textarea,
@@ -81,7 +84,6 @@ body{
     border-radius: 2px;
     font-size: 18px;
   }
-
   .uk-checkbox{
     border: 2px solid $accent;
     border-radius: 2px;
@@ -108,7 +110,6 @@ body{
       left: 2px;
     }
   }
-
   .uk-form-label{
     font-family: $ff-light;
     -webkit-text-stroke: 0;
@@ -188,6 +189,7 @@ a.button, .button{
   border: none;
   transition: all .5s ease;
   cursor: pointer;
+  white-space: nowrap;
   &:hover{
     text-decoration: none;
     color: white;
@@ -264,3 +266,12 @@ $table-cell-padding-vertical: 18px;
 $table-cell-padding-horizontal: 0;
 
 $form-label-font-size: 18px;
+
+
+$notification-width: 575px;
+$notification-message-background: black;
+$notification-message-color: white;
+$notification-message-primary-color: white;
+// $notification-message-success-color: $global-success-background !default;
+$notification-message-warning-color: $accent;
+// $notification-message-danger-color: $global-danger-background !default;

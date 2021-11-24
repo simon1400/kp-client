@@ -22,14 +22,15 @@ const CanvasItem = ({basketItem = false, data, index}) => {
   }
 
   const getSlug = (data) => {
-    if(data.__typename === 'Produkty') {
-      return `/product/${data.slug}`
+    console.log(data);
+    if(data.__typename === 'product') {
+      return `/p/${data.slug}`
     }else if(data.__typename === 'Brand' || data.__typename === 'Category'){
-      return `/${data.slug}`
+      return `/c/${data.slug}`
     }else if(data.__typename === 'Blog'){
-      return `/blog/${data.slug}`
+      return `/${data.category[0].slug}/${data.slug}`
     }
-    return ''
+    return '/'
   }
 
   return (

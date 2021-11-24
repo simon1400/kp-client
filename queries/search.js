@@ -38,6 +38,9 @@ const searchQuery = gql`
     }) {
       title
       slug
+      category{
+        slug
+      }
       image {
         url
       }
