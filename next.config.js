@@ -16,7 +16,7 @@ module.exports = (phase) => {
 
   const env = {
     APP_API: (() => {
-      if (isDev) return 'http://localhost:1339'
+      if (isDev) return 'https://strapi-kp.investmag.cz'
       if (isProd) return 'https://strapi-kp.investmag.cz'
       return 'RESTURL_SPEAKERS:not (isDev,isProd && !isStaging,isProd && isStaging)'
     })(),

@@ -10,8 +10,8 @@ const combineMenu = (item) => {
     obj.slug = `/c/${item.category.slug}`
   }else if(item.brand){
     obj.slug = `/c/${item.brand.slug}`
-  }else if(item.blog){
-    obj.slug = `/${item.blog?.category?.[0].slug || item.blog?.category?.slug}/${item.blog.slug}`
+  }else if(item.blog && (item.blog.category?.slug || item.blog.category[0])){
+    obj.slug = `/${item.blog.category[0].slug || item.blog.category.slug}/${item.blog.slug}`
   }
 
   return obj
@@ -19,7 +19,6 @@ const combineMenu = (item) => {
 
 const getMenu = (nav) => {
   let arr = [], navObj = {};
-  console.log(nav);
   nav.map(item => {
     navObj = {...combineMenu(item)}
     if(item.sub_nav_item.length) {
