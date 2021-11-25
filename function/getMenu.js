@@ -11,7 +11,7 @@ const combineMenu = (item) => {
   }else if(item.brand){
     obj.slug = `/c/${item.brand.slug}`
   }else if(item.blog){
-    obj.slug = `/${item.blog.category[0].slug}/${item.blog.slug}`
+    obj.slug = `/${item.blog?.category?.[0].slug || item.blog?.category?.slug}/${item.blog.slug}`
   }
 
   return obj
