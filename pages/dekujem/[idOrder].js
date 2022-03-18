@@ -61,19 +61,17 @@ const ThankYou = () => {
   }, [order])
 
   useEffect(() => {
-    if(status.length) {
-      if(!order.order.sendMail){
-        axios.post("/api/mail/order", order.order).then(res => {
-          updateOrder({variables: {
-            input: {
-              where: {id: atob(router.query.idOrder)},
-              data: {
-                sendMail: true
-              }
+    if(status.length && !order.order.sendMail) {
+      axios.post("/api/mail/order", order.order).then(res => {
+        updateOrder({variables: {
+          input: {
+            where: {id: atob(router.query.idOrder)},
+            data: {
+              sendMail: true
             }
-          }})
-        }).catch(err => console.log(err))
-      }
+          }
+        }})
+      }).catch(err => console.log(err))
     }
   }, [status])
 

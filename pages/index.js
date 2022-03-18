@@ -9,6 +9,7 @@ import PageTop from '../components/PageTop'
 import BigBanner from '../components/BigBanner'
 // import Image from '../components/Image'
 import Image from 'next/image'
+import { AxiosCLIENT } from '../restClient';
 const APP_API = process.env.APP_API
 
 const Homepage = () => {
@@ -17,6 +18,10 @@ const Homepage = () => {
 
   const [h1, setH1] = useState([])
   const [h2, setH2] = useState([])
+
+  useEffect(() => {
+    AxiosCLIENT.post('/money', {someBody: 'data'}).then(res => console.log(res.data))
+  }, [])
 
   useEffect(() => {
     if(!loading) {
