@@ -4,53 +4,51 @@ export default (data) => {
       <SeznamFirem>
         <Firma>
           <GUID>{13FE548C-1A7C-4896-B648-1AF094AA8492}</GUID>
-          <Nazev>Josef Drahokoupil</Nazev>
+          <Nazev>${data.firmInfo[0].nameCompany}</Nazev>
           <Adresa>
-            <Ulice>Osobn� 44</Ulice>
-            <Misto>Brno</Misto>
-            <PSC>62800</PSC>
-            <Stat>�esk� republika</Stat>
+            <Ulice>${data.address}</Ulice>
+            <Misto>${data.city}</Misto>
+            <PSC>${data.zip}</PSC>
+            <Stat>${data.state}</Stat>
             <KodStatu>CZ</KodStatu>
           </Adresa>
-          <ObchNazev>ABC, s.r.o.</ObchNazev>
+          <ObchNazev>${data.firmInfo[0].nameCompany}</ObchNazev>
           <ObchAdresa>
-            <Ulice>Firemn� 36</Ulice>
-            <Misto>Brno</Misto>
-            <PSC>60200</PSC>
-            <Stat>�esk� republika</Stat>
+            <Ulice>${data.address}</Ulice>
+            <Misto>${data.city}</Misto>
+            <PSC>${data.zip}</PSC>
+            <Stat>${data.state}</Stat>
             <KodStatu>CZ</KodStatu>
           </ObchAdresa>
-          <FaktNazev>ABC, s.r.o.</FaktNazev>
+          <FaktNazev>${data.firmInfo[0].nameCompany}</FaktNazev>
           <FaktAdresa>
-            <Ulice>Firemn� 36</Ulice>
-            <Misto>Brno</Misto>
-            <PSC>60200</PSC>
-            <Stat>�esk� republika</Stat>
+            <Ulice>${data.address}</Ulice>
+            <Misto>${data.city}</Misto>
+            <PSC>${data.zip}</PSC>
+            <Stat>${data.state}</Stat>
             <KodStatu>CZ</KodStatu>
           </FaktAdresa>
           <Mobil>
             <Pred>+420</Pred>
-            <Cislo>602333444</Cislo>
+            <Cislo>${data.phone}</Cislo>
           </Mobil>
-          <EMail>josef.drahokoupil@e-mail.cz</EMail>
-          <ICO>789456123</ICO>
-          <DIC>CZ789456123</DIC>
+          <EMail>${data.email}</EMail>
+          <ICO>${data.firmInfo[0].ico}</ICO>
+          <DIC>${data.firmInfo[0].dic}</DIC>
           <eshop>
             <IN_Export>6</IN_Export>
           </eshop>
           <Osoba>
-            <Jmeno>Drahokoupil</Jmeno>
-            <Prijmeni>Josef</Prijmeni>
+            <Jmeno>${data.name}</Jmeno>
+            <Prijmeni>${data.surname}</Prijmeni>
             <Jednatel>1</Jednatel>
           </Osoba>
         </Firma>
       </SeznamFirem>
       <SeznamObjPrij>
         <ObjPrij>
-          <Popis>Objedn�vka z e-shopu (100200143)</Popis>
-          <Poznamka>P��klad objedn�vky s vazbou na d��ve naimportovanou adresu.
-          Adresa odb�ratele (DodOdb) obsahuje pouze vazebn� GUID. 
-          Kone�n� p��jemce se pou�ije z adresy odb�ratele (KPFromOdb = 1).</Poznamka>
+          <Popis>Objedn�vka z e-shopu (${data.id})</Popis>
+          <Poznamka>${data.description}</Poznamka>
           <!-- 
           <Vystaveno>2010-06-01</Vystaveno>
           <Vyridit_do>2010-06-10/Vyridit_do> 
@@ -59,59 +57,58 @@ export default (data) => {
             <GUID>{13FE548C-1A7C-4896-B648-1AF094AA8492}</GUID>
           </DodOdb>
           <KPFromOdb>1</KPFromOdb>
-          <PlatPodm>dob�rkou</PlatPodm>
-          <Doprava>PPL</Doprava>
-          <PrimDoklad>100200143</PrimDoklad>
+          <PlatPodm>${data.payment.name}</PlatPodm>
+          <Doprava>${data.delivery.name}</Doprava>
+          <PrimDoklad>${data.id}</PrimDoklad>
           <Sleva>0</Sleva>
           <eshop>
             <IN_Export>6</IN_Export>
-            <IN_Poznamk>Po�lete pouze kompletn� objedn�vku.</IN_Poznamk>
+            <IN_Poznamk>${data.description}</IN_Poznamk>
           </eshop>
-          <Polozka>
-            <PocetMJ>1</PocetMJ>
-            <Cena>11990</Cena>
-            <SazbaDPH>21</SazbaDPH>
-            <TypCeny>1</TypCeny>
-            <Sleva>0</Sleva>
-            <!--
-            <Vystaveno>2010-06-01</Vystaveno>
-            <Vyridit_do>2010-06-10</Vyridit_do>
-            -->
-            <CenovaHlad>Z�kladn�</CenovaHlad>
-            <CenaPoSleve>1</CenaPoSleve>
-            <KmKarta>
-              <GUID>{82F6B7F5-0D31-4E39-B7C6-B31E26E6B7AD}</GUID>
-            </KmKarta>
-            <Sklad>
-              <GUID>{504C55C5-461E-46C4-A42B-5242FDE76A03}</GUID>
-            </Sklad>
-            <Poznamka>vel. 29</Poznamka>
-          </Polozka>
-          <Polozka>
-            <PocetMJ>1</PocetMJ>
-            <Cena>3220</Cena>
-            <SazbaDPH>21</SazbaDPH>
-            <TypCeny>1</TypCeny>
-            <Sleva>0</Sleva>
-            <!--
-            <Vystaveno>2010-06-01</Vystaveno>
-            <Vyridit_do>2010-06-10</Vyridit_do>
-            -->
-            <CenovaHlad>ZAK_KARTA</CenovaHlad>
-            <CenaPoSleve>1</CenaPoSleve>
-            <KmKarta>
-              <GUID>{482B84BB-7043-459C-A947-6E4F96B0C817}</GUID>
-            </KmKarta>
-            <Sklad>
-              <GUID>{504C55C5-461E-46C4-A42B-5242FDE76A03}</GUID>
-            </Sklad>
-            <Poznamka>vel. 60</Poznamka>
-          </Polozka>
+          ${data.basketItem.map(item => `
+            <Polozka>
+              <PocetMJ>${item.count}</PocetMJ>
+              <Cena>${item.price}</Cena>
+              <SazbaDPH>21</SazbaDPH>
+              <TypCeny>1</TypCeny>
+              <Sleva>0</Sleva>
+              <!--
+              <Vystaveno>2010-06-01</Vystaveno>
+              <Vyridit_do>2010-06-10</Vyridit_do>
+              -->
+              <CenovaHlad>Z�kladn�</CenovaHlad>
+              <CenaPoSleve>1</CenaPoSleve>
+              <KmKarta>
+                <GUID>{82F6B7F5-0D31-4E39-B7C6-B31E26E6B7AD}</GUID>
+              </KmKarta>
+              <Sklad>
+                <GUID>{504C55C5-461E-46C4-A42B-5242FDE76A03}</GUID>
+              </Sklad>
+            </Polozka>
+          `)}
+          
           <Polozka>
             <Popis>Doprava</Popis>
             <PocetMJ>1</PocetMJ>
             <ZbyvaMJ>1</ZbyvaMJ>
-            <Cena>120</Cena>
+            <Cena>${data.delivery.value}</Cena>
+            <SazbaDPH>21</SazbaDPH>
+            <TypCeny>1</TypCeny>
+            <Sleva>0</Sleva>
+            <!--
+            <Vystaveno>2010-06-01</Vystaveno>
+            <Vyridit_do>2010-06-10</Vyridit_do>
+            -->
+            <CenaPoSleve>1</CenaPoSleve>
+            - <NesklPolozka>
+              <TypZarDoby>N</TypZarDoby>
+            </NesklPolozka>
+          </Polozka>
+          <Polozka>
+            <Popis>Platba</Popis>
+            <PocetMJ>1</PocetMJ>
+            <ZbyvaMJ>1</ZbyvaMJ>
+            <Cena>${data.payment.value}</Cena>
             <SazbaDPH>21</SazbaDPH>
             <TypCeny>1</TypCeny>
             <Sleva>0</Sleva>

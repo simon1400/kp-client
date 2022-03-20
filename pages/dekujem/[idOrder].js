@@ -10,6 +10,7 @@ import axios from 'axios'
 // import Head from 'next/head'
 
 import Page from "../../layout/Page"
+import { AxiosCLIENT } from '../../restClient'
 
 const ThankYou = () => {
 
@@ -61,17 +62,20 @@ const ThankYou = () => {
   }, [order])
 
   useEffect(() => {
-    if(status.length && !order.order.sendMail) {
-      axios.post("/api/mail/order", order.order).then(res => {
-        updateOrder({variables: {
-          input: {
-            where: {id: atob(router.query.idOrder)},
-            data: {
-              sendMail: true
+    if(status.length){
+      if(!order.order.sendMail){
+        axios.post("/api/mail/order", order.order).then(res => {
+          updateOrder({variables: {
+            input: {
+              where: {id: atob(router.query.idOrder)},
+              data: {
+                sendMail: true
+              }
             }
-          }
-        }})
-      }).catch(err => console.log(err))
+          }})
+        }).catch(err => console.log(err))
+      }
+      axios.post('/api/money/order', order).then(res => console.log(res.data))
     }
   }, [status])
 

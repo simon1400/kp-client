@@ -70,6 +70,7 @@ export const CreateOrder = gql`
 export const GetOrder = gql`
   query GetOrder($id: ID!) {
     order(id: $id) {
+      id
       email
       phone
       name
