@@ -1,6 +1,7 @@
 export default (data) => {
   return `<?xml version="1.0" encoding="windows-1250"?>
     <MoneyData>
+      <UpdateHd>1</UpdateHd>
       <SeznamFirem>
         <Firma>
           <GUID>{13FE548C-1A7C-4896-B648-1AF094AA8492}</GUID>
@@ -65,28 +66,27 @@ export default (data) => {
             <IN_Export>6</IN_Export>
             <IN_Poznamk>${data.description}</IN_Poznamk>
           </eshop>
-          ${data.basketItem.map(item => `
-            <Polozka>
-              <PocetMJ>${item.count}</PocetMJ>
-              <Cena>${item.price}</Cena>
-              <SazbaDPH>21</SazbaDPH>
-              <TypCeny>1</TypCeny>
-              <Sleva>0</Sleva>
-              <!--
-              <Vystaveno>2010-06-01</Vystaveno>
-              <Vyridit_do>2010-06-10</Vyridit_do>
-              -->
-              <CenovaHlad>Z�kladn�</CenovaHlad>
-              <CenaPoSleve>1</CenaPoSleve>
-              <KmKarta>
-                <GUID>{82F6B7F5-0D31-4E39-B7C6-B31E26E6B7AD}</GUID>
-              </KmKarta>
-              <Sklad>
-                <GUID>{504C55C5-461E-46C4-A42B-5242FDE76A03}</GUID>
-              </Sklad>
-            </Polozka>
-          `)}
-          
+        ${data.basketItem.map(item => `
+          <Polozka>
+            <PocetMJ>${item.count}</PocetMJ>
+            <Cena>${item.price}</Cena>
+            <SazbaDPH>21</SazbaDPH>
+            <TypCeny>1</TypCeny>
+            <Sleva>0</Sleva>
+            <!--
+            <Vystaveno>2010-06-01</Vystaveno>
+            <Vyridit_do>2010-06-10</Vyridit_do>
+            -->
+            <CenovaHlad>Z�kladn�</CenovaHlad>
+            <CenaPoSleve>1</CenaPoSleve>
+            <KmKarta>
+              <GUID>${item.guid}</GUID>
+            </KmKarta>
+            <Sklad>
+              <GUID>{504C55C5-461E-46C4-A42B-5242FDE76A03}</GUID>
+            </Sklad>
+          </Polozka>
+        `)}
           <Polozka>
             <Popis>Doprava</Popis>
             <PocetMJ>1</PocetMJ>

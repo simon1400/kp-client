@@ -11,6 +11,7 @@ const productQuery = gql`
       code
       slug
       content
+      guid
       images {
         url
         formats

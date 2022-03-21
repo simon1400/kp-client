@@ -46,6 +46,7 @@ export const CreateOrder = gql`
           count
           idProduct
           title
+          guid
         }
         anotherAddress {
           email
@@ -102,6 +103,7 @@ export const GetOrder = gql`
         count
         idProduct
         title
+        guid
       }
       anotherAddress {
         email
