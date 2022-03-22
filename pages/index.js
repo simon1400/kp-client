@@ -21,7 +21,9 @@ const Homepage = () => {
   const [h2, setH2] = useState([])
 
   useEffect(() => {
-    axios.post('/api/money/export').then(res => console.log(res.data))
+    axios.post('/api/money/export').then(res => {
+      console.log(res.data)
+    })
   }, [])
 
   useEffect(() => {
