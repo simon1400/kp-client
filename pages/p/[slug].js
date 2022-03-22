@@ -31,7 +31,7 @@ const Product = () => {
     variables: {slug: router.query.slug}
   });
 
-  const buy = (e) => {
+  const buy = (e, product) => {
     e.preventDefault()
     if(!selectValue.id.length && !!product.Variants?.length) {
       setErrorBuy(true)
@@ -64,6 +64,7 @@ const Product = () => {
         imageUrl: product.images[0].url,
         brand: product.brand.title,
         slug: product.slug,
+        guid: product.guid,
         __typename: "product"
       }
       if(!!product.Variants?.length){
@@ -146,7 +147,7 @@ const Product = () => {
                   {getPrice()} Kč
                 </span>
                 <label className="available">Skladem</label>
-                {!product.Variants.length && <a href="/" className="button" onClick={e => buy(e)}>přidat do košíku</a>}
+                {!product.Variants.length && <a href="/" className="button" onClick={e => buy(e, product)}>přidat do košíku</a>}
                 {!!product.Variants.length && <div className="variant-button-wrap">
                   <div className="select-variant">
                     <button className={`button border-button ${errorBuy && 'uk-form-danger'}`} type="button">{selectValue.name} <img className="uk-svg" src="/assets/angle-down.svg" uk-svg="" /></button>
@@ -154,7 +155,7 @@ const Product = () => {
                       {product.Variants.map((item, index) => <li key={index}><a href="/" onClick={e => selectVariant(e, item, index)}><span>{item.nazev}</span><span>{item.price} Kč</span></a></li>)}
                     </ul>
                   </div>
-                  <a href="/" className="button" onClick={e => buy(e)}>přidat do košíku</a>
+                  <a href="/" className="button" onClick={e => buy(e, product)}>přidat do košíku</a>
                 </div>}
                 <ul>
                   <li>Značka: <a href={`/${product.brand.slug}`}>{product.brand.title}</a></li>

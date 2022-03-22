@@ -174,11 +174,15 @@ const CheckoutWrap = () => {
         slug: item.slug,
         count: item.count,
         idProduct: item.id,
-        title: item.title
+        title: item.title,
+        guid: item.guid
       })),
       anotherAddress,
       firmInfo
     }
+
+    console.log(dataSend)
+    console.log(basketItems)
 
     const dataOrder = await createOrder({variables: { input: { data: dataSend } }})
 

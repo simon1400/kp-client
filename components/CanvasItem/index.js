@@ -18,7 +18,7 @@ const CanvasItem = ({basketItem = false, data, index}) => {
   }
 
   if(!data) {
-     return ''
+    return ''
   }
 
   const getSlug = (data) => {

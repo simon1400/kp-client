@@ -10,6 +10,7 @@ import axios from 'axios'
 // import Head from 'next/head'
 
 import Page from "../../layout/Page"
+import { AxiosCLIENT } from '../../restClient'
 
 const ThankYou = () => {
 
@@ -61,7 +62,7 @@ const ThankYou = () => {
   }, [order])
 
   useEffect(() => {
-    if(status.length) {
+    if(status.length){
       if(!order.order.sendMail){
         axios.post("/api/mail/order", order.order).then(res => {
           updateOrder({variables: {
@@ -74,6 +75,7 @@ const ThankYou = () => {
           }})
         }).catch(err => console.log(err))
       }
+      axios.post('/api/money/order', order).then(res => console.log(res.data))
     }
   }, [status])
 
