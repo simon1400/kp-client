@@ -28,7 +28,7 @@ const BlogFull = () => {
   let title = blog?.title.split(' ')
   let subTitle = blog?.add_title.split(' ')
 
-  
+  title = [title.splice(0, Math.ceil(title.length / 2) - 1).join(' '), title.splice(Math.ceil(title.length / 2) - 1, title.length).join(' ')]
 
   return (
     <Page
@@ -40,7 +40,7 @@ const BlogFull = () => {
       <PageTop
         small
         head={<h1 className="big-head">
-                <span>{title[0]} <b>{title[1]} {title[2]}</b></span>
+                <span>{title[0]} <b>{title[1]}</b></span>
               </h1>}
       />
       <section className="sec-big">

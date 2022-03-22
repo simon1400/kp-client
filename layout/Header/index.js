@@ -2,6 +2,7 @@ import MenuDropdown from '../../components/MenuDropdown'
 import {useState, useEffect, useContext} from 'react'
 import {util, offcanvas} from 'uikit'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 import MobileMenu from '../MobileMenu'
 import getMenu from '../../function/getMenu'
 import { DataStateContext } from '../../context/dataStateContext'
@@ -13,6 +14,8 @@ const Header = ({
   rightNav,
   basket
 }) => {
+
+  const router = useRouter()
 
   const { dataContextState, dataContextDispatch } = useContext(DataStateContext)
   const [activeDropdown, setActiveDropdown] = useState(false)
@@ -71,8 +74,9 @@ const Header = ({
             </ul>
           </div>}
           {basket && <div className="uk-flex uk-flex-bottom">
-            <a className="bare-button button-reverse" href="/">
-              <img className="uk-svg" src="/assets/angle-left.svg" uk-svg="" /><span className="uk-visible@s">zpět k nákupu</span>
+            <a className="bare-button button-reverse" onClick={e => {e.preventDefault(); router.back()}} href="/">
+              <img className="uk-svg" src="/assets/angle-left.svg" uk-svg="" />
+              <span className="uk-visible@s">zpět</span>
             </a>
           </div>}
           <div className="logo">

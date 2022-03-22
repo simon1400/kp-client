@@ -2,6 +2,8 @@ import React, {useState} from 'react'
 import loadable from '@loadable/component'
 import AnimateHeight from 'react-animate-height';
 import errorMessages from '../data/errorMessages'
+import globalQuery from '../queries/global'
+import { useQuery } from '@apollo/client'
 
 const Page = loadable(() => import('../layout/Page'))
 const Sale = loadable(() => import('../components/Sale'))
@@ -45,7 +47,7 @@ const Checkout = ({
     setHeightProductsLits(heightProductsList === 0 ? 'auto' : 0)
   }
 
-
+  const { data: dataGl } = useQuery(globalQuery);
 
   return(
     <Page title="Objednávka" basket>
@@ -176,7 +178,7 @@ const Checkout = ({
                   </table>
                   <hr className="uk-margin-remove-top" />
                   <p>Všechny ceny jsou včetně DPH 21 %</p>
-                  <p>Odesláním objednávky souhlasíte s <a href="/clanek/obchodni-podminky" target="_blank">obchodními podmínkami.</a></p>
+                  <p>Odesláním objednávky souhlasíte s <a href={`/${dataGl?.global.terms.category.slug}/${dataGl?.global.terms.slug}`} target="_blank">obchodními podmínkami.</a></p>
                   {Object.values(error).indexOf(true) >= 0 && <div className="uk-alert-danger uk-width-1-1 uk-margin-remove-bottom uk-text-center" uk-alert="">Chyba, zkontrolujte si prosím vaše údaje.</div>}
                   <button onClick={() => send()} className="button primary uk-width-expand uk-margin-top">Odeslat objednávku</button>
                 </div>

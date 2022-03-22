@@ -22,7 +22,6 @@ const CanvasItem = ({basketItem = false, data, index}) => {
   }
 
   const getSlug = (data) => {
-    console.log(data);
     if(data.__typename === 'product') {
       return `/p/${data.slug}`
     }else if(data.__typename === 'Brand' || data.__typename === 'Category'){

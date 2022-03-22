@@ -1,7 +1,8 @@
 import { useState, useContext } from 'react';
 import Head from 'next/head'
 import { useRouter } from 'next/router'
-
+import globalQuery from '../../queries/global'
+import { useQuery } from "@apollo/client";
 import Header from '../Header'
 import Footer from '../Footer'
 import Canvas from '../Canvas'
@@ -28,6 +29,10 @@ const Page = ({
   nav = {},
   basket = false
 }) => {
+
+
+  const { loading, error, data } = useQuery(globalQuery);
+
   const router = useRouter()
   const [global, setGlobal] = useState({
     site_url: process.env.NODE_ENV === 'development' ? 'http://localhost:3005' : 'https://kralovska-pece.cz',
@@ -39,7 +44,11 @@ const Page = ({
     defaultSep: ' '
   })
 
-  const theTitle = title ? (title + global.defaultSep + global.defaultTitle) : global.defaultTitle;
+  if(loading){
+    return ''
+  }
+
+  const theTitle = title ? (title + global.defaultSep + data.global.endTitle) : ('KRALOVSKA PECE' + global.defaultSep + data.global.endTitle);
   const theDescription = description ? description : global.defaultDescription;
   const theImage = image ? image : global.defaultImage;
 

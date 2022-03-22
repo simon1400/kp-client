@@ -69,7 +69,7 @@ const Category = () => {
         categoryId: router.query?.Category ? router.query.Category.split(',') : undefined,
         brandId: router.query?.Brand ? router.query.Brand.split(',') : undefined,
         offset: 0,
-        limit: 4
+        limit: 20
       }
 
       let categoryFetch = {}
@@ -125,6 +125,7 @@ const Category = () => {
   }, [dataProducts])
 
   const handleFilter = (state) => {
+    console.log(state);
     changeUrl(state)
 
     let filterObj = filter
@@ -252,7 +253,7 @@ const Category = () => {
             {!!products?.length && products.map((item, index) => <div key={index}><Card data={item} /></div>)}
           </div>
           {buttonMore && <div className="button-more-wrap">
-            <a href="/" onClick={e => loadMore(e, products.length, products.length + 4)} className="button">načíst další</a>
+            <a href="/" onClick={e => loadMore(e, products.length, products.length + 20)} className="button">načíst další</a>
           </div>}
           <hr />
         </div>

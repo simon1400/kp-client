@@ -1,7 +1,7 @@
 .editor-content{
   text-align: left;
   h2, h3, h4{
-    font-family: $ff-light;
+    font-family: $ff-thin;
     font-weight: 300;
     color: black;
     -webkit-text-stroke: 0.5px #000;
@@ -32,9 +32,14 @@
       &:hover{
         color: $accent;
       }
+      i, em{
+        color: $accent;
+        strong{
+          color: $accent;
+        }
+      }
     }
     i, em{
-      font-style: normal;
       color: $text-color;
     }
   }
@@ -119,6 +124,67 @@
       top: 0;
       left: 0;
       position: absolute;
+    }
+  }
+}
+
+@media(max-width: 640px) {
+  .editor-content{
+    h2{
+      font-size: 28px;
+      line-height: 34px;
+    }
+    h3{
+      font-size: 22px;
+      line-height: 27px;
+    }
+    h4{
+      font-size: 16px;
+      line-height: 20px;
+    }
+    p{
+      font-size: 14px;
+      line-height: 26px;
+    }
+    ol, ul{
+      li{
+        padding-left: 16px;
+        font-size: 14px;
+        line-height: 26px;
+      }
+    }
+    ol{
+      li{
+        &:before{
+          font-size: 13px;
+        }
+      }
+    }
+    ul{
+      li{
+        &:before{
+          width: 9px;
+          height: 1px;
+          top: 19px;
+        }
+      }
+    }
+    .table{
+      table{
+        tr{
+          td{
+            font-size: 14px;
+            line-height: 26px;
+            padding-top: 5px;
+            padding-bottom: 5px;
+          }
+        }
+      }
+    }
+    blockquote{
+      font-size: 14px;
+      line-height: 26px;
+      padding-left: 16px;
     }
   }
 }

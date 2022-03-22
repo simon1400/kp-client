@@ -2,9 +2,11 @@ import {useState, useEffect, useContext} from 'react'
 import useRegister from '../useRegister'
 import { DataStateContext } from '../../../context/dataStateContext'
 import { getUserQuery, controlUser } from '../../../queries/auth'
-import { useLazyQuery } from '@apollo/client'
+import globalQuery from '../../../queries/global'
+import { useLazyQuery, useQuery } from '@apollo/client'
 import axios from 'axios'
 import {alert} from 'uikit'
+
 
 const SingUp = ({handleType}) => {
 
@@ -20,6 +22,7 @@ const SingUp = ({handleType}) => {
 
   const [getUser, {data: user}] = useLazyQuery(getUserQuery)
   const [controlExistUser, {data: existUser}] = useLazyQuery(controlUser)
+  const { data: dataGl } = useQuery(globalQuery);
 
   useEffect(() => {
     if(response) {
@@ -86,7 +89,7 @@ const SingUp = ({handleType}) => {
           <input onChange={e => setPassword(e.target.value)} className="uk-input" id="form-stacked-text" type="password" value={password} />
         </div>
       </div>
-      <p>Prohlašuji, že jsem se seznámil se <a href="/">Zásadami zpracování osobních údajů</a> i s <a href="/">obchodními podmínkami</a>.</p>
+      <p>Prohlašuji, že jsem se seznámil se <a href={`/${dataGl.global.gdpr.category.slug}/${dataGl.global.gdpr.slug}`}>Zásadami zpracování osobních údajů</a> i s <a href={`/${dataGl.global.terms.category.slug}/${dataGl.global.terms.slug}`}>obchodními podmínkami</a>.</p>
       <div className="uk-margin-medium">
         <a href="/" className="button uk-width-1-1" onClick={e => handleOnSubmit(e)}>registrovat</a>
       </div>

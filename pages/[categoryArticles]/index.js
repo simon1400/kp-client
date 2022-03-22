@@ -3,7 +3,7 @@ import PageTop from '../../components/PageTop'
 import { useQuery } from "@apollo/client";
 import articlesCategory from '../../queries/articlesCategory'
 import Image from 'next/image'
-import Content from '../../components/Content'
+// import Content from '../../components/Content'
 
 import { useRouter } from 'next/router';
 
@@ -48,21 +48,19 @@ const Blog = () => {
           {category.articles?.length && category.articles.map((item, index) => <div key={index} className="uk-grid blog-item uk-child-width-1-1 uk-child-width-1-2@s" uk-grid="" uk-height-match="target: > div > div">
             <div>
               <div className="blog-item-img uk-position-relative">
-                {item.image?.url && <Image 
-                  src={APP_API+item.image.url} 
-                  width="100%" 
-                  height="100%" 
+                {item.image?.url && <Image
+                  src={APP_API+item.image.url}
+                  width="100%"
+                  height="65%"
                   layout="responsive" 
-                  objectFit="contain" 
-                  objectPosition="left top" />}
+                  objectFit="cover"
+                  objectPosition="center" />}
               </div>
             </div>
             <div>
               <div className="blog-item-info">
                 {item.title && <h2>{item.title}</h2>}
-                {item.content && <div>
-                  <Content data={item.content}/>
-                </div>}
+                {item.content && <p>{item.content.replace(/<[^>]+>/g, ' ').substr(0, 440)}</p>}
                 {item.slug && <a className="bare-button" href={`/blog/${item.slug}`}>celý článek <img className="uk-svg" src="/assets/angle-right.svg" uk-svg="" /></a>}
               </div>
             </div>
