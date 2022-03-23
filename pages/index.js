@@ -20,11 +20,11 @@ const Homepage = () => {
   const [h1, setH1] = useState([])
   const [h2, setH2] = useState([])
 
-  useEffect(() => {
-    axios.post('/api/money/export').then(res => {
-      console.log(res.data)
-    })
-  }, [])
+  // useEffect(() => {
+  //   axios.post('/api/money/exportOC').then(res => {
+  //     console.log(res.data)
+  //   })
+  // }, [])
 
   useEffect(() => {
     if(!loading) {
