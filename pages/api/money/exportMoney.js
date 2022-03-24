@@ -6,13 +6,13 @@ import slugify from 'slugify'
 export default async function handler (req, res) {
   if(req.method == 'POST') {
 
-    var filename = ''
+    // var filename = ''
 
-    fs.readdirSync('./moneyData/export').forEach(file => {
-      filename = file
-    });
+    // fs.readdirSync('./moneyData/export').forEach(file => {
+    //   filename = file
+    // });
 
-    var xml = await fs.readFileSync('./moneyData/export/' + filename, 'utf8');
+    var xml = await fs.readFileSync('./moneyData/export/Zasoby.xml', 'utf8');
     var result = convert.xml2json(xml, {compact: true, spaces: 4});
 
     result = JSON.parse(result)
@@ -24,7 +24,8 @@ export default async function handler (req, res) {
         data.push({
           title: item['KmKarta']['Popis']._text,
           slug: slugify(item['KmKarta']['Popis']._text, {
-            lower: true
+            lower: true,
+            remove: /[*+~´,.()'"!:@]/g
           }),
           price: item['PC']['Cena1']['Cena']._text,
           stock: item['StavZasoby']['Zasoba']._text,
@@ -36,7 +37,8 @@ export default async function handler (req, res) {
         dataVariants.push({
           title: item['KmKarta']['Popis']._text,
           slug: slugify(item['KmKarta']['Popis']._text, {
-            lower: true
+            lower: true,
+            remove: /[*+~´,.()'"!:@]/g
           }),
           price: item['PC']['Cena1']['Cena']._text,
           stock: item['StavZasoby']['Zasoba']._text,
@@ -54,8 +56,9 @@ export default async function handler (req, res) {
         dataVariantsCombine[item.code.split('-')[0]] = [item]
       }
     })
+    let error = false
 
-    data.splice(0, 4).map(item => {
+    data.map(item => {
       AxiosSTRAPI.get(`/produkties?guid_contains=${item.guid}&_publicationState=preview`).then(res => {
         if(res.data.length){
           AxiosSTRAPI.put('/produkties/'+res.data[0].id, {
@@ -65,18 +68,26 @@ export default async function handler (req, res) {
             .catch(err => console.error(err.response.data))
         }else{
           AxiosSTRAPI.post('/produkties', item)
-            .then(res => console.log('Success --', res.data.title))
-            .catch(err => console.error(err.response.data))
+            .then(res => console.log('Success created --', res.data.title))
+            .catch(err => {
+              console.log(item.title)
+              console.error('Failed created --', err.response.data)
+            })
         }
       }).catch(err => console.error(err.response.data))
     })
 
-    const testObj = {
-      [Object.keys(dataVariantsCombine)[0]]: dataVariantsCombine[Object.keys(dataVariantsCombine)[0]],
-      [Object.keys(dataVariantsCombine)[1]]: dataVariantsCombine[Object.keys(dataVariantsCombine)[1]]
-    }
+    // const testObj = {
+    //   [Object.keys(dataVariantsCombine)[0]]: dataVariantsCombine[Object.keys(dataVariantsCombine)[0]],
+    //   [Object.keys(dataVariantsCombine)[1]]: dataVariantsCombine[Object.keys(dataVariantsCombine)[1]]
+    // }
 
-    for (const [key, value] of Object.entries(testObj)) {
+    
+
+    for (const [key, value] of Object.entries(dataVariantsCombine)) {
+      if(error) {
+        break;
+      }
       AxiosSTRAPI.get(`/produkties?guid_contains=${value[0].guid}&_publicationState=preview`).then(res => {
         if(res.data.length){
           AxiosSTRAPI.put('/produkties/'+res.data[0].id, {
@@ -88,17 +99,18 @@ export default async function handler (req, res) {
               guid: item.guid,
               stock: item.stock,
             })),
-          }).then(res => console.log('Success update --', res.data.title))
+          }).then(res => console.log('Success update variant --', res.data?.title))
             .catch(err => console.error(err.response?.data))
         }else{
           AxiosSTRAPI.post('/produkties', {
             title: value[0].title,
             slug: slugify(value[0].title, {
-              lower: true
+              lower: true,
+              remove: /[*+~´,.()'"!:@]/g
             }),
             price: value[0].price,
             stock: value[0].stock,
-            code: value[0].code,
+            code: key,
             guid: value.map(item => item.guid).join(''),
             Variants: value.map(item => ({
               nazev: item.magnetude,
@@ -107,14 +119,17 @@ export default async function handler (req, res) {
               stock: item.stock,
             })),
             published_at: null
-          }).then(res => console.log('Success --', res.data.title))
-            .catch(err => console.error(err.response.data))
+          }).then(res => console.log('Success created variant --', res.data.title))
+            .catch(err => {
+              error = true
+              console.error('Failed create variant --', err.response?.data?.data?.errors)
+            })
         }
       }).catch(err => console.error(err.response.data))
     }
 
     // res.status(200).json(result['MoneyData']['SeznamZasoba']['Zasoba']);
-    res.status(200).json(dataVariantsCombine);
+    res.status(200).json(data);
 
   }else{
     res.status(200).send(req.method);
