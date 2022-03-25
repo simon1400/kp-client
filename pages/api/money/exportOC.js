@@ -11,37 +11,32 @@ export default async function handler (req, res) {
     let resStrapi;
 
     const length = products.length
-
-    // {
-    //   "product_id": 98,
-    //   "name(cs-cz)": "Diptyque - L`Ombre dans L`Eau EdT",
-    //   "categories": "31",
-    //   "sku": "0006",
-    //   "model": "0006",
-    //   "manufacturer": "Diptyque",
-    //   "image_name": "catalog\/diptyque\/l-ombre-dans-l-eau-edt-1.jpg",
-    //   "description(cs-cz)": "<p>\"Stín (chládek) na vodě\" - nádherná čistá vůně, která již při prvním přivonění připomene poetický obraz překrásné zahrady, která leží na břehu malého rybníka. Esence listů keře černého rybízu a to nejněžnější z bulharských růží, jenom tušení, nechá nás snít.<\/p>\n\n<p>S hlavními akordy zelené, ovoce, aromatických složek, jemného koření a růže je to parfém lehký, nasládlý a krásný. Nejprve se objeví zelená vůně, pak se přidá bouquet divokých květin. Složky jako bulharská růže či koření dávájí této vůni exotický a luxusní linii.  <\/p>\n\n<p><strong>Hlava: <\/strong>černý rybíz<br \/>\n<strong>Srdce: <\/strong>bulharská růže<br \/>\n<strong>Tělo: <\/strong>mošus, lístky rybízu<\/p>\n",
-    //   "meta_title(cs-cz)": "Diptyque - L`Ombre dans L`Eau EdT",
-    //   "meta_description(cs-cz)": "Diptyque - L`Ombre dans L`Eau. S hlavními akordy zelené, ovoce, aromatických složek, jemného koření a růže je to parfém lehký, nasládlý a krásný.",
-    //   "related_ids": "104,365"
-    //  },
+    
+    var img = '';
 
     for(var i = 0; i < length; i++) {
       resStrapi = await AxiosSTRAPI.get(`/produkties?code=${products[i].sku}&_publicationState=preview`)
       if(resStrapi.data.length) {
-        console.log(resStrapi.data[0].id)
+        img = products[i]['image_name'].split('/')
+        img = img[img.length - 1]
         AxiosSTRAPI.put('/produkties/'+resStrapi.data[0].id, {
           title: products[i]['name(cs-cz)'],
           content: products[i]['description(cs-cz)'],
           product_id: `${products[i]['product_id']}`,
+          relatedIds: products[i]['related_ids'] !== null ? `${products[i]['related_ids']}` : '',
+          imageName: img,
           meta: {
             title: products[i]['meta_title(cs-cz)'],
             description: products[i]['meta_description(cs-cz)']
           }
         }).then(() => console.log('UPDATE! --', i))
           .catch(err => {
-            console.log(err.response.data);
-            console.log('Not update! --', i);
+            if(err.response.data) {
+              console.log(err.response.data.data);
+            }else{
+              console.log(err.response);
+            }
+            console.log('Not update! --', products[i]);
           })
       }else{
         console.log(i, '/', length)

@@ -2,6 +2,7 @@
 
 # dependencies
 /moneyData
+/data/catalog
 /node_modules
 /.pnp
 .pnp.js

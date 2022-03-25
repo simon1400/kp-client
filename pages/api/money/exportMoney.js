@@ -56,38 +56,32 @@ export default async function handler (req, res) {
         dataVariantsCombine[item.code.split('-')[0]] = [item]
       }
     })
-    let error = false
 
-    data.map(item => {
-      AxiosSTRAPI.get(`/produkties?guid_contains=${item.guid}&_publicationState=preview`).then(res => {
-        if(res.data.length){
-          AxiosSTRAPI.put('/produkties/'+res.data[0].id, {
-            price: item.price,
-            stock: item.stock,
-          }).then(res => console.log('Success update --', res.data.title))
-            .catch(err => console.error(err.response.data))
-        }else{
-          AxiosSTRAPI.post('/produkties', item)
-            .then(res => console.log('Success created --', res.data.title))
-            .catch(err => {
-              console.log(item.title)
-              console.error('Failed created --', err.response.data)
-            })
-        }
-      }).catch(err => console.error(err.response.data))
-    })
-
-    // const testObj = {
-    //   [Object.keys(dataVariantsCombine)[0]]: dataVariantsCombine[Object.keys(dataVariantsCombine)[0]],
-    //   [Object.keys(dataVariantsCombine)[1]]: dataVariantsCombine[Object.keys(dataVariantsCombine)[1]]
-    // }
-
-    
+    // data.map(item => {
+    //   AxiosSTRAPI.get(`/produkties?guid_contains=${item.guid}&_publicationState=preview`).then(res => {
+    //     if(res.data.length){
+    //       AxiosSTRAPI.put('/produkties/'+res.data[0].id, {
+    //         price: item.price,
+    //         stock: item.stock,
+    //       }).then(res => console.log('Success update --', res.data.title))
+    //         .catch(err => console.error(err.response?.data || err.response))
+    //     }else{
+    //       AxiosSTRAPI.post('/produkties', item)
+    //         .then(res => console.log('Success created --', res.data.title))
+    //         .catch(err => {
+    //           // console.log(item.title
+    //           console.log(item)
+    //           if(err.response?.data) {
+    //             console.log('Failed created --', err.response.data)
+    //           }else{
+    //             console.log('Failed created --', err.response)
+    //           }
+    //         })
+    //     }
+    //   }).catch(err => console.log(err.response?.data || err.response))
+    // })
 
     for (const [key, value] of Object.entries(dataVariantsCombine)) {
-      if(error) {
-        break;
-      }
       AxiosSTRAPI.get(`/produkties?guid_contains=${value[0].guid}&_publicationState=preview`).then(res => {
         if(res.data.length){
           AxiosSTRAPI.put('/produkties/'+res.data[0].id, {
@@ -111,7 +105,7 @@ export default async function handler (req, res) {
             price: value[0].price,
             stock: value[0].stock,
             code: key,
-            guid: value.map(item => item.guid).join(''),
+            guid: value.map(item => item.guid).join(),
             Variants: value.map(item => ({
               nazev: item.magnetude,
               price: item.price,
@@ -121,15 +115,28 @@ export default async function handler (req, res) {
             published_at: null
           }).then(res => console.log('Success created variant --', res.data.title))
             .catch(err => {
-              error = true
-              console.error('Failed create variant --', err.response?.data?.data?.errors)
+              console.log(value);
+              if(err.response?.data?.data) {
+                console.error('Failed create variant --', err.response?.data?.data)
+              }else if(err.response?.data) {
+                console.error('Failed create variant --', err.response?.data)
+              }else{
+                console.error('Failed create variant --', err.response)
+              }
             })
         }
-      }).catch(err => console.error(err.response.data))
+      }).catch(err => {
+        console.log(value)
+        if(err.response?.data) {
+          console.log('Failed get --', err.response.data)
+        }else{
+          console.log('Failed get --', err.response)
+        }
+      })
     }
 
     // res.status(200).json(result['MoneyData']['SeznamZasoba']['Zasoba']);
-    res.status(200).json(data);
+    res.status(200).json(dataVariantsCombine);
 
   }else{
     res.status(200).send(req.method);

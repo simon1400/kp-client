@@ -10,8 +10,9 @@ import BigBanner from '../components/BigBanner'
 // import Image from '../components/Image'
 import Image from 'next/image'
 import axios from 'axios';
-// import { AxiosCLIENT } from '../restClient';
+// import { AxiosSTRAPI } from '../restClient';
 const APP_API = process.env.APP_API
+
 
 const Homepage = () => {
 
@@ -21,10 +22,14 @@ const Homepage = () => {
   const [h2, setH2] = useState([])
 
   useEffect(() => {
-    axios.post('/api/money/exportMoney').then(res => {
-      console.log(res.data)
-    })
+    getData()
   }, [])
+
+  const getData = async () => {
+    axios.post('/api/money/exportImg').then(res => {
+      console.log(res.data);
+    })
+  }
 
   useEffect(() => {
     if(!loading) {
