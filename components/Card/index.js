@@ -5,6 +5,8 @@ const APP_API = process.env.APP_API
 
 const Card = ({data}) => {
 
+  console.log(data);
+
   const getPrice = () => {
     if(data.Variants?.length > 0) {
       return 'od ' + getMinPrice(data.Variants).price.toLocaleString()
@@ -20,7 +22,7 @@ const Card = ({data}) => {
           <Image src={APP_API + data.images[0].url} width="320" height="320" />
         </div>
         <div className="card-content">
-          <label>{data.brand.title}</label>
+          {data.brand && <label>{data.brand.title}</label>}
           <h3>{data.title}</h3>
           <span>{getPrice()} Kč</span>
         </div>

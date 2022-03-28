@@ -1,58 +1,106 @@
 import {AxiosSTRAPI} from '../../../restClient';
 import fs from 'fs'
-import FormData from 'form-data'
-import slugify from 'slugify'
-import axios from 'axios';
-import { Blob } from 'buffer';
-
-function DataURIToBlob(dataURI) {
-  const splitDataURI = dataURI.split(',')
-  const byteString = splitDataURI[0].indexOf('base64') >= 0 ? atob(splitDataURI[1]) : decodeURI(splitDataURI[1])
-  const mimeString = splitDataURI[0].split(':')[1].split(';')[0]
-
-  const ia = new Uint8Array(byteString.length)
-  for (let i = 0; i < byteString.length; i++)
-      ia[i] = byteString.charCodeAt(i)
-
-  return new Blob([ia], { type: mimeString })
-}
 
 export default async function handler (req, res) {
   if(req.method == 'POST') {
 
     var dataOC = JSON.parse(await fs.readFileSync('./data/exportFromOC.json', 'utf8'));
 
-    const products = dataOC.Products
+    const products = dataOC.AdditionalImages
     let resStrapi;
 
     const length = products.length
 
-    
+    let resImg = ''
 
-    for(var i = 0; i < 20; i++) {
+    let productLen = 0, imgLen = 0;
+
+    // for(var i = 0; i < length; i++) {
+    //   resStrapi = await AxiosSTRAPI.get(`/produkties?product_id=${products[i].product_id}&_publicationState=preview`)
+    //   if(resStrapi.data.length && resStrapi.data[0].imageName?.length) {
+    //     console.log(resStrapi.data[0].imageName);
+    //     productLen++
+    //     resImg = await AxiosSTRAPI.get(encodeURI(`/upload/files?name=${resStrapi.data[0].imageName}`))
+    //     if(resImg.data.length) {
+    //       AxiosSTRAPI.put('/produkties/'+resStrapi.data[0].id, {
+    //         images: resImg.data[0].id
+    //       }).then(res => {
+    //         imgLen++
+    //         console.log('Success update --', res.data.title)
+    //       }).catch(err => {
+    //         if(err.response?.data){
+    //           console.log(err.response.data)
+    //         }else{
+    //           console.log(err.response)
+    //         }
+    //       })
+    //     }else{
+    //       console.log('Image in Strapi not found --', resStrapi.data[0].imageName)
+    //     }
+    //   }else{
+    //     console.log(i, '/', length)
+    //   }
+    // }
+
+    let imgName = '', data;
+
+    for(var i = 0; i < length; i++) {
       resStrapi = await AxiosSTRAPI.get(`/produkties?product_id=${products[i].product_id}&_publicationState=preview`)
-      if(resStrapi.data.length && resStrapi.data[0].imageName?.length) {
-        
-        
-        const file = fs.readFileSync('public/catalog/'+resStrapi.data[0].imageName)
-        // let name = resStrapi.data[0].imageName.split('.')
-        const base64 = file.toString('base64')
-        const fileBlob = DataURIToBlob(base64)
-        console.log(fileBlob);
-        // let blobFile = new Blob([file], {type: name[name.length - 1]})
-        // let formData = new FormData()
-        // formData.append('files', blobFile)
-        // formData.append('ref', 'produkties')
-        // formData.append('refId', resStrapi.data[0].id)
-        // formData.append('field', 'images')
-        // console.log(formData);
-        // AxiosSTRAPI.post('/upload', formData).then(res => console.log(res.data))
-        //     .catch(err => console.log('Not uploud --', err.response.data.data.errors))
-
+      if(resStrapi.data.length && products[i].image !== null) {
+        imgName = products[i].image.split('/')
+        imgName = imgName[imgName.length - 1]
+        productLen++
+        resImg = await AxiosSTRAPI.get(encodeURI(`/upload/files?name=${imgName}`))
+        if(resImg.data.length) {
+          if(resStrapi.data[0].images?.length) {
+            data = {
+              images: [...resStrapi.data[0].images.map(item => item.id), resImg.data[0].id]
+            }
+          }else{
+            data = {
+              images: resImg.data[0].id
+            }
+          }
+          await AxiosSTRAPI.put('/produkties/'+resStrapi.data[0].id, data).then(res => {
+            imgLen++
+            console.log('Success update --', res.data.title)
+          }).catch(err => {
+            if(err.response?.data){
+              console.log(err.response.data)
+            }else{
+              console.log(err.response)
+            }
+          })
+        }else{
+          console.log('Image in Strapi not found --', imgName)
+        }
       }else{
         console.log(i, '/', length)
       }
+      
+      // productLen++
+      // resImg = await AxiosSTRAPI.get(encodeURI(`/upload/files?name=${resStrapi.data[0].imageName}`))
+      // if(resImg.data.length) {
+      //   AxiosSTRAPI.put('/produkties/'+resStrapi.data[0].id, {
+      //     images: resImg.data[0].id
+      //   }).then(res => {
+      //     imgLen++
+      //     // console.log('Success update --', res.data.title)
+      //   }).catch(err => {
+      //     if(err.response?.data){
+      //       console.log(err.response.data)
+      //     }else{
+      //       console.log(err.response)
+      //     }
+      //   })
+      // }else{
+      //   // console.log('Image in Strapi not found --', resStrapi.data[0].imageName)
+      // }
+      
     }
+
+    console.log('Products with images --', productLen);
+    console.log('Images in product set --', imgLen);
 
     res.status(200).send('All finished!');
 

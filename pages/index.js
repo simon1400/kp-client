@@ -21,15 +21,15 @@ const Homepage = () => {
   const [h1, setH1] = useState([])
   const [h2, setH2] = useState([])
 
-  useEffect(() => {
-    getData()
-  }, [])
+  // useEffect(() => {
+  //   getData()
+  // }, [])
 
-  const getData = async () => {
-    axios.post('/api/money/exportImg').then(res => {
-      console.log(res.data);
-    })
-  }
+  // const getData = async () => {
+  //   // axios.post('/api/money/exportPublication').then(res => {
+  //   //   console.log(res.data);
+  //   // })
+  // }
 
   useEffect(() => {
     if(!loading) {
