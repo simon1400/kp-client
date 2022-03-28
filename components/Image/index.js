@@ -1,7 +1,7 @@
 import { getStrapiMedia } from "../../lib/api";
 
 const Image = ({ image, style, svg = false }) => {
-  const imageUrl = getStrapiMedia(image);
+  const imageUrl = image;
   if(svg){
     return (
       <img

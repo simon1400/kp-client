@@ -62,7 +62,7 @@ const Product = () => {
         count: 1,
         image: product.images[0],
         imageUrl: product.images[0].url,
-        brand: product.brand.title,
+        brand: product.brand?.title,
         slug: product.slug,
         guid: product.guid,
         __typename: "product"
@@ -109,6 +109,8 @@ const Product = () => {
 
   const product = data.produkties[0]
 
+  console.log(product.images)
+
   return (
     <Page
       title={product.meta?.title}
@@ -126,7 +128,8 @@ const Product = () => {
                 <div className="uk-slideshow" uk-slideshow="ratio: 1:1">
                   <ul className="uk-slideshow-items">
                     {product.images.map((item, index) => <li key={index}>
-                      <Image src={APP_API+item.url} width="680" height="680" layout="responsive"/>
+                      {/* <Image src={APP_API+item.url} width="680" height="680" layout="responsive"/> */}
+                      <img src={item.url} />
                     </li>)}
                   </ul>
                   <a className="uk-position-center-left uk-position-small uk-slidenav" href="#" uk-slideshow-item="previous">

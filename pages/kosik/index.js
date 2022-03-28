@@ -54,7 +54,8 @@ const Basket = () => {
                     {!!basketItems.length && basketItems.map((item, index) => <tr key={index} className="basket-item">
                       <td className="uk-flex uk-flex-start">
                         <div className="basket-item-img">
-                          <Image src={APP_API+item.image.url} width="100" height="100" />
+                          {/* <Image src={APP_API+item.image.url} width="100" height="100" /> */}
+                          <img src={item.image.url} />
                         </div>
                         <div className="basket-item-content">
                           <label>{item.brand}</label>

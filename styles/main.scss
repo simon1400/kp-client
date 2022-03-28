@@ -205,10 +205,18 @@ h2.big-head{
   > a{
     position: absolute;
     z-index: 100;
-    top: 0;
+    top: -25px;
     left: 0;
   }
   .uk-slideshow{
+    .uk-slideshow-items{
+      li{
+        text-align: center;
+        img{
+          height: 100%;
+        }
+      }
+    }
     &:hover{
       .uk-slidenav{
         display: block;
@@ -221,7 +229,7 @@ h2.big-head{
       width: 15px;
     }
   }
-  .uk-slideshow-na{
+  .uk-slideshow-nav{
     margin-top: 20px;
   }
 }

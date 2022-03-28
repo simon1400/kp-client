@@ -26,7 +26,7 @@ const Homepage = () => {
   // }, [])
 
   // const getData = async () => {
-  //   // axios.post('/api/money/exportPublication').then(res => {
+  //   // axios.post('/api/money/exportImg').then(res => {
   //   //   console.log(res.data);
   //   // })
   // }
@@ -86,7 +86,8 @@ const Homepage = () => {
           <div className="uk-slider" uk-slider="autoplay: true">
             <ul className="uk-slider-items uk-child-width-1-2 uk-child-width-1-4@s uk-child-width-1-6@m uk-grid uk-grid-stack">
               {data.homepage.partners.map((image, index) => <li key={index}>
-                <Image src={APP_API+image.url} width="100%" height="80" layout="responsive" objectFit="contain" />
+                {/* <Image src={image.url} width="100%" height="80" layout="responsive" objectFit="contain" /> */}
+                <img src={image.url} />
               </li>)}
             </ul>
           </div>

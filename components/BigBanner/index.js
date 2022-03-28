@@ -19,7 +19,8 @@ const BigBanner = ({data}) => {
       <div className="uk-container uk-container-large">
         <div className="big-banner">
           <div className="img-wrap-bg">
-            <Image src={`${APP_API}${data.image.url}`} layout="fill" />
+            {/* <Image src={`${APP_API}${data.image.url}`} layout="fill" /> */}
+            <img src={data.image.url} />
           </div>
           <div className="big-banner-info">
             <h2 className="big-head">

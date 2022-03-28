@@ -15,10 +15,11 @@ export default async function handler (req, res) {
 
     let productLen = 0, imgLen = 0;
 
+    // SINGLE TOP IMAGE
+
     // for(var i = 0; i < length; i++) {
     //   resStrapi = await AxiosSTRAPI.get(`/produkties?product_id=${products[i].product_id}&_publicationState=preview`)
     //   if(resStrapi.data.length && resStrapi.data[0].imageName?.length) {
-    //     console.log(resStrapi.data[0].imageName);
     //     productLen++
     //     resImg = await AxiosSTRAPI.get(encodeURI(`/upload/files?name=${resStrapi.data[0].imageName}`))
     //     if(resImg.data.length) {
@@ -42,7 +43,9 @@ export default async function handler (req, res) {
     //   }
     // }
 
+
     let imgName = '', data;
+    // ADDITIONAL IMAGE
 
     for(var i = 0; i < length; i++) {
       resStrapi = await AxiosSTRAPI.get(`/produkties?product_id=${products[i].product_id}&_publicationState=preview`)

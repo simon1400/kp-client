@@ -49,7 +49,7 @@ const Blog = () => {
             <div>
               <div className="blog-item-img uk-position-relative">
                 {item.image?.url && <Image
-                  src={APP_API+item.image.url}
+                  src={item.image.url}
                   width="100%"
                   height="65%"
                   layout="responsive" 
