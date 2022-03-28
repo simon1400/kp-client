@@ -1,11 +1,9 @@
-import Link from 'next/link'
+// import Link from 'next/link'
 import getMinPrice from '../../function/getMinPrice'
-import Image from 'next/image'
+// import Image from 'next/image'
 const APP_API = process.env.APP_API
 
 const Card = ({data}) => {
-
-  console.log(data);
 
   const getPrice = () => {
     if(data.Variants?.length > 0) {
@@ -19,7 +17,8 @@ const Card = ({data}) => {
     <div>
       <a href={`/p/${data.slug}`} className="card">
         <div className="card-img">
-          <Image src={APP_API + data.images[0].url} width="320" height="320" />
+          {/* <Image src={APP_API + data.images[0].url} width="320" height="320" /> */}
+          <img src={APP_API + data.images[0].url} />
         </div>
         <div className="card-content">
           {data.brand && <label>{data.brand.title}</label>}

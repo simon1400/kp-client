@@ -141,7 +141,7 @@ const Product = () => {
             </div>
             <div>
               <div className="product-info">
-                <label>{product.brand.title}</label>
+                {product.brand && <label>{product.brand.title}</label>}
                 <h1>{product.title}</h1>
                 <span className="price">
                   {getPrice()} Kč
@@ -158,7 +158,7 @@ const Product = () => {
                   <a href="/" className="button" onClick={e => buy(e, product)}>přidat do košíku</a>
                 </div>}
                 <ul>
-                  <li>Značka: <a href={`/${product.brand.slug}`}>{product.brand.title}</a></li>
+                  {product.brand && <li>Značka: <a href={`/${product.brand.slug}`}>{product.brand.title}</a></li>}
                   <li>Kód výrobku: {product.code}</li>
                 </ul>
                 {/* <div className="description"> */}
