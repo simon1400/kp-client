@@ -37,7 +37,7 @@ const Canvas = () => {
         </div>
         <hr />
         <div className="canvas-content-wrap">
-          {!!canvasItems.length ? canvasItems.map((item, index) => <CanvasItem basketItem key={index} data={item} index={index} />) : 'Váš košík je prázdný.'}
+          {!!canvasItems.length ? canvasItems.map((item, index) => <CanvasItem basketItem key={index} square={130} data={item} index={index} />) : 'Váš košík je prázdný.'}
         </div>
         {!!canvasItems.length && <hr className="uk-margin-bottom uk-margin-top"/>}
         {!!canvasItems.length && <table className="canvas-table uk-table uk-margin-remove-vertical">

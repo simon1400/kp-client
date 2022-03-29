@@ -6,7 +6,7 @@ import BigBanner from '../../components/BigBanner'
 import Head from 'next/head'
 import { useQuery } from "@apollo/client";
 import productQuery from '../../queries/product'
-import Image from 'next/image'
+import Image from '../../components/Image'
 import { DataStateContext } from '../../context/dataStateContext'
 import {dropdown, offcanvas} from 'uikit'
 import getMinPrice from '../../function/getMinPrice'
@@ -75,6 +75,8 @@ const Product = () => {
       localBasket.push(newLocalBasket)
     }
 
+    console.log(localBasket)
+
     // setAddToCardGTM(newLocalBasket.id)
 
     dataContextDispatch({ state: localBasket, type: 'basket' })
@@ -128,8 +130,9 @@ const Product = () => {
                 <div className="uk-slideshow" uk-slideshow="ratio: 1:1">
                   <ul className="uk-slideshow-items">
                     {product.images.map((item, index) => <li key={index}>
-                      {/* <Image src={APP_API+item.url} width="680" height="680" layout="responsive"/> */}
-                      <img src={item.url} />
+                      <div>
+                        <Image image={item.hash} width={680} height={680} />
+                      </div>
                     </li>)}
                   </ul>
                   <a className="uk-position-center-left uk-position-small uk-slidenav" href="#" uk-slideshow-item="previous">

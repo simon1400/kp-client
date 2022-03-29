@@ -11,9 +11,7 @@ const articlesCategory = gql`
         slug
         content
         image {
-          url
-          previewUrl
-          formats
+          hash
         }
       }
       meta {

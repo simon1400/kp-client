@@ -2,7 +2,7 @@ const navObj = `{
   name
   link
   image{
-    url
+    hash
   }
   brand{
     title
@@ -23,7 +23,7 @@ const navObj = `{
     name
     link
     image {
-      url
+      hash
     }
     brand{
       title

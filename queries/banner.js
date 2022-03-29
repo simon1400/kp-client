@@ -3,7 +3,7 @@ import { gql } from "@apollo/client";
 const bannerQuery = `banner {
   title
   image {
-    url
+    hash
   }
   button {
     text

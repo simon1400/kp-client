@@ -8,6 +8,8 @@ import Content from '../../components/Content';
 
 const BlogFull = () => {
 
+  
+
   const router = useRouter()
 
   const { loading, error, data } = useQuery(blogItemQuery, {
@@ -30,6 +32,8 @@ const BlogFull = () => {
 
   title = [title.splice(0, Math.ceil(title.length / 2) - 1).join(' '), title.splice(Math.ceil(title.length / 2) - 1, title.length).join(' ')]
 
+  console.log(blog);
+
   return (
     <Page
       title={blog.meta?.title}
@@ -48,7 +52,7 @@ const BlogFull = () => {
           <div>
             {blog.iframe && <div dangerouslySetInnerHTML={{__html: blog.iframe}} />}
             <Content data={blog.content}/>
-            {blog.image && <Image image={blog.image} />}
+            {blog.image && <Image image={blog.image.hash} width={900} />}
           </div>
           <h2 className="big-head uk-text-center uk-margin-large-top uk-margin-large-bottom">
             <span style={{paddingLeft: '0px'}}>{subTitle[0]} {subTitle[1]} {subTitle[2]} {subTitle[3]}</span>

@@ -2,7 +2,7 @@ import Page from '../../layout/Page'
 import PageTop from '../../components/PageTop'
 import { useQuery } from "@apollo/client";
 import articlesCategory from '../../queries/articlesCategory'
-import Image from 'next/image'
+import Image from '../../components/Image'
 // import Content from '../../components/Content'
 
 import { useRouter } from 'next/router';
@@ -48,13 +48,7 @@ const Blog = () => {
           {category.articles?.length && category.articles.map((item, index) => <div key={index} className="uk-grid blog-item uk-child-width-1-1 uk-child-width-1-2@s" uk-grid="" uk-height-match="target: > div > div">
             <div>
               <div className="blog-item-img uk-position-relative">
-                {item.image?.url && <Image
-                  src={item.image.url}
-                  width="100%"
-                  height="65%"
-                  layout="responsive" 
-                  objectFit="cover"
-                  objectPosition="center" />}
+                {item.image?.hash && <Image image={item.image.url} />}
               </div>
             </div>
             <div>

@@ -85,7 +85,7 @@ h2.big-head{
     text-align: center;
   }
   img{
-    height: 80px;
+    height: 100px;
   }
 }
 
@@ -212,8 +212,13 @@ h2.big-head{
     .uk-slideshow-items{
       li{
         text-align: center;
-        img{
-          height: 100%;
+        div{
+          min-height: 100%;
+          display: flex;
+          img{
+            max-height: 100%;
+            margin: auto;
+          }
         }
       }
     }

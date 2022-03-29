@@ -1,6 +1,4 @@
 .canvas-item{
-  display: -webkit-flex;
-  display: -ms-flex;
   display: flex;
   align-items: center;
   margin-bottom: 20px;
@@ -27,19 +25,14 @@
     overflow: hidden;
     background-color: #fff;
     margin-right: 10px;
-    display: -webkit-flex;
-    display: -ms-flex;
     display: flex;
     img{
       object-fit: contain;
-      width: 100%;
       margin: auto;
     }
   }
   .canvas-item-content{
     width: 100%;
-    display: -webkit-flex;
-    display: -ms-flex;
     display: flex;
     > div{
       width: 100%;
@@ -56,8 +49,6 @@
     }
   }
   .control-item{
-    display: -webkit-flex;
-    display: -ms-flex;
     display: flex;
     justify-content: space-between;
     color: $text_color;

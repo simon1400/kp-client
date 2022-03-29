@@ -1,6 +1,6 @@
 import {useState, useEffect, useContext} from 'react'
 import { DataStateContext } from '../../context/dataStateContext'
-import Image from 'next/image'
+import Image from '../../components/Image'
 import Page from '../../layout/Page'
 
 const APP_API = process.env.APP_API
@@ -55,7 +55,7 @@ const Basket = () => {
                       <td className="uk-flex uk-flex-start">
                         <div className="basket-item-img">
                           {/* <Image src={APP_API+item.image.url} width="100" height="100" /> */}
-                          <img src={item.image.url} />
+                          <Image image={item.image.hash} width={100} height={100}  />
                         </div>
                         <div className="basket-item-content">
                           <label>{item.brand}</label>

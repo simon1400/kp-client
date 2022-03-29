@@ -13,8 +13,7 @@ const productQuery = gql`
       content
       guid
       images {
-        url
-        formats
+        hash
       }
       relateds {
         title,
@@ -24,7 +23,7 @@ const productQuery = gql`
           title
         },
         images {
-          url
+          hash
         }
       }
       brand {

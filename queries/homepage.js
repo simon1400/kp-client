@@ -8,9 +8,7 @@ const homepageQuery = gql`
       title,
       subtitle
       image {
-        url
-        previewUrl
-        formats
+        hash
       },
       Button {
         text,
@@ -31,16 +29,13 @@ const homepageQuery = gql`
             title
           },
           images {
-            url
-            previewUrl
-            formats
+            hash
           }
         }
       }
       partners {
+        hash
         url
-        previewUrl
-        formats
       }
       meta{
         title
