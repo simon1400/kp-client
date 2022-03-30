@@ -5,6 +5,24 @@ import blogItemQuery from '../../queries/blogItem'
 import Image from '../../components/Image'
 import {useRouter} from 'next/router'
 import Content from '../../components/Content';
+import { AxiosSTRAPI } from '../../restClient';
+
+
+export async function getServerSideProps(context) {
+
+  const resCat = await AxiosSTRAPI.get(`/category-articles?slug=${context.query.categoryArticles}`)
+  const resBlog = await AxiosSTRAPI.get(`/blogs?slug=${context.query.slug}`)
+
+  if(!resCat.data.length || !resBlog.data.length) {
+    return {
+      notFound: true
+    }
+  }
+
+  return {
+    props: {}
+  }
+}
 
 const BlogFull = () => {
 
@@ -15,11 +33,6 @@ const BlogFull = () => {
   });
 
   if(loading) {
-    return ''
-  }
-
-  if(!data.blogs.length){
-    router.push('/404')
     return ''
   }
 
@@ -48,7 +61,7 @@ const BlogFull = () => {
           <div>
             {blog.iframe && <div dangerouslySetInnerHTML={{__html: blog.iframe}} />}
             <Content data={blog.content}/>
-            {blog.image && <Image image={blog.image} />}
+            {blog.image && <Image image={blog.image.hash} width={900} />}
           </div>
           <h2 className="big-head uk-text-center uk-margin-large-top uk-margin-large-bottom">
             <span style={{paddingLeft: '0px'}}>{subTitle[0]} {subTitle[1]} {subTitle[2]} {subTitle[3]}</span>

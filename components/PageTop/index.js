@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import Image from 'next/image'
+import Image from '../Image'
 
 const APP_API = process.env.APP_API
 
@@ -14,7 +14,7 @@ const PageTop = ({
   return (
     <section className={`page-top${big ? ' big-top' : ''}${!img ? ' yellow-top' : ' img-top'}`}>
       {img && <div className="img-wrap-bg">
-        <Image src={APP_API+img.url} layout="fill" />
+        <Image image={img.hash} width={2560} />
       </div>}
       <div className={`${!big ? 'uk-container ' : ''} ${center && 'uk-flex uk-flex-middle uk-height-1-1'}`}>
         {head}

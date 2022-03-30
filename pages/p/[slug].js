@@ -6,7 +6,7 @@ import BigBanner from '../../components/BigBanner'
 import Head from 'next/head'
 import { useQuery } from "@apollo/client";
 import productQuery from '../../queries/product'
-import Image from 'next/image'
+import Image from '../../components/Image'
 import { DataStateContext } from '../../context/dataStateContext'
 import {dropdown, offcanvas} from 'uikit'
 import getMinPrice from '../../function/getMinPrice'
@@ -62,7 +62,7 @@ const Product = () => {
         count: 1,
         image: product.images[0],
         imageUrl: product.images[0].url,
-        brand: product.brand.title,
+        brand: product.brand?.title,
         slug: product.slug,
         guid: product.guid,
         __typename: "product"
@@ -74,6 +74,8 @@ const Product = () => {
       }
       localBasket.push(newLocalBasket)
     }
+
+    console.log(localBasket)
 
     // setAddToCardGTM(newLocalBasket.id)
 
@@ -109,6 +111,8 @@ const Product = () => {
 
   const product = data.produkties[0]
 
+  console.log(product.images)
+
   return (
     <Page
       title={product.meta?.title}
@@ -126,7 +130,9 @@ const Product = () => {
                 <div className="uk-slideshow" uk-slideshow="ratio: 1:1">
                   <ul className="uk-slideshow-items">
                     {product.images.map((item, index) => <li key={index}>
-                      <Image src={APP_API+item.url} width="680" height="680" layout="responsive"/>
+                      <div>
+                        <Image image={item.hash} width={680} height={680} />
+                      </div>
                     </li>)}
                   </ul>
                   <a className="uk-position-center-left uk-position-small uk-slidenav" href="#" uk-slideshow-item="previous">
@@ -141,7 +147,7 @@ const Product = () => {
             </div>
             <div>
               <div className="product-info">
-                <label>{product.brand.title}</label>
+                {product.brand && <label>{product.brand.title}</label>}
                 <h1>{product.title}</h1>
                 <span className="price">
                   {getPrice()} Kč
@@ -158,7 +164,7 @@ const Product = () => {
                   <a href="/" className="button" onClick={e => buy(e, product)}>přidat do košíku</a>
                 </div>}
                 <ul>
-                  <li>Značka: <a href={`/${product.brand.slug}`}>{product.brand.title}</a></li>
+                  {product.brand && <li>Značka: <a href={`/${product.brand.slug}`}>{product.brand.title}</a></li>}
                   <li>Kód výrobku: {product.code}</li>
                 </ul>
                 {/* <div className="description"> */}

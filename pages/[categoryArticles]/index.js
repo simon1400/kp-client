@@ -2,16 +2,31 @@ import Page from '../../layout/Page'
 import PageTop from '../../components/PageTop'
 import { useQuery } from "@apollo/client";
 import articlesCategory from '../../queries/articlesCategory'
-import Image from 'next/image'
-// import Content from '../../components/Content'
-
+import Image from '../../components/Image'
 import { useRouter } from 'next/router';
+import { AxiosSTRAPI } from '../../restClient';
 
 const APP_API = process.env.APP_API
+
+export async function getServerSideProps(context) {
+
+  const resCat = await AxiosSTRAPI.get(`/category-articles?slug=${context.query.categoryArticles}`)
+
+  if(!resCat.data.length) {
+    return {
+      notFound: true
+    }
+  }
+
+  return {
+    props: { }
+  }
+}
 
 const Blog = () => {
 
   const router = useRouter()
+
   const { loading, error, data } = useQuery(articlesCategory, {
     variables: {
       slug: router.query.categoryArticles
@@ -19,11 +34,6 @@ const Blog = () => {
   });
 
   if(loading) {
-    return ''
-  }
-
-  if(!data?.categoryArticles?.length){
-    router.push('/404')
     return ''
   }
 
@@ -48,13 +58,7 @@ const Blog = () => {
           {category.articles?.length && category.articles.map((item, index) => <div key={index} className="uk-grid blog-item uk-child-width-1-1 uk-child-width-1-2@s" uk-grid="" uk-height-match="target: > div > div">
             <div>
               <div className="blog-item-img uk-position-relative">
-                {item.image?.url && <Image
-                  src={APP_API+item.image.url}
-                  width="100%"
-                  height="65%"
-                  layout="responsive" 
-                  objectFit="cover"
-                  objectPosition="center" />}
+                {item.image?.hash && <Image image={item.image.hash} width={680} />}
               </div>
             </div>
             <div>

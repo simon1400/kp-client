@@ -8,9 +8,8 @@ import SmallBanner from '../components/SmallBanner'
 import PageTop from '../components/PageTop'
 import BigBanner from '../components/BigBanner'
 // import Image from '../components/Image'
-import Image from 'next/image'
+import Image from '../components/Image'
 import axios from 'axios';
-// import { AxiosSTRAPI } from '../restClient';
 const APP_API = process.env.APP_API
 
 
@@ -21,15 +20,15 @@ const Homepage = () => {
   const [h1, setH1] = useState([])
   const [h2, setH2] = useState([])
 
-  useEffect(() => {
-    getData()
-  }, [])
+  // useEffect(() => {
+  //   getData()
+  // }, [])
 
-  const getData = async () => {
-    axios.post('/api/money/exportImg').then(res => {
-      console.log(res.data);
-    })
-  }
+  // const getData = async () => {
+  //   // axios.post('/api/money/exportImg').then(res => {
+  //   //   console.log(res.data);
+  //   // })
+  // }
 
   useEffect(() => {
     if(!loading) {
@@ -84,9 +83,11 @@ const Homepage = () => {
       <section className="partners-logo">
         <div className="uk-container uk-container-large">
           <div className="uk-slider" uk-slider="autoplay: true">
-            <ul className="uk-slider-items uk-child-width-1-2 uk-child-width-1-4@s uk-child-width-1-6@m uk-grid uk-grid-stack">
+            <ul className="uk-slider-items uk-child-width-1-2 uk-child-width-1-4@s uk-child-width-1-6@m uk-grid uk-grid-stack" uk-lightbox="animation: fade">
               {data.homepage.partners.map((image, index) => <li key={index}>
-                <Image src={APP_API+image.url} width="100%" height="80" layout="responsive" objectFit="contain" />
+                <a class="uk-inline" href={image.url} data-caption="Caption 1">
+                  <Image image={image.hash} height={100} />
+                </a>
               </li>)}
             </ul>
           </div>

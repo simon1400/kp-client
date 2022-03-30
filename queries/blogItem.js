@@ -11,9 +11,7 @@ const blogItemQuery = gql`
       add_title
       add_content
       image {
-        url
-        previewUrl
-        formats
+        hash
       }
       cta{
         text

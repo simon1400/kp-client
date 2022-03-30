@@ -130,7 +130,7 @@ const Checkout = ({
                   </a>
                   {!!basketItems.length && <AnimateHeight id='example-panel' duration={500} height={heightProductsList}>
                     <div className="canvas-content-wrap">
-                      {basketItems.map((item, index) => <CanvasItem key={index} data={item} index={index} basket={true} />)}
+                      {basketItems.map((item, index) => <CanvasItem key={index} data={item} square={80} index={index} basket={true} />)}
                     </div>
                     <a href="/kosik" className="small-text">Upravit obsah košíku</a>
                   </AnimateHeight>}

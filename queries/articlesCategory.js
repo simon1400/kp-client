@@ -6,14 +6,12 @@ const articlesCategory = gql`
   query getCategory($slug: String!) {
     categoryArticles(where: {slug: $slug}) {
       title
-      articles{
+      articles (sort: "created_at:desc") {
         title,
         slug
         content
         image {
-          url
-          previewUrl
-          formats
+          hash
         }
       }
       meta {

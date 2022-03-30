@@ -23,7 +23,7 @@ export const CATEGORY_PRODUCTS = gql`
       title
     },
     images {
-      url
+      hash
     }
     values {
       id

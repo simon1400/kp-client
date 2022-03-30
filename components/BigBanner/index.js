@@ -1,8 +1,6 @@
 import {useEffect, useState} from 'react'
 import Link from 'next/link'
-import Image from 'next/image'
-
-const APP_API = process.env.APP_API
+import Image from '../Image'
 
 const BigBanner = ({data}) => {
 
@@ -19,7 +17,9 @@ const BigBanner = ({data}) => {
       <div className="uk-container uk-container-large">
         <div className="big-banner">
           <div className="img-wrap-bg">
-            <Image src={`${APP_API}${data.image.url}`} layout="fill" />
+            {/* <Image src={`${APP_API}${data.image.url}`} layout="fill" /> */}
+            {/* <img src={data.image.url} /> */}
+            <Image image={data.image.hash} width={1400} height={770} />
           </div>
           <div className="big-banner-info">
             <h2 className="big-head">

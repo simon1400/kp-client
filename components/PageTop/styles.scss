@@ -6,6 +6,15 @@
   overflow: hidden;
   height: 380px;
   background-color: #000;
+  .img-wrap-bg{
+    position: relative;
+    img{
+      object-fit: cover;
+      object-position: center center;
+      width: 100%;
+      height: 100%;
+    }
+  }
   &:before{
     position: absolute;
     display: block;

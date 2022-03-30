@@ -151,6 +151,7 @@ a.bare-button, .bare-button{
   font-size: 17px;
   font-weight: $font-medium;
   text-decoration: none;
+  text-transform: lowercase;
   img, svg{
     color: $accent;
     transition: all .5s ease;
@@ -188,6 +189,7 @@ a.button, .button{
   padding: 20px 70px;
   border: none;
   transition: all .5s ease;
+  text-transform: lowercase;
   cursor: pointer;
   white-space: nowrap;
   &:hover{
