@@ -13,8 +13,6 @@ const Card = ({data}) => {
     }
   }
 
-  console.log(data.images[0]);
-
   return (
     <div>
       <a href={`/p/${data.slug}`} className="card">

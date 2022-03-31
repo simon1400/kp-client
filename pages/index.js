@@ -10,6 +10,7 @@ import BigBanner from '../components/BigBanner'
 // import Image from '../components/Image'
 import Image from '../components/Image'
 import axios from 'axios';
+import ArticleShort from '../components/ArticleShort';
 const APP_API = process.env.APP_API
 
 
@@ -41,6 +42,8 @@ const Homepage = () => {
     return ''
   }
 
+  console.log(data.homepage);
+
   return (
     <Page 
       bgImg={data.homepage.image}
@@ -61,6 +64,17 @@ const Homepage = () => {
         textButton={data.homepage.Button.text}
         linkButton={data.homepage.Button.link}
       />
+
+      <section className="sec-base">
+        <div className="uk-container uk-container-large">
+          <div className="uk-grid uk-child-width-1-1 uk-child-width-1-3@m" uk-grid="">
+            {data.homepage.articles.map((item, index) => <div key={index}>
+              <ArticleShort data={item} />
+            </div>)}
+          </div>
+        </div>
+      </section>
+
       <section className="sec-base">
         <div className="uk-container uk-container-large">
           <h2 className="big-head uk-text-center uk-margin-large-bottom">

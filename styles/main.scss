@@ -3,7 +3,6 @@
 @import 'components';
 @import 'libs';
 
-
 #search, #auth, #canvas{
   z-index: 1111;
 }
@@ -434,6 +433,12 @@ h2.big-head{
     width: 20px;
     height: 20px;
   }
+}
+
+.checkout-head{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
 }
 
 @import 'media';

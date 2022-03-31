@@ -7,6 +7,7 @@ const payQuery = gql`
       price
       type
       sale_from
+      state
       deliveries {
         title
       }

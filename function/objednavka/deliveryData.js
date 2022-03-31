@@ -7,6 +7,7 @@ export default (data) => {
       value: item.price,
       type: item.type,
       saleFrom: item.sale_from,
+      state: item.state,
       check: false,
       paysAllow: item.pays
     }))

@@ -1,4 +1,6 @@
+import { logMissingFieldErrors } from '@apollo/client/core/ObservableQuery'
 import {useEffect, useState} from 'react'
+import RadioState from '../RadioState'
 
 const Method = ({
   title,
@@ -9,6 +11,7 @@ const Method = ({
   error,
   name,
   sum,
+  radioCountry,
   pickupData = false,
   getPickup = () => {}
 }) => {
@@ -25,7 +28,10 @@ const Method = ({
   return (
     <div className="methods uk-margin-medium-bottom">
       <table className="uk-table uk-table-middle uk-table-divider uk-margin-remove">
-        <caption>{title}{!!error[name] && <span className="uk-text-danger">{errorMessages[name]}</span>}</caption>
+        <caption>
+          {title}
+          {!!error[name] && <span className="uk-text-danger">{errorMessages[name]}</span>}
+        </caption>
         <tbody>
           {state.map((item, index) => {
 
@@ -35,34 +41,40 @@ const Method = ({
               else disable = false
             }
             
-            return <tr key={index} className={`checkout-item${disable ? ' disabled-check-item' : ''}`}>
-            <td className="uk-flex uk-flex-between">
-              <div className="uk-form-controls radio-wrap">
-                <label>
-                  <input 
-                    className="uk-radio" 
-                    type="radio" 
-                    name={item.name} 
-                    disabled={disable} 
-                    value={item.value} 
-                    onChange={() => selectRadio(index)} 
-                    checked={item.check} />
-                  <span>{item.label}</span>
-               </label>
-               {item.check && item.type === 'zasilkovna' && pickupData && <div>
-                 <p>Vybraná pobočka: {pickupData.name}</p>
-                 <a href="/" onClick={e => {
-                     e.preventDefault()
-                     window.Packeta.Widget.pick('497b43a88a3af5e8', getPickup)
-                   }}>Změnit pobočku</a>
-               </div>}
-              </div>
-              <div className="uk-text-right">
-                {item.value > 0 && item.saleFrom >= sum && <span className="price-method">{item.value} Kč</span>}
-                {(item.value <= 0 || item.saleFrom <= sum) && <span className="yellow-text">ZDARMA</span>}
-              </div>
-            </td>
-          </tr>})}
+            if(item.state === radioCountry) {
+              return <tr key={index} className={`checkout-item${disable ? ' disabled-check-item' : ''}`}>
+                <td className="uk-flex uk-flex-between">
+                  <div className="uk-form-controls radio-wrap">
+                    <label>
+                      <input 
+                        className="uk-radio" 
+                        type="radio" 
+                        name={item.name} 
+                        disabled={disable} 
+                        value={item.value} 
+                        onChange={() => selectRadio(index)} 
+                        checked={item.check} />
+                      <span>{item.label}</span>
+                  </label>
+                  {item.check && item.type === 'zasilkovna' && pickupData && <div>
+                    <p>Vybraná pobočka: {pickupData.name}</p>
+                    <a href="/" onClick={e => {
+                        e.preventDefault()
+                        window.Packeta.Widget.pick('497b43a88a3af5e8', getPickup)
+                      }}>Změnit pobočku</a>
+                  </div>}
+                  </div>
+                  <div className="uk-text-right">
+                    {item.value > 0 && item.saleFrom >= sum && <span className="price-method">{item.value} Kč</span>}
+                    {(item.value <= 0 || item.saleFrom <= sum) && <span className="yellow-text">ZDARMA</span>}
+                  </div>
+                </td>
+              </tr>
+            }else{
+              return null
+            }
+          })}
+            
         </tbody>
       </table>
     </div>

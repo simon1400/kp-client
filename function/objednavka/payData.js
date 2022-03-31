@@ -7,6 +7,7 @@ export default (data) => {
       check: false,
       disabled: false,
       saleFrom: item.sale_from,
+      state: item.state,
       payOnline: item.type === 'online',
       method: item.type,
       deliveryAllow: item.deliveries

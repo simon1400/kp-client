@@ -33,6 +33,16 @@ const homepageQuery = gql`
           }
         }
       }
+      articles {
+        title
+        text
+        article {
+          slug
+          category {
+            slug
+          }
+        }
+      }
       logo_company {
         image {
           hash

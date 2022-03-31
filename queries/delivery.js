@@ -6,6 +6,7 @@ const deliveryQuery = gql`
       title
       price
       sale_from
+      state
       type
       pays {
         title

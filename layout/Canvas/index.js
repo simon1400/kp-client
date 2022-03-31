@@ -28,8 +28,6 @@ const Canvas = () => {
     setSum(startSum)
   }, [dataContextState, dataContextState.basket.length])
 
-  console.log(data);
-
   return (
     <div id="canvas" className="uk-offcanvas" uk-offcanvas="flip: true; overlay: true">
       <div className="uk-offcanvas-bar">

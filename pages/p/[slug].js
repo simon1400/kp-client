@@ -11,6 +11,7 @@ import { DataStateContext } from '../../context/dataStateContext'
 import {dropdown, offcanvas} from 'uikit'
 import getMinPrice from '../../function/getMinPrice'
 import Content from '../../components/Content'
+import ArticleShort from '../../components/ArticleShort'
 const APP_API = process.env.APP_API
 
 var startSelectValue = {
@@ -75,8 +76,6 @@ const Product = () => {
       localBasket.push(newLocalBasket)
     }
 
-    console.log(localBasket)
-
     // setAddToCardGTM(newLocalBasket.id)
 
     dataContextDispatch({ state: localBasket, type: 'basket' })
@@ -111,7 +110,7 @@ const Product = () => {
 
   const product = data.produkties[0]
 
-  console.log(product.images)
+  console.log(data);
 
   return (
     <Page
@@ -144,6 +143,7 @@ const Product = () => {
                   <ul className="uk-slideshow-nav uk-dotnav uk-flex-center uk-margin"></ul>
                 </div>
               </div>
+              <ArticleShort data={data.global.support} icon="/assets/phone.svg" product />
             </div>
             <div>
               <div className="product-info">

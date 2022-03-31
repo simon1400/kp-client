@@ -50,6 +50,16 @@ const productQuery = gql`
       email
       address
       copyright
+      support {
+        title
+        text
+        article {
+          slug
+          category{
+            slug
+          }
+        }
+      }
       ${bannerQuery}
     }
     ${navQuery}

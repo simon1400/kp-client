@@ -1,0 +1,14 @@
+.radio-state{
+  margin-bottom: 20px;
+  label{
+    font-family: $ff-semibold;
+    -webkit-text-stroke: transparent;
+    opacity: 1;
+    &:not(:last-child) {
+      margin-right: 35px;
+    }
+  }
+  input{
+    margin-right: 10px;
+  }
+}

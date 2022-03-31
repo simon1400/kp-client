@@ -4,6 +4,7 @@ import AnimateHeight from 'react-animate-height';
 import errorMessages from '../data/errorMessages'
 import globalQuery from '../queries/global'
 import { useQuery } from '@apollo/client'
+import RadioState from '../components/RadioState';
 
 const Page = loadable(() => import('../layout/Page'))
 const Sale = loadable(() => import('../components/Sale'))
@@ -51,13 +52,18 @@ const Checkout = ({
 
   const { data: dataGl } = useQuery(globalQuery);
 
+  const [radioState, setRadioState] = useState("cz")
+
   return(
     <Page title="Objednávka" basket>
       <div className="checkout uk-position-relative">
         <div className="uk-container uk-container-large">
           <div className="uk-grid" uk-grid="">
             <div className="uk-width-1-1 uk-width-2-3@s">
-              <h1 className="uk-margin-large-top">Objednávka</h1>
+              <div className="checkout-head">
+                <h1 className="uk-margin-large-top">Objednávka</h1>
+                <RadioState state={radioState} setState={setRadioState} />
+              </div>
 
               {error.exist && <div className="uk-alert-danger" uk-alert="">
                 <p>Uzivatel s timto emailem uz existuje</p>
@@ -75,6 +81,7 @@ const Checkout = ({
                 errorMessages={errorMessages}
                 pickupData={pickupData}
                 name="deliveryMethod"
+                radioCountry={radioState}
                 sum={sum}
                 allow={deliveryAllow}
                 getPickup={getPickup} />
@@ -83,6 +90,7 @@ const Checkout = ({
                 state={payMethod}
                 setState={setPayMethod}
                 error={error}
+                radioCountry={radioState}
                 sum={sum}
                 allow={paymentAllow}
                 errorMessages={errorMessages}
