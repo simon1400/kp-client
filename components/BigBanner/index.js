@@ -14,13 +14,15 @@ const BigBanner = ({data}) => {
     }
   }, [data.title])
 
+  if(!title.length) {
+    return null
+  }
+
   return (
     <section className="sec-base">
       <div className="uk-container uk-container-large">
         <div className="big-banner">
           <div className="img-wrap-bg">
-            {/* <Image src={`${APP_API}${data.image.url}`} layout="fill" /> */}
-            {/* <img src={data.image.url} /> */}
             <Image image={data.image.hash} width={1400} height={770} />
           </div>
           <div className="big-banner-info">
