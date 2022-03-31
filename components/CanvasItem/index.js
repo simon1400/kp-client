@@ -32,8 +32,6 @@ const CanvasItem = ({basketItem = false, data, index, square = false}) => {
     return '/'
   }
 
-  console.log(data);
-
   return (
     <Link href={getSlug(data)}>
       <a className={`canvas-item ${basketItem ? 'basket-canvas-item' : ''}`}>

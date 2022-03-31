@@ -7,6 +7,9 @@ const deliveryQuery = gql`
       price
       sale_from
       type
+      pays {
+        title
+      }
     }
   }
 `

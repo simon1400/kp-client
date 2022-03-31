@@ -7,6 +7,9 @@ const payQuery = gql`
       price
       type
       sale_from
+      deliveries {
+        title
+      }
     }
   }
 `

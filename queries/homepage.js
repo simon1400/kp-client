@@ -33,9 +33,13 @@ const homepageQuery = gql`
           }
         }
       }
-      partners {
-        hash
-        url
+      logo_company {
+        image {
+          hash
+        }
+        brands {
+          slug
+        }
       }
       meta{
         title

@@ -83,10 +83,10 @@ const Homepage = () => {
       <section className="partners-logo">
         <div className="uk-container uk-container-large">
           <div className="uk-slider" uk-slider="autoplay: true">
-            <ul className="uk-slider-items uk-child-width-1-2 uk-child-width-1-4@s uk-child-width-1-6@m uk-grid uk-grid-stack" uk-lightbox="animation: fade">
-              {data.homepage.partners.map((image, index) => <li key={index}>
-                <a class="uk-inline" href={image.url} data-caption="Caption 1">
-                  <Image image={image.hash} height={100} />
+            <ul className="uk-slider-items uk-child-width-1-2 uk-child-width-1-4@s uk-child-width-1-6@m uk-grid uk-grid-stack">
+              {data.homepage.logo_company.map((item, index) => <li key={index}>
+                <a href={item.brands.slug}>
+                  <Image image={item.image.hash} height={100} />
                 </a>
               </li>)}
             </ul>

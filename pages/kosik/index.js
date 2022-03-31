@@ -2,6 +2,8 @@ import {useState, useEffect, useContext} from 'react'
 import { DataStateContext } from '../../context/dataStateContext'
 import Image from '../../components/Image'
 import Page from '../../layout/Page'
+import { useQuery } from '@apollo/client'
+import canvasQuery from '../../queries/canvas'
 
 const APP_API = process.env.APP_API
 
@@ -9,6 +11,7 @@ const Basket = () => {
 
   const [basketItems, setBasketItems] = useState([])
   const { dataContextState, dataContextDispatch } = useContext(DataStateContext)
+  const { data } = useQuery(canvasQuery);
 
   useEffect(() => {
     setBasketItems(dataContextState.basket)
@@ -54,12 +57,11 @@ const Basket = () => {
                     {!!basketItems.length && basketItems.map((item, index) => <tr key={index} className="basket-item">
                       <td className="uk-flex uk-flex-start">
                         <div className="basket-item-img">
-                          {/* <Image src={APP_API+item.image.url} width="100" height="100" /> */}
                           <Image image={item.image.hash} width={100} height={100}  />
                         </div>
                         <div className="basket-item-content">
                           <label>{item.brand}</label>
-                          <a href={`/product/${item.slug}`}>{item.title}</a>
+                          <a href={`/p/${item.slug}`}>{item.title}</a>
                           {!!item.variantProduct && <span>{item.variantProduct}</span>}
                         </div>
                       </td>
@@ -88,25 +90,18 @@ const Basket = () => {
                 <h2 className="uk-margin-large-top">Souhrn objednávky</h2>
                 <div >
                   <table className="canvas-table uk-table uk-margin-remove-vertical">
-                    <tbody>
-                      <tr>
-                        <td>Doprava</td>
+                    {!!data?.global?.basketInfo && !!data.global?.basketInfo?.length && <tbody>
+                      {data.global.basketInfo.map((item, index) => <tr key={index}>
+                        <td>{item.title}</td>
                         <td className="uk-text-right">
-                          <span className="green-text">ZDARMA</span>
+                          <span className="green-text">{item.value}</span>
                         </td>
-                      </tr>
-                      <tr>
-                        <td>Platba</td>
-                        <td className="uk-text-right">
-                          <span className="green-text">ZDARMA</span>
-                        </td>
-                      </tr>
-                    </tbody>
+                      </tr>)}
+                    </tbody>}
                     <tfoot>
                       <tr>
                         <th>Celková cena</th>
                         <th className="uk-text-right price-color">{globalSum().toLocaleString()} Kč</th>
-                        {/*<th className="uk-text-right price-color">1 387 Kč</th>*/}
                       </tr>
                     </tfoot>
                   </table>

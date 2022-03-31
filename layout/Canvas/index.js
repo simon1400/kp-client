@@ -1,13 +1,15 @@
 import {useState, useEffect, useContext} from 'react'
-// import loadable from '@loadable/component'
 import { DataStateContext } from '../../context/dataStateContext'
 import { offcanvas, util } from 'uikit'
 
 import CanvasItem from '../../components/CanvasItem'
+import canvasQuery from '../../queries/canvas'
+import { useQuery } from '@apollo/client'
 
 const Canvas = () => {
 
   const [canvasItems, setCanvasItems] = useState([])
+  const { data } = useQuery(canvasQuery);
 
   const closeCanvas = (e) => {
     e.preventDefault()
@@ -26,6 +28,8 @@ const Canvas = () => {
     setSum(startSum)
   }, [dataContextState, dataContextState.basket.length])
 
+  console.log(data);
+
   return (
     <div id="canvas" className="uk-offcanvas" uk-offcanvas="flip: true; overlay: true">
       <div className="uk-offcanvas-bar">
@@ -41,20 +45,14 @@ const Canvas = () => {
         </div>
         {!!canvasItems.length && <hr className="uk-margin-bottom uk-margin-top"/>}
         {!!canvasItems.length && <table className="canvas-table uk-table uk-margin-remove-vertical">
-          <tbody>
-            <tr>
-              <td>Doprava</td>
+          {!!data?.global?.basketInfo && !!data.global?.basketInfo?.length && <tbody>
+            {data.global.basketInfo.map((item, index) => <tr key={index}>
+              <td>{item.title}</td>
               <td className="uk-text-right">
-                <span className="green-text">ZDARMA</span>
+                <span className="green-text">{item.value}</span>
               </td>
-            </tr>
-            <tr>
-              <td>Platba</td>
-              <td className="uk-text-right">
-                <span className="green-text">ZDARMA</span>
-              </td>
-            </tr>
-          </tbody>
+            </tr>)}
+          </tbody>}
           <tfoot>
             <tr>
               <th>Celková cena</th>

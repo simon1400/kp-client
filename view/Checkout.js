@@ -33,6 +33,8 @@ const Checkout = ({
   setError,
   setAnotherAddress,
   setFirmInfo,
+  paymentAllow,
+  deliveryAllow,
   setDescription,
   setSale,
   pickupData,
@@ -73,14 +75,18 @@ const Checkout = ({
                 errorMessages={errorMessages}
                 pickupData={pickupData}
                 name="deliveryMethod"
-                getPickup={getPickup}  />
+                sum={sum}
+                allow={deliveryAllow}
+                getPickup={getPickup} />
               <Methods
                 title="Platba"
                 state={payMethod}
                 setState={setPayMethod}
                 error={error}
+                sum={sum}
+                allow={paymentAllow}
                 errorMessages={errorMessages}
-                name="payMethod"  />
+                name="payMethod" />
 
               <div className="uk-margin-medium-top">
                 <InfoForm state={contactInfo} setState={setContactInfo} name="contact" error={error} setError={setError} errorMessages={errorMessages} title="Kontatkní údaje"  />

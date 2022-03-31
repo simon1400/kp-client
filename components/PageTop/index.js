@@ -1,8 +1,6 @@
 import Link from 'next/link'
 import Image from '../Image'
 
-const APP_API = process.env.APP_API
-
 const PageTop = ({
   big = false,
   head,

@@ -30,6 +30,9 @@ const CheckoutWrap = () => {
   const [deliveryMethod, setDeliveryMethod] = useState([])
   const [payMethod, setPayMethod] = useState([])
 
+  const [deliveryAllow, setDeliveryAllow] = useState("all")
+  const [paymentAllow, setPaymentsAllow] = useState("all")
+
   const [contactInfo, setContactInfo] = useState(contactData(dataContextState?.user))
   const [anotherAddress, setAnotherAddress] = useState(contactData(dataContextState?.user?.anotherAddress))
   const [firmInfo, setFirmInfo] = useState(firmData(dataContextState?.user?.firmInfo))
@@ -58,16 +61,16 @@ const CheckoutWrap = () => {
   }, [])
 
   useEffect(() => {
-    if(payData) {
-      setPayMethod(getPayData(payData))
-    }
-  }, [payData])
-
-  useEffect(() => {
     if(deliveryData) {
       setDeliveryMethod(getDeliveryData(deliveryData))
     }
   }, [deliveryData])
+
+  useEffect(() => {
+    if(payData) {
+      setPayMethod(getPayData(payData))
+    }
+  }, [payData])
 
   useEffect(() => {
     if(sale.value){
@@ -91,10 +94,20 @@ const CheckoutWrap = () => {
         }
       })
     }
+    deliveryMethod.map(item => {
+      if(item.check){
+        setPaymentsAllow(item.paysAllow)
+      }
+    })
   }, [deliveryMethod])
 
   useEffect(() => {
     setError({...error, payMethod: false})
+    payMethod.map(item => {
+      if(item.check){
+        setDeliveryAllow(item.deliveryAllow)
+      }
+    })
   }, [payMethod])
 
   useEffect(() => {
@@ -181,9 +194,6 @@ const CheckoutWrap = () => {
       firmInfo
     }
 
-    console.log(dataSend)
-    console.log(basketItems)
-
     const dataOrder = await createOrder({variables: { input: { data: dataSend } }})
 
     if(dataSend.payOnline) {
@@ -227,6 +237,8 @@ const CheckoutWrap = () => {
       setFirmInfo={setFirmInfo}
       description={description}
       setPayMethod={setPayMethod}
+      paymentAllow={paymentAllow}
+      deliveryAllow={deliveryAllow}
       anotherAddress={anotherAddress}
       setContactInfo={setContactInfo}
       setDescription={setDescription}
