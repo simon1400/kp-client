@@ -2,6 +2,7 @@ import {useEffect, useState} from 'react'
 import getMenu from '../../function/getMenu'
 import Link from 'next/link'
 import Image from '../../components/Image'
+import splitArr from '../../function/splitArr'
 
 const Footer = ({
   data,
@@ -15,19 +16,24 @@ const Footer = ({
 
   useEffect(() => {
     if(data?.title_footer) {
-      setTitle(data.title_footer.split(' '))
+      let newTitle = data.title_footer.split(' ')
+      setTitle(splitArr(newTitle, 2))
       setTechMenu(getMenu(nav))
       setSocMenu(getMenu(soc))
     }
   }, [data])
+
+  if(!title.length) {
+    return null
+  }
 
   return (
     <footer>
       <div className="footer-top">
         <div className="uk-container uk-container-large">
           <h2 className="big-head">
-            <span style={{paddingLeft: '0px'}}><b>{title[0]} {title[1]} {title[2]}</b></span>
-            <span style={{paddingLeft: '10vw'}}>{title[3]} {title[4]} {title[5]} {title[6]}</span>
+            <span style={{paddingLeft: '0px'}}><b>{title?.[0].map(item => `${item} `)}</b></span>
+            <span style={{paddingLeft: '10vw'}}>{title?.[1].map(item => `${item} `)}</span>
           </h2>
           <div className="uk-grid uk-child-width-1-1 uk-child-width-1-3@s" uk-grid="">
             <div className="footer-item">

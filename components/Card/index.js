@@ -16,9 +16,9 @@ const Card = ({data}) => {
   return (
     <div>
       <a href={`/p/${data.slug}`} className="card">
-        <div className="card-img">
+        {data.images[0]?.hash && <div className="card-img">
           <Image image={data.images[0].hash} width={320} height={320} />
-        </div>
+        </div>}
         <div className="card-content">
           {data.brand && <label>{data.brand.title}</label>}
           <h3>{data.title}</h3>

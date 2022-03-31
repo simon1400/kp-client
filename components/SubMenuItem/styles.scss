@@ -1,0 +1,22 @@
+.sub-menu-item{
+  border: solid 1px #e5e5e5;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  h4{
+    margin-bottom: 0;
+    font-size: 15px;
+    color: $text-color;
+    font-weight: $font-bold;
+    font-family: $ff-semibold;
+    line-height: 1;
+  }
+  .img-wrap{
+    min-height: 50px;
+    min-width: 50px;
+    text-align: center;
+  }
+  &:hover{
+    text-decoration: none;
+  }
+}

@@ -110,8 +110,6 @@ const Product = () => {
 
   const product = data.produkties[0]
 
-  console.log(data);
-
   return (
     <Page
       title={product.meta?.title}
@@ -143,7 +141,7 @@ const Product = () => {
                   <ul className="uk-slideshow-nav uk-dotnav uk-flex-center uk-margin"></ul>
                 </div>
               </div>
-              <ArticleShort data={data.global.support} icon="/assets/phone.svg" product />
+              {product.support && <ArticleShort data={data.global.support} icon="/assets/phone.svg" product />}
             </div>
             <div>
               <div className="product-info">

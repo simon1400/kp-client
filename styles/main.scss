@@ -441,4 +441,16 @@ h2.big-head{
   align-items: flex-end;
 }
 
+.sec-sub-categories{
+  padding-top: 40px;
+  padding-bottom: 40px;
+  .sub-cat-wrap{
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 10px;
+  }
+}
+
+
+
 @import 'media';

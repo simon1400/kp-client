@@ -97,6 +97,11 @@
 }
 @media(max-width: $breakpoint-small) {
   // $breakpoint-small: 640px
+  .sec-sub-categories{
+    .sub-cat-wrap{
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
   .header{
     .button-reverse.bare-button{
       &:hover{

@@ -11,6 +11,7 @@ import filteredLabelQuery from '../../queries/filter'
 import { DataStateContext } from '../../context/dataStateContext'
 import changeUrl from '../../function/changeUrl'
 import Content from '../../components/Content'
+import SubMenuItem from '../../components/SubMenuItem'
 
 const Category = () => {
 
@@ -230,6 +231,15 @@ const Category = () => {
                 <span><b>{title[0]}</b> {title[1]}</span>
               </h1>}
         />
+
+      {!!category?.sub?.length && <section className="sec-sub-categories">
+        <div className="uk-container uk-container-large">
+          <div className="sub-cat-wrap">
+            {category?.sub.map((item, index) => <SubMenuItem key={index} data={item} />)}
+          </div>
+        </div>
+      </section>}
+
       <section>
         <div className="uk-container uk-container-large">
           <div className="catalog-control">

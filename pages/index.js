@@ -11,6 +11,7 @@ import BigBanner from '../components/BigBanner'
 import Image from '../components/Image'
 import axios from 'axios';
 import ArticleShort from '../components/ArticleShort';
+import splitArr from '../function/splitArr';
 const APP_API = process.env.APP_API
 
 
@@ -42,7 +43,7 @@ const Homepage = () => {
     return ''
   }
 
-  console.log(data.homepage);
+  const h1Split = splitArr(h1, 3)
 
   return (
     <Page 
@@ -56,9 +57,9 @@ const Homepage = () => {
         big
         center
         head={<h1 className="big-head">
-                <span style={{paddingLeft: '5vw'}}><b>{h1[0]} {h1[1]}</b> {h1[2]}</span>
-                <span style={{paddingLeft: '22vw'}}>{h1[3]} {h1[4]}</span>
-                <span style={{paddingLeft: '5vw'}}><b>{h1[5]} {h1[6]}</b></span>
+                <span style={{paddingLeft: '5vw'}}><b>{h1Split[0].map(item => `${item} `)}</b></span>
+                <span style={{paddingLeft: '22vw'}}>{h1Split[1].map(item => `${item} `)}</span>
+                <span style={{paddingLeft: '5vw'}}><b>{h1Split[2].map(item => `${item} `)}</b></span>
               </h1>}
         img={data.homepage.image}
         textButton={data.homepage.Button.text}
@@ -99,7 +100,7 @@ const Homepage = () => {
           <div className="uk-slider" uk-slider="autoplay: true">
             <ul className="uk-slider-items uk-child-width-1-2 uk-child-width-1-4@s uk-child-width-1-6@m uk-grid uk-grid-stack">
               {data.homepage.logo_company.map((item, index) => <li key={index}>
-                <a href={item.brands.slug}>
+                <a href={`/c/${item.brands.slug}`}>
                   <Image image={item.image.hash} height={100} />
                 </a>
               </li>)}

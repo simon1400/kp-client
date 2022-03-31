@@ -16,12 +16,18 @@ const Method = ({
   getPickup = () => {}
 }) => {
 
-  const selectRadio = (index) => {
+  const selectRadio = (index, reset = false) => {
     const newState = [...state]
     newState.map(item => item.check = false)
-    newState[index].check = true
+    if(!reset) {
+      newState[index].check = true
+    }
     setState([...newState])
   }
+
+  useEffect(() => {
+    selectRadio(0, true)
+  }, [radioCountry])
 
   let disable
 

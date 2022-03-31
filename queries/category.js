@@ -17,6 +17,13 @@ const categoryQuery = gql`
       id
  			title
       add_title
+      sub{
+        icon {
+          hash
+        }
+        title
+        slug
+      }
       content
       filterCategories: brands {
         title
