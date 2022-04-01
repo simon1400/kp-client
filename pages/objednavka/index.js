@@ -8,12 +8,11 @@ import contactData from '../../function/objednavka/contactData'
 import firmData from '../../function/objednavka/firmData'
 import Checkout from '../../view/Checkout'
 import axios from 'axios'
-
 import {stateObj, errorObj} from '../../function/objednavka/objects'
-
 import payQuery from '../../queries/pay'
 import deliveryQuery from '../../queries/delivery'
 import {CreateOrder} from '../../queries/order'
+import saleFrom from '../../function/objednavka/saleFrom'
 
 const CheckoutWrap = () => {
 
@@ -44,31 +43,29 @@ const CheckoutWrap = () => {
 
   const [state, setState] = useState(stateObj)
   const [error, setError] = useState(errorObj)
-
+  
   useEffect(() => {
     setBasketItems(dataContextState.basket)
     var newStartSum = 0
     dataContextState.basket.map(item => {
       newStartSum += +item.price * +item.count
     })
-    if(newStartSum > 2000){
-      var newDeliveryMethod = [...deliveryMethod]
-      var newPayMethod = [...payMethod]
-      newDeliveryMethod.map(item => item.value = 0)
-      newPayMethod.map(item => item.value = 0)
-    }
     setStartSum(newStartSum)
   }, [])
 
   useEffect(() => {
     if(deliveryData) {
-      setDeliveryMethod(getDeliveryData(deliveryData))
+      const combineData = getDeliveryData(deliveryData)
+      const catlculateData = saleFrom(combineData, startSum)
+      setDeliveryMethod(catlculateData)
     }
   }, [deliveryData])
 
   useEffect(() => {
     if(payData) {
-      setPayMethod(getPayData(payData))
+      const combineData = getPayData(payData)
+      const catlculateData = saleFrom(combineData, startSum)
+      setPayMethod(catlculateData)
     }
   }, [payData])
 
@@ -243,6 +240,7 @@ const CheckoutWrap = () => {
       setContactInfo={setContactInfo}
       setDescription={setDescription}
       deliveryMethod={deliveryMethod}
+      setPaymentsAllow={setPaymentsAllow}
       setDeliveryMethod={setDeliveryMethod}
       setAnotherAddress={setAnotherAddress}
     />

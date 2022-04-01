@@ -12,6 +12,7 @@ import { DataStateContext } from '../../context/dataStateContext'
 import changeUrl from '../../function/changeUrl'
 import Content from '../../components/Content'
 import SubMenuItem from '../../components/SubMenuItem'
+import splitArr from '../../function/splitArr'
 
 const Category = () => {
 
@@ -216,6 +217,8 @@ const Category = () => {
     setMore(true)
   }
 
+  const h1Split = splitArr(title, 2)
+
   return (
     <Page
       title={category.meta?.title}
@@ -228,7 +231,7 @@ const Category = () => {
         small
         img={category.image}
         head={<h1 className="big-head">
-                <span><b>{title[0]}</b> {title[1]}</span>
+                <span><b>{h1Split[0].map(item => `${item} `)}</b> {h1Split[1].map(item => `${item} `)}</span>
               </h1>}
         />
 

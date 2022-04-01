@@ -5,6 +5,7 @@ import errorMessages from '../data/errorMessages'
 import globalQuery from '../queries/global'
 import { useQuery } from '@apollo/client'
 import RadioState from '../components/RadioState';
+import { stateObj } from '../function/objednavka/objects';
 
 const Page = loadable(() => import('../layout/Page'))
 const Sale = loadable(() => import('../components/Sale'))
@@ -37,6 +38,7 @@ const Checkout = ({
   paymentAllow,
   deliveryAllow,
   setDescription,
+  setPaymentsAllow,
   setSale,
   pickupData,
   getPickup
@@ -51,8 +53,18 @@ const Checkout = ({
   }
 
   const { data: dataGl } = useQuery(globalQuery);
-
   const [radioState, setRadioState] = useState("cz")
+
+  const changeCountry = (state) => {
+    setPaymentsAllow("all")
+    setRadioState(state)
+  }
+
+  const resetFromDelivery = () => {
+    const newPay = [...payMethod]
+    newPay.map(item => {item.check = false})
+    console.log(newPay);
+  }
 
   return(
     <Page title="Objednávka" basket>
@@ -62,7 +74,7 @@ const Checkout = ({
             <div className="uk-width-1-1 uk-width-2-3@s">
               <div className="checkout-head">
                 <h1 className="uk-margin-large-top">Objednávka</h1>
-                <RadioState state={radioState} setState={setRadioState} />
+                <RadioState state={radioState} setState={changeCountry} />
               </div>
 
               {error.exist && <div className="uk-alert-danger" uk-alert="">
@@ -77,12 +89,14 @@ const Checkout = ({
                 title="Doprava"
                 state={deliveryMethod}
                 setState={setDeliveryMethod}
+                setPayMethod={setPayMethod}
                 error={error}
                 errorMessages={errorMessages}
                 pickupData={pickupData}
                 name="deliveryMethod"
                 radioCountry={radioState}
-                sum={sum}
+                sum={startSum}
+                resetFromDelivery={resetFromDelivery}
                 allow={deliveryAllow}
                 getPickup={getPickup} />
               <Methods
@@ -91,7 +105,7 @@ const Checkout = ({
                 setState={setPayMethod}
                 error={error}
                 radioCountry={radioState}
-                sum={sum}
+                sum={startSum}
                 allow={paymentAllow}
                 errorMessages={errorMessages}
                 name="payMethod" />

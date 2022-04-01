@@ -10,8 +10,8 @@ const Method = ({
   allow,
   error,
   name,
-  sum,
   radioCountry,
+  resetFromDelivery,
   pickupData = false,
   getPickup = () => {}
 }) => {
@@ -23,13 +23,16 @@ const Method = ({
       newState[index].check = true
     }
     setState([...newState])
+    if(name == 'deliveryMethod') {
+      resetFromDelivery()
+    }
   }
+
+  let disable = false
 
   useEffect(() => {
     selectRadio(0, true)
   }, [radioCountry])
-
-  let disable
 
   return (
     <div className="methods uk-margin-medium-bottom">
@@ -41,10 +44,12 @@ const Method = ({
         <tbody>
           {state.map((item, index) => {
 
-            if(allow !== 'all') {
+            if(allow !== 'all' && name !== "deliveryMethod") {
               let findElement = allow.find(e => e.title === item.label)
               if(findElement === undefined) disable = true
               else disable = false
+            }else{
+              disable = false
             }
             
             if(item.state === radioCountry) {
@@ -61,18 +66,18 @@ const Method = ({
                         onChange={() => selectRadio(index)} 
                         checked={item.check} />
                       <span>{item.label}</span>
-                  </label>
-                  {item.check && item.type === 'zasilkovna' && pickupData && <div>
-                    <p>Vybraná pobočka: {pickupData.name}</p>
-                    <a href="/" onClick={e => {
-                        e.preventDefault()
-                        window.Packeta.Widget.pick('497b43a88a3af5e8', getPickup)
-                      }}>Změnit pobočku</a>
-                  </div>}
+                    </label>
+                    {item.check && item.type === 'zasilkovna' && pickupData && <div>
+                      <p>Vybraná pobočka: {pickupData.name}</p>
+                      <a href="/" onClick={e => {
+                          e.preventDefault()
+                          window.Packeta.Widget.pick('497b43a88a3af5e8', getPickup)
+                        }}>Změnit pobočku</a>
+                    </div>}
                   </div>
                   <div className="uk-text-right">
-                    {item.value > 0 && item.saleFrom >= sum && <span className="price-method">{item.value} Kč</span>}
-                    {(item.value <= 0 || item.saleFrom <= sum) && <span className="yellow-text">ZDARMA</span>}
+                    {item.value > 0 && <span className="price-method">{item.value} Kč</span>}
+                    {item.value <= 0 && <span className="yellow-text">ZDARMA</span>}
                   </div>
                 </td>
               </tr>
