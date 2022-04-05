@@ -6,6 +6,7 @@
 /node_modules
 /.pnp
 .pnp.js
+/typesense-server-data
 
 # testing
 /coverage
