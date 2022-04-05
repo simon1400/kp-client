@@ -3,8 +3,6 @@ import { connectStateResults } from 'react-instantsearch-dom';
 
 const HasResult = ({ allSearchResults }) => {
 
-  console.log(allSearchResults);
-
   const hasResults = allSearchResults && (allSearchResults?.blogs?.nbHits !== 0 || allSearchResults?.categories?.nbHits !== 0 || allSearchResults?.produkties?.nbHits !== 0 || allSearchResults?.brands?.nbHits !== 0);
   
   if(!hasResults) {

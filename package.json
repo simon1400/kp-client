@@ -5,10 +5,7 @@
     "build": "next build",
     "start": "next start -p 3005",
     "typesense": "node function/startTypesenseServer.js",
-    "popProduct": "node typesenseIndex/produkties.js",
-    "popBlog": "node typesenseIndex/blogs.js",
-    "popCat": "node typesenseIndex/categories.js",
-    "popBrand": "node typesenseIndex/brands.js"
+    "populate": "node typesenseIndex/produkties.js && node typesenseIndex/blogs.js && node typesenseIndex/categories.js && node typesenseIndex/brands.js"
   },
   "dependencies": {
     "@apollo/client": "^3.4.8",

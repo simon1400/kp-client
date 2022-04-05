@@ -47,6 +47,7 @@ module.exports = (async () => {
       categorySlug: [],
       values: [],
       brand: "",
+      brandsSlug: ""
     };
 
     if(item.images?.length) {
@@ -55,6 +56,7 @@ module.exports = (async () => {
     
     if(item.brand?.title) {
       transformData[index].brand = item.brand.title
+      transformData[index].brandsSlug = item.brand.slug
     }
     
     if(item.values.length) {

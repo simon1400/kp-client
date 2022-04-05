@@ -29,6 +29,11 @@ module.exports = {
       facet: true
     },
     {
+      name: "brandsSlug",
+      type: "string",
+      facet: true
+    },
+    {
       name: "category",
       type: "string[]",
       facet: true

@@ -147,7 +147,7 @@ const Category = () => {
 
         {!!category?.sub?.length && <SubCategoryMenu sub={category.sub}/>}
 
-        <CatalogFilterLabels labels={[]} />
+        <CatalogFilterLabels />
 
         <Configure 
           query={router.query.category}
