@@ -16,7 +16,11 @@ let reducer = (state, action) => {
       Cookies.set('cookies_agree', action.state)
       return { ...state, cookies_agree: action.state }
     case "state":
-      return { ...state, state: action.state }
+      return { ...state, state: action.state } 
+    case "filterCategory":
+      return { ...state, filterCategory: action.state }
+    case "filterParameters":
+      return { ...state, filterParameters: action.state }
     default:
       console.error('action.type: "' + action.type + '" is not implemented')
       return state
@@ -30,11 +34,10 @@ const initialState = {
   cookies_agree: Cookies.get('cookies_agree') ? Cookies.get('cookies_agree') : false,
   state: {
     searchFocus: false,
-    Brand: [],
-    Category: [],
-    param: [],
-    sort: 'published_at:asc'
-  }
+    sort: 'published_at:asc',
+  },
+  filterCategory: [],
+  filterParameters: [],
 }
 
 const DataStateContext = createContext(initialState);

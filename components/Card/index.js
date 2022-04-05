@@ -1,9 +1,8 @@
 // import Link from 'next/link'
 import getMinPrice from '../../function/getMinPrice'
 import Image from '../Image'
-const APP_API = process.env.APP_API
 
-const Card = ({data}) => {
+const Card = ({data, catalog = false}) => {
 
   const getPrice = () => {
     if(data.Variants?.length > 0) {
@@ -15,7 +14,7 @@ const Card = ({data}) => {
 
   return (
     <div>
-      <a href={`/p/${data.slug}`} className="card">
+      {!catalog && <a href={`/p/${data.slug}`} className="card">
         {data.images[0]?.hash && <div className="card-img">
           <Image image={data.images[0].hash} width={320} height={320} />
         </div>}
@@ -24,7 +23,17 @@ const Card = ({data}) => {
           <h3>{data.title}</h3>
           <span>{getPrice()} Kč</span>
         </div>
-      </a>
+      </a>}
+      {!!catalog && <a href={`/p/${data.slug}`} className="card">
+        {data.image && <div className="card-img">
+          <Image image={data.image} width={320} height={320} />
+        </div>}
+        <div className="card-content">
+          {data.brand && <label>{data.brand}</label>}
+          <h3>{data.title}</h3>
+          <span>{getPrice()} Kč</span>
+        </div>
+      </a>}
     </div>
   )
 }

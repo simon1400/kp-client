@@ -27,9 +27,9 @@ const Homepage = () => {
   // }, [])
 
   // const getData = async () => {
-  //   // axios.post('/api/money/exportImg').then(res => {
-  //   //   console.log(res.data);
-  //   // })
+  //   axios.post('/api/money/exportMoney').then(res => {
+  //     console.log(res.data);
+  //   })
   // }
 
   useEffect(() => {

@@ -162,7 +162,7 @@ const Product = () => {
                   <a href="/" className="button" onClick={e => buy(e, product)}>přidat do košíku</a>
                 </div>}
                 <ul>
-                  {product.brand && <li>Značka: <a href={`/${product.brand.slug}`}>{product.brand.title}</a></li>}
+                  {product.brand && <li>Značka: <a href={`/c/${product.brand.slug}`}>{product.brand.title}</a></li>}
                   <li>Kód výrobku: {product.code}</li>
                 </ul>
                 {/* <div className="description"> */}
