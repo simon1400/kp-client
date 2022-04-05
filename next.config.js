@@ -53,11 +53,11 @@ module.exports = (phase) => {
     })(),
     TYPESENSE_HOST: (() => {
       if (isDev) return 'localhost'
-      if (isProd) return 'strapi-kp.investmag.cz'
+      if (isProd) return 'search-kp.investmag.cz'
       return 'RESTURL_SPEAKERS:not (isDev,isProd && !isStaging,isProd && isStaging)'
     })(),
     TYPESENSE_PORT: (() => {
-      if (isDev) return '8108'
+      if (isDev) return '8109'
       if (isProd) return '443'
       return 'RESTURL_SPEAKERS:not (isDev,isProd && !isStaging,isProd && isStaging)'
     })(),

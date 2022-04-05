@@ -1285,3 +1285,30 @@ Interval compaction: 0.00 GB write, 0.00 MB/s write, 0.00 GB read, 0.00 MB/s rea
 Stalls(count): 0 level0_slowdown, 0 level0_slowdown_with_compaction, 0 level0_numfiles, 0 level0_numfiles_with_compaction, 0 stop for pending_compaction_bytes, 0 slowdown for pending_compaction_bytes, 0 memtable_compaction, 0 memtable_slowdown, interval 0 total count
 
 ** File Read Latency Histogram By Level [default] **
+2022/04/05-14:02:20.804633 4059b98700 [ilities/checkpoint/checkpoint_impl.cc:90] Started the snapshot process -- creating snapshot in directory /data/state/snapshot/temp/db_snapshot
+2022/04/05-14:02:20.805149 4059b98700 [ilities/checkpoint/checkpoint_impl.cc:106] Snapshot process -- using temporary directory /data/state/snapshot/temp/db_snapshot.tmp
+2022/04/05-14:02:20.812802 4059b98700 [/db_impl/db_impl_files.cc:49] File Deletions Disabled
+2022/04/05-14:02:20.825017 4059b98700 [/db_impl/db_impl_write.cc:1770] [default] New memtable created with log file: #194. Immutable memtables: 0.
+2022/04/05-14:02:20.832412 4038b56700 (Original Log Time 2022/04/05-14:02:20.831559) [/db_impl/db_impl_compaction_flush.cc:2548] Calling FlushMemTableToOutputFile with column family [default], flush slots available 4, compaction slots available 1, flush slots scheduled 1, compaction slots scheduled 0
+2022/04/05-14:02:20.832487 4038b56700 [/flush_job.cc:339] [default] [JOB 6] Flushing memtable with next log file: 194
+2022/04/05-14:02:20.833614 4038b56700 EVENT_LOG_v1 {"time_micros": 1649167340833564, "job": 6, "event": "flush_started", "num_memtables": 1, "num_entries": 2, "num_deletes": 0, "total_data_size": 254, "memory_usage": 1016, "flush_reason": "Get Live Files"}
+2022/04/05-14:02:20.833653 4038b56700 [/flush_job.cc:368] [default] [JOB 6] Level-0 flush table #195: started
+2022/04/05-14:02:20.854229 4038b56700 EVENT_LOG_v1 {"time_micros": 1649167340854001, "cf_name": "default", "job": 6, "event": "table_file_creation", "file_number": 195, "file_size": 1003, "file_checksum": "", "file_checksum_func_name": "Unknown", "table_properties": {"data_size": 0, "index_size": 13, "index_partitions": 0, "top_level_index_size": 0, "index_key_is_user_key": 1, "index_value_is_delta_encoded": 1, "filter_size": 0, "raw_key_size": 21, "raw_average_key_size": 21, "raw_value_size": 17, "raw_average_value_size": 17, "num_data_blocks": 0, "num_entries": 1, "num_deletions": 1, "num_merge_operands": 0, "num_range_deletions": 1, "format_version": 0, "fixed_key_len": 0, "filter_policy": "", "column_family_name": "default", "column_family_id": 0, "comparator": "leveldb.BytewiseComparator", "merge_operator": "UInt64AddOperator", "prefix_extractor_name": "nullptr", "property_collectors": "[]", "compression": "NoCompression", "compression_options": "window_bits=-14; level=32767; strategy=0; max_dict_bytes=0; zstd_max_train_bytes=0; enabled=0; max_dict_buffer_bytes=0; ", "creation_time": 1649163740, "oldest_key_time": 1649163740, "file_creation_time": 1649167340, "slow_compression_estimated_data_size": 0, "fast_compression_estimated_data_size": 0, "db_id": "577f2496-79a1-443f-8c86-04acfd502327", "db_session_id": "O8TEW152201VSJXZAR7K"}}
+2022/04/05-14:02:20.862856 4038b56700 [/flush_job.cc:427] [default] [JOB 6] Level-0 flush table #195: 1003 bytes OK
+2022/04/05-14:02:20.868829 4038b56700 (Original Log Time 2022/04/05-14:02:20.863057) [/memtable_list.cc:449] [default] Level-0 commit table #195 started
+2022/04/05-14:02:20.868845 4038b56700 (Original Log Time 2022/04/05-14:02:20.867604) [/memtable_list.cc:629] [default] Level-0 commit table #195: memtable #1 done
+2022/04/05-14:02:20.868853 4038b56700 (Original Log Time 2022/04/05-14:02:20.868573) EVENT_LOG_v1 {"time_micros": 1649167340868370, "job": 6, "event": "flush_finished", "output_compression": "NoCompression", "lsm_state": [1, 1, 0, 0, 0, 0, 0], "immutable_memtables": 0}
+2022/04/05-14:02:20.868861 4038b56700 (Original Log Time 2022/04/05-14:02:20.868701) [/db_impl/db_impl_compaction_flush.cc:239] [default] Level summary: files[1 1 0 0 0 0 0] max score 0.50
+2022/04/05-14:02:20.884057 4059b98700 [/wal_manager.cc:83] Latest Archived log: 189
+2022/04/05-14:02:20.884164 4059b98700 [ilities/checkpoint/checkpoint_impl.cc:134] Copying /MANIFEST-000184
+2022/04/05-14:02:20.895710 4059b98700 [ilities/checkpoint/checkpoint_impl.cc:134] Copying /OPTIONS-000187
+2022/04/05-14:02:20.905138 4059b98700 [ilities/checkpoint/checkpoint_impl.cc:124] Hard Linking /000195.sst
+2022/04/05-14:02:20.912141 4059b98700 [ilities/checkpoint/checkpoint_impl.cc:124] Hard Linking /000193.sst
+2022/04/05-14:02:20.915614 4059b98700 [ilities/checkpoint/checkpoint_impl.cc:140] Creating /CURRENT
+2022/04/05-14:02:20.919889 4059b98700 [ilities/checkpoint/checkpoint_impl.cc:375] Number of log files 3
+2022/04/05-14:02:20.921338 4059b98700 [/db_impl/db_impl_files.cc:78] File Deletions Enabled
+2022/04/05-14:02:20.921518 4059b98700 [/db_impl/db_impl_files.cc:417] [JOB 0] Try to delete WAL files size 45, prev total WAL file size 45, number of live WAL files 2.
+2022/04/05-14:02:20.927557 4059b98700 [/wal_manager.cc:281] Move log file /data/db/000191.log to /data/db/archive/000191.log -- OK
+2022/04/05-14:02:20.929151 4059b98700 [/wal_manager.cc:281] Move log file /data/db/000191.log to /data/db/archive/000191.log -- IO error: No such file or directory: While renaming a file to /data/db/archive/000191.log: /data/db/000191.log: No such file or directory
+2022/04/05-14:02:20.935935 4059b98700 [ilities/checkpoint/checkpoint_impl.cc:172] Snapshot DONE. All is good
+2022/04/05-14:02:20.935967 4059b98700 [ilities/checkpoint/checkpoint_impl.cc:173] Snapshot sequence number: 26447
