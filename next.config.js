@@ -53,7 +53,7 @@ module.exports = (phase) => {
     })(),
     TYPESENSE_HOST: (() => {
       if (isDev) return 'localhost'
-      if (isProd) return 'search-kp.investmag.cz'
+      if (isProd) return 'kp-search.hardart.cz'
       return 'RESTURL_SPEAKERS:not (isDev,isProd && !isStaging,isProd && isStaging)'
     })(),
     TYPESENSE_PORT: (() => {
