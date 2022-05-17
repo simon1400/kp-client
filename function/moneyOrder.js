@@ -50,10 +50,6 @@ export default (data) => {
         <ObjPrij>
           <Popis>Objedn�vka z e-shopu (${data.id})</Popis>
           <Poznamka>${data.description}</Poznamka>
-          <!-- 
-          <Vystaveno>2010-06-01</Vystaveno>
-          <Vyridit_do>2010-06-10/Vyridit_do> 
-          -->
           <DodOdb>
             <GUID>{13FE548C-1A7C-4896-B648-1AF094AA8492}</GUID>
           </DodOdb>
@@ -83,7 +79,7 @@ export default (data) => {
               <GUID>${item.guid}</GUID>
             </KmKarta>
             <Sklad>
-              <GUID>{504C55C5-461E-46C4-A42B-5242FDE76A03}</GUID>
+              <GUID>{4F7A6CE9-A84A-4287-98BB-66BA52B81D38}</GUID>
             </Sklad>
           </Polozka>
         `)}

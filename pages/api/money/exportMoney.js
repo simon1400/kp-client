@@ -63,7 +63,6 @@ export default async function handler (req, res) {
           AxiosSTRAPI.post('/produkties', item)
             .then(res => console.log('Success created --', res.data.title))
             .catch(err => {
-              console.log(item)
               if(err.response?.data) {
                 console.log('Failed created --', err.response.data)
               }else{
@@ -108,7 +107,6 @@ export default async function handler (req, res) {
             published_at: null
           }).then(res => console.log('Success created variant --', res.data.title))
             .catch(err => {
-              console.log(value);
               if(err.response?.data?.data) {
                 console.error('Failed create variant --', err.response?.data?.data)
               }else if(err.response?.data) {
@@ -119,7 +117,6 @@ export default async function handler (req, res) {
             })
         }
       }).catch(err => {
-        console.log(value)
         if(err.response?.data) {
           console.log('Failed get --', err.response.data)
         }else{
