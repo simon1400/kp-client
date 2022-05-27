@@ -12,6 +12,7 @@ const productQuery = gql`
       slug
       content
       guid
+      code
       support
       images {
         hash

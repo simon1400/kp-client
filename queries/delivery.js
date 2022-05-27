@@ -8,6 +8,8 @@ const deliveryQuery = gql`
       sale_from
       state
       type
+      guid
+      code
       pays {
         title
       }

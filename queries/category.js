@@ -1,5 +1,4 @@
 import { gql } from "@apollo/client";
-import bannerQuery from './banner'
 import navQuery from './nav'
 
 import {
@@ -37,7 +36,7 @@ const categoryQuery = gql`
         description
       }
       image {
-        url
+        hash
       }
     }
     brands(where: {slug:$slug}) {
@@ -57,7 +56,7 @@ const categoryQuery = gql`
         description
       }
       image {
-        url
+        hash
       }
     }
     global {

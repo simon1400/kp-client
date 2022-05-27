@@ -4,6 +4,8 @@ export default (data) => {
       name: 'payment',
       label: item.title,
       value: item.price,
+      guid: item.guid,
+      code: item.code,
       check: false,
       disabled: false,
       saleFrom: item.sale_from,

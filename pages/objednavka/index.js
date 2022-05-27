@@ -153,6 +153,8 @@ const CheckoutWrap = () => {
       return
     }
 
+    console.log("basketItems", basketItems)
+
     const dataSend = {
       email: contactInfo.email,
       phone: contactInfo.phone,
@@ -170,12 +172,16 @@ const CheckoutWrap = () => {
       delivery: {
         name: checkDelivery.label,
         value: checkDelivery.value,
-        type: checkDelivery.method
+        type: checkDelivery.method,
+        guid: checkDelivery.guid,
+        code: checkDelivery.code,
       },
       payment: {
         name: checkPayment.label,
         value: checkPayment.value,
-        type: checkPayment.method
+        type: checkPayment.method,
+        guid: checkPayment.guid,
+        code: checkPayment.code,
       },
       basketItem: basketItems.map(item => ({
         variant: item.variantProduct,
@@ -185,7 +191,8 @@ const CheckoutWrap = () => {
         count: item.count,
         idProduct: item.id,
         title: item.title,
-        guid: item.guid
+        guid: item.guid,
+        code: item.code
       })),
       anotherAddress,
       firmInfo

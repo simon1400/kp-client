@@ -66,6 +66,7 @@ const Product = () => {
         brand: product.brand?.title,
         slug: product.slug,
         guid: product.guid,
+        code: product.code,
         __typename: "product"
       }
       if(!!product.Variants?.length){
@@ -103,7 +104,7 @@ const Product = () => {
     return ''
   }
 
-  if(!data.produkties.length) {
+  if(!data?.produkties?.length) {
     router.push('/404')
     return ''
   }

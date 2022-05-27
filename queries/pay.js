@@ -8,6 +8,8 @@ const payQuery = gql`
       type
       sale_from
       state
+      guid
+      code
       deliveries {
         title
       }

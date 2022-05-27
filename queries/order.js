@@ -32,11 +32,15 @@ export const CreateOrder = gql`
           name
           value
           type
+          guid
+          code
         }
         payment {
           name
           value
           type
+          guid
+          code
         }
         basketItem {
           variant
@@ -47,6 +51,7 @@ export const CreateOrder = gql`
           idProduct
           title
           guid
+          code
         }
         anotherAddress {
           email
@@ -89,11 +94,15 @@ export const GetOrder = gql`
         name
         value
         type
+        guid
+        code
       }
       payment {
         name
         value
         type
+        guid
+        code
       }
       basketItem {
         variant
@@ -104,6 +113,7 @@ export const GetOrder = gql`
         idProduct
         title
         guid
+        code
       }
       anotherAddress {
         email

@@ -10,14 +10,14 @@ import axios from 'axios'
 // import Head from 'next/head'
 
 import Page from "../../layout/Page"
-import { AxiosCLIENT } from '../../restClient'
+// import { AxiosCLIENT } from '../../restClient'
 
 const ThankYou = () => {
 
   const router = useRouter()
 
   const [status, setStatus] = useState('')
-  const [price, setPrice] = useState('')
+  // const [price, setPrice] = useState('')
 
   const { dataContextDispatch } = useContext(DataStateContext)
   const [getOrder, {data: order}] = useLazyQuery(GetOrder);
@@ -75,6 +75,7 @@ const ThankYou = () => {
           }})
         }).catch(err => console.log(err))
       }
+      console.log("Dekujem - order - ", order)
       axios.post('/api/money/order', order).then(res => console.log(res.data))
     }
   }, [status])
