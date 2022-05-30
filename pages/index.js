@@ -22,16 +22,6 @@ const Homepage = () => {
   const [h1, setH1] = useState([])
   const [h2, setH2] = useState([])
 
-  // useEffect(() => {
-  //   getData()
-  // }, [])
-
-  // const getData = async () => {
-  //   axios.post('/api/money/exportMoney').then(res => {
-  //     console.log(res.data);
-  //   })
-  // }
-
   useEffect(() => {
     if(!loading) {
       setH1(data.homepage.title.split(' '))

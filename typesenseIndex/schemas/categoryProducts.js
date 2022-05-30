@@ -1,5 +1,5 @@
 module.exports = {
-  name: "category_products",
+  name: "categoryProducts",
   num_documents: 0,
   fields: [
     {

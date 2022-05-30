@@ -9,7 +9,7 @@ const SearchResult = ({
   title
 }) => {
 
-  const [slug, setSlug] = useState('')
+  // const [slug, setSlug] = useState('')
 
   const getSlug = (data) => {
     if(title === 'Produkty') {

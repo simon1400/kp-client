@@ -47,7 +47,7 @@ const Search = () => {
 
   return (
     <InstantSearch
-      indexName="produkties" 
+      indexName="produkties"
       searchClient={searchClient}
     >
       <div id="search" className="uk-offcanvas" uk-offcanvas="flip: true; overlay: true">

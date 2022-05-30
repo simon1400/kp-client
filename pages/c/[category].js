@@ -5,10 +5,10 @@ import Filter from '../../layout/Filter'
 import categoryQuery from '../../queries/category'
 import { useLazyQuery } from "@apollo/client";
 import {useRouter} from 'next/router'
-import changeUrl from '../../function/changeUrl'
+// import changeUrl from '../../function/changeUrl'
 import Content from '../../components/Content'
 import splitArr from '../../function/splitArr'
-import {InstantSearch, Configure} from 'react-instantsearch-dom'
+import {InstantSearch, Configure, Index} from 'react-instantsearch-dom'
 import { searchClient } from "../../lib/typesenseAdapter";
 import CatalogList from '../../components/CatalogList'
 import CatalogFilterLabels from '../../components/CatalogFilterLabels'
@@ -23,15 +23,15 @@ const Category = () => {
   const [subTitle, setSubTitle] = useState([])
   const [navigation, setNavigation] = useState({})
   const [global, setGlobal] = useState({})
-  const [filter, setFilter] = useState({
-    slug: undefined,
-    sort: undefined,
-    param: undefined,
-    brandId: undefined,
-    categoryId: undefined,
-    offset: 0,
-    limit: 4
-  })
+  // const [filter, setFilter] = useState({
+  //   slug: undefined,
+  //   sort: undefined,
+  //   param: undefined,
+  //   brandId: undefined,
+  //   categoryId: undefined,
+  //   offset: 0,
+  //   limit: 4
+  // })
 
   const [getData, {data: dataFetch}] = useLazyQuery(categoryQuery);
 
@@ -68,58 +68,58 @@ const Category = () => {
     }
   }, [dataFetch])
 
-  const handleFilter = (state) => {
-    changeUrl(state)
+  // const handleFilter = (state) => {
+  //   changeUrl(state)
 
-    let filterObj = filter
-    const labelsFilter = {
-      param: [0],
-      brandId: [0],
-      categoryId: [0]
-    }
+  //   let filterObj = filter
+  //   const labelsFilter = {
+  //     param: [0],
+  //     brandId: [0],
+  //     categoryId: [0]
+  //   }
 
-    if(category.__typename === "Category") {
-      filterObj.categoryId = category.id
-    }
-    if(category.__typename === "Brand"){
-      filterObj.brandId = category.id
-    }
+  //   if(category.__typename === "Category") {
+  //     filterObj.categoryId = category.id
+  //   }
+  //   if(category.__typename === "Brand"){
+  //     filterObj.brandId = category.id
+  //   }
 
-    if(state?.Brand?.length){
-      filterObj.brandId = state.Brand
-      labelsFilter.brandId = state.Brand
-    }else{
-      filterObj.brandId = undefined
-    }
-    if(state?.Category?.length){
-      filterObj.categoryId = state.Category
-      labelsFilter.categoryId = state.Category
-    }else{
-      filterObj.categoryId = undefined
-    }
-    if(state.param.length) {
-      filterObj.param = state.param
-      labelsFilter.param = state.param
-    }else{
-      filterObj.param = undefined
-    }
-    if(state.sort.length) {
-      filterObj.sort = state.sort
-    }else{
-      filterObj.sort = undefined
-    }
+  //   if(state?.Brand?.length){
+  //     filterObj.brandId = state.Brand
+  //     labelsFilter.brandId = state.Brand
+  //   }else{
+  //     filterObj.brandId = undefined
+  //   }
+  //   if(state?.Category?.length){
+  //     filterObj.categoryId = state.Category
+  //     labelsFilter.categoryId = state.Category
+  //   }else{
+  //     filterObj.categoryId = undefined
+  //   }
+  //   if(state.param.length) {
+  //     filterObj.param = state.param
+  //     labelsFilter.param = state.param
+  //   }else{
+  //     filterObj.param = undefined
+  //   }
+  //   if(state.sort.length) {
+  //     filterObj.sort = state.sort
+  //   }else{
+  //     filterObj.sort = undefined
+  //   }
 
-    getProducts({variables: filterObj})
-    // refetchLabels(labelsFilter)
-    setFilter(filterObj)
-  }
+  //   // getProducts({variables: filterObj})
+  //   // refetchLabels(labelsFilter)
+  //   setFilter(filterObj)
+  // }
 
   const h1Split = splitArr(title, 2)
   const subTitleSplit = splitArr(subTitle, 3)
 
   return (
     <InstantSearch 
-      indexName="category_products"
+      indexName="categoryProducts"
       searchClient={searchClient}
     >
       <Page
@@ -137,34 +137,34 @@ const Category = () => {
                 </h1>}
           />
 
-        {!!category?.sub?.length && <SubCategoryMenu sub={category.sub}/>}
+          {!!category?.sub?.length && <SubCategoryMenu sub={category.sub}/>}
 
-        <CatalogFilterLabels />
+          <CatalogFilterLabels />
 
-        <Configure 
-          query={router.query.category}
-          hitsPerPage={20}
-        />
-        <CatalogList />
-        
-        <section className="additional-sec">
-          <div className="uk-container">
-            {!!subTitle?.length && <h2 className="big-head">
-              <span style={{paddingLeft: '14vw'}}>{subTitleSplit[0].map(item => `${item} `)}</span>
-              <span style={{paddingLeft: '0px'}}>{subTitleSplit[1].map(item => `${item} `)}</span>
-              <span style={{paddingLeft: '7vw'}}>{subTitleSplit[2].map(item => `${item} `)}</span>
-            </h2>}
-            <div>
-              {category.content && <Content data={category.content} />}
+          <Configure 
+            query={router.query.category}
+            hitsPerPage={20}
+          />
+          <CatalogList />
+          
+          <section className="additional-sec">
+            <div className="uk-container">
+              {!!subTitle?.length && <h2 className="big-head">
+                <span style={{paddingLeft: '14vw'}}>{subTitleSplit[0].map(item => `${item} `)}</span>
+                <span style={{paddingLeft: '0px'}}>{subTitleSplit[1].map(item => `${item} `)}</span>
+                <span style={{paddingLeft: '7vw'}}>{subTitleSplit[2].map(item => `${item} `)}</span>
+              </h2>}
+              <div>
+                {category.content && <Content data={category.content} />}
+              </div>
             </div>
-          </div>
-        </section>
+          </section>
 
-        <Filter
-          parameters={category?.parameters || []}
-          category={category?.filterCategories || []}
-          handle={handleFilter}
-        />
+          <Filter
+            parameters={category?.parameters || []}
+            category={category?.filterCategories || []}
+            // handle={handleFilter}
+          />
 
       </Page>
     </InstantSearch>

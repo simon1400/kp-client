@@ -1,9 +1,8 @@
 import { connectStateResults } from 'react-instantsearch-dom';
-// import Button from '../../../components/Button';
 
 const HasResult = ({ allSearchResults }) => {
 
-  const hasResults = allSearchResults && (allSearchResults?.blogs?.nbHits !== 0 || allSearchResults?.categories?.nbHits !== 0 || allSearchResults?.produkties?.nbHits !== 0 || allSearchResults?.brands?.nbHits !== 0);
+  const hasResults = allSearchResults && (allSearchResults?.category_products?.nbHits !== 0 || allSearchResults?.blogs?.nbHits !== 0 || allSearchResults?.categories?.nbHits !== 0 || allSearchResults?.produkties?.nbHits !== 0 || allSearchResults?.brands?.nbHits !== 0);
   
   if(!hasResults) {
     return (

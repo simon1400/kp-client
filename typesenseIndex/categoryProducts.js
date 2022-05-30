@@ -1,7 +1,7 @@
 require("dotenv").config();
 const client = require('./config')
 const axios = require('axios')
-const nameCollection = 'category_products'
+const nameCollection = 'categoryProducts'
 const APP_API = process.env.APP_API
 
 const schema = require(`./schemas/${nameCollection}`)
