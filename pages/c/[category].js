@@ -127,7 +127,7 @@ const Category = () => {
 
   return (
     <InstantSearch 
-      indexName="produkties" 
+      indexName="category_products" 
       searchClient={searchClient}
     >
       <Page
