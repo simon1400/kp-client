@@ -185,7 +185,7 @@ const Product = () => {
             {product.relateds.map((item, index) => <div key={index}><Card data={item} /></div>)}
           </div>
           <div className="button-more-wrap">
-            <a href={`/${product.category[0].slug}`} className="button">dalši {product.category[0].title}</a>
+            <a href={`/c/${product.category[0].slug}`} className="button">dalši {product.category[0].title}</a>
           </div>
         </div>
       </section>}

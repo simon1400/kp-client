@@ -39,13 +39,11 @@ const BlogFull = () => {
 
   let blog = data.blogs[0]
 
-  let title = blog?.title.split(' ')
-  let subTitle = blog?.add_title.split(' ')
+  let title = blog?.title.split(' ') || ""
+  let subTitle = blog?.add_title.split(' ') || ""
 
-  title = splitArr(title, 2)
-  subTitle = splitArr(subTitle, 2)
-
-  console.log(subTitle);
+  title = title.length ? splitArr(title, 2) : ""
+  subTitle = subTitle.length ? splitArr(subTitle, 2) : ""
 
   return (
     <Page

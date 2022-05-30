@@ -22,7 +22,7 @@ const SingUp = ({handleType}) => {
 
   const [getUser, {data: user}] = useLazyQuery(getUserQuery)
   const [controlExistUser, {data: existUser}] = useLazyQuery(controlUser)
-  const { data: dataGl } = useQuery(globalQuery);
+  const { loading: loadingGl, data: dataGl } = useQuery(globalQuery);
 
   useEffect(() => {
     if(response) {
@@ -69,6 +69,10 @@ const SingUp = ({handleType}) => {
     e.preventDefault()
     alert('#alert-exist').close()
     setError({...error, exist: false})
+  }
+
+  if(loadingGl) {
+    return null
   }
 
   return (

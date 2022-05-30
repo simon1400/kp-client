@@ -151,7 +151,7 @@ const Category = () => {
 
         <Configure 
           query={router.query.category}
-          hitsPerPage={8}
+          hitsPerPage={20}
         />
         <CatalogList />
         

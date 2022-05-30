@@ -130,7 +130,7 @@ const CheckoutWrap = () => {
     if(!contactInfo.address.length) newError.address = true
     if(!contactInfo.city.length) newError.city = true
     if(!contactInfo.surname.length) newError.surname = true
-    if(!contactInfo.name.length) newError.name = true
+    if(!contactInfo.firstname.length) newError.firstname = true
     if(!contactInfo.phone.length) newError.phone = true
     if(!contactInfo.zip.length) newError.zip = true
 
@@ -158,7 +158,7 @@ const CheckoutWrap = () => {
     const dataSend = {
       email: contactInfo.email,
       phone: contactInfo.phone,
-      name: contactInfo.name,
+      name: contactInfo.firstname,
       surname: contactInfo.surname,
       address: contactInfo.address,
       city: contactInfo.city,

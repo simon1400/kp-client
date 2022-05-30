@@ -60,7 +60,7 @@ const InfoForm = ({
           errorAlert={error?.name}
           errorMessages={errorMessages?.name}
           id={`name_${name}`}
-          name="name"
+          name="firstname"
           value={state.name}
           handle={changeState}
         />
