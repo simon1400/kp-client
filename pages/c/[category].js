@@ -33,14 +33,6 @@ const Category = () => {
     limit: 4
   })
 
-  // const { loading: errorLoading, error: errorLabels, data: labels, refetch: refetchLabels } = useQuery(filteredLabelQuery, {
-  //   variables: {
-  //     param: router.query?.param ? router.query.param.split(',') : [0],
-  //     categoryId: router.query?.Category ? router.query.Category.split(',') : [0],
-  //     brandId: router.query?.Brand ? router.query.Brand.split(',') : [0]
-  //   }
-  // });
-
   const [getData, {data: dataFetch}] = useLazyQuery(categoryQuery);
 
   useEffect(() => {
@@ -127,7 +119,7 @@ const Category = () => {
 
   return (
     <InstantSearch 
-      indexName="category_products" 
+      indexName="category_products"
       searchClient={searchClient}
     >
       <Page
