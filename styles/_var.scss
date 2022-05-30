@@ -277,3 +277,12 @@ $notification-message-primary-color: white;
 // $notification-message-success-color: $global-success-background !default;
 $notification-message-warning-color: $accent;
 // $notification-message-danger-color: $global-danger-background !default;
+
+$hamburger-padding-x           : 0;
+$hamburger-padding-y           : 0;
+$hamburger-layer-width         : 30px;
+$hamburger-layer-height        : 2px;
+$hamburger-layer-spacing       : 8px;
+$hamburger-layer-color         : $accent;
+$hamburger-layer-border-radius : 0;
+$hamburger-hover-opacity       : 1;

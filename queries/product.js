@@ -21,6 +21,9 @@ const productQuery = gql`
         title,
         slug,
         price,
+        Variants {
+          price
+        }
         brand {
           title
         },

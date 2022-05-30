@@ -24,6 +24,11 @@ module.exports = {
       facet: true,
     },
     {
+      name: "variants",
+      type: "int32",
+      facet: true,
+    },
+    {
       name: "brand",
       type: "string",
       facet: true

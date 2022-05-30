@@ -90,8 +90,6 @@ header{
       align-self: end;
     }
     .control-menu{
-      display: -webkit-flex;
-      display: -ms-flex;
       display: flex;
       align-items: flex-end;
       .icons-wrap{
@@ -117,12 +115,3 @@ header{
 .hamburger-box{
   vertical-align: bottom;
 }
-
-$hamburger-padding-x           : 0;
-$hamburger-padding-y           : 0;
-$hamburger-layer-width         : 30px;
-$hamburger-layer-height        : 2px;
-$hamburger-layer-spacing       : 8px;
-$hamburger-layer-color         : $accent;
-$hamburger-layer-border-radius : 0;
-$hamburger-hover-opacity       : 1;
