@@ -23,7 +23,7 @@ module.exports = (phase) => {
     })(),
     APP_DOMAIN: (() => {
       if (isDev) return 'http://localhost:3005'
-      if (isProd) return 'https://kralovska-pece.hardart.cz'
+      if (isProd) return 'https://kralovska-pece.cz'
       return 'RESTURL_SPEAKERS:not (isDev,isProd && !isStaging,isProd && isStaging)'
     })(),
     GP_CLIENT_ID: (() => {
