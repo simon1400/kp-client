@@ -131,8 +131,8 @@ const Product = ({
           <div className="uk-grid uk-child-width-1-1 uk-child-width-1-2@s">
             <div>
               <div className="product-slider">
-                <a className="bare-button button-reverse uk-visible@s" href={`/c/${product.category[0].slug}`}>
-                  <img className="uk-svg" src="/assets/angle-left.svg" uk-svg="" />{product.category[0].title}
+                <a className="bare-button button-reverse uk-visible@s" href={`/c/${product.category[0]?.slug || product.brand?.slug}`}>
+                  <img className="uk-svg" src="/assets/angle-left.svg" uk-svg="" />{product.category[0]?.title || product.brand?.title}
                 </a>
                 <div className="uk-slideshow" uk-slideshow="ratio: 1:1">
                   <ul className="uk-slideshow-items">
@@ -193,7 +193,7 @@ const Product = ({
             {product.relateds.map((item, index) => <div key={index}><Card data={item} /></div>)}
           </div>
           <div className="button-more-wrap">
-            <a href={`/c/${product.category[0].slug}`} className="button">dalši {product.category[0].title}</a>
+            <a href={`/c/${product.category[0]?.slug || product.brand?.slug}`} className="button">dalši {product.category[0]?.title || product.brand?.title}</a>
           </div>
         </div>
       </section>}
