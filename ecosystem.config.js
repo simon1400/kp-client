@@ -12,7 +12,7 @@ module.exports = {
       ref  : 'origin/main',
       repo : 'git@github.com:simon1400/kralovska-pece.git',
       path : '/var/www/kralovska-pece/client',
-      'post-deploy' : 'yarn && yarn build && pm2 reload ecosystem.config.js --env production',
+      'post-deploy' : 'yarn && yarn build && yarn populate && pm2 reload ecosystem.config.js --env production',
     }
   }
 };
