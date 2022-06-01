@@ -68,14 +68,8 @@ module.exports = (phase) => {
     })()
   }
 
-  const images = {
-    domains: ['localhost', 'strapi-kp.investmag.cz'],
-    deviceSizes: [320, 360, 640, 960, 1200, 1920, 2048],
-  }
-
   // next.config.js object
   return {
-    env,
-    images
+    env
   }
 }

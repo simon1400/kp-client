@@ -4,7 +4,9 @@ require("dotenv").config();
 const API_KEY = process.env.TYPESENSE_ADMIN_API_KEY;
 const PORT = 8109;
 
-const command = `docker run -d -p ${PORT}:8109 -v\`pwd\`/typesense-server-data/:/data \
+console.log(API_KEY);
+
+const command = `docker run -d -p ${PORT}:${PORT} -v\`pwd\`/typesense-server-data/:/data \
 typesense/typesense:0.22.2 --data-dir /data --api-key=${API_KEY} --listen-port ${PORT}  --enable-cors`;
 
 exec(command, (err, stdout, stderr) => {
