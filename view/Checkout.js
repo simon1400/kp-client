@@ -41,7 +41,8 @@ const Checkout = ({
   setPaymentsAllow,
   setSale,
   pickupData,
-  getPickup
+  getPickup,
+  dataGl
 }) => {
 
   const [saleCoupon, setSaleCoupon] = useState('')
@@ -52,7 +53,6 @@ const Checkout = ({
     setHeightProductsLits(heightProductsList === 0 ? 'auto' : 0)
   }
 
-  const { data: dataGl } = useQuery(globalQuery);
   const [radioState, setRadioState] = useState("cz")
 
   const changeCountry = (state) => {
@@ -63,7 +63,6 @@ const Checkout = ({
   const resetFromDelivery = () => {
     const newPay = [...payMethod]
     newPay.map(item => {item.check = false})
-    console.log(newPay);
   }
 
   return(
@@ -206,7 +205,7 @@ const Checkout = ({
                   </table>
                   <hr className="uk-margin-remove-top" />
                   <p>Všechny ceny jsou včetně DPH 21 %</p>
-                  <p>Odesláním objednávky souhlasíte s <a href={`/${dataGl?.global.terms.category.slug}/${dataGl?.global.terms.slug}`} target="_blank">obchodními podmínkami.</a></p>
+                  <p>Odesláním objednávky souhlasíte s <a href={`/${dataGl.global.terms.category[0].slug}/${dataGl.global.terms.slug}`} target="_blank">obchodními podmínkami.</a></p>
                   {Object.values(error).indexOf(true) >= 0 && <div className="uk-alert-danger uk-width-1-1 uk-margin-remove-bottom uk-text-center" uk-alert="">Chyba, zkontrolujte si prosím vaše údaje.</div>}
                   <button onClick={() => send()} className="button primary uk-width-expand uk-margin-top">Odeslat objednávku</button>
                 </div>

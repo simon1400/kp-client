@@ -1,43 +1,40 @@
 import Page from '../../layout/Page'
 import PageTop from '../../components/PageTop'
-import { useQuery } from "@apollo/client";
 import articlesCategory from '../../queries/articlesCategory'
 import Image from '../../components/Image'
-import { useRouter } from 'next/router';
-import { AxiosSTRAPI } from '../../restClient';
+import { client } from '../../lib/api';
+import splitArr from '../../function/splitArr';
 
-const APP_API = process.env.APP_API
+export async function getServerSideProps(ctx) {
 
-export async function getServerSideProps(context) {
+  const { data } = await client.query({
+    query: articlesCategory,
+    variables: {
+      slug: ctx.query.categoryArticles
+    }
+  });
 
-  const resCat = await AxiosSTRAPI.get(`/category-articles?slug=${context.query.categoryArticles}`)
-
-  if(!resCat.data.length) {
+  if(!data?.categoryArticles?.length) {
     return {
       notFound: true
     }
   }
 
   return {
-    props: { }
+    props: { 
+      data: data
+    }
   }
 }
 
-const Blog = () => {
+const Blog = ({
+  data
+}) => {
 
-  const router = useRouter()
+  const category = data.categoryArticles[0]
 
-  const { loading, error, data } = useQuery(articlesCategory, {
-    variables: {
-      slug: router.query.categoryArticles
-    }
-  });
-
-  if(loading) {
-    return ''
-  }
-
-  let category = data.categoryArticles[0]
+  const h1 = category.title.split(' ')
+  const h1Split = splitArr(h1, 2)
 
   return (
     <Page 
@@ -49,7 +46,10 @@ const Blog = () => {
       <PageTop
         small
         head={<h1 className="big-head">
-                {category.title && <span>{category.title}</span>}
+                {category.title && <span>
+                  {h1Split[0].map(item => `${item} `)}
+                  <b>{h1Split[1].map(item => `${item} `)}</b>
+                </span>}
               </h1>}
       />
 

@@ -12,8 +12,6 @@ const CatalogList = ({
     refineNext()
   }
 
-  console.log(hits);
-
   return (
     <section className="catalog-list">
       <div className="uk-container uk-container-large">

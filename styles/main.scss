@@ -79,16 +79,15 @@ h2.big-head{
 .partners-logo{
   padding-top: 50px;
   padding-bottom: 50px;
+  li{
+    display: flex;
+    align-items: center;
+  }
   a{
     display: block;
     text-align: center;
   }
-  img{
-    height: 100px;
-  }
 }
-
-
 
 .catalog-control{
   padding-top: 30px;
@@ -439,6 +438,7 @@ h2.big-head{
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
+  flex-wrap: wrap;
 }
 
 .sec-sub-categories{

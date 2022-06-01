@@ -20,7 +20,13 @@
   > td{
     padding: 25px 0;
     div{
-      min-width: 60px;
+      &:last-child{
+        margin-left: 10px;
+        span{
+          white-space: nowrap;
+        }
+        
+      }
     }
   }
   &.disabled-check-item{

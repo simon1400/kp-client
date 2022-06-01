@@ -46,7 +46,7 @@ const Footer = ({
             </div>
             <div className="footer-item">
               <label>Navštivte nás</label>
-              <p>{data.address}</p>
+              <p><a href={`https://maps.google.com/?q=${data.address}`} target="_blank">{data.address}</a></p>
             </div>
           </div>
         </div>

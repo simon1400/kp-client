@@ -110,42 +110,37 @@ const User = () => {
 
   return (
     <Page globalData={data.global} nav={data.navigation}>
-      <div className="uk-grid" uk-grid="">
-        <div className="uk-width-1-4"></div>
-        <div className="uk-width-1-2">
-          <h1 className="uk-h3 uk-margin-large-top">Kontatkní údaje</h1>
+      <div className="uk-container uk-container-small">
+        <h1 className="uk-h3 uk-margin-large-top">Kontatkní údaje</h1>
 
-          <div className="uk-margin-medium-top">
-            <InfoForm state={contactInfo} setState={setContactInfo} name="contact" error={error} setError={setError} errorMessages={errorMessages} title=""  />
+        <div className="uk-margin-medium-top">
+          <InfoForm state={contactInfo} setState={setContactInfo} name="contact" error={error} setError={setError} errorMessages={errorMessages} title=""  />
+        </div>
+
+        <div className="uk-margin-medium-top margin-last-bottom">
+          <div className="uk-grid uk-child-width-1-1" uk-grid="">
+
+            <label className="uk-margin-small">
+              <input className="uk-checkbox" type="checkbox" name="deliveryAnother" checked={state.deliveryAnother} onChange={e => setState({...state, deliveryAnother: !state.deliveryAnother})} />
+              Doručit na jinou adresu
+            </label>
+            {state.deliveryAnother && <div className="uk-margin-small-bottom uk-margin-small-top">
+              <InfoForm state={anotherAddress} setState={setAnotherAddress} name="another_adrress" title="" />
+            </div>}
+
+            <label className="uk-margin-small">
+              <input className="uk-checkbox" type="checkbox" name="firmInfo" checked={state.firmInfo} onChange={e => setState({...state, firmInfo: !state.firmInfo})} />
+              Doplnit firemní údaje
+            </label>
+            {state.firmInfo && <div className="uk-margin-small-bottom uk-margin-small-top">
+              <FirmInfo state={firmInfo} setState={setFirmInfo} error={error} />
+            </div>}
+
           </div>
-
-          <div className="uk-margin-medium-top margin-last-bottom">
-            <div className="uk-grid uk-child-width-1-1" uk-grid="">
-
-              <label className="uk-margin-small">
-                <input className="uk-checkbox" type="checkbox" name="deliveryAnother" checked={state.deliveryAnother} onChange={e => setState({...state, deliveryAnother: !state.deliveryAnother})} />
-                Doručit na jinou adresu
-              </label>
-              {state.deliveryAnother && <div className="uk-margin-small-bottom uk-margin-small-top">
-                <InfoForm state={anotherAddress} setState={setAnotherAddress} name="another_adrress" title="" />
-              </div>}
-
-              <label className="uk-margin-small">
-                <input className="uk-checkbox" type="checkbox" name="firmInfo" checked={state.firmInfo} onChange={e => setState({...state, firmInfo: !state.firmInfo})} />
-                Doplnit firemní údaje
-              </label>
-              {state.firmInfo && <div className="uk-margin-small-bottom uk-margin-small-top">
-                <FirmInfo state={firmInfo} setState={setFirmInfo} error={error} />
-              </div>}
-
-            </div>
-          </div>
-          <div className="uk-grid uk-child-width-1-2" uk-grid="">
-            <div>
-              <a href="/" className="uk-margin-top button" onClick={e => handleUserInfo(e)}>uložit změny</a>
-              <a href="/" className="uk-margin-left button border-button" onClick={e => logout(e)}>Odhlasít</a>
-            </div>
-          </div>
+        </div>
+        <div className="buttons-wrap-user">
+          <a href="/" className="uk-margin-top button" onClick={e => handleUserInfo(e)}>uložit změny</a>
+          <a href="/" className="uk-margin-left button border-button" onClick={e => logout(e)}>Odhlasít</a>
         </div>
       </div>
     </Page>

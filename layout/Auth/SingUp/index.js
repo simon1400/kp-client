@@ -93,7 +93,7 @@ const SingUp = ({handleType}) => {
           <input onChange={e => setPassword(e.target.value)} className="uk-input" id="form-stacked-text" type="password" value={password} />
         </div>
       </div>
-      <p>Prohlašuji, že jsem se seznámil se <a href={`/${dataGl.global.gdpr.category.slug}/${dataGl.global.gdpr.slug}`}>Zásadami zpracování osobních údajů</a> i s <a href={`/${dataGl.global.terms.category.slug}/${dataGl.global.terms.slug}`}>obchodními podmínkami</a>.</p>
+      <p>Prohlašuji, že jsem se seznámil se <a href={`/${dataGl.global.gdpr.category[0].slug}/${dataGl.global.gdpr.slug}`}>Zásadami zpracování osobních údajů</a> i s <a href={`/${dataGl.global.terms.category[0].slug}/${dataGl.global.terms.slug}`}>obchodními podmínkami</a>.</p>
       <div className="uk-margin-medium">
         <a href="/" className="button uk-width-1-1" onClick={e => handleOnSubmit(e)}>registrovat</a>
       </div>

@@ -13,8 +13,21 @@ import payQuery from '../../queries/pay'
 import deliveryQuery from '../../queries/delivery'
 import {CreateOrder} from '../../queries/order'
 import saleFrom from '../../function/objednavka/saleFrom'
+import { client } from '../../lib/api'
+import globalQuery from '../../queries/global'
 
-const CheckoutWrap = () => {
+export async function getServerSideProps() {
+
+  const { data: dataGl } = await client.query({query: globalQuery});
+
+  return {
+    props: { 
+      dataGl: dataGl
+    }
+  }
+}
+
+const CheckoutWrap = ({dataGl}) => {
 
   const [basketItems, setBasketItems] = useState([])
   const { dataContextState } = useContext(DataStateContext)
@@ -225,6 +238,7 @@ const CheckoutWrap = () => {
     <Checkout
       sum={sum}
       sale={sale}
+      dataGl={dataGl}
       send={send}
       state={state}
       error={error}

@@ -142,7 +142,7 @@ const Product = () => {
                   <ul className="uk-slideshow-nav uk-dotnav uk-flex-center uk-margin"></ul>
                 </div>
               </div>
-              {product.support && <ArticleShort data={data.global.support} icon="/assets/phone.svg" product />}
+              {product.support && <div className="uk-visible@s"><ArticleShort data={data.global.support} icon="/assets/phone.svg" product /></div>}
             </div>
             <div>
               <div className="product-info">
@@ -162,13 +162,12 @@ const Product = () => {
                   </div>
                   <a href="/" className="button" onClick={e => buy(e, product)}>přidat do košíku</a>
                 </div>}
+                {product.support && <div className="uk-hidden@s"><ArticleShort data={data.global.support} icon="/assets/phone.svg" product /></div>}
                 <ul>
                   {product.brand && <li>Značka: <a href={`/c/${product.brand.slug}`}>{product.brand.title}</a></li>}
                   <li>Kód výrobku: {product.code}</li>
                 </ul>
-                {/* <div className="description"> */}
-                  {product.content && <Content data={product.content} />}
-                {/* </div> */}
+                {product.content && <Content data={product.content} />}
               </div>
             </div>
           </div>

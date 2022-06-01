@@ -1,9 +1,8 @@
 .small-banner{
   background-color: $yellow;
   text-align: center;
-  display: -webkit-flex;
-  display: -ms-flex;
   display: flex;
+  padding: 0 40px;
   > div{
     margin: auto;
   }

@@ -4,8 +4,6 @@ import Image from '../Image'
 
 const Card = ({data, catalog = false}) => {
 
-  console.log(data);
-
   const getPrice = () => {
     if(data.Variants?.length > 0) {
       return 'od ' + getMinPrice(data.Variants).price.toLocaleString()

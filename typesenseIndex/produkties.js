@@ -42,6 +42,7 @@ module.exports = (async () => {
       title: item.title,
       slug: item.slug,
       price: item.price,
+      code: item.code,
       image: undefined,
       category: [],
       categorySlug: [],

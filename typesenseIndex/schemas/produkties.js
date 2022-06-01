@@ -19,6 +19,11 @@ module.exports = {
       optional: true,
     },
     {
+      name: "code",
+      type: "string",
+      facet: false,
+    },
+    {
       name: "price",
       type: "int32",
       facet: true,
