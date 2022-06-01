@@ -1,57 +1,63 @@
 import Page from '../../layout/Page'
 import PageTop from '../../components/PageTop'
-import { useQuery } from "@apollo/client";
 import blogItemQuery from '../../queries/blogItem'
 import Image from '../../components/Image'
-import {useRouter} from 'next/router'
 import Content from '../../components/Content';
 import { AxiosSTRAPI } from '../../restClient';
 import splitArr from '../../function/splitArr';
+import { client } from '../../lib/api';
 
+export async function getServerSideProps(ctx) {
 
-export async function getServerSideProps(context) {
+  const resCat = await AxiosSTRAPI.get(`/category-articles?slug=${ctx.query.categoryArticles}`)
 
-  const resCat = await AxiosSTRAPI.get(`/category-articles?slug=${context.query.categoryArticles}`)
-  const resBlog = await AxiosSTRAPI.get(`/blogs?slug=${context.query.slug}`)
+  const { data } = await client.query({
+    query: blogItemQuery,
+    variables: {
+      slug: ctx.query.slug
+    }
+  });
 
-  if(!resCat.data.length || !resBlog.data.length) {
+  let blog = data.blogs[0]
+
+  let title = blog?.title.split(' ') || []
+  let subTitle = blog?.add_title.split(' ') || []
+
+  title = splitArr(title, 2)
+  subTitle = splitArr(subTitle, 2)
+
+  if(!resCat.data.length || !data.blogs.length) {
     return {
       notFound: true
     }
   }
 
   return {
-    props: {}
+    props: {
+      blog,
+      title,
+      subTitle,
+      global: data.global,
+      navigation: data.navigation
+    }
   }
 }
 
-const BlogFull = () => {
-
-  const router = useRouter()
-
-  const { loading, error, data } = useQuery(blogItemQuery, {
-    variables: {slug: router.query.slug}
-  });
-
-  if(loading) {
-    return ''
-  }
-
-  let blog = data.blogs[0]
-
-  let title = blog?.title.split(' ') || ""
-  let subTitle = blog?.add_title.split(' ') || ""
-
-  title = title.length ? splitArr(title, 2) : ""
-  subTitle = subTitle.length ? splitArr(subTitle, 2) : ""
+const BlogFull = ({
+  blog,
+  title,
+  subTitle,
+  global,
+  navigation
+}) => {  
 
   return (
     <Page
       title={blog.meta?.title}
       description={blog.meta?.description}
       bigHeader 
-      globalData={data.global} 
-      nav={data.navigation}>
+      globalData={global} 
+      nav={navigation}>
       <PageTop
         small
         head={<h1 className="big-head">

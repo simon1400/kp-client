@@ -22,13 +22,6 @@ const Image = ({ image, style, svg = false, height = false, width = false }) => 
     myImage.resize(limitFit().height(height))
   }
 
-  {/* <img
-        uk-img=""
-        src={image}
-        alt={image.alternativeText || image.name}
-        style={style}
-      /> */}
-
   if(svg){
     return (
       <img

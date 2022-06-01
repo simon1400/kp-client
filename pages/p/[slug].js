@@ -1,10 +1,7 @@
 import {useContext, useState} from 'react'
-import { useRouter } from 'next/router'
 import Page from '../../layout/Page'
 import Card from '../../components/Card'
 import BigBanner from '../../components/BigBanner'
-import Head from 'next/head'
-import { useQuery } from "@apollo/client";
 import productQuery from '../../queries/product'
 import Image from '../../components/Image'
 import { DataStateContext } from '../../context/dataStateContext'
@@ -12,7 +9,7 @@ import {dropdown, offcanvas} from 'uikit'
 import getMinPrice from '../../function/getMinPrice'
 import Content from '../../components/Content'
 import ArticleShort from '../../components/ArticleShort'
-const APP_API = process.env.APP_API
+import { client } from '../../lib/api'
 
 var startSelectValue = {
   name: 'vybrat variantu',
@@ -20,17 +17,39 @@ var startSelectValue = {
   price: ''
 }
 
-const Product = () => {
+export async function getServerSideProps(ctx) {
+
+  const { data } = await client.query({
+    query: productQuery,
+    variables: {
+      slug: ctx.query.slug
+    }
+  });
+
+  if(!data?.produkties?.length) {
+    return {
+      notFound: true
+    }
+  }
+
+  return {
+    props: { 
+      global: data.global,
+      navigation: data.navigation,
+      product: data.produkties[0]
+    }
+  }
+}
+
+const Product = ({
+  global,
+  navigation,
+  product
+}) => {
   const { dataContextState, dataContextDispatch } = useContext(DataStateContext)
   const [selectValue, setSelectValue] = useState(startSelectValue)
   const [errorBuy, setErrorBuy] = useState(false)
-  const [addToCardGTM, setAddToCardGTM] = useState(false)
-
-  const router = useRouter()
-
-  const { loading, error, data } = useQuery(productQuery, {
-    variables: {slug: router.query.slug}
-  });
+  // const [addToCardGTM, setAddToCardGTM] = useState(false)
 
   const buy = (e, product) => {
     e.preventDefault()
@@ -93,30 +112,20 @@ const Product = () => {
   const getPrice = () => {
     if(selectValue.price){
       return selectValue.price.toLocaleString()
-    }else if(data.produkties[0].Variants.length) {
-      return 'od '+getMinPrice(data.produkties[0].Variants).price.toLocaleString()
+    }else if(product.Variants.length) {
+      return 'od '+getMinPrice(product.Variants).price.toLocaleString()
     }else{
-      return data.produkties[0].price.toLocaleString()
+      return product.price.toLocaleString()
     }
   }
-
-  if(loading) {
-    return ''
-  }
-
-  if(!data?.produkties?.length) {
-    router.push('/404')
-    return ''
-  }
-
-  const product = data.produkties[0]
 
   return (
     <Page
       title={product.meta?.title}
       description={product.meta?.description}
-      globalData={data.global} 
-      nav={data.navigation}>
+      image={product.images[0]}
+      globalData={global} 
+      nav={navigation}>
       <section className="product-base">
         <div className="uk-container uk-container-large">
           <div className="uk-grid uk-child-width-1-1 uk-child-width-1-2@s">
@@ -142,7 +151,7 @@ const Product = () => {
                   <ul className="uk-slideshow-nav uk-dotnav uk-flex-center uk-margin"></ul>
                 </div>
               </div>
-              {product.support && <div className="uk-visible@s"><ArticleShort data={data.global.support} icon="/assets/phone.svg" product /></div>}
+              {product.support && <div className="uk-visible@s"><ArticleShort data={global.support} icon="/assets/phone.svg" product /></div>}
             </div>
             <div>
               <div className="product-info">
@@ -162,7 +171,7 @@ const Product = () => {
                   </div>
                   <a href="/" className="button" onClick={e => buy(e, product)}>přidat do košíku</a>
                 </div>}
-                {product.support && <div className="uk-hidden@s"><ArticleShort data={data.global.support} icon="/assets/phone.svg" product /></div>}
+                {product.support && <div className="uk-hidden@s"><ArticleShort data={global.support} icon="/assets/phone.svg" product /></div>}
                 <ul>
                   {product.brand && <li>Značka: <a href={`/c/${product.brand.slug}`}>{product.brand.title}</a></li>}
                   <li>Kód výrobku: {product.code}</li>
@@ -189,7 +198,7 @@ const Product = () => {
         </div>
       </section>}
 
-      <BigBanner data={data.global.banner}/>
+      <BigBanner data={global.banner}/>
 
     </Page>
   )

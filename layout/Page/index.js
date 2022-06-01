@@ -8,6 +8,7 @@ import Footer from '../Footer'
 import Canvas from '../Canvas'
 import Auth from '../Auth'
 import Search from '../Search'
+import buildImageUrl from '../../function/buildImageUrl';
 
 const Page = ({
   children,
@@ -30,7 +31,6 @@ const Page = ({
   basket = false
 }) => {
 
-
   const { loading, error, data } = useQuery(globalQuery);
 
   const router = useRouter()
@@ -50,7 +50,7 @@ const Page = ({
 
   const theTitle = title ? (title + global.defaultSep + data.global.endTitle) : ('KRALOVSKA PECE' + global.defaultSep + data.global.endTitle);
   const theDescription = description ? description : global.defaultDescription;
-  const theImage = image ? image : global.defaultImage;
+  const theImage = image ? buildImageUrl(image) : global.defaultImage;
 
   return (
     <>
