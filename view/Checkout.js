@@ -63,7 +63,7 @@ const Checkout = ({
   }
 
   return(
-    <Page title="Objednávka" basket>
+    <Page>
       <div className="checkout uk-position-relative">
         <div className="uk-container uk-container-large">
           <div className="uk-grid" uk-grid="">

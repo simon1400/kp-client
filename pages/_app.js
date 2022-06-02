@@ -33,9 +33,9 @@ function MyApp({ Component, pageProps }) {
     endTitle: '| Kralovska pece',
   }
 
-  const theTitle = meta.title ? (meta.title + " " + global.endTitle) : (defaultData.title + defaultData.separator + defaultData.endTitle);
-  const theDescription = meta.description ? meta.description : defaultData.description;
-  const theImage = meta.image ? buildImageUrl(meta.image) : null;
+  const theTitle = meta?.title ? (meta.title + " " + global.endTitle) : (defaultData.title + defaultData.separator + defaultData.endTitle);
+  const theDescription = meta?.description ? meta.description : defaultData.description;
+  const theImage = meta?.image ? buildImageUrl(meta.image) : null;
 
   return <DataProvider>
     <WithGraphQL>
@@ -65,7 +65,7 @@ function MyApp({ Component, pageProps }) {
           <meta property="og:image" content={theImage} />
           <meta property="og:description" content={theDescription} />
           <meta property="og:site_name" content="Kralovska pece" />
-          <meta property="fb:app_id" content={global.facebook_app_id} />
+          {/* <meta property="fb:app_id" content={global.facebook_app_id} /> */}
 
           <script src="https://widget.packeta.com/v6/www/js/library.js"></script>
 
@@ -73,11 +73,11 @@ function MyApp({ Component, pageProps }) {
         <Header
           bgImg={bgImg}
           bigHeader={bigHeader}
-          leftNav={navigation.left_nav}
-          rightNav={navigation.right_nav}
+          leftNav={navigation?.left_nav}
+          rightNav={navigation?.right_nav}
           basket={basket} />
         <Component {...pageProps} />
-        {!basket && <Footer data={global} nav={navigation.footer_nav} soc={navigation.soc_nav} />}
+        {!basket && <Footer data={global} nav={navigation?.footer_nav} soc={navigation?.soc_nav} />}
         <Canvas />
         <Auth />
         <Search />
