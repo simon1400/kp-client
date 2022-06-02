@@ -47,7 +47,7 @@ const User = () => {
   const [contactInfo, setContactInfo] = useState({
     email: dataContextState?.user?.email || '',
     phone: dataContextState?.user?.phone || '',
-    name: dataContextState?.user?.name || '',
+    firstname: dataContextState?.user?.firstname || '',
     surname: dataContextState?.user?.surname || '',
     address: dataContextState?.user?.address || '',
     city: dataContextState?.user?.city || '',
@@ -58,7 +58,7 @@ const User = () => {
   const [anotherAddress, setAnotherAddress] = useState({
     email: dataContextState?.user?.anotherAddress?.email || '',
     phone: dataContextState?.user?.anotherAddress?.phone || '',
-    name: dataContextState?.user?.anotherAddress?.name || '',
+    firstname: dataContextState?.user?.anotherAddress?.firstname || '',
     surname: dataContextState?.user?.anotherAddress?.surname || '',
     address: dataContextState?.user?.anotherAddress?.address || '',
     city: dataContextState?.user?.anotherAddress?.city || '',
