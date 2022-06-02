@@ -15,14 +15,22 @@ import {CreateOrder} from '../../queries/order'
 import saleFrom from '../../function/objednavka/saleFrom'
 import { client } from '../../lib/api'
 import globalQuery from '../../queries/global'
+import userQuery from '../../queries/user'
 
 export async function getServerSideProps() {
 
   const { data: dataGl } = await client.query({query: globalQuery});
+  const { data } = await client.query({query: userQuery});
 
   return {
     props: { 
-      dataGl: dataGl
+      dataGl: dataGl,
+      global: data.global,
+      meta: {
+        title: "Objednávka",
+      },
+      navigation: data.navigation,
+      basket: true
     }
   }
 }

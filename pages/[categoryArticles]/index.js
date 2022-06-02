@@ -22,27 +22,24 @@ export async function getServerSideProps(ctx) {
 
   return {
     props: { 
-      data: data
+      navigation: data.navigation,
+      category: data.categoryArticles[0],
+      meta: data.categoryArticles[0].meta,
+      global: data.global,
+      bigHeader: true
     }
   }
 }
 
 const Blog = ({
-  data
+  category
 }) => {
-
-  const category = data.categoryArticles[0]
 
   const h1 = category.title.split(' ')
   const h1Split = splitArr(h1, 2)
 
   return (
-    <Page 
-      title={category?.meta?.title}
-      description={category?.meta?.description}
-      bigHeader 
-      globalData={data.global} 
-      nav={data.navigation}>
+    <Page>
       <PageTop
         small
         head={<h1 className="big-head">

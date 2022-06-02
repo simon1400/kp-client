@@ -28,6 +28,7 @@ const blogItemQuery = gql`
       phone
       email
       address
+      endTitle
       copyright
     }
     ${navQuery}

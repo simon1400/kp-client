@@ -19,13 +19,13 @@ const articlesCategory = gql`
         description
       }
     }
-    
     global {
       title_footer
       phone
       email
       address
       copyright
+      endTitle
     }
     ${navQuery}
   }

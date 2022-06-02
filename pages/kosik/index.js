@@ -4,8 +4,23 @@ import Image from '../../components/Image'
 import Page from '../../layout/Page'
 import { useQuery } from '@apollo/client'
 import canvasQuery from '../../queries/canvas'
+import { client } from '../../lib/api'
+import userQuery from '../../queries/user'
 
-const APP_API = process.env.APP_API
+export async function getServerSideProps() {
+  const { data } = await client.query({query: userQuery});
+
+  return {
+    props: { 
+      basket: true,
+      global: data.global,
+      navigation: data.navigation,
+      meta: {
+        title: "Košik"
+      }
+    }
+  }
+}
 
 const Basket = () => {
 

@@ -36,6 +36,10 @@ export async function getServerSideProps(ctx) {
     props: { 
       global: data.global,
       navigation: data.navigation,
+      meta: {
+        ...data.produkties[0].meta,
+        image: data.produkties[0].images[0]
+      },
       product: data.produkties[0]
     }
   }
@@ -43,7 +47,6 @@ export async function getServerSideProps(ctx) {
 
 const Product = ({
   global,
-  navigation,
   product
 }) => {
   const { dataContextState, dataContextDispatch } = useContext(DataStateContext)
@@ -120,12 +123,7 @@ const Product = ({
   }
 
   return (
-    <Page
-      title={product.meta?.title}
-      description={product.meta?.description}
-      image={product.images[0]}
-      globalData={global} 
-      nav={navigation}>
+    <Page>
       <section className="product-base">
         <div className="uk-container uk-container-large">
           <div className="uk-grid uk-child-width-1-1 uk-child-width-1-2@s">

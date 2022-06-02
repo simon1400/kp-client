@@ -2,19 +2,32 @@ import {useState, useEffect, useContext} from 'react'
 import { DataStateContext } from '../../context/dataStateContext'
 import loadable from '@loadable/component'
 import errorMessages from '../../data/errorMessages'
-import { useQuery, useMutation } from "@apollo/client";
+import { useMutation } from "@apollo/client";
 import userQuery from '../../queries/user'
 import {updateUserQuery} from '../../queries/auth'
 import {notification} from 'uikit'
+import { client } from '../../lib/api';
 
 const Page = loadable(() => import('../../layout/Page'))
 const InfoForm = loadable(() => import('../../components/InfoForm'))
 const FirmInfo = loadable(() => import('../../components/FirmInfo'))
 
+export async function getServerSideProps() {
+
+  const { data } = await client.query({query: userQuery});
+
+  return {
+    props: { 
+      global: data.global,
+      navigation: data.navigation,
+      data: data,
+    }
+  }
+}
+
 const User = () => {
 
   const { dataContextState, dataContextDispatch } = useContext(DataStateContext)
-  const { loading, data } = useQuery(userQuery);
   const [updateUser, { data: dataUpdatingUser }] = useMutation(updateUserQuery);
 
   const [state, setState] = useState({
@@ -106,10 +119,8 @@ const User = () => {
     window.location.href = '/'
   }
 
-  if(loading) return 'Loadding...'
-
   return (
-    <Page globalData={data.global} nav={data.navigation}>
+    <Page>
       <div className="uk-container uk-container-small">
         <h1 className="uk-h3 uk-margin-large-top">Kontatkní údaje</h1>
 

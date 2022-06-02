@@ -55,6 +55,7 @@ const productQuery = gql`
       email
       address
       copyright
+      endTitle
       support {
         title
         text

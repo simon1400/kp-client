@@ -50,7 +50,13 @@ export async function getServerSideProps(ctx) {
       subTitleSplit,
       navigation: data.navigation,
       global: data.global,
-      category
+      meta: {
+        ...category.meta,
+        image: category.image
+      },
+      category,
+      bigHeader: true,
+      bgImg: category.image
     }
   }
 }
@@ -126,14 +132,7 @@ const Category = ({
       indexName="categoryProducts"
       searchClient={searchClient}
     >
-      <Page
-        title={category.meta?.title}
-        description={category.meta?.description}
-        bigHeader
-        bgImg={category.image}
-        image={category.image}
-        globalData={global} 
-        nav={navigation}>
+      <Page>
         <PageTop
           small
           img={category.image}

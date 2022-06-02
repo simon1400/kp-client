@@ -29,30 +29,25 @@ export async function getServerSideProps() {
       global: data.global,
       navigation: data.navigation,
       data: data.homepage,
-      h1Split
+      h1Split,
+      meta: {
+        ...data.homepage.meta,
+        image: data.homepage.image
+      },
+      bigHeader: true,
+      bgImg: data.homepage.image
     }
   }
 }
 
-
 const Homepage = ({
   data,
   global,
-  navigation,
   h1Split
 }) => {
 
-  
-
   return (
-    <Page 
-      bgImg={data.image}
-      title={data.meta?.title}
-      image={data.image}
-      description={data.meta?.description}
-      bigHeader 
-      globalData={global} 
-      nav={navigation}>
+    <Page>
       <PageTop
         big
         center

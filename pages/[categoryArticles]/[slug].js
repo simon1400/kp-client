@@ -38,7 +38,9 @@ export async function getServerSideProps(ctx) {
       title,
       subTitle,
       global: data.global,
-      navigation: data.navigation
+      navigation: data.navigation,
+      meta: blog.meta,
+      bigHeader: true
     }
   }
 }
@@ -47,17 +49,10 @@ const BlogFull = ({
   blog,
   title,
   subTitle,
-  global,
-  navigation
 }) => {  
 
   return (
-    <Page
-      title={blog.meta?.title}
-      description={blog.meta?.description}
-      bigHeader 
-      globalData={global} 
-      nav={navigation}>
+    <Page>
       <PageTop
         small
         head={<h1 className="big-head">

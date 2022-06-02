@@ -1,37 +1,44 @@
 import {useState, useEffect, useContext} from 'react'
-import loadable from '@loadable/component'
 import {useRouter} from 'next/router'
 import {GetOrder, UpdateOrder} from '../../queries/order'
 import userQuery from '../../queries/user'
 import {useLazyQuery, useMutation} from '@apollo/client'
 import { DataStateContext } from '../../context/dataStateContext'
 import axios from 'axios'
-// import dataSend from '../../function/gtag'
-// import Head from 'next/head'
 
 import Page from "../../layout/Page"
-// import { AxiosCLIENT } from '../../restClient'
 
-const ThankYou = () => {
+export async function getServerSideProps(ctx) {
+
+  const { data: order } = await client.query({
+    query: GetOrder, 
+    variables: {
+      id: atob(ctx.query.idOrder)
+    }
+  });
+
+  const { data } = await client.query({query: userQuery});
+
+  return {
+    props: { 
+      global: data.global,
+      navigation: data.navigation,
+      order,
+      meta: {
+        title: "Dokončená objednávka",
+      }
+    }
+  }
+}
+
+const ThankYou = ({
+  order
+}) => {
 
   const router = useRouter()
-
   const [status, setStatus] = useState('')
-  // const [price, setPrice] = useState('')
-
   const { dataContextDispatch } = useContext(DataStateContext)
-  const [getOrder, {data: order}] = useLazyQuery(GetOrder);
-  const [getGlobal, {data}] = useLazyQuery(userQuery);
   const [updateOrder] = useMutation(UpdateOrder);
-
-  useEffect(() => {
-    getGlobal()
-    if(router.query.idOrder){
-      getOrder({variables: {
-        id: atob(router.query.idOrder)
-      }})
-    }
-  }, [router.query])
 
   useEffect(() => {
     if(order) {
@@ -57,7 +64,6 @@ const ThankYou = () => {
         }).catch(err => console.log(err))
       }
       dataContextDispatch({ state: [], type: 'basket' })
-      // dataContextDispatch({ state: 0, type: 'basketCount' })
     }
   }, [order])
 
@@ -75,13 +81,12 @@ const ThankYou = () => {
           }})
         }).catch(err => console.log(err))
       }
-      console.log("Dekujem - order - ", order)
       axios.post('/api/money/order', order).then(res => console.log(res.data))
     }
   }, [status])
 
   return(
-    <Page title="Dokončená objednávka" globalData={data?.global || {}} nav={data?.navigation || {}}>
+    <Page>
       <div className="uk-container uk-margin-xlarge-top">
         <div className="uk-grid uk-child-width-1-1" uk-grid="">
           <div className="uk-text-center">

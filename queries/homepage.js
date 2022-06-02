@@ -62,6 +62,7 @@ const homepageQuery = gql`
       email
       address
       copyright
+      endTitle
       ${bannerQuery}
     }
     ${navQuery}

@@ -37,6 +37,7 @@ export const GLOBAL_SETTINGS = gql`
     phone
     email
     address
+    endTitle
     copyright
   }
 `;
