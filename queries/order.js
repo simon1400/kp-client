@@ -56,7 +56,7 @@ export const CreateOrder = gql`
         anotherAddress {
           email
           phone
-          name
+          firstname
           surname
           address
           city
