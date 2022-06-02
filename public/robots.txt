@@ -1,2 +1,3 @@
+Sitemap: https://strapi.kralovska-pece.cz/sitemap.xml
 User-agent: *
 Allow: /
