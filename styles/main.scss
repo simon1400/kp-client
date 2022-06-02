@@ -434,6 +434,11 @@ h2.big-head{
   }
 }
 
+.uk-table caption{
+  display: flex;
+  justify-content: space-between;
+}
+
 .checkout-head{
   display: flex;
   justify-content: space-between;

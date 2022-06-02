@@ -3,7 +3,7 @@ export default {
   payMethod: 'vyberte způsob platby',
   email: 'zadejte platnou emailovou adresu',
   phone: 'chybně zadané telefonní číslo',
-  name: 'zadejte Vaše jméno',
+  firstname: 'zadejte Vaše jméno',
   surname: 'zadejte Vaše příjmení',
   address: 'zadejte ulici',
   city: 'zadejte město',

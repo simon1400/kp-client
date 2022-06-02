@@ -56,12 +56,12 @@ const InfoForm = ({
       <div className="uk-grid uk-grid-small uk-child-width-1-1 uk-child-width-1-2@s" uk-grid="">
         <Input 
           label="jméno"
-          error={error?.name}
-          errorAlert={error?.name}
-          errorMessages={errorMessages?.name}
+          error={error?.firstname}
+          errorAlert={error?.firstname}
+          errorMessages={errorMessages?.firstname}
           id={`name_${name}`}
           name="firstname"
-          value={state.name}
+          value={state.firstname}
           handle={changeState}
         />
         <Input 

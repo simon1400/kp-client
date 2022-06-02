@@ -115,6 +115,8 @@ body{
     -webkit-text-stroke: 0;
     font-weight: $font-medium;
     opacity: 1;
+    display: flex;
+    justify-content: space-between;
   }
   .uk-radio {
     border-radius: 50%;

@@ -11,7 +11,7 @@ export const errorObj = {
   payMethod: false,
   email: false,
   phone: false,
-  name: false,
+  firstname: false,
   surname: false,
   address: false,
   city: false,

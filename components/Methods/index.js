@@ -38,7 +38,7 @@ const Method = ({
     <div className="methods uk-margin-medium-bottom">
       <table className="uk-table uk-table-middle uk-table-divider uk-margin-remove">
         <caption>
-          {title}
+          <span>{title}</span>
           {!!error[name] && <span className="uk-text-danger">{errorMessages[name]}</span>}
         </caption>
         <tbody>

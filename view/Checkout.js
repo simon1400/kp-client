@@ -2,10 +2,7 @@ import React, {useState} from 'react'
 import loadable from '@loadable/component'
 import AnimateHeight from 'react-animate-height';
 import errorMessages from '../data/errorMessages'
-import globalQuery from '../queries/global'
-import { useQuery } from '@apollo/client'
 import RadioState from '../components/RadioState';
-import { stateObj } from '../function/objednavka/objects';
 
 const Page = loadable(() => import('../layout/Page'))
 const Sale = loadable(() => import('../components/Sale'))

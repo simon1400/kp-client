@@ -2,7 +2,7 @@ export default (data) => {
   return {
     email: data?.email || '',
     phone: data?.phone || '',
-    name: data?.name || '',
+    firstname: data?.firstname || '',
     surname: data?.surname || '',
     address: data?.address || '',
     city: data?.city || '',

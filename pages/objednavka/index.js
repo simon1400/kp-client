@@ -166,8 +166,6 @@ const CheckoutWrap = ({dataGl}) => {
       return
     }
 
-    console.log("basketItems", basketItems)
-
     const dataSend = {
       email: contactInfo.email,
       phone: contactInfo.phone,
