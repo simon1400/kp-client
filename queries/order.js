@@ -112,6 +112,7 @@ export const GetOrder = gql`
         price
         slug
         count
+        imageUrl
         idProduct
         title
         guid

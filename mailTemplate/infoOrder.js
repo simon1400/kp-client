@@ -82,7 +82,7 @@ a[x-apple-data-detectors] {
                   <td align="center" valign="top" style="padding:0;Margin:0;width:560px">
                    <table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
                      <tr style="border-collapse:collapse">
-                      <td align="center" style="padding:0;Margin:0;font-size:0px"><a href="https://hurom.cz" target="_blank"><img src="https://cdn.sanity.io/images/bvwt1scq/production/0201aaa552d5af496425856027f4fb2714c68103-172x30.png" alt style="display:block;border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic" width="150"></a></td>
+                      <td align="center" style="padding:0;Margin:0;font-size:0px"><a href="https://kralovska-pece.cz" target="_blank"><img src="https://res.cloudinary.com/hardart-cz/image/upload/v1654248851/logo_kkejc5.svg" alt style="display:block;border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic" width="150"></a></td>
                      </tr>
                      <tr style="border-collapse:collapse">
                       <td align="center" class="es-m-p0r es-m-p0l" style="padding:20px;Margin:0;font-size:0">
@@ -467,7 +467,7 @@ a[x-apple-data-detectors] {
                        </table></td>
                      </tr>
                      <tr style="border-collapse:collapse">
-                      <td align="center" style="padding:0;Margin:0;padding-top:20px;padding-bottom:40px"><p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-size:14px;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:21px;color:#333333">Potřebujete s něčím poradit?&nbsp;<a href="https://hurom.cz/clanek/kontakt" target="_blank" style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;font-size:14px;text-decoration:none;color:#80bd01">Kontaktujte nás.</a></p></td>
+                      <td align="center" style="padding:0;Margin:0;padding-top:20px;padding-bottom:40px"><p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-size:14px;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:21px;color:#333333">Potřebujete s něčím poradit?&nbsp;<a href="https://kralovska-pece.cz/o-nas/kontakt" target="_blank" style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;font-size:14px;text-decoration:none;color:#b09925">Kontaktujte nás.</a></p></td>
                      </tr>
                    </table></td>
                  </tr>
@@ -487,7 +487,7 @@ a[x-apple-data-detectors] {
                   <td align="center" valign="top" style="padding:0;Margin:0;width:560px">
                    <table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
                      <tr style="border-collapse:collapse">
-                      <td align="center" style="padding:0;Margin:0;padding-bottom:30px"><p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-size:14px;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:21px;color:#999999"><a target="_blank" style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;font-size:14px;text-decoration:none;color:#999999;line-height:21px" href="https://hurom.cz/clanek/ochrana-osobnich-udaju">Informace o zpracování a ochraně osobních údajů</a><br><a target="_blank" style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;font-size:14px;text-decoration:none;color:#999999;line-height:21px" href="https://hurom.cz/clanek/obchodni-podminky">Obchodní podmínky</a><br></p></td>
+                      <td align="center" style="padding:0;Margin:0;padding-bottom:30px"><p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-size:14px;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:21px;color:#999999"><a target="_blank" style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;font-size:14px;text-decoration:none;color:#999999;line-height:21px" href="https://kralovska-pece.cz/support/ochrana-osobnich-udaju">Informace o zpracování a ochraně osobních údajů</a><br><a target="_blank" style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;font-size:14px;text-decoration:none;color:#999999;line-height:21px" href="https://kralovska-pece.cz/support/obchodni-podminky">Obchodní podmínky</a><br></p></td>
                      </tr>
                    </table></td>
                  </tr>
