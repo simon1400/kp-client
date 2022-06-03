@@ -38,7 +38,7 @@ module.exports = (phase) => {
     })(),
     PAY_API: (() => {
       if (isDev) return 'https://gw.sandbox.gopay.com'
-      if (isProd) return 'https://gw.sandbox.gopay.com'
+      if (isProd) return 'https://gate.gopay.cz'
       return 'RESTURL_SPEAKERS:not (isDev,isProd && !isStaging,isProd && isStaging)'
     })(),
     SENDGRID_API_KEY: (() => {
