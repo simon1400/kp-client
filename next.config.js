@@ -42,8 +42,8 @@ module.exports = (phase) => {
       return 'RESTURL_SPEAKERS:not (isDev,isProd && !isStaging,isProd && isStaging)'
     })(),
     SENDGRID_API_KEY: (() => {
-      if (isDev) return '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'
-      if (isProd) return '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'
+      if (isDev) return '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'
+      if (isProd) return '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'
       return 'RESTURL_SPEAKERS:not (isDev,isProd && !isStaging,isProd && isStaging)'
     })(),
     TYPESENSE_SEARCH_ONLY_API_KEY: (() => {
