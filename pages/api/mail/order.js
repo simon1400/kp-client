@@ -13,8 +13,7 @@ export default async function handler (req, res) {
 
     const msg = {
       to: data.email,
-      // to: "pechunka11@gmail.com",
-      from: '"Objednávka dokončena - Kralovska peče" <info@kralovska-pece.cz>',
+      from: 'Objednávka dokončena - Kralovska peče <info@kralovska-pece.cz>',
       subject: 'Objednávka č.: ' + data.id,
       text: "Objednávka dokončena - Kralovska peče",
       html: InfoOrder(data),
