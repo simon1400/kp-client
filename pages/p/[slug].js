@@ -84,7 +84,7 @@ const Product = ({
         price: product.price,
         count: 1,
         image: product.images[0],
-        imageUrl: product.images[0].url,
+        imageUrl: product.images[0],
         brand: product.brand?.title,
         slug: product.slug,
         guid: product.guid,

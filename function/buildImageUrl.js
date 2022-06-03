@@ -1,7 +1,8 @@
 import { buildUrl } from 'cloudinary-build-url'
 
-const buildImageUrl = (image) => {
-  const src = buildUrl(image.hash, {
+const buildImageUrl = (image, width) => {
+  
+  const options = {
     cloud: {
       cloudName: 'hardart-cz',
     },
@@ -10,7 +11,13 @@ const buildImageUrl = (image) => {
         width: 1200,
       }
     }
-  })
+  }
+
+  if(width) {
+    options.transformations.resize.width = width
+  }
+
+  const src = buildUrl(image.hash, options)
 
   return src
 }

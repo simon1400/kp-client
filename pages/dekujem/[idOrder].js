@@ -2,18 +2,20 @@ import {useState, useEffect, useContext} from 'react'
 import {useRouter} from 'next/router'
 import {GetOrder, UpdateOrder} from '../../queries/order'
 import userQuery from '../../queries/user'
-import {useLazyQuery, useMutation} from '@apollo/client'
+import {useMutation} from '@apollo/client'
 import { DataStateContext } from '../../context/dataStateContext'
 import axios from 'axios'
-
+import { client } from '../../lib/api'
 import Page from "../../layout/Page"
 
 export async function getServerSideProps(ctx) {
 
+  const id = Buffer.from(ctx.query.idOrder, 'base64')
+
   const { data: order } = await client.query({
     query: GetOrder, 
     variables: {
-      id: atob(ctx.query.idOrder)
+      id: id.toString()
     }
   });
 
@@ -32,8 +34,10 @@ export async function getServerSideProps(ctx) {
 }
 
 const ThankYou = ({
-  order
+  order,
 }) => {
+
+  console.log(order)
 
   const router = useRouter()
   const [status, setStatus] = useState('')
@@ -70,8 +74,8 @@ const ThankYou = ({
   useEffect(() => {
     if(status.length){
       if(!order.order.sendMail){
-        axios.post("/api/mail/order", order.order).then(res => {
-          updateOrder({variables: {
+        axios.post("/api/mail/order", order.order).then(async res => {
+          const {data} = await updateOrder({variables: {
             input: {
               where: {id: atob(router.query.idOrder)},
               data: {
@@ -79,9 +83,12 @@ const ThankYou = ({
               }
             }
           }})
+          return data
+        }).then(res => {
+          order.order.sendMail = res.updateOrder.order.sendMail
         }).catch(err => console.log(err))
       }
-      axios.post('/api/money/order', order).then(res => console.log(res.data))
+      axios.post('/api/money/order', order).catch(err => console.error(err))
     }
   }, [status])
 

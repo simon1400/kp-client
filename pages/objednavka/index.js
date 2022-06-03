@@ -16,6 +16,7 @@ import saleFrom from '../../function/objednavka/saleFrom'
 import { client } from '../../lib/api'
 import globalQuery from '../../queries/global'
 import userQuery from '../../queries/user'
+import buildImageUrl from '../../function/buildImageUrl'
 
 export async function getServerSideProps() {
 
@@ -208,6 +209,7 @@ const CheckoutWrap = ({dataGl}) => {
         price: item.price,
         slug: item.slug,
         count: item.count,
+        imageUrl: buildImageUrl(item.imageUrl),
         idProduct: item.id,
         title: item.title,
         guid: item.guid,

@@ -5,6 +5,7 @@ export const UpdateOrder = gql`
     updateOrder(input: $input) {
       order {
         status
+        sendMail
       }
     }
   }
@@ -48,6 +49,7 @@ export const CreateOrder = gql`
           price
           slug
           count
+          imageUrl
           idProduct
           title
           guid
@@ -118,7 +120,7 @@ export const GetOrder = gql`
       anotherAddress {
         email
         phone
-        name
+        firstname
         surname
         address
         city

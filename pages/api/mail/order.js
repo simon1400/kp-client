@@ -1,29 +1,30 @@
-const sgMail = require('@sendgrid/mail')
-// using Twilio SendGrid's v3 Node.js Library
-// https://github.com/sendgrid/sendgrid-nodejs
+import InfoOrder from '../../../mailTemplate/infoOrder';
+import sgMail from '@sendgrid/mail'
+
 export default async function handler (req, res) {
   if(req.method === 'POST') {
     console.log('POST /SEND ORDER');
 
     await sgMail.setApiKey(process.env.SENDGRID_API_KEY)
 
-    const {email} = req.body
+    const data = req.body
+
+    console.log("data order in mail send", data)
 
     const msg = {
-      to: email, // Change to your recipient
-      from: 'devs@pechunka.com', // Change to your verified sender
-      subject: 'Sending with SendGrid is Fun',
-      text: 'and easy to do anywhere, even with Node.js',
-      html: '<strong>and easy to do anywhere, even with Node.js</strong>',
+      to: data.email,
+      // to: "pechunka11@gmail.com",
+      from: '"Objednávka dokončena - Kralovska peče" <info@kralovska-pece.cz>',
+      subject: 'Objednávka č.: ' + data.idOrder,
+      text: "Objednávka dokončena - Kralovska peče",
+      html: InfoOrder(data),
     }
-    await sgMail
-      .send(msg)
-      .then(() => {
-        console.log('Email sent')
-      })
-      .catch((error) => {
-        res.status(error.code).json(error.response.body);
-        console.error('ERRORRR --- ', error)
-      })
+
+    await sgMail.send(msg).then(() => {
+      res.status(200).send('Email sent')
+    }).catch((error) => {
+      console.error('ERRORRR --- ', error)
+      res.status(error.code).json(error.response.body);
+    })
   }
 }
