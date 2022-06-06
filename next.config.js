@@ -28,23 +28,23 @@ module.exports = (phase) => {
     })(),
     GP_CLIENT_ID: (() => {
       if (isDev) return '1436406037'
-      if (isProd) return '1303062651'
+      if (isProd) return '1436406037'
       return 'RESTURL_SPEAKERS:not (isDev,isProd && !isStaging,isProd && isStaging)'
     })(),
     GP_GO_ID: (() => {
       if (isDev) return '8815516765'
-      if (isProd) return '8311687967'
+      if (isProd) return '8815516765'
       return 'RESTURL_SPEAKERS:not (isDev,isProd && !isStaging,isProd && isStaging)'
     })(),
     GP_SECRET_ID: (() => {
       if (isDev) return 'EJ2AVkDs'
-      if (isProd) return 'CrGvzcbB'
+      if (isProd) return 'EJ2AVkDs'
       return 'RESTURL_SPEAKERS:not (isDev,isProd && !isStaging,isProd && isStaging)'
     })(),
     PAY_API: (() => {
-      // if (isDev) return 'https://gw.sandbox.gopay.com'
-      if (isDev) return 'https://gate.gopay.cz'
-      if (isProd) return 'https://gate.gopay.cz'
+      if (isDev) return 'https://gw.sandbox.gopay.com'
+      // if (isDev) return 'https://gate.gopay.cz'
+      if (isProd) return 'https://gw.sandbox.gopay.com'
       return 'RESTURL_SPEAKERS:not (isDev,isProd && !isStaging,isProd && isStaging)'
     })(),
     SENDGRID_API_KEY: (() => {
