@@ -52,9 +52,11 @@ export default async function handler (req, res) {
         lang: "CS",
         callback: {
           return_url: `${process.env.APP_DOMAIN}/dekujem/${orderId64}`,
-          notification_url: `${process.env.APP_DOMAIN}/api/notify`
+          notification_url: `https://kralovska-pece.cz/api/notify`
         },
       }
+
+      console.log(bodyObj)
 
       const AccessToken = await GetAccessToken()
 

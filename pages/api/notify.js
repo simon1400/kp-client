@@ -6,8 +6,8 @@ export default async function handler (req, res) {
     console.log('GET /notify');
 
     res.status(200).json(req.body);
-  }else if(req.method === 'GET'){
-    console.log('GET /notify');
+  }else if(req.method === 'POST'){
+    console.log('POST /notify');
 
     res.status(200).json(req.body);
   }else{
