@@ -9,10 +9,8 @@ export default async function handler (req, res) {
 
     const data = req.body
 
-    console.log("data order in mail send", data)
-
     const msg = {
-      to: data.email,
+      to: [data.email, 'info@kralovska-pece.cz'],
       from: 'Objednávka dokončena - Kralovska peče <info@kralovska-pece.cz>',
       subject: 'Objednávka č.: ' + data.id,
       text: "Objednávka dokončena - Kralovska peče",

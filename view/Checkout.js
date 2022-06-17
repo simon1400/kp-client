@@ -39,7 +39,9 @@ const Checkout = ({
   setSale,
   pickupData,
   getPickup,
-  dataGl
+  dataGl,
+  setRadioState,
+  radioState
 }) => {
 
   const [saleCoupon, setSaleCoupon] = useState('')
@@ -49,8 +51,6 @@ const Checkout = ({
     e.preventDefault()
     setHeightProductsLits(heightProductsList === 0 ? 'auto' : 0)
   }
-
-  const [radioState, setRadioState] = useState("cz")
 
   const changeCountry = (state) => {
     setPaymentsAllow("all")

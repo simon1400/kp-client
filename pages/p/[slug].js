@@ -158,9 +158,10 @@ const Product = ({
                 <span className="price">
                   {getPrice()} Kč
                 </span>
-                <label className="available">Skladem</label>
-                {!product.Variants.length && <a href="/" className="button" onClick={e => buy(e, product)}>přidat do košíku</a>}
-                {!!product.Variants.length && <div className="variant-button-wrap">
+                {product.available && <label className="available">{product.stock > 0 ? "Skladem" : "Na objednávku do 14 dnů"}</label>}
+                {!product.available && <label className="available">Momentálně nedostupné</label>}
+                {!product.Variants.length && product.available && <a href="/" className="button" onClick={e => buy(e, product)}>přidat do košíku</a>}
+                {!!product.Variants.length && product.available && <div className="variant-button-wrap">
                   <div className="select-variant">
                     <button className={`button border-button ${errorBuy && 'uk-form-danger'}`} type="button">{selectValue.name} <img className="uk-svg" src="/assets/angle-down.svg" uk-svg="" /></button>
                     <ul id="variant-select" className="uk-dropdown" uk-dropdown="mode: click; offset: 8; pos: bottom-justify;">

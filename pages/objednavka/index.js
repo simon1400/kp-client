@@ -51,6 +51,8 @@ const CheckoutWrap = ({dataGl}) => {
   const [deliveryMethod, setDeliveryMethod] = useState([])
   const [payMethod, setPayMethod] = useState([])
 
+  const [radioState, setRadioState] = useState("cz")
+
   const [deliveryAllow, setDeliveryAllow] = useState("all")
   const [paymentAllow, setPaymentsAllow] = useState("all")
 
@@ -236,8 +238,9 @@ const CheckoutWrap = ({dataGl}) => {
     if(data === null) {
       deliveryArr[deliveryArr.findIndex(item => item.type === 'zasilkovna')].check = false
     }else{
-      deliveryArr[deliveryArr.findIndex(item => item.type === 'zasilkovna')].label = `Zasilkovna - ${data.name}`
+      deliveryArr[deliveryArr.findIndex(item => (item.type === 'zasilkovna' && item.state === radioState))].label = `Zasilkovna - ${data.name}`
     }
+    
     setDeliveryMethod(deliveryArr)
     setPickupData(data)
   }
@@ -269,6 +272,8 @@ const CheckoutWrap = ({dataGl}) => {
       setContactInfo={setContactInfo}
       setDescription={setDescription}
       deliveryMethod={deliveryMethod}
+      setRadioState={setRadioState}
+      radioState={radioState}
       setPaymentsAllow={setPaymentsAllow}
       setDeliveryMethod={setDeliveryMethod}
       setAnotherAddress={setAnotherAddress}

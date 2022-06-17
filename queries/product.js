@@ -13,7 +13,9 @@ const productQuery = gql`
       content
       guid
       code
+      stock
       support
+      available
       images {
         hash
       }
