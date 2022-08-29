@@ -16,18 +16,18 @@ const NotFound = () => {
   return(
     <Page
       bigHeader 
-      globalData={data.global}
-      nav={data.navigation}>
+      globalData={data.global.data.attributes}
+      nav={data.navigation.data.attributes}>
       <PageTop
         small
         head={<h1 className="big-head">
-                <span>{data.global.nf_title}</span>
+                <span>{data.global.data.attributes.nf_title}</span>
               </h1>}
       />
       <section className="sec-big">
         <div className="uk-container uk-container-small">
           <div>
-            <Content data={data.global.nf_content}/>
+            <Content data={data.global.data.attributes.nf_content}/>
           </div>
         </div>
       </section>

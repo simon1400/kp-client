@@ -14,6 +14,7 @@ export default async function handler (req, res) {
     const data = [], dataVariants = [], dataVariantsCombine = {};
 
     result['MoneyData']['SeznamZasoba']['Zasoba'].map(item => {
+      console.log(item['KmKarta']);
       if(item['KmKarta']['Katalog']._text.indexOf('-') < 0){
         data.push({
           title: item['KmKarta']['Popis']._text,

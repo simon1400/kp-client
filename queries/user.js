@@ -1,13 +1,19 @@
 import { gql } from "@apollo/client";
 import navQuery from './nav'
 
-import { GLOBAL_SETTINGS } from './fragments'
-
 const userQuery = gql`
-  ${GLOBAL_SETTINGS}
   query user {
     global {
-      ...GlobalSettings
+      data{
+        attributes{
+          title_footer
+          phone
+          email
+          address
+          endTitle
+          copyright
+        }
+      }
     }
     ${navQuery}
   }

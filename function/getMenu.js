@@ -6,12 +6,12 @@ const combineMenu = (item) => {
     image: item.image
   }
 
-  if(item.category) {
-    obj.slug = `/c/${item.category.slug}`
-  }else if(item.brand){
-    obj.slug = `/c/${item.brand.slug}`
-  }else if(item.blog && (item.blog.category?.slug || item.blog.category[0])){
-    obj.slug = `/${item.blog.category[0].slug || item.blog.category.slug}/${item.blog.slug}`
+  if(item.category.data) {
+    obj.slug = `/c/${item.category.data.attributes.slug}`
+  }else if(item.brand.data){
+    obj.slug = `/c/${item.brand.data.attributes.slug}`
+  }else if(item.blog.data && (item.blog.data.attributes.category?.data.attributes?.slug || item.blog.data.attributes.category.data[0])){
+    obj.slug = `/${item.blog.data.attributes.category.data[0].attributes.slug || item.blog.data.attributes.category.data.attributes.slug}/${item.blog.data.attributes.slug}`
   }
 
   return obj

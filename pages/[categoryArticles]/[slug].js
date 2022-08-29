@@ -9,7 +9,7 @@ import { client } from '../../lib/api';
 
 export async function getServerSideProps(ctx) {
 
-  const resCat = await AxiosSTRAPI.get(`/category-articles?slug=${ctx.query.categoryArticles}`)
+  const resCat = await AxiosSTRAPI.get(`/api/category-articles?filters[slug][$eq]=${ctx.query.categoryArticles}`)
 
   const { data } = await client.query({
     query: blogItemQuery,
@@ -18,7 +18,13 @@ export async function getServerSideProps(ctx) {
     }
   });
 
-  let blog = data.blogs[0]
+  if(!resCat.data.data.length || !data.articles.data.length) {
+    return {
+      notFound: true
+    }
+  }
+
+  let blog = data.articles.data[0].attributes
 
   let title = blog?.title.split(' ') || []
   let subTitle = blog?.add_title.split(' ') || []
@@ -26,19 +32,16 @@ export async function getServerSideProps(ctx) {
   title = splitArr(title, 2)
   subTitle = splitArr(subTitle, 2)
 
-  if(!resCat.data.length || !data.blogs.length) {
-    return {
-      notFound: true
-    }
-  }
+  const global = data.global.data.attributes
+  const navigation = data.navigation.data.attributes
 
   return {
     props: {
       blog,
       title,
       subTitle,
-      global: data.global,
-      navigation: data.navigation,
+      global,
+      navigation,
       meta: blog.meta,
       bigHeader: true
     }
@@ -64,7 +67,7 @@ const BlogFull = ({
           <div>
             {blog.iframe && <div dangerouslySetInnerHTML={{__html: blog.iframe}} />}
             <Content data={blog.content}/>
-            {blog.image && <Image image={blog.image.hash} width={900} />}
+            {blog.image.data && <Image image={blog.image.data.attributes} width={900} />}
           </div>
           <h2 className="big-head uk-text-center uk-margin-large-top uk-margin-large-bottom">
             <span style={{paddingLeft: '0px'}}>{subTitle[0].map(item => `${item} `)}</span>

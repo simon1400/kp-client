@@ -1,6 +1,4 @@
-import { logMissingFieldErrors } from '@apollo/client/core/ObservableQuery'
-import {useEffect, useState} from 'react'
-import RadioState from '../RadioState'
+import {useEffect} from 'react'
 
 const Method = ({
   title,
@@ -45,7 +43,7 @@ const Method = ({
           {state.map((item, index) => {
 
             if(allow !== 'all' && name !== "deliveryMethod") {
-              let findElement = allow.find(e => e.title === item.label)
+              let findElement = allow.data.find(e => e.attributes.title === item.label)
               if(findElement === undefined) disable = true
               else disable = false
             }else{

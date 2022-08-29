@@ -1,18 +1,27 @@
 import { gql } from "@apollo/client";
 
 const payQuery = gql`
-  query {
-    platbies {
-      title
-      price
-      type
-      sale_from
-      state
-      guid
-      code
-      deliveries {
-        title
+  query Pays {
+    pays {
+      data{
+        attributes{
+          title
+          price
+          type
+          sale_from
+          state
+          guid
+          code
+          deliveries {
+            data{
+              attributes{
+                title
+              }
+            }
+          }
+        }
       }
+      
     }
   }
 `

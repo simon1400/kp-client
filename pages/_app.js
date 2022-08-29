@@ -79,7 +79,7 @@ function MyApp({ Component, pageProps }) {
         <Component {...pageProps} />
         {!basket && <Footer data={global} nav={navigation?.footer_nav} soc={navigation?.soc_nav} />}
         <Canvas />
-        <Auth />
+        {/* <Auth /> */}
         <Search />
       </WithGraphQL>
     </DataProvider>

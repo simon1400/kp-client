@@ -1,4 +1,3 @@
-import {useState} from 'react'
 import Link from 'next/link'
 import Image from '../Image'
 import { connectHits } from 'react-instantsearch-dom'
@@ -8,8 +7,6 @@ const SearchResult = ({
   square = 80, 
   title
 }) => {
-
-  // const [slug, setSlug] = useState('')
 
   const getSlug = (data) => {
     if(title === 'Produkty') {
@@ -27,9 +24,12 @@ const SearchResult = ({
       <div className="result-block">
         <h4>{title}</h4>
         {hits.map((item, index) => <Link key={index} href={getSlug(item)}>
-          <a className={`canvas-item`}>
+          <a className="canvas-item">
             {!!item.image && <div className="canvas-item-img">
               <Image image={item.image} width={square} height={square} />
+            </div>}
+            {!!item.images?.length && <div className="canvas-item-img">
+              <Image image={item.images[0]} width={square} height={square} />
             </div>}
             <div className="canvas-item-content">
               <div>

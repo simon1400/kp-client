@@ -52,6 +52,8 @@ const Basket = () => {
     return sum
   }
 
+  console.log(data?.global);
+
   return (
     <Page basket>
       <div className="basket uk-position-relative">
@@ -72,7 +74,7 @@ const Basket = () => {
                     {!!basketItems.length && basketItems.map((item, index) => <tr key={index} className="basket-item">
                       <td className="uk-flex uk-flex-start">
                         <div className="basket-item-img">
-                          <Image image={item.image.hash} width={100} height={100}  />
+                          <Image image={item.image} width={100} height={100}  />
                         </div>
                         <div className="basket-item-content">
                           <label>{item.brand}</label>
@@ -91,7 +93,6 @@ const Basket = () => {
                         </div>
                       </td>
                       <td className="basket-item-price">
-                        {/*<span className="price price-small">132 Kč</span>*/}
                         <span className="price price-small">{(item.price * item.count).toLocaleString()} Kč</span>
                         <span onClick={() => deleteItem(index)}><img classNAme="uk-svg" src="/assets/times.svg" uk-svg="" /></span>
                       </td>
@@ -105,8 +106,8 @@ const Basket = () => {
                 <h2 className="uk-margin-large-top">Souhrn objednávky</h2>
                 <div >
                   <table className="canvas-table uk-table uk-margin-remove-vertical">
-                    {!!data?.global?.basketInfo && !!data.global?.basketInfo?.length && <tbody>
-                      {data.global.basketInfo.map((item, index) => <tr key={index}>
+                    {!!data?.global.data.attributes?.basketInfo && !!data.global.data.attributes?.basketInfo?.length && <tbody>
+                      {data.global.data.attributes.basketInfo.map((item, index) => <tr key={index}>
                         <td>{item.title}</td>
                         <td className="uk-text-right">
                           <span className="green-text">{item.value}</span>

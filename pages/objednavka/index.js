@@ -46,7 +46,7 @@ const CheckoutWrap = ({dataGl}) => {
 
   const {data: payData} = useQuery(payQuery)
   const {data: deliveryData} = useQuery(deliveryQuery)
-  const [createOrder, { data }] = useMutation(CreateOrder)
+  const [createOrder] = useMutation(CreateOrder)
 
   const [deliveryMethod, setDeliveryMethod] = useState([])
   const [payMethod, setPayMethod] = useState([])
@@ -62,7 +62,6 @@ const CheckoutWrap = ({dataGl}) => {
 
   const [pickupData, setPickupData] = useState(false)
 
-  // const [password, setPassword] = useState('')
   const [description, setDescription] = useState('')
 
   const [state, setState] = useState(stateObj)
@@ -178,6 +177,7 @@ const CheckoutWrap = ({dataGl}) => {
     }
 
     const dataSend = {
+      publishedAt: new Date(),
       email: contactInfo.email,
       phone: contactInfo.phone,
       name: contactInfo.firstname,
@@ -216,19 +216,25 @@ const CheckoutWrap = ({dataGl}) => {
         title: item.title,
         guid: item.guid,
         code: item.code
-      })),
-      anotherAddress,
-      firmInfo
+      }))
     }
 
-    const dataOrder = await createOrder({variables: { input: { data: dataSend } }})
+    if(anotherAddress.email.length) {
+      dataSend.anotherAddress = anotherAddress
+    }
+
+    if(firmInfo.ico.length) {
+      dataSend.firmInfo = firmInfo
+    }
+
+    const dataOrder = await createOrder({variables: { data: dataSend }})
 
     if(dataSend.payOnline) {
-      axios.post(`/api/payment`, dataOrder.data.createOrder.order).then(res => {
+      axios.post(`/api/payment`, {...dataOrder.data.createOrder.data.attributes, id: dataOrder.data.createOrder.data.id}).then(res => {
         window.location.href = res.data.gw_url
       }).catch(err => console.log(err))
     }else{
-      window.location.href = `/dekujem/${btoa(dataOrder.data.createOrder.order.id)}`
+      window.location.href = `/dekujem/${btoa(dataOrder.data.createOrder.data.id)}`
     }
 
   }

@@ -3,7 +3,7 @@ import moneyOrder from '../../../function/moneyOrder';
 
 export default async function handler (req, res) {
   if(req.method == 'POST') {
-    fs.writeFile('moneyData/import/importOrder.xml', moneyOrder(req.body.order), (err) => {
+    fs.writeFile('moneyData/import/importOrder.xml', moneyOrder({...req.body.order.data.attributes, id: req.body.order.data.id}), (err) => {
       if (err) throw err;
       console.log('File is created successfully.');
     });

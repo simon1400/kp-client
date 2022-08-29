@@ -1,31 +1,47 @@
 import { gql } from "@apollo/client";
-import bannerQuery from './banner'
 import navQuery from './nav'
 
 const articlesCategory = gql`
-  query getCategory($slug: String!) {
-    categoryArticles(where: {slug: $slug}) {
-      title
-      articles (sort: "created_at:desc") {
-        title,
-        slug
-        content
-        image {
-          hash
+   query getCategory($slug: String!) {
+    categoryArticles(filters: {slug: {eq:$slug}}) {
+      data{
+        attributes{
+          title
+          articles (sort: "createdAt:desc") {
+            data{
+              attributes{
+                title,
+                slug
+                content
+                image {
+                  data{
+                    attributes{
+                      url
+                    }
+                  }
+                }
+              }
+            }
+          }
+          meta {
+            title
+            description
+          }
         }
-      }
-      meta {
-        title
-        description
+        
       }
     }
     global {
-      title_footer
-      phone
-      email
-      address
-      copyright
-      endTitle
+      data{
+        attributes{
+          title_footer
+          phone
+          email
+          address
+          copyright
+          endTitle
+        }
+      }
     }
     ${navQuery}
   }

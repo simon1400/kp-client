@@ -43,8 +43,8 @@ const Canvas = () => {
         </div>
         {!!canvasItems.length && <hr className="uk-margin-bottom uk-margin-top"/>}
         {!!canvasItems.length && <table className="canvas-table uk-table uk-margin-remove-vertical">
-          {!!data?.global?.basketInfo && !!data.global?.basketInfo?.length && <tbody>
-            {data.global.basketInfo.map((item, index) => <tr key={index}>
+          {!!data?.global.data.attributes?.basketInfo && !!data.global.data.attributes?.basketInfo?.length && <tbody>
+            {data.global.data.attributes.basketInfo.map((item, index) => <tr key={index}>
               <td>{item.title}</td>
               <td className="uk-text-right">
                 <span className="green-text">{item.value}</span>

@@ -3,9 +3,13 @@ import { gql } from "@apollo/client";
 const canvasQuery = gql`
   query GetGlobal {
     global {
-      basketInfo {
-        title
-        value
+      data{
+        attributes{
+          basketInfo {
+            title
+            value
+          }
+        }
       }
     }
   }

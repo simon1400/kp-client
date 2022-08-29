@@ -1,16 +1,16 @@
 export default (data) => {
-  if(data?.dopravies){
-    return data.dopravies.map(item => ({
+  if(data?.deliveries){
+    return data.deliveries.data.map(item => ({
       name: 'delivery',
-      label: item.title,
-      value: item.price,
-      type: item.type,
-      guid: item.guid,
-      code: item.code,
-      saleFrom: item.sale_from,
-      state: item.state,
+      label: item.attributes.title,
+      value: item.attributes.price,
+      type: item.attributes.type,
+      guid: item.attributes.guid,
+      code: item.attributes.code,
+      saleFrom: item.attributes.sale_from,
+      state: item.attributes.state,
       check: false,
-      paysAllow: item.pays
+      paysAllow: item.attributes.pays
     }))
   }else{
     return []

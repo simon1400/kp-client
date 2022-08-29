@@ -6,7 +6,7 @@ export default (data) => {
       <SeznamFirem>
         <Firma>
           <GUID>{13FE548C-1A7C-4896-B648-1AF094AA8492}</GUID>
-          <Nazev>${data.firmInfo[0].nameCompany.length ? data.firmInfo[0].nameCompany : data.name+" "+data.surname}</Nazev>
+          <Nazev>${data.firmInfo?.nameCompany?.length ? data.firmInfo.nameCompany : data.name+" "+data.surname}</Nazev>
           <Adresa>
             <Ulice>${data.address}</Ulice>
             <Misto>${data.city}</Misto>
@@ -14,7 +14,7 @@ export default (data) => {
             <Stat>${data.state}</Stat>
             <KodStatu>CZ</KodStatu>
           </Adresa>
-          <ObchNazev>${data.firmInfo[0].nameCompany.length ? data.firmInfo[0].nameCompany : data.name+" "+data.surname}</ObchNazev>
+          <ObchNazev>${data.firmInfo?.nameCompany?.length ? data.firmInfo.nameCompany : data.name+" "+data.surname}</ObchNazev>
           <ObchAdresa>
             <Ulice>${data.address}</Ulice>
             <Misto>${data.city}</Misto>
@@ -22,7 +22,7 @@ export default (data) => {
             <Stat>${data.state}</Stat>
             <KodStatu>CZ</KodStatu>
           </ObchAdresa>
-          <FaktNazev>${data.firmInfo[0].nameCompany.length ? data.firmInfo[0].nameCompany : data.name+" "+data.surname}</FaktNazev>
+          <FaktNazev>${data.firmInfo?.nameCompany?.length ? data.firmInfo.nameCompany : data.name+" "+data.surname}</FaktNazev>
           <FaktAdresa>
             <Ulice>${data.address}</Ulice>
             <Misto>${data.city}</Misto>
@@ -34,8 +34,8 @@ export default (data) => {
             <Cislo>${data.phone}</Cislo>
           </Mobil>
           <EMail>${data.email}</EMail>
-          <ICO>${data.firmInfo[0].ico}</ICO>
-          <DIC>${data.firmInfo[0].dic}</DIC>
+          <ICO>${data.firmInfo?.ico || ''}</ICO>
+          <DIC>${data.firmInfo?.dic || ''}</DIC>
           <eshop>
             <IN_Export>6</IN_Export>
           </eshop>
@@ -53,7 +53,7 @@ export default (data) => {
           <Poznamka>${data.description}</Poznamka>
           <DodOdb>
             <GUID>{13FE548C-1A7C-4896-B648-1AF094AA8492}</GUID>
-            <ObchNazev>${data.firmInfo[0].nameCompany}</ObchNazev>
+            <ObchNazev>${data.firmInfo?.nameCompany?.length ? data.firmInfo.nameCompany : data.name+" "+data.surname}</ObchNazev>
             <ObchAdresa>
               <Ulice>${data.address}</Ulice>
               <Misto>${data.city}</Misto>
@@ -61,7 +61,7 @@ export default (data) => {
               <Stat>${data.state}</Stat>
               <KodStatu>CZ</KodStatu>
             </ObchAdresa>
-            <FaktNazev>${data.firmInfo[0].nameCompany}</FaktNazev>
+            <FaktNazev>${data.firmInfo?.nameCompany?.length ? data.firmInfo.nameCompany : data.name+" "+data.surname}</FaktNazev>
             <FaktAdresa>
               <Ulice>${data.address}</Ulice>
               <Misto>${data.city}</Misto>
@@ -99,7 +99,6 @@ export default (data) => {
           <Celkem>${data.sum}</Celkem>
           <Stredisko>ESHOP</Stredisko>
           <Nadpis>Přijatá objednávka</Nadpis>
-          <PrimDoklad>${randomId}</PrimDoklad>
           <VarSymbol>${randomId}</VarSymbol>
           <NeVyrizova>0</NeVyrizova>
           <SizDecDPH>0</SizDecDPH>

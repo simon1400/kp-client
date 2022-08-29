@@ -1,23 +1,21 @@
 {
   "private": true,
   "scripts": {
-    "dev": "next dev -p 3005",
+    "dev": "next dev -p 3041",
     "build": "next build",
-    "start": "next start -p 3005",
+    "start": "next start -p 3041",
     "deploy": "pm2 deploy production",
     "typesense": "node function/startTypesenseServer.js",
     "populate": "node typesenseIndex/produkties.js && node typesenseIndex/categoryProducts.js && node typesenseIndex/blogs.js && node typesenseIndex/categories.js && node typesenseIndex/brands.js"
   },
   "dependencies": {
     "@apollo/client": "^3.4.8",
-    "@cloudinary/react": "^1.2.2",
-    "@cloudinary/url-gen": "^1.7.0",
     "@loadable/component": "^5.15.0",
+    "@meilisearch/instant-meilisearch": "^0.8.1",
     "@sendgrid/mail": "^7.4.7",
     "axios": "^0.21.4",
     "canvas": "^2.9.1",
     "classnames": "2.3.1",
-    "cloudinary-build-url": "^0.2.4",
     "date-fns": "2.22.1",
     "dotenv": "^16.0.0",
     "graphql": "^15.5.1",
@@ -31,8 +29,6 @@
     "react-instantsearch-dom": "^6.23.1",
     "react-markdown": "^6.0.2",
     "slugify": "^1.6.5",
-    "typesense": "^1.2.2",
-    "typesense-instantsearch-adapter": "^2.4.0",
     "uikit": "^3.7.2",
     "xml-js": "^1.6.11"
   },

@@ -1,9 +1,11 @@
-import { gql } from "@apollo/client";
-
 const bannerQuery = `banner {
   title
   image {
-    hash
+    data{
+      attributes{
+        url
+      }
+    }
   }
   button {
     text

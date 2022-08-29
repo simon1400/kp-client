@@ -2,42 +2,82 @@ const navObj = `{
   name
   link
   image{
-    hash
+    data{
+      attributes{
+        url
+      }
+    }
   }
   brand{
-    title
-    slug
+    data{
+      attributes{
+        title
+        slug
+      }
+    }
   }
   category {
-    title
-    slug
+    data{
+      attributes{
+        title
+        slug
+      }
+    }
   }
   blog {
-    title
-    slug
-    category {
-      slug
+    data{
+      attributes{
+        title
+        slug
+        category {
+          data{
+            attributes{
+              slug
+            }
+          }
+        }
+      }
     }
   }
   sub_nav_item{
     name
     link
     image {
-      hash
+      data{
+        attributes{
+          url
+        }
+      }
     }
     brand{
-      title
-      slug
+      data{
+        attributes{
+          title
+          slug
+        }
+      }
     }
     category {
-      title
-      slug
+      data{
+        attributes{
+          title
+          slug
+        }
+      }
     }
     blog {
-      title
-      slug
-      category{
-        slug
+      data{
+        attributes{
+          title
+          slug
+          category{
+            data{
+              attributes{
+                slug
+              }
+            }
+          }
+        }
       }
     }
   }
@@ -45,7 +85,11 @@ const navObj = `{
 
 const navQuery = `
   navigation {
-    ${['left_nav', 'right_nav', 'footer_nav', 'soc_nav'].map(item => `${item} ${navObj}`)}
+    data{
+      attributes{
+        ${['left_nav', 'right_nav', 'footer_nav', 'soc_nav'].map(item => `${item} ${navObj}`)}
+      }
+    }
   }
 `
 

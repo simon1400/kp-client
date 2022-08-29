@@ -1,66 +1,125 @@
 import { gql } from "@apollo/client";
 import navQuery from './nav'
 
-import {
-  CATEGORY_PARAMETERS,
-  GLOBAL_SETTINGS
-} from './fragments'
-
 const categoryQuery = gql`
-  ${CATEGORY_PARAMETERS}
-  ${GLOBAL_SETTINGS}
   query GetCategory(
     $slug: String!
   ) {
-    categories(where: { slug: $slug }) {
-      id
- 			title
-      add_title
-      sub{
-        icon {
-          hash
-        }
-        title
-        slug
-      }
-      content
-      filterCategories: brands {
-        title
+    categories(filters: { slug: {eq:$slug} }) {
+      data{
         id
-      }
-      parameters {
-        ...CategoryParameters
-      }
-      meta{
-        title
-        description
-      }
-      image {
-        hash
+        attributes{
+          title
+          add_title
+          content
+          sub{
+            data{
+              attributes{
+                title
+                slug
+                icon {
+                  data{
+                    attributes{
+                      url
+                    }
+                  }
+                }
+              }
+            }
+          }
+          filterCategories: brands {
+            data{
+              id
+              attributes{
+                title
+              }
+            }
+          }
+          parameters {
+             data{
+              id
+              attributes{
+                title
+                values {
+                  data{
+                    id
+                    attributes{
+                      title
+                    }
+                  }
+                }
+              }
+            }
+          }
+          meta{
+            title
+            description
+          }
+          image {
+            data{
+              attributes{
+                url
+              }
+            }
+          }
+        }
       }
     }
-    brands(where: {slug:$slug}) {
-      id
- 			title
-      add_title
-      content
-      filterCategories: categories {
-        title
-        id
-      }
-      parameters {
-        ...CategoryParameters
-      }
-      meta{
-        title
-        description
-      }
-      image {
-        hash
+    brands(filters: {slug:{eq:$slug}}) {
+      data{
+        attributes{
+          title
+          add_title
+          content
+          filterCategories: categories {
+            data{
+              id
+              attributes{
+                title
+              }
+            }
+          }
+          parameters {
+            data{
+              id
+              attributes{
+                title
+                values {
+                  data{
+                    id
+                    attributes{
+                      title
+                    }
+                  }
+                }
+              }
+            }
+          }
+          meta{
+            title
+            description
+          }
+          image {
+            data{
+              attributes{
+                url
+              }
+            }
+          }
+        }
       }
     }
     global {
-      ...GlobalSettings
+      data{
+        attributes{
+          title_footer
+          phone
+          email
+          address
+          endTitle
+          copyright
+        }
+      }
     }
     ${navQuery}
   }

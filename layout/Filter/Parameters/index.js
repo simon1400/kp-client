@@ -6,29 +6,20 @@ const Parameters = ({
   data,
   items,
   refine,
-  // currentRefinement
 }) => {
-
-  // const { dataContextState, dataContextDispatch } = useContext(DataStateContext)
-
-  // useEffect(() => {
-  //   if(dataContextState.filterParameters !== currentRefinement){
-  //     dataContextDispatch({state: currentRefinement, type: 'filterParameters'})
-  //   }
-  // }, [currentRefinement])
 
   return (
     <>
       {data.map((item, index) => <li key={index}>
-        <a className="uk-accordion-title" href="#">{item.title} <img className="uk-svg" src="/assets/angle-down.svg" uk-svg="" /></a>
+        <a className="uk-accordion-title" href="#">{item.attributes.title} <img className="uk-svg" src="/assets/angle-down.svg" uk-svg="" /></a>
         <div className="uk-accordion-content">
           <ul>
-            {item.values.map((itemVal, indexVal) => {
-              let itemFind = items[items.findIndex(menuItem => menuItem.label === itemVal.title)]
+            {item.attributes.values.data.map((itemVal, indexVal) => {
+              let itemFind = items[items.findIndex(menuItem => menuItem.label === itemVal.attributes.title)]
               if(itemFind) {
                 return <li key={indexVal}>
                 <label>
-                  <span>{itemVal.title}</span>
+                  <span>{itemVal.attributes.title}</span>
                   <input
                     onChange={e => refine(itemFind.value)} 
                     className="uk-checkbox" 

@@ -12,20 +12,20 @@ export async function getServerSideProps(ctx) {
 
   const id = Buffer.from(ctx.query.idOrder, 'base64')
 
-  const { data: order } = await client.query({
+  const { data } = await client.query({
     query: GetOrder, 
     variables: {
       id: id.toString()
     }
   });
 
-  const { data } = await client.query({query: userQuery});
+  const { data: dataGlob } = await client.query({query: userQuery});
 
   return {
     props: { 
-      global: data.global,
-      navigation: data.navigation,
-      order,
+      global: dataGlob.global,
+      navigation: dataGlob.navigation,
+      data,
       meta: {
         title: "Dokončená objednávka",
       }
@@ -34,10 +34,8 @@ export async function getServerSideProps(ctx) {
 }
 
 const ThankYou = ({
-  order,
+  data,
 }) => {
-
-  console.log(order)
 
   const router = useRouter()
   const [status, setStatus] = useState('')
@@ -45,50 +43,45 @@ const ThankYou = ({
   const [updateOrder] = useMutation(UpdateOrder);
 
   useEffect(() => {
-    if(order) {
+    if(data.order.data) {
       if(!router.query.id){
-        if(order.order.payment.type === 'dobirka'){
-          setStatus(order.order.payment.type)
+        if(data.order.data.attributes.payment.type === 'dobirka'){
+          setStatus(data.order.data.attributes.payment.type)
         }else{
-          setStatus(order.order.status)
+          setStatus(data.order.data.attributes.status)
         }
       }else{
         axios.get('/api/payment/'+router.query.id).then(res => {
           setStatus(res.data.state)
-          if(order.order.status !== res.data.state){
+          if(data.order.data.attributes.status !== res.data.state){
             updateOrder({variables: {
-              input: {
-                where: {id: atob(router.query.idOrder)},
-                data: {
-                  status: res.data.state
-                }
-              }
+              id: atob(router.query.idOrder),
+              input: {status: res.data.state}
             }})
           }
         }).catch(err => console.log(err))
       }
       dataContextDispatch({ state: [], type: 'basket' })
     }
-  }, [order])
+  }, [data])
 
   useEffect(() => {
     if(status.length){
-      if(!order.order.sendMail){
-        axios.post("/api/mail/order", order.order).then(async res => {
+      if(!data.order.data.attributes.sendMail){
+        axios.post("/api/mail/order", {...data.order.data.attributes, id: data.order.data.id}).then(async res => {
           const {data} = await updateOrder({variables: {
+            id: atob(router.query.idOrder),
             input: {
-              where: {id: atob(router.query.idOrder)},
-              data: {
-                sendMail: true
-              }
+              sendMail: true
             }
           }})
           return data
         }).then(res => {
-          order.order.sendMail = res.updateOrder.order.sendMail
+          console.log(res)
+          data.order.data.attributes.sendMail = res.updateOrder.order.sendMail
         }).catch(err => console.log(err))
       }
-      axios.post('/api/money/order', order).catch(err => console.error(err))
+      axios.post('/api/money/order', data).catch(err => console.error(err))
     }
   }, [status])
 
@@ -110,7 +103,6 @@ const ThankYou = ({
       </div>
     </Page>
   )
-
 }
 
 export default ThankYou

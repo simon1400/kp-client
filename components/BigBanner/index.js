@@ -23,7 +23,7 @@ const BigBanner = ({data}) => {
       <div className="uk-container uk-container-large">
         <div className="big-banner">
           <div className="img-wrap-bg">
-            <Image image={data.image.hash} width={1400} height={770} />
+            <Image image={data.image.data.attributes} width={1400} height={770} />
           </div>
           <div className="big-banner-info">
             <h2 className="big-head">

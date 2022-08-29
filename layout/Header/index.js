@@ -1,7 +1,6 @@
 import MenuDropdown from '../../components/MenuDropdown'
 import {useState, useEffect, useContext} from 'react'
 import {util, offcanvas} from 'uikit'
-import Link from 'next/link'
 import { useRouter } from 'next/router'
 import MobileMenu from '../MobileMenu'
 import getMenu from '../../function/getMenu'

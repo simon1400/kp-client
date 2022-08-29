@@ -1,27 +1,12 @@
-// import { useContext, useEffect } from "react"
 import {connectRefinementList} from "react-instantsearch-core"
-// import { DataStateContext } from "../../../context/dataStateContext"
 
 const FilterCategory = ({
   items,
-  refine,
-  createURL
-  // currentRefinement
+  refine
 }) => {
 
-  // const { dataContextState, dataContextDispatch } = useContext(DataStateContext)
-
-  // useEffect(() => {
-  //   if(dataContextState.filterCategory !== currentRefinement){
-  //     console.log('category update');
-  //     dataContextDispatch({state: currentRefinement, type: 'filterCategory'})
-  //   }
-  // }, [currentRefinement])
-
   const handle = (value) => {
-    refine(value); 
-    const url = createURL(value)
-    console.log(url);
+    refine(value);
   }
 
   return (

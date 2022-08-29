@@ -4,13 +4,18 @@ import navQuery from './nav'
 const notFoundQuery = gql`
   query {
     global {
-      title_footer
-      phone
-      email
-      address
-      copyright
-      nf_title
-      nf_content
+      data{
+        attributes{
+          title_footer
+          phone
+          email
+          address
+          copyright
+          nf_title
+          nf_content
+        }
+      }
+      
     }
     ${navQuery}
   }

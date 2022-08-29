@@ -26,29 +26,37 @@ export async function getServerSideProps(ctx) {
     }
   });
 
-  if(!data?.produkties?.length) {
+  if(!data?.produkties.data?.length) {
     return {
       notFound: true
     }
   }
 
+  const product = data?.produkties.data[0].attributes
+  const productId = data?.produkties.data[0].id
+  const global = data.global.data.attributes
+  const navigation = data.navigation.data.attributes
+
   return {
     props: { 
-      global: data.global,
-      navigation: data.navigation,
+      global,
+      navigation,
       meta: {
-        ...data.produkties[0].meta,
-        image: data.produkties[0].images[0]
+        ...product.meta,
+        image: product.images.data[0]?.attributes || null
       },
-      product: data.produkties[0]
+      product,
+      productId
     }
   }
 }
 
 const Product = ({
   global,
-  product
+  product,
+  productId
 }) => {
+
   const { dataContextState, dataContextDispatch } = useContext(DataStateContext)
   const [selectValue, setSelectValue] = useState(startSelectValue)
   const [errorBuy, setErrorBuy] = useState(false)
@@ -58,7 +66,6 @@ const Product = ({
     e.preventDefault()
     if(!selectValue.id.length && !!product.Variants?.length) {
       setErrorBuy(true)
-      console.log(errorBuy);
       return
     }
     let localBasket = dataContextState.basket
@@ -70,7 +77,7 @@ const Product = ({
         if(localBasket[i].id === selectValue.id){
           hasItem = i
         }
-      }else if(localBasket[i].id === product.id){
+      }else if(localBasket[i].id === productId){
         hasItem = i
       }
     }
@@ -79,13 +86,13 @@ const Product = ({
       localBasket[hasItem].count += 1
     }else{
       var newLocalBasket = {
-        id: product.id,
+        id: productId,
         title: product.title,
         price: product.price,
         count: 1,
-        image: product.images[0],
-        imageUrl: product.images[0],
-        brand: product.brand?.title,
+        image: product.images.data[0].attributes,
+        imageUrl: product.images.data[0].attributes,
+        brand: product.brand.data?.attributes?.title,
         slug: product.slug,
         guid: product.guid,
         code: product.code,
@@ -129,14 +136,14 @@ const Product = ({
           <div className="uk-grid uk-child-width-1-1 uk-child-width-1-2@s">
             <div>
               <div className="product-slider">
-                <a className="bare-button button-reverse uk-visible@s" href={`/c/${product.category[0]?.slug || product.brand?.slug}`}>
-                  <img className="uk-svg" src="/assets/angle-left.svg" uk-svg="" />{product.category[0]?.title || product.brand?.title}
+                <a className="bare-button button-reverse uk-visible@s" href={`/c/${product.category.data[0]?.attributes.slug || product.brand?.data?.attributes?.slug}`}>
+                  <img className="uk-svg" src="/assets/angle-left.svg" uk-svg="" />{product.category.data[0]?.attributes.title || product.brand?.data?.attributes?.title}
                 </a>
                 <div className="uk-slideshow" uk-slideshow="ratio: 1:1">
                   <ul className="uk-slideshow-items">
-                    {product.images.map((item, index) => <li key={index}>
+                    {product.images.data.map((item, index) => <li key={index}>
                       <div>
-                        <Image image={item.hash} width={680} height={680} />
+                        <Image image={item.attributes} width={680} height={680} />
                       </div>
                     </li>)}
                   </ul>
@@ -153,7 +160,7 @@ const Product = ({
             </div>
             <div>
               <div className="product-info">
-                {product.brand && <label>{product.brand.title}</label>}
+                {product.brand && <label>{product.brand.data.attributes.title}</label>}
                 <h1>{product.title}</h1>
                 <span className="price">
                   {getPrice()} Kč
@@ -182,17 +189,17 @@ const Product = ({
           <hr />
         </div>
       </section>
-      {!!product.relateds?.length && <section className="related-products">
+      {!!product.relateds.data?.length && <section className="related-products">
         <div className="uk-container uk-container-large">
           <h2 className="big-head uk-margin-large-bottom">
             <span style={{paddingLeft: '11vw'}}>podobné produkty,</span>
             <span style={{paddingLeft: '14vw'}}>které by vás mohli zajímat</span>
           </h2>
           <div className="uk-grid uk-child-width-1-2 uk-child-width-1-4@s" uk-grid="">
-            {product.relateds.map((item, index) => <div key={index}><Card data={item} /></div>)}
+            {product.relateds.data.map((item, index) => <div key={index}><Card data={item.attributes} /></div>)}
           </div>
           <div className="button-more-wrap">
-            <a href={`/c/${product.category[0]?.slug || product.brand?.slug}`} className="button">dalši {product.category[0]?.title || product.brand?.title}</a>
+            <a href={`/c/${product.category.data[0].attributes?.slug || product.brand?.data?.attributes?.slug}`} className="button">dalši {product.category.data[0].attributes?.title || product.brand.data.attributes?.title}</a>
           </div>
         </div>
       </section>}

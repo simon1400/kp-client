@@ -1,25 +1,21 @@
-import {AdvancedImage} from '@cloudinary/react';
-import {Cloudinary} from "@cloudinary/url-gen";
-import {limitFit} from "@cloudinary/url-gen/actions/resize";
+import buildImageUrl from '../../function/buildImageUrl';
 
-const Image = ({ image, style, svg = false, height = false, width = false }) => {
+const Image = ({ 
+  image, 
+  style, 
+  svg = false, 
+  height = false, 
+  width = false 
+}) => {
 
-  const cld = new Cloudinary({
-    cloud: {
-      cloudName: 'hardart-cz'
-    }
-  });
+  let format = ''
 
-  const myImage = cld.image(image);
-  
-  myImage.format('auto');
-
-  if(height && width) {
-    myImage.resize(limitFit().width(width).height(height))
-  }else if(width) {
-    myImage.resize(limitFit().width(width))
-  }else if(height) {
-    myImage.resize(limitFit().height(height))
+  if(width) {
+    format = '&width='+width
+  }else if(height){
+    format = '&height='+height
+  }else if(height && width){
+    format = `&resize=${width}x${height}`
   }
 
   if(svg){
@@ -33,7 +29,7 @@ const Image = ({ image, style, svg = false, height = false, width = false }) => 
     );
   }else{
     return (
-      <AdvancedImage cldImg={myImage} />
+      <img src={`${buildImageUrl(image)}?format=webp${format}`} />
     );
   }
 

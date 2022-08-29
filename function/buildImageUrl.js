@@ -1,25 +1,14 @@
-import { buildUrl } from 'cloudinary-build-url'
+const APP_API = process.env.APP_API
 
-const buildImageUrl = (image, width) => {
-  
-  const options = {
-    cloud: {
-      cloudName: 'hardart-cz',
-    },
-    transformations: {
-      resize: {
-        width: 1200,
-      }
-    }
-  }
+const buildImageUrl = (image, width = false) => {
+
+  let format = ''
 
   if(width) {
-    options.transformations.resize.width = width
+    format = `?width=${width}`
   }
 
-  const src = buildUrl(image.hash, options)
-
-  return src
+  return APP_API+image?.url+format
 }
 
 

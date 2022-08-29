@@ -4,71 +4,112 @@ import navQuery from './nav'
 
 const productQuery = gql`
   query GetProduct($slug: String!) {
-    produkties(where: {slug:$slug}) {
-      id
-      title
-      price
-      code
-      slug
-      content
-      guid
-      code
-      stock
-      support
-      available
-      images {
-        hash
-      }
-      relateds {
-        title,
-        slug,
-        price,
-        Variants {
-          price
-        }
-        brand {
-          title
-        },
-        images {
-          hash
-        }
-      }
-      brand {
-  			title
-        slug
-      }
-      category {
-  			title
-        slug
-      }
-      Variants {
-  			nazev
-        price
+    produkties(filters: {slug:{eq:$slug}}) {
+      data{
         id
-      }
-      meta{
-        title
-        description
-      }
-    }
-    global {
-      title_footer
-      phone
-      email
-      address
-      copyright
-      endTitle
-      support {
-        title
-        text
-        article {
+        attributes{
+          title
+          price
+          code
           slug
-          category{
-            slug
+          content
+          guid
+          code
+          stock
+          support
+          available
+          images {
+            data{
+              attributes{
+                url
+              }
+            }
+          }
+          relateds {
+            data{
+              attributes{
+                title,
+                slug,
+                price,
+                Variants {
+                  price
+                }
+                brand {
+                  data{
+                    attributes{
+                      title
+                    }
+                  }
+                },
+                images {
+                  data{
+                    attributes{
+                      url
+                    }
+                  }
+                }
+              }
+            }
+          }
+          brand {
+            data{
+              attributes{
+                title
+                slug
+              }
+            }
+          }
+          category {
+            data{
+              attributes{
+                title
+                slug
+              }
+            }
+            
+          }
+          Variants {
+            nazev
+            price
+            id
+          }
+          meta{
+            title
+            description
           }
         }
       }
-      ${bannerQuery}
+    }
+    global {
+      data{
+        attributes{
+          title_footer
+          phone
+          email
+          address
+          copyright
+          endTitle
+          support {
+            title
+            text
+            articles {
+              data{
+                attributes{
+                  slug
+                  category{
+                    data{
+                      attributes{
+                        slug
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+          ${bannerQuery}
+        }
+      }
     }
     ${navQuery}
   }

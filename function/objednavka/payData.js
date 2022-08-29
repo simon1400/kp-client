@@ -1,18 +1,18 @@
 export default (data) => {
-  if(data?.platbies){
-    return data.platbies.map(item => ({
+  if(data?.pays){
+    return data.pays.data.map(item => ({
       name: 'payment',
-      label: item.title,
-      value: item.price,
-      guid: item.guid,
-      code: item.code,
+      label: item.attributes.title,
+      value: item.attributes.price,
+      guid: item.attributes.guid,
+      code: item.attributes.code,
       check: false,
       disabled: false,
-      saleFrom: item.sale_from,
-      state: item.state,
-      payOnline: item.type === 'online',
-      method: item.type,
-      deliveryAllow: item.deliveries
+      saleFrom: item.attributes.sale_from,
+      state: item.attributes.state,
+      payOnline: item.attributes.type === 'online',
+      method: item.attributes.type,
+      deliveryAllow: item.attributes.deliveries
     }))
   }else{
     return []

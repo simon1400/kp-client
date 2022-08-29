@@ -3,67 +3,121 @@ import bannerQuery from './banner'
 import navQuery from './nav'
 
 const homepageQuery = gql`
-  query {
+  query GetHomepage {
     homepage {
-      title,
-      subtitle
-      image {
-        hash
-      },
-      Button {
-        text,
-        link
-      },
-      products {
-        brand,
-        text,
-        button {
-          text
-          link
-        }
-        products {
+      data{
+        attributes{
           title,
-          slug,
-          price,
-          brand {
-            title
+          subtitle
+          image {
+            data{
+              attributes{
+                url
+              }
+            }
           },
-          images {
-            hash
+          Button {
+            text,
+            link
+          },
+          products {
+            brand,
+            text,
+            button {
+              text
+              link
+            }
+            products {
+              data{
+                attributes{
+                  title,
+                  slug,
+                  price,
+                  brand {
+                    data{
+                      attributes{
+                        title
+                      }
+                    }
+                  },
+                  images {
+                    data{
+                      attributes{
+                        url
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+          articles {
+            title
+            text
+            articles {
+              data{
+                attributes{
+                  slug
+                  category {
+                    data{
+                      attributes{
+                        slug
+                      }
+                    }
+                  }
+                }
+              }
+              
+            }
+          }
+          logo_company {
+            image {
+              data{
+                attributes{
+                  url
+                }
+              }
+            }
+            brands {
+              data{
+                attributes{
+                  slug  
+                }
+              }
+            }
+          }
+          meta{
+            title
+            description
           }
         }
-      }
-      articles {
-        title
-        text
-        article {
-          slug
-          category {
-            slug
-          }
-        }
-      }
-      logo_company {
-        image {
-          hash
-        }
-        brands {
-          slug
-        }
-      }
-      meta{
-        title
-        description
       }
     }
     global {
-      title_footer
-      phone
-      email
-      address
-      copyright
-      endTitle
-      ${bannerQuery}
+      data{
+        attributes{
+          title_footer
+          phone
+          email
+          address
+          copyright
+          endTitle
+          banner {
+            title
+            image {
+              data{
+                attributes{
+                  url
+                }
+              }
+            }
+            button {
+              text
+              link
+            }
+          }
+        }
+      } 
     }
     ${navQuery}
   }

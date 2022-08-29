@@ -1,6 +1,5 @@
-import {dropdown, findOne} from 'uikit'
+import {dropdown} from 'uikit'
 import Image from '../Image'
-const APP_API = process.env.APP_API
 
 const MenuDropdown = ({index, data}) => {
 
@@ -18,8 +17,8 @@ const MenuDropdown = ({index, data}) => {
       <div className="uk-container">
         <div className="dropdown-wrap">
           {data.map((item, index) => <a key={index} href={item.slug} className="dropdown-item">
-            {item.image && <div className="dropdown-img">
-              <Image image={item.image.hash} width={70} height={70} />
+            {item.image.data && <div className="dropdown-img">
+              <Image image={item.image.data.attributes} width={70} height={70} />
             </div>}
             <span>{item.name}</span>
           </a>)}

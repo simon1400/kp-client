@@ -1,22 +1,15 @@
-import {useState, useEffect, useRef} from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { offcanvas, util } from 'uikit'
 import SearchResult from '../../components/SearchResult'
-import {useLazyQuery} from '@apollo/client'
-import searchQuery from '../../queries/search.js'
 import { Configure, Index, InstantSearch } from 'react-instantsearch-dom'
-import { searchClient } from '../../lib/typesenseAdapter'
+import searchClient from '../../lib/meilisearch.js'
 import SearchBox from '../../components/SearchBox'
 import HasResult from '../../components/HasResult'
 
 const Search = () => {
 
   const searchInput = useRef(null)
-
-  const [searchItems, setSearchItems] = useState([])
   const [searchValue, setSearchValue] = useState('')
-  const [searchNotFound, setSearchNotFound] = useState('')
-
-  const [getData, {loading, data, error}] = useLazyQuery(searchQuery)
 
   const closeCanvas = (e) => {
     e.preventDefault()
@@ -24,32 +17,11 @@ const Search = () => {
   }
 
   useEffect(() => {
-    // util.on('#search', 'beforehide', () => setActiveDropdown(false));
     util.on('#search', 'beforeshow', () => searchInput.current.focus());
   })
 
-  useEffect(() => {
-    const timeoutId = setTimeout(() => {
-      if(searchValue.length > 2) {
-        getData({
-          variables: {
-            search: searchValue
-          }
-        })
-      }
-    }, 500)
-    return () => clearTimeout(timeoutId);
-  }, [searchValue]);
-
-  const handleSearch = async (value) => {
-    setSearchValue(value)
-  }
-
   return (
-    <InstantSearch
-      indexName="produkties"
-      searchClient={searchClient}
-    >
+    
       <div id="search" className="uk-offcanvas" uk-offcanvas="flip: true; overlay: true">
         <div className="uk-offcanvas-bar">
           <div className="canvas-head uk-flex uk-flex-between">
@@ -60,30 +32,44 @@ const Search = () => {
           </div>
           <hr />
 
-          <Configure hitsPerPage={4} />
+          
 
-          <SearchBox searchInput={searchInput} />
+          <div className="input-search-wrap">
+            <img className="uk-svg" src="/assets/search.svg" uk-svg="" />
+            <input 
+              onChange={e => setSearchValue(e.currentTarget.value)} 
+              ref={searchInput} 
+              value={searchValue} 
+              className="uk-input" 
+              type="text" />
+          </div>
 
-          <HasResult />
+          {/* <HasResult /> */}
 
-          {/* {/* {!data && !!searchValue.length && 'Nic jsme nenašli, zkuste jiné slovo.'} */}
           <div className="results">
-            <Index indexName="categories">
+            <InstantSearch indexName="category" searchClient={searchClient}>
+              <div className="uk-hidden"><SearchBox searchValue={searchValue}/></div>
+              <Configure hitsPerPage={4} />
               <SearchResult title="Kategorie" />
-            </Index>
-            <Index indexName="brands">
+            </InstantSearch>
+            <InstantSearch indexName="brand" searchClient={searchClient}>
+              <div className="uk-hidden"><SearchBox searchValue={searchValue}/></div>
+              <Configure hitsPerPage={4} />
               <SearchResult title="Značky" />
-            </Index>
-            <Index indexName="produkties">
+            </InstantSearch>
+            <InstantSearch indexName="categoryProducts" searchClient={searchClient}>
+              <div className="uk-hidden"><SearchBox searchValue={searchValue}/></div>
+              <Configure hitsPerPage={4} />
               <SearchResult title="Produkty" />
-            </Index>
-            <Index indexName="blogs">
+            </InstantSearch>
+            <InstantSearch indexName="article" searchClient={searchClient}>
+              <div className="uk-hidden"><SearchBox searchValue={searchValue}/></div>
+              <Configure hitsPerPage={4} />
               <SearchResult title="Články" />
-            </Index>
+            </InstantSearch>
           </div>
         </div>
       </div>
-    </InstantSearch>
   )
 }
 

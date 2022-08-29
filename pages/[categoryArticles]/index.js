@@ -14,18 +14,23 @@ export async function getServerSideProps(ctx) {
     }
   });
 
-  if(!data?.categoryArticles?.length) {
+  if(!data?.categoryArticles.data?.length) {
     return {
       notFound: true
     }
   }
 
+  const category = data?.categoryArticles.data[0].attributes
+  const meta = data?.categoryArticles.data[0].attributes.meta
+  const global = data.global.data.attributes
+  const navigation = data.navigation.data.attributes
+
   return {
     props: { 
-      navigation: data.navigation,
-      category: data.categoryArticles[0],
-      meta: data.categoryArticles[0].meta,
-      global: data.global,
+      navigation,
+      category,
+      meta,
+      global,
       bigHeader: true
     }
   }
@@ -52,17 +57,17 @@ const Blog = ({
 
       <section className="sec-big">
         <div className="uk-container uk-container-large">
-          {category.articles?.length && category.articles.map((item, index) => <div key={index} className="uk-grid blog-item uk-child-width-1-1 uk-child-width-1-2@s" uk-grid="" uk-height-match="target: > div > div">
+          {category.articles.data.length && category.articles.data.map((item, index) => <div key={index} className="uk-grid blog-item uk-child-width-1-1 uk-child-width-1-2@s" uk-grid="" uk-height-match="target: > div > div">
             <div>
               <div className="blog-item-img uk-position-relative">
-                {item.image?.hash && <Image image={item.image.hash} width={680} />}
+                {item.attributes.image.data && <Image image={item.attributes.image.data.attributes} width={680} />}
               </div>
             </div>
             <div>
               <div className="blog-item-info">
-                {item.title && <h2>{item.title}</h2>}
-                {item.content && <p>{item.content.replace(/<[^>]+>/g, ' ').substr(0, 440)}</p>}
-                {item.slug && <a className="bare-button" href={`/blog/${item.slug}`}>celý článek <img className="uk-svg" src="/assets/angle-right.svg" uk-svg="" /></a>}
+                {item.attributes.title && <h2>{item.attributes.title}</h2>}
+                {item.attributes.content && <p>{item.attributes.content.replace(/<[^>]+>/g, ' ').substr(0, 440)}</p>}
+                {item.attributes.slug && <a className="bare-button" href={`/blog/${item.attributes.slug}`}>celý článek <img className="uk-svg" src="/assets/angle-right.svg" uk-svg="" /></a>}
               </div>
             </div>
           </div>)}

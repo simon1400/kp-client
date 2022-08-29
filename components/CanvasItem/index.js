@@ -2,11 +2,8 @@ import {useState, useContext} from 'react'
 import Link from 'next/link'
 import { DataStateContext } from '../../context/dataStateContext'
 import Image from '../Image'
-const APP_API = process.env.APP_API
 
 const CanvasItem = ({basketItem = false, data, index, square = false}) => {
-
-  const [slug, setSlug] = useState('')
 
   const { dataContextState, dataContextDispatch } = useContext(DataStateContext)
 
@@ -36,10 +33,10 @@ const CanvasItem = ({basketItem = false, data, index, square = false}) => {
     <Link href={getSlug(data)}>
       <a className={`canvas-item ${basketItem ? 'basket-canvas-item' : ''}`}>
         {!!data.image && <div className="canvas-item-img">
-          <Image image={data.image.hash} width={square} height={square} />
+          <Image image={data.image} width={square} height={square} />
         </div>}
         {!!data.images && <div className="canvas-item-img">
-          <Image image={data.images[0].hash} width={square} height={square} />
+          <Image image={data.images[0]} width={square} height={square} />
         </div>}
         <div className="canvas-item-content">
           <div>
