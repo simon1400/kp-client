@@ -4,9 +4,7 @@
     "dev": "next dev -p 3041",
     "build": "next build",
     "start": "next start -p 3041",
-    "deploy": "pm2 deploy production",
-    "typesense": "node function/startTypesenseServer.js",
-    "populate": "node typesenseIndex/produkties.js && node typesenseIndex/categoryProducts.js && node typesenseIndex/blogs.js && node typesenseIndex/categories.js && node typesenseIndex/brands.js"
+    "deploy": "pm2 deploy production"
   },
   "dependencies": {
     "@apollo/client": "^3.4.8",
@@ -22,7 +20,6 @@
     "hamburgers": "1.1.3",
     "js-cookie": "^3.0.0",
     "next": "latest",
-    "node-sass": "4.14.1",
     "react": "^17.0.2",
     "react-animate-height": "^2.0.23",
     "react-dom": "^17.0.2",
