@@ -1,6 +1,6 @@
 module.exports = {
   apps : [{
-    name   : "Kralovska pece client",
+    name   : "KP demo client",
     script : "yarn start",
     env_production: {
       GP_CLIENT_ID: "1693740873",
