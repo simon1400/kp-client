@@ -44,7 +44,6 @@ const Checkout = ({
   radioState
 }) => {
 
-  const [saleCoupon, setSaleCoupon] = useState('')
   const [heightProductsList, setHeightProductsLits] = useState(0)
 
   const toggleProductsList = (e) => {
@@ -164,17 +163,16 @@ const Checkout = ({
                     setState={setState}
                     sale={sale}
                     setSale={setSale}
-                    saleCoupon={saleCoupon}
                     error={error}
                     sum={startSum}
                     setError={setError}
-                    setSaleCoupon={setSaleCoupon} />
+                  />
                   <hr />
                   <table className="canvas-table uk-table uk-table-divider uk-margin-remove-vertical">
                     <tbody>
                       {sale.value > 0 && <tr>
                         <td>Sleva</td>
-                        <td className="uk-text-right">{sale.value} {sale.typ === 'procent' ? '%' : 'Kč'}</td>
+                        <td className="uk-text-right">{sale.value} {sale.type === 'procenta' ? '%' : 'Kč'}</td>
                       </tr>}
                       <tr>
                         <td>Doprava</td>

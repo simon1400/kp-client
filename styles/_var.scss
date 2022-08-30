@@ -252,6 +252,7 @@ $global-primary-background: $accent;
 
 $offcanvas-bar-padding-vertical-m: 30px;
 $offcanvas-bar-padding-horizontal-m: 30px;
+$offcanvas-bar-width-s: 575px;
 
 
 $form-radio-size: 18px;
@@ -288,3 +289,6 @@ $hamburger-layer-spacing       : 8px;
 $hamburger-layer-color         : $accent;
 $hamburger-layer-border-radius : 0;
 $hamburger-hover-opacity       : 1;
+
+$dropdown-margin: 0;
+$dropdown-viewport-margin: 0;

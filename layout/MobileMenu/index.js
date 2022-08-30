@@ -7,7 +7,8 @@ const MobileMenu = ({
   menu,
   handleMenu,
   left,
-  right
+  right,
+  clickMenu
 }) => {
 
   useEffect(() => {
@@ -23,12 +24,12 @@ const MobileMenu = ({
       <div className="menu menu-mobile uk-offcanvas-bar">
         <ul>
           {left.map((item, index) => <li key={index}>
-            {!item.sub_nav && <Link href={item.slug}><a>{item.name}</a></Link>}
+            {!item.sub_nav && <Link href={item.slug}><a onClick={() => clickMenu()}>{item.name}</a></Link>}
             {!!item.sub_nav && <a href="/" onClick={e => e.preventDefault()}>{item.name} <img className="uk-svg" src="/assets/plus.svg" uk-svg="" /></a>}
             {!!item.sub_nav && <MenuDropdown data={item.sub_nav} index={'mob_top_'+index} />}
           </li>)}
           {right.map((item, index) => <li key={index}>
-            {!item.sub_nav && <Link href={item.slug}><a>{item.name}</a></Link>}
+            {!item.sub_nav && <Link href={item.slug}><a onClick={() => clickMenu()}>{item.name}</a></Link>}
             {!!item.sub_nav && <a href="/" onClick={e => e.preventDefault()}>{item.name} <img className="uk-svg" src="/assets/plus.svg" uk-svg="" /></a>}
             {!!item.sub_nav && <MenuDropdown data={item.sub_nav} index={'mob_bottom_'+index} />}
           </li>)}

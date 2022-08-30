@@ -102,6 +102,13 @@
 }
 @media(max-width: $breakpoint-small) {
   // $breakpoint-small: 640px
+  .page-top.big-top a:hover{
+    width: 210px;
+    height: 210px;
+  }
+  .catalog-control{
+    height: auto;
+  }
   .buttons-wrap-user {
     a.button{
       display: block;

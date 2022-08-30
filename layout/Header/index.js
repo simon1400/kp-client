@@ -40,6 +40,10 @@ const Header = ({
     setMenu(!menu)
   }
 
+  const clickMenu = () => {
+    setMenu(false)
+  }
+
   const closeMenu = async (e, id) => {
     e.preventDefault()
     setMenu(false)
@@ -79,7 +83,7 @@ const Header = ({
             </a>
           </div>}
           <div className="logo">
-            <a href="/"><img className="uk-svg" src="/assets/logo.svg" uk-svg="" /></a>
+            <a href="/"><img className="uk-svg hidden" src="/assets/logo.svg" uk-svg="" /></a>
           </div>
           {basket && <div></div>}
           {!basket && <div className="control-menu-wrap">
@@ -92,13 +96,13 @@ const Header = ({
                 </li>)}
               </ul>
               <ul className="icons-wrap">
-                <li className="uk-visible@m"><a href="/" onClick={e => closeMenu(e, "#search")}><img className="uk-svg" src="/assets/search.svg" uk-svg=""/></a></li>
-                {!dataContextState?.token && <li><a href="/" onClick={e => closeMenu(e, "#auth")}><img className="uk-svg" src="/assets/user.svg" uk-svg=""/></a></li>}
+                <li className="uk-visible@m"><a href="/" onClick={e => closeMenu(e, "#search")}><img className="uk-svg hidden" src="/assets/search.svg" uk-svg=""/></a></li>
+                {!dataContextState?.token && <li><a href="/" onClick={e => closeMenu(e, "#auth")}><img className="uk-svg hidden" src="/assets/user.svg" uk-svg=""/></a></li>}
                 {!!dataContextState?.token && <li><a href="/user"><img className="uk-svg" src="/assets/user.svg" uk-svg=""/></a></li>}
-                <li className={`basket-icon-wrap ${!dataContextState.basket.length ? 'empty-basket-icon' : ''}`}>
+                <li className={`basket-icon-wrap`}>
                   <a href="/" onClick={e => closeMenu(e, "#canvas")}>
                     <img className="uk-svg" src="/assets/bag.svg" uk-svg=""/>
-                    <span></span>
+                    {!!dataContextState.basket.length && <span></span>}
                   </a>
                 </li>
               </ul>
@@ -106,7 +110,7 @@ const Header = ({
           </div>}
         </nav>
       </div>
-      {!basket && <MobileMenu menu={menu} handleMenu={handleMenu} left={left} right={right} />}
+      {!basket && <MobileMenu menu={menu} clickMenu={clickMenu} handleMenu={handleMenu} left={left} right={right} />}
     </header>
   )
 }

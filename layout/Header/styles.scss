@@ -2,6 +2,7 @@ header{
   position: absolute;
   width: 100%;
   z-index: 99;
+  transition: all .2s ease;
   &.small-header{
     position: static;
     background-color: $yellow;

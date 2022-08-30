@@ -8,6 +8,7 @@ const BottomControl = ({
 
   const removeAll = (e) => {
     e.preventDefault()
+    closeCanvas(e)
     refine(items)
   }
 

@@ -42,7 +42,7 @@ const CheckoutWrap = ({dataGl}) => {
   const { dataContextState } = useContext(DataStateContext)
   const [startSum, setStartSum] = useState(0)
   const [sum, setSum] = useState(0)
-  const [sale, setSale] = useState({value: 0, typ: ''})
+  const [sale, setSale] = useState({value: 0, type: ''})
 
   const {data: payData} = useQuery(payQuery)
   const {data: deliveryData} = useQuery(deliveryQuery)
@@ -92,17 +92,20 @@ const CheckoutWrap = ({dataGl}) => {
     }
   }, [payData])
 
+  const calculateSale = () => {
+    var newSum = startSum
+    if(sale.type === 'procenta'){
+      newSum = Math.round(newSum - (newSum * (sale.value / 100)))
+    }else if(sale.type === 'castka'){
+      newSum = newSum - sale.value
+    }
+    return newSum
+  }
+
   useEffect(() => {
     if(sale.value){
-      var newSum = sum
-      if(sale.typ === 'procent'){
-        newSum = Math.round(newSum - (newSum * (sale.value / 100)))
-      }else if(sale.typ === 'current'){
-        newSum = newSum - sale.value
-      }
-      setSum(newSum)
+      setSum(calculateSale())
     }
-
   }, [sale.value])
 
   useEffect(() => {
@@ -133,7 +136,12 @@ const CheckoutWrap = ({dataGl}) => {
   useEffect(() => {
     const checkDelivery = deliveryMethod.filter(item => item.check)[0]
     const checkPayment = payMethod.filter(item => item.check)[0]
-    var sum = startSum
+    let sum = 0
+    if(sale.value) {
+      sum = calculateSale()
+    }else{
+      sum = startSum
+    }
     sum += +checkDelivery?.value || 0
     sum += +checkPayment?.value || 0
     setSum(sum)
@@ -189,7 +197,7 @@ const CheckoutWrap = ({dataGl}) => {
       description,
       sum,
       payOnline: checkPayment.payOnline,
-      // sale
+      sale,
       status: "CREATED",
       delivery: {
         name: checkDelivery.label,
@@ -219,6 +227,13 @@ const CheckoutWrap = ({dataGl}) => {
       }))
     }
 
+    if(sale.value > 0) {
+      dataSend.sale = {
+        type: sale.type === 'procent' ? '%' : "Kč",
+        value: sale.value
+      }
+    }
+    
     if(anotherAddress.email.length) {
       dataSend.anotherAddress = anotherAddress
     }

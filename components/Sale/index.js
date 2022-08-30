@@ -1,25 +1,21 @@
-import React, {useEffect, useState} from 'react'
-// import sanityClient from "../../lib/sanity.js";
+import { useLazyQuery } from '@apollo/client'
+import { useState } from 'react'
 
-// import query from '../../queries/sale'
+import query from '../../queries/sale'
 
 const Sale = ({
   state,
   sale,
   setSale,
-  saleCoupon,
   error,
   sum,
   setState,
   setError,
-  setSaleCoupon
 }) => {
 
-  const [sales, setSales] = useState([])
+  const [getSales] = useLazyQuery(query)
 
-  useEffect(() => {
-    // sanityClient.fetch(query).then(data => setSales(data))
-  }, [])
+  const [saleCoupon, setSaleCoupon] = useState('')
 
   const changeSaleCoupon = value => {
     setError({...error, sale: false})
@@ -35,22 +31,26 @@ const Sale = ({
     setState({...state, sale: !state.sale})
   }
 
-  const accessSale = (e) => {
+  const accessSale = async (e) => {
     e.preventDefault()
 
-    if(!sales.length){
+    const sales = await getSales({variables: {
+      code: saleCoupon
+    }})
+
+    if(!sales.data.saleCodes.data.length){
       setError({...error, sale: true})
       return
     }
 
-    const currentSales = sales.filter(item => item.title === saleCoupon)[0]
+    const currentSales = sales.data.saleCodes.data[0].attributes
 
     if(!currentSales || sum < currentSales?.minValue){
       setError({...error, sale: true})
       return
     }
 
-    setSale({value: currentSales.value, typ: currentSales.typ})
+    setSale({value: currentSales.value, type: currentSales.type})
   }
 
   return(
@@ -60,7 +60,15 @@ const Sale = ({
         <div className="uk-grid uk-grid-small uk-margin-small-top" uk-grid="">
           <div className="uk-width-3-4">
             <div className="uk-form-controls">
-              <input className={`uk-input ${error.sale && 'uk-form-danger'}`} disabled={sale.value > 0} id="saleCoupon" type="text" name="saleCoupon" value={saleCoupon} onChange={e => changeSaleCoupon(e.target.value)} />
+              <input 
+                className={`uk-input ${error.sale && 'uk-form-danger'}`} 
+                disabled={sale.value > 0} 
+                id="saleCoupon" 
+                type="text" 
+                name="saleCoupon" 
+                value={saleCoupon} 
+                onChange={e => changeSaleCoupon(e.target.value)} 
+              />
             </div>
           </div>
           <div className="uk-width-1-4">
