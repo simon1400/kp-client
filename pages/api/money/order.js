@@ -13,6 +13,7 @@ export default async function handler (req, res) {
       const files = await fs.readdir(dir)
       return files.length
     }
+
     const countFiles = await getNumFiles(dir)
 
     const nameFile = `importOrder${countFiles+1}.xml`
@@ -20,12 +21,12 @@ export default async function handler (req, res) {
     await fs.writeFile(`moneyData/import/${nameFile}`, moneyOrder({...req.body.order.data.attributes, id: req.body.order.data.id}), (err) => {
       if (err) throw err;
       console.log('File is created successfully.');
-    });
+    })
 
     const dataReq = {
       type: 'import',
       fileName: nameFile,
-      fileContent: moneyOrder({...req.body.order.data.attributes, id: req.body.order.data.id})
+      // fileContent: moneyOrder({...req.body.order.data.attributes, id: req.body.order.data.id})
     }
 
     await axios.post(APP_API+'/api/moneys', {data: dataReq})
