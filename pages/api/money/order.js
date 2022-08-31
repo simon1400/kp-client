@@ -25,15 +25,17 @@ export default async function handler (req, res) {
       console.log('File is created successfully.');
     })
 
-    // const dataReq = {
-    //   type: 'import',
-    //   fileName: nameFile,
-    //   // fileContent: moneyOrder({...req.body.order.data.attributes, id: req.body.order.data.id})
-    // }
+    const dataReq = {
+      type: 'import',
+      fileName: nameFile,
+      // fileContent: moneyOrder({...req.body.order.data.attributes, id: req.body.order.data.id})
+    }
 
-    // await axios.post(APP_API+'/api/moneys', {data: dataReq})
-    //             .then(() => console.log('Money import data success saved!'))
-    //             .catch(err => console.log(err))
+    console.log(dataReq);
+
+    await axios.post(APP_API+'/api/moneys', {data: dataReq})
+                .then(() => console.log('Money import data success saved!'))
+                .catch(err => console.log(err))
 
     res.status(200).json({result: req.body});
 
