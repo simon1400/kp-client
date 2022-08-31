@@ -71,6 +71,8 @@ const Category = ({
 
   const router = useRouter()
 
+  console.log(category);
+
   return (
     <InstantSearch 
       indexName="categoryProducts"
@@ -85,7 +87,7 @@ const Category = ({
                 </h1>}
           />
 
-          {!!category?.sub?.length && <SubCategoryMenu sub={category.sub}/>}
+          {!!category?.sub.data?.length && <SubCategoryMenu sub={category.sub.data}/>}
 
           <CatalogFilterLabels />
 

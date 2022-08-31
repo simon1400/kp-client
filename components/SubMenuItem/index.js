@@ -4,10 +4,12 @@ const SubMenuItem = ({
   data
 }) => {
 
+  console.log(data);
+
   return (
     <a href={data.slug} className="sub-menu-item">
-      {data.icon && <div className="img-wrap">
-        <Image image={data.icon.hash} width={50} height={50} />
+      {data.icon.data && <div className="img-wrap">
+        <Image image={data.icon} width={50} height={50} />
       </div>}
       <div>
         <h4>{data.title}</h4>
