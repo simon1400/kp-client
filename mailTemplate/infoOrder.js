@@ -390,17 +390,17 @@ a[x-apple-data-detectors] {
 
                         <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-size:14px;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:21px;color:#333333">
                           <b>Dodací adresa</b><br>
-                          ${!!data.anotherAddress[0].email.length 
-                            ? (data.anotherAdress[0].firstname
+                          ${!!data.anotherAddress?.email?.length 
+                            ? (data.anotherAdress.firstname
                                 +' '
-                                +data.anotherAdress[0].surname
+                                +data.anotherAdress.surname
                                 +'<br>'
-                                +data.anotherAdress[0].address
+                                +data.anotherAdress.address
                                 +'<br>'
-                                +data.anotherAdress[0].zip
+                                +data.anotherAdress.zip
                                 +' '
-                                +data.anotherAdress[0].city
-                                +'<br>'+data.anotherAdress[0].state
+                                +data.anotherAdress.city
+                                +'<br>'+data.anotherAdress.state
                                 +'<br>'
                                 +data.phone
                                 +'<br>'+data.description) 
@@ -435,7 +435,7 @@ a[x-apple-data-detectors] {
                       <td align="left" style="padding:0;Margin:0">
                         <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-size:14px;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:21px;color:#333333">
                           <b>Fakturační adresa</b><br>
-                          ${!!data.firmInfo[0].ico.length ? (data.firmInfo[0].nameCompany+'<br>'+data.firmInfo[0].ico+'<br>'+data.firmInfo[0].dic) : ''}
+                          ${!!data.firmInfo?.ico?.length ? (data.firmInfo.nameCompany+'<br>'+data.firmInfo.ico+'<br>'+data.firmInfo.dic) : ''}
                           ${data.name+' '+data.surname+'<br>'+data.address+'<br>'+data.zip+' '+data.city+'<br>'+data.state}
                         </p>
                       </td>

@@ -37,6 +37,7 @@ const Filter = ({
                 <FilterCategory 
                   attribute={category[0].attributes.__typename === 'Brand' ? "brand.title" : "categoryTitles"}
                   limit={50}
+                  operator="and"
                   transformItems={items => items.sort(orderBy)}
                 />
               </div>
@@ -44,6 +45,7 @@ const Filter = ({
             {!!parameters.length && <Parameters 
               data={parameters}
               attribute="valuesTitles"
+              operator="and"
               limit={50}
             />}
             <Sorting

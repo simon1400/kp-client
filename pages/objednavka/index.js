@@ -197,7 +197,6 @@ const CheckoutWrap = ({dataGl}) => {
       description,
       sum,
       payOnline: checkPayment.payOnline,
-      sale,
       status: "CREATED",
       delivery: {
         name: checkDelivery.label,

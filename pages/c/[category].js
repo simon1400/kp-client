@@ -93,6 +93,7 @@ const Category = ({
             query={router.query.category}
             hitsPerPage={20}
           />
+          
           <CatalogList />
           
           <section className="additional-sec">
