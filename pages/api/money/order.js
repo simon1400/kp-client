@@ -16,8 +16,6 @@ export default async function handler (req, res) {
 
     const countFiles = await getNumFiles(dir)
 
-    console.log(countFiles);
-
     const nameFile = `importOrder${countFiles}.xml`
 
     await fs.writeFile(`moneyData/import/${nameFile}`, moneyOrder({...req.body.order.data.attributes, id: req.body.order.data.id}), (err) => {
@@ -28,10 +26,8 @@ export default async function handler (req, res) {
     const dataReq = {
       type: 'import',
       fileName: nameFile,
-      // fileContent: moneyOrder({...req.body.order.data.attributes, id: req.body.order.data.id})
+      fileContent: moneyOrder({...req.body.order.data.attributes, id: req.body.order.data.id})
     }
-
-    console.log(dataReq);
 
     await axios.post(APP_API+'/api/moneys', {data: dataReq})
                 .then(() => console.log('Money import data success saved!'))

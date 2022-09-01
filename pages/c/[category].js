@@ -71,8 +71,6 @@ const Category = ({
 
   const router = useRouter()
 
-  console.log(category);
-
   return (
     <InstantSearch 
       indexName="categoryProducts"

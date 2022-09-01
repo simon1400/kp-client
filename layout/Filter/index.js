@@ -27,7 +27,13 @@ const Filter = ({
         <hr />
         <div className="catalog-filter">
           <ul className="uk-accordion" uk-accordion="multiple: true">
-            {!!category.length && <li className="uk-open">
+            {!!parameters.length && <Parameters 
+              data={parameters}
+              attribute="valuesTitles"
+              operator="and"
+              limit={50}
+            />}
+            {!!category.length && <li>
               <a className="uk-accordion-title" href="#">
                 {category[0].attributes.__typename === 'Brand' && 'Značka'}
                 {category[0].attributes.__typename === 'Category' && 'Kategorie'}
@@ -42,12 +48,6 @@ const Filter = ({
                 />
               </div>
             </li>}
-            {!!parameters.length && <Parameters 
-              data={parameters}
-              attribute="valuesTitles"
-              operator="and"
-              limit={50}
-            />}
             <Sorting
               defaultRefinement="categoryProducts"
               items={[

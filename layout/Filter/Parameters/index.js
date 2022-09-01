@@ -10,7 +10,7 @@ const Parameters = ({
 
   return (
     <>
-      {data.map((item, index) => <li key={index}>
+      {data.map((item, index) => <li key={index} className={index === 0 ? "uk-open": ''}>
         <a className="uk-accordion-title" href="#">{item.attributes.title} <img className="uk-svg" src="/assets/angle-down.svg" uk-svg="" /></a>
         <div className="uk-accordion-content">
           <ul>

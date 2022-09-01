@@ -4,11 +4,13 @@ import { DataStateContext } from '../../../context/dataStateContext'
 import { getUserQuery, controlUser } from '../../../queries/auth'
 import globalQuery from '../../../queries/global'
 import { useLazyQuery, useQuery } from '@apollo/client'
-import axios from 'axios'
-import {alert} from 'uikit'
+import { alert, offcanvas, util } from 'uikit'
+import { useRouter } from 'next/router'
 
 
 const SingUp = ({handleType}) => {
+
+  const router = useRouter()
 
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
@@ -26,7 +28,6 @@ const SingUp = ({handleType}) => {
 
   useEffect(() => {
     if(response) {
-      console.log('Register.useEffect.response', response);
       getUser({
         variables: {
           id: response.register.user.id
@@ -34,22 +35,25 @@ const SingUp = ({handleType}) => {
       })
       dataContextDispatch({ state: response.register.jwt, type: 'token' })
     }
-    console.log(errorReg);
   }, [response])
 
   useEffect(() => {
     if(user) {
-      dataContextDispatch({ state: user.user, type: 'user' })
-      axios.post('/api/mail/registration', {email}).then(res => {
-        window.location.href = '/user'
-      })
+      dataContextDispatch({ state: {...user.usersPermissionsUser.data.attributes, id: user.usersPermissionsUser.data.id}, type: 'user' })
+      // axios.post('/api/mail/registration', {email}).catch((err) => {
+      //   console.error('Send email registration', err)
+      // })
+      offcanvas(util.find('#auth')).hide();
+      router.push('/user')
     }
   }, [user])
 
   const handleOnSubmit = async (e) => {
     e.preventDefault();
     await controlExistUser({
-      variables: {email}
+      variables: {
+        email
+      }
     })
   }
 
@@ -58,9 +62,9 @@ const SingUp = ({handleType}) => {
   }
 
   useEffect(() => {
-    if(existUser?.usersConnection.aggregate.count === 0){
+    if(existUser?.usersPermissionsUsers?.meta.pagination.total === 0){
       handleReg()
-    }else if(existUser?.usersConnection.aggregate.count > 0){
+    }else if(existUser?.usersPermissionsUsers?.meta.pagination.total > 0){
       setError({...error, exist: true})
     }
   }, [existUser])
@@ -74,6 +78,9 @@ const SingUp = ({handleType}) => {
   if(loadingGl) {
     return null
   }
+
+  const gdpr = dataGl.global.data.attributes.gdpr
+  const terms = dataGl.global.data.attributes.terms
 
   return (
     <div className="form-canvas-wrap">
@@ -93,7 +100,7 @@ const SingUp = ({handleType}) => {
           <input onChange={e => setPassword(e.target.value)} className="uk-input" id="form-stacked-text" type="password" value={password} />
         </div>
       </div>
-      <p>Prohlašuji, že jsem se seznámil se <a href={`/${dataGl.global.gdpr.category[0].slug}/${dataGl.global.gdpr.slug}`}>Zásadami zpracování osobních údajů</a> i s <a href={`/${dataGl.global.terms.category[0].slug}/${dataGl.global.terms.slug}`}>obchodními podmínkami</a>.</p>
+      <p>Prohlašuji, že jsem se seznámil se <a href={`/${gdpr.data.attributes.category.data[0].attributes.slug}/${gdpr.data.attributes.slug}`}>Zásadami zpracování osobních údajů</a> i s <a href={`/${terms.data.attributes.category.data[0].attributes.slug}/${terms.data.attributes.slug}`}>obchodními podmínkami</a>.</p>
       <div className="uk-margin-medium">
         <a href="/" className="button uk-width-1-1" onClick={e => handleOnSubmit(e)}>registrovat</a>
       </div>

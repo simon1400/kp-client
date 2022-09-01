@@ -5,7 +5,7 @@ const useRegister = () => {
   const [callMutation, {loading, data, error: errorReg}] = useMutation(registerQuery);
 
   const register = async (email, password) => {
-    const result = await callMutation({
+    await callMutation({
       variables: {
         input: {
           email,
@@ -14,8 +14,6 @@ const useRegister = () => {
         }
       }
     });
-    console.log(errorReg);
-    console.log('useRegister.register.result', result);
   }
 
   return [register, data, loading, errorReg];

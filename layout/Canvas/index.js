@@ -9,7 +9,7 @@ import { useQuery } from '@apollo/client'
 const Canvas = () => {
 
   const [canvasItems, setCanvasItems] = useState([])
-  const { data } = useQuery(canvasQuery);
+  const { data, loading } = useQuery(canvasQuery);
 
   const closeCanvas = (e) => {
     e.preventDefault()

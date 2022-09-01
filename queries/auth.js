@@ -22,32 +22,34 @@ export const registerQuery = gql`
 `
 
 export const updateUserQuery = gql`
-  mutation UpdateUser($input: updateUserInput) {
-    updateUser(input: $input) {
-      user{
+  mutation UpdateUser($id: ID!, $data: UsersPermissionsUserInput!) {
+    updateUsersPermissionsUser(id: $id, data: $data) {
+      data{
         id
-        email
-        phone
-        name
-        surname
-        address
-        city
-        zip
-        state
-        anotherAddress {
+        attributes{
           email
           phone
-          name
+          firstname
           surname
           address
           city
           zip
           state
-        }
-        firmInfo {
-          nameCompany
-          ico
-          dic
+          anotherAddress {
+            email
+            phone
+            firstname
+            surname
+            address
+            city
+            zip
+            state
+          }
+          firmInfo {
+            nameCompany
+            ico
+            dic
+          }
         }
       }
     }
@@ -56,30 +58,34 @@ export const updateUserQuery = gql`
 
 export const getUserQuery = gql`
   query GetUser($id: ID!) {
-    user(id: $id) {
-      id
-      email
-      phone
-      name
-      surname
-      address
-      city
-      zip
-      state
-      anotherAddress {
-        email
-        phone
-        name
-        surname
-        address
-        city
-        zip
-        state
-      }
-      firmInfo {
-        nameCompany
-        ico
-        dic
+    usersPermissionsUser(id: $id) {
+      data{
+        id
+        attributes{
+          email
+          phone
+          firstname
+          surname
+          address
+          city
+          zip
+          state
+          anotherAddress {
+            email
+            phone
+            firstname
+            surname
+            address
+            city
+            zip
+            state
+          }
+          firmInfo {
+            nameCompany
+            ico
+            dic
+          }
+        }
       }
     }
   }
@@ -87,9 +93,11 @@ export const getUserQuery = gql`
 
 export const controlUser = gql`
   query ControlExistUser($email: String!) {
-    usersConnection(where: {email: $email}) {
-      aggregate{
-        count
+    usersPermissionsUsers(filters: {email: {eq: $email}}) {
+      meta{
+        pagination{
+          total
+        }
       }
     }
   }

@@ -2,8 +2,12 @@ import {useState, useEffect, useContext} from 'react'
 import { DataStateContext } from '../../../context/dataStateContext'
 import { getUserQuery, loginQuery } from '../../../queries/auth'
 import { useLazyQuery, useMutation } from '@apollo/client'
+import { useRouter } from 'next/router'
+import { alert, offcanvas, util } from 'uikit'
 
 const Login = ({handleType}) => {
+
+  const router = useRouter()
 
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
@@ -15,7 +19,6 @@ const Login = ({handleType}) => {
 
   useEffect(() => {
     if(data) {
-      console.log('Login.useEffect.response', data);
       getUser({
         variables: {
           id: data.login.user.id
@@ -27,9 +30,9 @@ const Login = ({handleType}) => {
 
   useEffect(() => {
     if(user) {
-      console.log(user)
-      dataContextDispatch({ state: user.user, type: 'user' })
-      window.location.href = '/user'
+      dataContextDispatch({ state: {...user.usersPermissionsUser.data.attributes, id: user.usersPermissionsUser.data.id}, type: 'user' })
+      offcanvas(util.find('#auth')).hide();
+      router.push('/user')
     }
   }, [user])
 

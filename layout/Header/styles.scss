@@ -23,6 +23,17 @@ header{
       }
     }
     .nav-wrap{
+      .control-menu{
+        .icons-wrap{
+          li{
+            a{
+              img, svg{
+                fill: $text_color;
+              }
+            }
+          }
+        }
+      }
       ul{
         li{
           > a{
@@ -102,6 +113,7 @@ header{
             img, svg{
               height: 24px;
               width: 22px;
+              fill: white;
             }
           }
         }

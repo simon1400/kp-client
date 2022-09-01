@@ -1,16 +1,16 @@
 import {useState, useEffect, useContext} from 'react'
-import { DataStateContext } from '../../context/dataStateContext'
+import { DataStateContext } from '../context/dataStateContext'
 import loadable from '@loadable/component'
-import errorMessages from '../../data/errorMessages'
+import errorMessages from '../data/errorMessages'
 import { useMutation } from "@apollo/client";
-import userQuery from '../../queries/user'
-import {updateUserQuery} from '../../queries/auth'
+import userQuery from '../queries/user'
+import {updateUserQuery} from '../queries/auth'
 import {notification} from 'uikit'
-import { client } from '../../lib/api';
+import { client } from '../lib/api';
 
-const Page = loadable(() => import('../../layout/Page'))
-const InfoForm = loadable(() => import('../../components/InfoForm'))
-const FirmInfo = loadable(() => import('../../components/FirmInfo'))
+const Page = loadable(() => import('../layout/Page'))
+const InfoForm = loadable(() => import('../components/InfoForm'))
+const FirmInfo = loadable(() => import('../components/FirmInfo'))
 
 export async function getServerSideProps() {
 
@@ -37,7 +37,13 @@ const User = () => {
 
   useEffect(() => {
     if(dataUpdatingUser){
-      dataContextDispatch({ state: dataUpdatingUser.updateUser.user, type: 'user' })
+      dataContextDispatch({ 
+        state: {
+          ...dataUpdatingUser.updateUsersPermissionsUser.data.attributes, 
+          id: dataUpdatingUser.updateUsersPermissionsUser.data.id
+        }, 
+        type: 'user' 
+      })
     }
   }, [dataUpdatingUser])
 
@@ -87,25 +93,26 @@ const User = () => {
 
   const handleUserInfo = (e) => {
     e.preventDefault()
-    const dataSend = {
-      ...contactInfo,
-      anotherAddress,
-      firmInfo
+
+    const dataSend = contactInfo
+
+    if(anotherAddress.email.length) {
+      dataSend.anotherAddress = anotherAddress
     }
+    if(firmInfo.ico.length) {
+      dataSend.firmInfo = firmInfo
+    }
+
     updateUser({ variables: {
-      input: {
-        where: {
-          id: dataContextState.user.id
-        },
-        data: dataSend
-      }
+      id: dataContextState.user.id,
+      data: dataSend
     }}).then(() => notification({
-        message: 'my-message!',
-        status: 'danger',
+        message: 'Success update user!',
+        status: 'success',
         pos: 'top-center',
         timeout: 10000
       })).catch(err => notification({
-        message: 'my-message!',
+        message: 'Error update user',
         status: 'danger',
         pos: 'top-center',
         timeout: 10000
@@ -120,7 +127,7 @@ const User = () => {
   }
 
   return (
-    <Page>
+    <Page className="user-content">
       <div className="uk-container uk-container-small">
         <h1 className="uk-h3 uk-margin-large-top">Kontatkní údaje</h1>
 
@@ -133,7 +140,7 @@ const User = () => {
 
             <label className="uk-margin-small">
               <input className="uk-checkbox" type="checkbox" name="deliveryAnother" checked={state.deliveryAnother} onChange={e => setState({...state, deliveryAnother: !state.deliveryAnother})} />
-              Doručit na jinou adresu
+              <span>Doručit na jinou adresu</span>
             </label>
             {state.deliveryAnother && <div className="uk-margin-small-bottom uk-margin-small-top">
               <InfoForm state={anotherAddress} setState={setAnotherAddress} name="another_adrress" title="" />
@@ -141,7 +148,7 @@ const User = () => {
 
             <label className="uk-margin-small">
               <input className="uk-checkbox" type="checkbox" name="firmInfo" checked={state.firmInfo} onChange={e => setState({...state, firmInfo: !state.firmInfo})} />
-              Doplnit firemní údaje
+              <span>Doplnit firemní údaje</span>
             </label>
             {state.firmInfo && <div className="uk-margin-small-bottom uk-margin-small-top">
               <FirmInfo state={firmInfo} setState={setFirmInfo} error={error} />
