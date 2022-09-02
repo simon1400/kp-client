@@ -1,6 +1,4 @@
-// import { useContext, useEffect } from "react"
 import {connectRefinementList} from "react-instantsearch-core"
-// import { DataStateContext } from "../../../context/dataStateContext"
 
 const Parameters = ({
   data,
@@ -10,7 +8,7 @@ const Parameters = ({
 
   return (
     <>
-      {data.map((item, index) => <li key={index} className={index === 0 ? "uk-open": ''}>
+      {data.map((item, index) => <li key={index}>
         <a className="uk-accordion-title" href="#">{item.attributes.title} <img className="uk-svg" src="/assets/angle-down.svg" uk-svg="" /></a>
         <div className="uk-accordion-content">
           <ul>

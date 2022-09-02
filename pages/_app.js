@@ -10,6 +10,9 @@ import Footer from '../layout/Footer';
 import Canvas from '../layout/Canvas';
 import Auth from '../layout/Auth';
 import Search from '../layout/Search';
+// import Script from 'next/script'
+import TagManager from 'react-gtm-module';
+import { useEffect } from 'react';
 
 function MyApp({ Component, pageProps }) {
   const {
@@ -26,16 +29,20 @@ function MyApp({ Component, pageProps }) {
   const defaultData = {
     siteUrl: process.env.NODE_ENV === 'development' ? 'http://localhost:3005' : 'https://kralovska-pece.cz',
     facebook_app_id: '',
-    title: 'KRALOVSKA PECE',
-    description: 'Kralovska pece',
+    title: 'Královská péče',
+    description: 'Královská péče',
     twitter: '@cereallarceny',
     separator: ' ',
-    endTitle: '| Kralovska pece',
+    endTitle: '| Královská péče',
   }
 
   const theTitle = meta?.title ? (meta.title + " " + global.endTitle) : (defaultData.title + defaultData.separator + defaultData.endTitle);
   const theDescription = meta?.description ? meta.description : defaultData.description;
   const theImage = meta?.image ? buildImageUrl(meta.image) : null;
+
+  useEffect(() => {
+    TagManager.initialize({ gtmId: 'GTM-PJZC2F3' });
+  }, []);
 
   return <DataProvider>
     <WithGraphQL>
@@ -70,6 +77,17 @@ function MyApp({ Component, pageProps }) {
           <script src="https://widget.packeta.com/v6/www/js/library.js"></script>
 
         </Head>
+
+        {/* <!-- Google Tag Manager --> */}
+        {/* <Script id="google-tag-manager" strategy="afterInteractive">
+          {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+            })(window,document,'script','dataLayer','GTM-PJZC2F3');`}
+        </Script> */}
+        {/* <!-- End Google Tag Manager --> */}
+
         <Header
           bgImg={bgImg}
           bigHeader={bigHeader}
@@ -78,9 +96,11 @@ function MyApp({ Component, pageProps }) {
           basket={basket} />
         <Component {...pageProps} />
         {!basket && <Footer data={global} nav={navigation?.footer_nav} soc={navigation?.soc_nav} />}
+
         <Canvas />
         <Auth />
         <Search />
+
       </WithGraphQL>
     </DataProvider>
 }

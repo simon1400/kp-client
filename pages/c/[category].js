@@ -85,7 +85,7 @@ const Category = ({
                 </h1>}
           />
 
-          {!!category?.sub.data?.length && <SubCategoryMenu sub={category.sub.data}/>}
+          {!!category?.sub?.data?.length && <SubCategoryMenu sub={category.sub.data}/>}
 
           <CatalogFilterLabels />
 

@@ -7,6 +7,7 @@ import { DataStateContext } from '../../context/dataStateContext'
 import axios from 'axios'
 import { client } from '../../lib/api'
 import Page from "../../layout/Page"
+import TagManager from 'react-gtm-module'
 
 export async function getServerSideProps(ctx) {
 
@@ -19,13 +20,33 @@ export async function getServerSideProps(ctx) {
     }
   });
 
-  const { data: dataGlob } = await client.query({query: userQuery});
+  const { data: dataGlob } = await client.query({query: userQuery})
+
+  let orderBasket = data.order.data.attributes.basketItem.map((item, index) => {
+
+    let basItem = {
+      id: item.idProduct,
+      name: item.title,
+      brand: item.brand,
+      list_position: index + 1,
+      quantity: item.count,
+      price: item.price
+    }
+
+    if(item.variantProduct) {
+      basItem.variant = item.variant
+    }
+
+    return basItem
+
+  })
 
   return {
     props: { 
       global: dataGlob.global,
       navigation: dataGlob.navigation,
-      data,
+      data: data.order.data,
+      orderBasket,
       meta: {
         title: "Dokončená objednávka",
       }
@@ -35,6 +56,7 @@ export async function getServerSideProps(ctx) {
 
 const ThankYou = ({
   data,
+  orderBasket
 }) => {
 
   const router = useRouter()
@@ -43,17 +65,40 @@ const ThankYou = ({
   const [updateOrder] = useMutation(UpdateOrder);
 
   useEffect(() => {
-    if(data.order.data) {
+
+    if(data) {
+
+      const dataTag = {
+        transaction_id: atob(router.query.idOrder),
+        affiliation: "Královská péče",
+        value: data.attributes.sum - (data.attributes.sum * 0.21),
+        currency: 'CZK',
+        tax: data.attributes.sum * 0.21,
+        shipping: data.attributes.deliveryPrice,
+        items: orderBasket
+      }
+
+      console.log(dataTag)
+  
+      const tagManagerArgs = {
+        dataLayer: {
+          event: 'purchase',
+          ...dataTag
+        }
+      }
+  
+      TagManager.dataLayer(tagManagerArgs)
+
       if(!router.query.id){
-        if(data.order.data.attributes.payment.type === 'dobirka'){
-          setStatus(data.order.data.attributes.payment.type)
+        if(data.attributes.payment.type === 'dobirka'){
+          setStatus(data.attributes.payment.type)
         }else{
-          setStatus(data.order.data.attributes.status)
+          setStatus(data.attributes.status)
         }
       }else{
         axios.get('/api/payment/'+router.query.id).then(res => {
           setStatus(res.data.state)
-          if(data.order.data.attributes.status !== res.data.state){
+          if(data.attributes.status !== res.data.state){
             updateOrder({variables: {
               id: atob(router.query.idOrder),
               input: {status: res.data.state}
@@ -61,14 +106,16 @@ const ThankYou = ({
           }
         }).catch(err => console.log(err))
       }
+
       dataContextDispatch({ state: [], type: 'basket' })
+
     }
   }, [data])
 
   useEffect(() => {
     if(status.length){
-      if(!data.order.data.attributes.sendMail){
-        axios.post("/api/mail/order", {...data.order.data.attributes, id: data.order.data.id}).then(async res => {
+      if(!data.attributes.sendMail){
+        axios.post("/api/mail/order", {...data.attributes, id: data.id}).then(async res => {
           const {data} = await updateOrder({variables: {
             id: atob(router.query.idOrder),
             input: {
@@ -77,8 +124,7 @@ const ThankYou = ({
           }})
           return data
         }).then(res => {
-          console.log(res)
-          data.order.data.attributes.sendMail = res.updateOrder.order.sendMail
+          data.attributes.sendMail = res.updateOrder.order.sendMail
         }).catch(err => console.log(err))
       }
       axios.post('/api/money/order', data).catch(err => console.error(err))

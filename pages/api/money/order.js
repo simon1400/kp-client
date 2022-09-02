@@ -18,7 +18,7 @@ export default async function handler (req, res) {
 
     const nameFile = `importOrder${countFiles}.xml`
 
-    await fs.writeFile(`moneyData/import/${nameFile}`, moneyOrder({...req.body.order.data.attributes, id: req.body.order.data.id}), (err) => {
+    await fs.writeFile(`moneyData/import/${nameFile}`, moneyOrder({...req.body.attributes, id: req.body.id}), (err) => {
       if (err) throw err;
       console.log('File is created successfully.');
     })
