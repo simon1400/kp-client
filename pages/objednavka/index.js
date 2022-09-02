@@ -241,14 +241,15 @@ const CheckoutWrap = ({dataGl}) => {
       dataSend.firmInfo = firmInfo
     }
 
-    const dataOrder = await createOrder({variables: { data: dataSend }})
+    // const dataOrder = await createOrder({variables: { data: dataSend }})
+    const dataOrder = await axios.post('http://kp-demo-strapi.hardart.cz/api/orders', {data: dataSend}).catch(err => console.error('Err', err)) 
 
     if(dataSend.payOnline) {
-      axios.post(`/api/payment`, {...dataOrder.data.createOrder.data.attributes, id: dataOrder.data.createOrder.data.id}).then(res => {
+      axios.post(`/api/payment`, {...dataOrder.data.data.attributes, id: dataOrder.data.data.id}).then(res => {
         window.location.href = res.data.gw_url
       }).catch(err => console.log(err))
     }else{
-      window.location.href = `/dekujem/${btoa(dataOrder.data.createOrder.data.id)}`
+      window.location.href = `/dekujem/${btoa(dataOrder.data.data.id)}`
     }
 
   }
