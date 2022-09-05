@@ -76,7 +76,15 @@ export default async function handler (req, res) {
 
       res.status(200).json(resPayment.data);
     }catch(err) {
-      console.log(err?.response?.data?.errors)
+      if(err.response?.data?.error?.details?.errors) {
+        console.log("err 1", err.response?.data?.error?.details?.errors);
+      }else if(err.response?.data?.error){
+        console.log("err 2", err.response?.data?.error);
+      }else if(err.response){
+        console.log("err 3", err.response);
+      }else{
+        console.log("err 4", err);
+      }
       res.status(500);
     }
   }else{
