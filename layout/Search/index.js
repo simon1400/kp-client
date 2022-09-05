@@ -47,24 +47,20 @@ const Search = () => {
           {/* <HasResult /> */}
 
           <div className="results">
-            <InstantSearch indexName="category" searchClient={searchClient}>
-              <div className="uk-hidden"><SearchBox searchValue={searchValue}/></div>
-              <Configure hitsPerPage={4} />
+            <InstantSearch indexName="category" searchClient={searchClient} >
+              <Configure hitsPerPage={4} query={searchValue} />
               <SearchResult title="Kategorie" />
             </InstantSearch>
-            <InstantSearch indexName="brand" searchClient={searchClient}>
-              <div className="uk-hidden"><SearchBox searchValue={searchValue}/></div>
-              <Configure hitsPerPage={4} />
+            <InstantSearch indexName="brand" searchClient={searchClient} >
+              <Configure hitsPerPage={4} query={searchValue} />
               <SearchResult title="Značky" />
             </InstantSearch>
-            <InstantSearch indexName="categoryProducts" searchClient={searchClient}>
-              <div className="uk-hidden"><SearchBox searchValue={searchValue}/></div>
-              <Configure hitsPerPage={4} />
+            <InstantSearch indexName="categoryProducts" searchClient={searchClient} >
+              <Configure hitsPerPage={4} query={searchValue} />
               <SearchResult title="Produkty" />
             </InstantSearch>
-            <InstantSearch indexName="article" searchClient={searchClient}>
-              <div className="uk-hidden"><SearchBox searchValue={searchValue}/></div>
-              <Configure hitsPerPage={4} />
+            <InstantSearch indexName="article" searchClient={searchClient} >
+              <Configure hitsPerPage={4} query={searchValue} />
               <SearchResult title="Články" />
             </InstantSearch>
           </div>

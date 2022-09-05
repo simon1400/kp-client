@@ -33,10 +33,10 @@ const CanvasItem = ({basketItem = false, data, index, square = false}) => {
     <Link href={getSlug(data)}>
       <a className={`canvas-item ${basketItem ? 'basket-canvas-item' : ''}`}>
         {!!data.image && <div className="canvas-item-img">
-          <Image image={data.image} width={square} height={square} />
+          <Image image={data.image} width={square} height={square} fit="inside" />
         </div>}
         {!!data.images && <div className="canvas-item-img">
-          <Image image={data.images[0]} width={square} height={square} />
+          <Image image={data.images[0]} width={square} height={square} fit="inside" />
         </div>}
         <div className="canvas-item-content">
           <div>

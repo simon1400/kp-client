@@ -143,7 +143,7 @@ const Product = ({
                   <ul className="uk-slideshow-items">
                     {product.images.data.map((item, index) => <li key={index}>
                       <div>
-                        <Image image={item.attributes} width={680} height={680} />
+                        <Image image={item.attributes} width={680} height={680} fit="inside" />
                       </div>
                     </li>)}
                   </ul>

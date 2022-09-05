@@ -28,7 +28,7 @@ export async function getServerSideProps() {
   return {
     props: { 
       dataGl: dataGl,
-      global: data.global,
+      global: dataGl.global.data.attributes,
       meta: {
         title: "Objednávka",
       },

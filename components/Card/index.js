@@ -19,7 +19,7 @@ const Card = ({data, catalog = false}) => {
       {!catalog && <Link href={`/p/${data.slug}`}>
         <a className="card">
           {data.images.data[0]?.attributes?.url && <div className="card-img">
-            <Image image={data.images.data[0]?.attributes} width={320} height={320} />
+            <Image image={data.images.data[0]?.attributes} width={320} height={320} fit="inside" />
           </div>}
           <div className="card-content">
             {data.brand && <label>{data.brand.title}</label>}

@@ -5,17 +5,22 @@ const Image = ({
   style, 
   svg = false, 
   height = false, 
-  width = false 
+  width = false,
+  fit = false
 }) => {
 
-  let format = ''
+  let format = '?format=webp'
 
   if(height && width){
-    format = `&resize=${width}x${height}`
+    format += `&resize=${width}x${height}`
   }else if(width) {
-    format = '&width='+width
+    format += '&width='+width
   }else if(height){
-    format = '&height='+height
+    format += '&height='+height
+  }
+
+  if(fit) {
+    format += `&fit=${fit}`
   }
 
   if(svg){
@@ -29,7 +34,7 @@ const Image = ({
     );
   }else{
     return (
-      <img src={`${buildImageUrl(image)}?format=webp${format}`} />
+      <img src={`${buildImageUrl(image)}${format}`} />
     );
   }
 
