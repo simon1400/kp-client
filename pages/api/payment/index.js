@@ -13,6 +13,8 @@ export default async function handler (req, res) {
 
       const orderId64 = Buffer.from(data.id).toString('base64')
 
+      console.log('orderId64', orderId64)
+
       const bodyObj = {
         payer: {
           allowed_payment_instruments: [
@@ -61,6 +63,8 @@ export default async function handler (req, res) {
       console.log('bodyObj', bodyObj)
 
       const AccessToken = await GetAccessToken()
+
+      console.log('AccessToken', AccessToken)
 
       const resPayment = await AxiosPAY.post('/api/payments/payment', bodyObj, {
         headers: {
