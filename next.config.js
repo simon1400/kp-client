@@ -17,8 +17,8 @@ module.exports = (phase) => {
   const env = {
     APP_API: (() => {
       // if (isDev) return 'http://localhost:1339'
-      if (isDev) return 'http://kp-demo-strapi.hardart.cz'
-      if (isProd) return 'http://kp-demo-strapi.hardart.cz'
+      if (isDev) return 'https://strapi.kralovska-pece.cz'
+      if (isProd) return 'https://strapi.kralovska-pece.cz'
       return 'RESTURL_SPEAKERS:not (isDev,isProd && !isStaging,isProd && isStaging)'
     })(),
     APP_DOMAIN: (() => {
