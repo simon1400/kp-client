@@ -160,9 +160,6 @@ export default (data) => {
             
             <Sleva>0</Sleva>
             <CenaPoSleve>1</CenaPoSleve>
-            - <NesklPolozka>
-              <TypZarDoby>N</TypZarDoby>
-            </NesklPolozka>
           </Polozka>
           <Polozka>
             <Popis>Platba</Popis>
@@ -188,9 +185,6 @@ export default (data) => {
               <CenikSklad>0</CenikSklad>
             </Sklad>
             <CenaPoSleve>1</CenaPoSleve>
-            - <NesklPolozka>
-              <TypZarDoby>N</TypZarDoby>
-            </NesklPolozka>
           </Polozka>
           <MojeFirma>
             <Nazev>Královská péče s.r.o.</Nazev>
