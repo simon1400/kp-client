@@ -243,12 +243,10 @@ const CheckoutWrap = ({dataGl}) => {
       dataSend.firmInfo = firmInfo
     }
 
-    const dataOrder = await axios.post(`${APP_API}/api/orders`, {data: dataSend}).catch(err => console.error('Err', err)) 
-
-    console.log(dataOrder)
+    const dataOrder = await axios.post(`${APP_API}/api/orders?populate=*`, {data: dataSend}).catch(err => console.error('Err', err)) 
 
     if(dataSend.payOnline) {
-      axios.post(`/api/payment`, {...dataSend, id: dataOrder.data.data.id}).then(res => {
+      axios.post(`/api/payment`, {...dataOrder.data.data.attributes, id: dataOrder.data.data.id}).then(res => {
         window.location.href = res.data.gw_url
       }).catch(err => console.log(err))
     }else{
