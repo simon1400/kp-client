@@ -142,7 +142,7 @@ export default (data) => {
             <TypCeny>1</TypCeny>
             <KmKarta>
               <Zkrat>Balík</Zkrat>
-              <GUID>${data.delivery.guid}</GUID>
+              <GUID>${data.delivery?.guid}</GUID>
               ${data.delivery?.code ? `<Katalog>${data.delivery.code}</Katalog>` : ""}
               <TypKarty>sluzba</TypKarty>
             </KmKarta>
