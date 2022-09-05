@@ -140,18 +140,23 @@ export default (data) => {
             <Cena>${data.delivery.value}</Cena>
             <SazbaDPH>21</SazbaDPH>
             <TypCeny>1</TypCeny>
+            <CenovaHlad>Základní</CenovaHlad>
+            <Sklad>
+              <Nazev>Hlavní sklad</Nazev>
+              <KodSkladu>HLV</KodSkladu>
+              <GUID>{4F7A6CE9-A84A-4287-98BB-66BA52B81D38}</GUID>
+              <CenikSklad>0</CenikSklad>
+            </Sklad>
+
             <KmKarta>
+              <Popis>Doprava</Popis>
               <Zkrat>Balík</Zkrat>
-              <GUID>${data.delivery?.guid}</GUID>
+              ${data.delivery?.guid ? `<GUID>${data.delivery.guid}</GUID>` : ""}
               ${data.delivery?.code ? `<Katalog>${data.delivery.code}</Katalog>` : ""}
               <TypKarty>sluzba</TypKarty>
             </KmKarta>
-            ${data.delivery?.guid ? `<Katalog>${data.delivery.guid}</Katalog>` : ""}
+            
             <Sleva>0</Sleva>
-            <!--
-            <Vystaveno>2010-06-01</Vystaveno>
-            <Vyridit_do>2010-06-10</Vyridit_do>
-            -->
             <CenaPoSleve>1</CenaPoSleve>
             - <NesklPolozka>
               <TypZarDoby>N</TypZarDoby>
@@ -162,15 +167,22 @@ export default (data) => {
             <PocetMJ>1</PocetMJ>
             <ZbyvaMJ>1</ZbyvaMJ>
             <Cena>${data.payment.value}</Cena>
-            ${data.payment?.guid ? `<GUID>${data.payment.guid}</GUID>` : ""}
-            ${data.payment?.code ? `<Katalog>${data.payment.code}</Katalog>` : ""}
+            <KmKarta>
+              <Popis>Platba</Popis>
+              <Zkrat>Balík</Zkrat>
+              ${data.payment?.guid ? `<GUID>${data.payment.guid}</GUID>` : ""}
+              ${data.payment?.code ? `<Katalog>${data.payment.code}</Katalog>` : ""}
+              <TypKarty>sluzba</TypKarty>
+            </KmKarta>
             <SazbaDPH>21</SazbaDPH>
             <TypCeny>1</TypCeny>
             <Sleva>0</Sleva>
-            <!--
-            <Vystaveno>2010-06-01</Vystaveno>
-            <Vyridit_do>2010-06-10</Vyridit_do>
-            -->
+            <Sklad>
+              <Nazev>Hlavní sklad</Nazev>
+              <KodSkladu>HLV</KodSkladu>
+              <GUID>{4F7A6CE9-A84A-4287-98BB-66BA52B81D38}</GUID>
+              <CenikSklad>0</CenikSklad>
+            </Sklad>
             <CenaPoSleve>1</CenaPoSleve>
             - <NesklPolozka>
               <TypZarDoby>N</TypZarDoby>
