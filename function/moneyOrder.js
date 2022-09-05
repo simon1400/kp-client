@@ -141,6 +141,8 @@ export default (data) => {
             <SazbaDPH>21</SazbaDPH>
             <TypCeny>1</TypCeny>
             <CenovaHlad>Základní</CenovaHlad>
+            ${data.delivery?.guid ? `<GUID>${data.delivery.guid}</GUID>` : ""}
+            ${data.delivery?.code ? `<Katalog>${data.delivery.code}</Katalog>` : ""}
             <Sklad>
               <Nazev>Hlavní sklad</Nazev>
               <KodSkladu>HLV</KodSkladu>
@@ -167,6 +169,8 @@ export default (data) => {
             <PocetMJ>1</PocetMJ>
             <ZbyvaMJ>1</ZbyvaMJ>
             <Cena>${data.payment.value}</Cena>
+            ${data.payment?.guid ? `<GUID>${data.payment.guid}</GUID>` : ""}
+            ${data.payment?.code ? `<Katalog>${data.payment.code}</Katalog>` : ""}
             <KmKarta>
               <Popis>Platba</Popis>
               <Zkrat>Balík</Zkrat>
