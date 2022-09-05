@@ -140,8 +140,13 @@ export default (data) => {
             <Cena>${data.delivery.value}</Cena>
             <SazbaDPH>21</SazbaDPH>
             <TypCeny>1</TypCeny>
+            <KmKarta>
+              <Zkrat>Balík</Zkrat>
+              <GUID>${data.delivery.guid}</GUID>
+              ${data.delivery?.code ? `<Katalog>${data.delivery.code}</Katalog>` : ""}
+              <TypKarty>sluzba</TypKarty>
+            </KmKarta>
             ${data.delivery?.guid ? `<Katalog>${data.delivery.guid}</Katalog>` : ""}
-            ${data.delivery?.code ? `<Katalog>${data.delivery.code}</Katalog>` : ""}
             <Sleva>0</Sleva>
             <!--
             <Vystaveno>2010-06-01</Vystaveno>
