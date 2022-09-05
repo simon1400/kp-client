@@ -10,12 +10,12 @@ const Image = ({
 
   let format = ''
 
-  if(width) {
+  if(height && width){
+    format = `&resize=${width}x${height}`
+  }else if(width) {
     format = '&width='+width
   }else if(height){
     format = '&height='+height
-  }else if(height && width){
-    format = `&resize=${width}x${height}`
   }
 
   if(svg){

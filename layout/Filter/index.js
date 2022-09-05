@@ -38,15 +38,13 @@ const Filter = ({
                   attribute={category[0].attributes.__typename === 'Brand' ? "brand.title" : "categoryTitles"}
                   limit={50}
                   operator="and"
-                  facetOrdering
-                  // transformItems={items => items.sort(orderBy)}
+                  transformItems={items => items.sort(orderBy)}
                 />
               </div>
             </li>}
             {!!parameters.length && <Parameters 
               data={parameters}
               attribute="valuesTitles"
-              operator="and"
               limit={50}
             />}
             <Sorting

@@ -1,4 +1,4 @@
-import {useState, useContext} from 'react'
+import {useContext} from 'react'
 import Link from 'next/link'
 import { DataStateContext } from '../../context/dataStateContext'
 import Image from '../Image'

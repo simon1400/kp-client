@@ -10,7 +10,6 @@ import Footer from '../layout/Footer';
 import Canvas from '../layout/Canvas';
 import Auth from '../layout/Auth';
 import Search from '../layout/Search';
-// import Script from 'next/script'
 import TagManager from 'react-gtm-module';
 import { useEffect } from 'react';
 
@@ -72,21 +71,10 @@ function MyApp({ Component, pageProps }) {
           <meta property="og:image" content={theImage} />
           <meta property="og:description" content={theDescription} />
           <meta property="og:site_name" content="Kralovska pece" />
-          {/* <meta property="fb:app_id" content={global.facebook_app_id} /> */}
 
           <script src="https://widget.packeta.com/v6/www/js/library.js"></script>
 
         </Head>
-
-        {/* <!-- Google Tag Manager --> */}
-        {/* <Script id="google-tag-manager" strategy="afterInteractive">
-          {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-            })(window,document,'script','dataLayer','GTM-PJZC2F3');`}
-        </Script> */}
-        {/* <!-- End Google Tag Manager --> */}
 
         <Header
           bgImg={bgImg}

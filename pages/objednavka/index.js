@@ -18,6 +18,8 @@ import globalQuery from '../../queries/global'
 import userQuery from '../../queries/user'
 import buildImageUrl from '../../function/buildImageUrl'
 
+const APP_API = process.env.APP_API
+
 export async function getServerSideProps() {
 
   const { data: dataGl } = await client.query({query: globalQuery});
@@ -241,8 +243,7 @@ const CheckoutWrap = ({dataGl}) => {
       dataSend.firmInfo = firmInfo
     }
 
-    // const dataOrder = await createOrder({variables: { data: dataSend }})
-    const dataOrder = await axios.post('http://kp-demo-strapi.hardart.cz/api/orders', {data: dataSend}).catch(err => console.error('Err', err)) 
+    const dataOrder = await axios.post(`${APP_API}/api/orders`, {data: dataSend}).catch(err => console.error('Err', err)) 
 
     if(dataSend.payOnline) {
       axios.post(`/api/payment`, {...dataOrder.data.data.attributes, id: dataOrder.data.data.id}).then(res => {
