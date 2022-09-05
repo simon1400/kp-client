@@ -8,7 +8,6 @@ export default async function handler (req, res) {
     await sgMail.setApiKey(process.env.SENDGRID_API_KEY)
 
     const {email} = req.body
-    console.log(email);
 
     const msg = {
       to: email, // Change to your recipient
