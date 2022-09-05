@@ -9,7 +9,7 @@ export default async function handler (req, res) {
     try{
       const data = req.body;
 
-      console.log(data)
+      console.log('data', data)
 
       const orderId64 = Buffer.from(data.id).toString('base64')
 
@@ -58,7 +58,7 @@ export default async function handler (req, res) {
         },
       }
 
-      console.log(bodyObj)
+      console.log('bodyObj', bodyObj)
 
       const AccessToken = await GetAccessToken()
 
