@@ -80,31 +80,32 @@
       }
     }
   }
-  .table{
-    table{
-      width: 100%;
-      border-collapse: collapse;
-      thead, tfoot{
-        tr{
-          td{
-            font-weight: bold;
-          }
-        }
-      }
+  table{
+    width: 100%;
+    border-collapse: collapse;
+    thead, tfoot{
       tr{
         td{
-          border-bottom: 1px solid $accent;
-          font-size: 20px;
-          line-height: 37px;
-          padding-top: 7px;
-          padding-bottom: 7px;
-          text-align: center;
-          &:first-child{
-            text-align: left;
-          }
-          &:last-child{
-            text-align: right;
-          }
+          font-weight: bold;
+        }
+      }
+    }
+    tr{
+      td{
+        border-bottom: 1px solid $accent;
+        font-size: 20px;
+        line-height: 37px;
+        padding-top: 7px;
+        padding-bottom: 7px;
+        text-align: center;
+        &:first-child{
+          text-align: left;
+        }
+        &:last-child{
+          text-align: right;
+        }
+        p:last-of-type{
+          margin-bottom: 0;
         }
       }
     }
@@ -170,15 +171,13 @@
         }
       }
     }
-    .table{
-      table{
-        tr{
-          td{
-            font-size: 14px;
-            line-height: 26px;
-            padding-top: 5px;
-            padding-bottom: 5px;
-          }
+    table{
+      tr{
+        td{
+          font-size: 14px;
+          line-height: 26px;
+          padding-top: 5px;
+          padding-bottom: 5px;
         }
       }
     }

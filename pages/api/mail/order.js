@@ -18,10 +18,11 @@ export default async function handler (req, res) {
     }
 
     await sgMail.send(msg).then(() => {
+      console.log('Email send')
       res.status(200).send('Email sent')
-    }).catch((error) => {
-      console.error('ERRORRR --- ', error)
-      res.status(error.code).json(error.response.body);
+    }).catch((err) => {
+      console.error('ERRORRR --- ', err)
+      res.status(err.code).json(err.response.body);
     })
   }
 }

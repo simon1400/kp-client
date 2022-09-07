@@ -77,8 +77,6 @@ const ThankYou = ({
         shipping: data.attributes.deliveryPrice,
         items: orderBasket
       }
-
-      console.log(dataTag)
   
       const tagManagerArgs = {
         dataLayer: {
@@ -114,6 +112,7 @@ const ThankYou = ({
 
   useEffect(() => {
     if(status.length){
+      console.log(data.attributes.sendMail)
       if(!data.attributes.sendMail){
         axios.post("/api/mail/order", {...data.attributes, id: data.id}).then(async res => {
           const {data} = await updateOrder({variables: {
@@ -124,7 +123,7 @@ const ThankYou = ({
           }})
           return data
         }).then(res => {
-          data.attributes.sendMail = res.updateOrder.order.sendMail
+          data.attributes.sendMail = res.updateOrder.data.attributes.sendMail
         }).catch(err => console.log(err))
       }
       axios.post('/api/money/order', data).catch(err => console.error(err))

@@ -51,26 +51,6 @@ module.exports = (phase) => {
       if (isDev) return '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'
       if (isProd) return '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'
       return 'RESTURL_SPEAKERS:not (isDev,isProd && !isStaging,isProd && isStaging)'
-    })(),
-    TYPESENSE_SEARCH_ONLY_API_KEY: (() => {
-      if (isDev) return 'xyz'
-      if (isProd) return 'sdfgsdfgsdfgfsdg'
-      return 'RESTURL_SPEAKERS:not (isDev,isProd && !isStaging,isProd && isStaging)'
-    })(),
-    TYPESENSE_HOST: (() => {
-      if (isDev) return 'localhost'
-      if (isProd) return 'kp-search.hardart.cz'
-      return 'RESTURL_SPEAKERS:not (isDev,isProd && !isStaging,isProd && isStaging)'
-    })(),
-    TYPESENSE_PORT: (() => {
-      if (isDev) return '8109'
-      if (isProd) return '443'
-      return 'RESTURL_SPEAKERS:not (isDev,isProd && !isStaging,isProd && isStaging)'
-    })(),
-    TYPESENSE_PROTOCOL: (() => {
-      if (isDev) return 'http'
-      if (isProd) return 'https'
-      return 'RESTURL_SPEAKERS:not (isDev,isProd && !isStaging,isProd && isStaging)'
     })()
   }
 

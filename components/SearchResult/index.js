@@ -23,8 +23,7 @@ const SearchResult = ({
     return (
       <div className="result-block">
         <h4>{title}</h4>
-        {hits.map((item, index) => <Link key={index} href={getSlug(item)}>
-          <a className="canvas-item">
+        {hits.map((item, index) => <a key={index} href={getSlug(item)} className="canvas-item">
             {!!item.image && <div className="canvas-item-img">
               <Image image={item.image} width={square} height={square} />
             </div>}
@@ -38,13 +37,12 @@ const SearchResult = ({
                 </h5>}
               </div>
             </div>
-          </a>
-        </Link>)}
+          </a>)}
       </div>
     )
-  }else{
-    return null
   }
+  
+  return null
   
 }
 

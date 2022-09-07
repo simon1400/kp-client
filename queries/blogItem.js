@@ -18,6 +18,14 @@ const blogItemQuery = gql`
               }
             }
           }
+          child{
+            data{
+              attributes{
+                title
+                slug
+              }
+            }
+          }
           cta{
             text
             link

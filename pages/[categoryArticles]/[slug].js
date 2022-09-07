@@ -6,6 +6,7 @@ import Content from '../../components/Content';
 import { AxiosSTRAPI } from '../../restClient';
 import splitArr from '../../function/splitArr';
 import { client } from '../../lib/api';
+import SubCategoryMenu from '../../components/SubCategoryMenu'
 
 export async function getServerSideProps(ctx) {
 
@@ -62,7 +63,8 @@ const BlogFull = ({
                 <span>{title[0].map(item => `${item} `)} <b>{title[1].map(item => `${item} `)}</b></span>
               </h1>}
       />
-      <section className="sec-big">
+      <section className={`sec-big ${!!blog?.child?.data?.length ? "uk-padding-remove-top" : ""}`}>
+        {!!blog?.child?.data?.length && <SubCategoryMenu small sub={blog.child.data}/>}
         <div className="uk-container uk-container-small">
           <div>
             {blog.iframe && <div dangerouslySetInnerHTML={{__html: blog.iframe}} />}

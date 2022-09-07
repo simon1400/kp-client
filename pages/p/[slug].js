@@ -179,7 +179,7 @@ const Product = ({
                 </div>}
                 {product.support && <div className="uk-hidden@s"><ArticleShort data={global.support} icon="/assets/phone.svg" product /></div>}
                 <ul>
-                  {product.brand && <li>Značka: <a href={`/c/${product.brand.slug}`}>{product.brand.title}</a></li>}
+                  {product.brand?.data && <li>Značka: <a href={`/c/${product.brand.data.attributes.slug}`}>{product.brand.data.attributes.title}</a></li>}
                   <li>Kód výrobku: {product.code}</li>
                 </ul>
                 {product.content && <Content data={product.content} />}
