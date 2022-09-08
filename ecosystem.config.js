@@ -9,7 +9,7 @@ module.exports = {
       APP_API: "https://strapi.kralovska-pece.cz",
       APP_DOMAIN: "https://kralovska-pece.cz",
       PAY_API: "https://gate.gopay.cz",
-      SENDGRID_API_KEY: "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",
+      SENDGRID_API_KEY: "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",
     }
   }],
 

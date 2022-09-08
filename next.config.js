@@ -48,8 +48,8 @@ module.exports = (phase) => {
       return 'RESTURL_SPEAKERS:not (isDev,isProd && !isStaging,isProd && isStaging)'
     })(),
     SENDGRID_API_KEY: (() => {
-      if (isDev) return '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'
-      if (isProd) return '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'
+      if (isDev) return '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'
+      if (isProd) return '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'
       return 'RESTURL_SPEAKERS:not (isDev,isProd && !isStaging,isProd && isStaging)'
     })()
   }
