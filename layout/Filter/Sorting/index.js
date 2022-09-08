@@ -1,16 +1,15 @@
-import {connectSortBy} from "react-instantsearch-core"
+import {useSortBy} from "react-instantsearch-hooks-web"
 
-const Sorting = ({
-  items,
-  refine
-}) => {
+const Sorting = (props) => {
+
+  const { options, refine } = useSortBy(props);
 
   return (
     <li>
       <a className="uk-accordion-title" href="#">Seřadit <img className="uk-svg" src="/assets/angle-down.svg" uk-svg="" /></a>
       <div className="uk-accordion-content">
         <ul>
-          {items.map((item, index) => <li key={index}>
+          {options.map((item, index) => <li key={index}>
             <label>
               <span>{item.label}</span>
               <input 
@@ -28,4 +27,4 @@ const Sorting = ({
   )
 }
 
-export default connectSortBy(Sorting)
+export default Sorting

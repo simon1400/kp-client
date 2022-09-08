@@ -8,6 +8,9 @@ import Image from '../components/Image'
 import ArticleShort from '../components/ArticleShort';
 import splitArr from '../function/splitArr';
 import { client } from '../lib/api'
+import Head from 'next/head'
+
+const DOMAIN = process.env.APP_DOMAIN;
 
 export async function getServerSideProps() {
 
@@ -57,6 +60,10 @@ const Homepage = ({
         textButton={data.Button.text}
         linkButton={data.Button.link}
       />
+
+      <Head>
+        <link rel="alternate" hrefLang="cs" href={DOMAIN} />
+      </Head>
 
       <section className="sec-base">
         <div className="uk-container uk-container-large">

@@ -12,6 +12,7 @@ import Auth from '../layout/Auth';
 import Search from '../layout/Search';
 import TagManager from 'react-gtm-module';
 import { useEffect } from 'react';
+import CookieConsent from '../components/CookieConsent'
 
 function MyApp({ Component, pageProps }) {
   const {
@@ -70,9 +71,10 @@ function MyApp({ Component, pageProps }) {
           <meta property="og:url" content={defaultData.siteUrl+router.asPath} />
           <meta property="og:image" content={theImage} />
           <meta property="og:description" content={theDescription} />
-          <meta property="og:site_name" content="Kralovska pece" />
+          <meta property="og:site_name" content={defaultData.title} />
 
           <script src="https://widget.packeta.com/v6/www/js/library.js"></script>
+          <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@v2.8.0/dist/cookieconsent.js"></script>
 
         </Head>
 
@@ -88,7 +90,7 @@ function MyApp({ Component, pageProps }) {
         <Canvas />
         <Auth />
         <Search />
-
+        <CookieConsent />
       </WithGraphQL>
     </DataProvider>
 }

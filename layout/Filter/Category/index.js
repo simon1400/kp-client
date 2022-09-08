@@ -1,10 +1,9 @@
 import { useEffect, useState } from "react";
-import {connectRefinementList} from "react-instantsearch-core"
+import {useRefinementList} from "react-instantsearch-hooks-web"
 
-const FilterCategory = ({
-  items,
-  refine
-}) => {
+const FilterCategory = (props) => {
+
+  const { items, refine } = useRefinementList(props);
 
   const [startItems, setStartItems] = useState(items)
   const [firstContent, setFirstContent] = useState(false)
@@ -55,4 +54,4 @@ const FilterCategory = ({
   )
 }
 
-export default connectRefinementList(FilterCategory)
+export default FilterCategory

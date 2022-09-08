@@ -6,6 +6,9 @@ import { useQuery } from '@apollo/client'
 import canvasQuery from '../../queries/canvas'
 import { client } from '../../lib/api'
 import userQuery from '../../queries/user'
+import Head from 'next/head'
+
+const DOMAIN = process.env.APP_DOMAIN;
 
 export async function getServerSideProps() {
   const { data } = await client.query({query: userQuery});
@@ -52,10 +55,11 @@ const Basket = () => {
     return sum
   }
 
-  console.log(data?.global);
-
   return (
     <Page basket>
+      <Head>
+        <link rel="alternate" hrefLang="cs" href={`${DOMAIN}/kosik`} />
+      </Head>
       <div className="basket uk-position-relative">
         {!!basketItems.length ? <div className="uk-container uk-container-large">
           <div className="uk-grid" uk-grid="">

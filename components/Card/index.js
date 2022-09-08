@@ -28,18 +28,16 @@ const Card = ({data, catalog = false}) => {
           </div>
         </a>
       </Link>}
-      {!!catalog && <Link href={`/p/${data.slug}`}>
-        <a className="card">
-          {data.images && <div className="card-img">
-            <Image image={data.images[0]} width={320} height={320} />
-          </div>}
-          <div className="card-content">
-            {data.brand && <label>{data.brand?.title}</label>}
-            <h3>{data.title}</h3>
-            <span>{getPrice()} Kč</span>
-          </div>
-        </a>
-      </Link>}
+      {!!catalog && <a href={`/p/${data.slug}`} className="card">
+        {data.images && <div className="card-img">
+          <Image image={data.images[0]} width={320} height={320} />
+        </div>}
+        <div className="card-content">
+          {data.brand && <label>{data.brand?.title}</label>}
+          <h3>{data.title}</h3>
+          <span>{getPrice()} Kč</span>
+        </div>
+      </a>}
     </div>
   )
 }

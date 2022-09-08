@@ -18,7 +18,7 @@ const blogItemQuery = gql`
               }
             }
           }
-          child{
+          child(sort: "position:desc"){
             data{
               attributes{
                 title

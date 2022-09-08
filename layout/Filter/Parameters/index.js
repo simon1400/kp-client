@@ -1,10 +1,9 @@
-import {connectRefinementList} from "react-instantsearch-core"
+import {useRefinementList} from "react-instantsearch-hooks-web"
 
-const Parameters = ({
-  data,
-  items,
-  refine,
-}) => {
+const Parameters = (props) => {
+
+  const { items, refine } = useRefinementList(props);
+  const {data} = props
 
   return (
     <>
@@ -16,20 +15,18 @@ const Parameters = ({
               let itemFind = items[items.findIndex(menuItem => menuItem.label === itemVal.attributes.title)]
               if(itemFind) {
                 return <li key={indexVal}>
-                <label>
-                  <span>{itemVal.attributes.title}</span>
-                  <input
-                    onChange={e => refine(itemFind.value)} 
-                    className="uk-checkbox" 
-                    type="checkbox" 
-                    checked={itemFind.isRefined} 
-                  />
-                </label>
-              </li>
-              }else{
-                return null
+                  <label>
+                    <span>{itemVal.attributes.title}</span>
+                    <input
+                      onChange={e => refine(itemFind.value)} 
+                      className="uk-checkbox" 
+                      type="checkbox" 
+                      checked={itemFind.isRefined} 
+                    />
+                  </label>
+                </li>
               }
-              })}
+            })}
           </ul>
         </div>
       </li>)}
@@ -37,4 +34,4 @@ const Parameters = ({
   )
 }
 
-export default connectRefinementList(Parameters)
+export default Parameters

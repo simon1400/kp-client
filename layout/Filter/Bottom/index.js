@@ -1,10 +1,9 @@
-import {connectCurrentRefinements} from "react-instantsearch-core"
+import {useCurrentRefinements} from "react-instantsearch-hooks-web"
 
-const BottomControl = ({
-  closeCanvas,
-  items,
-  refine
-}) => {
+const BottomControl = (props) => {
+
+  const { items, refine } = useCurrentRefinements(props);
+  const {closeCanvas} = props
 
   const removeAll = (e) => {
     e.preventDefault()
@@ -20,4 +19,4 @@ const BottomControl = ({
   )
 }
 
-export default connectCurrentRefinements(BottomControl)
+export default BottomControl

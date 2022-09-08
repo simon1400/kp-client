@@ -12,7 +12,7 @@ const PageTop = ({
   return (
     <section className={`page-top${big ? ' big-top' : ''}${!img ? ' yellow-top' : ' img-top'}`}>
       {img && <div className="img-wrap-bg">
-        <Image image={img} width={2560} />
+        <Image image={img} height={!big ? 380 : false} width={2560} />
       </div>}
       <div className={`${!big ? 'uk-container ' : ''} ${center && 'uk-flex uk-flex-middle uk-height-1-1'}`}>
         {head}

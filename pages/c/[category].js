@@ -5,12 +5,15 @@ import categoryQuery from '../../queries/category'
 import {useRouter} from 'next/router'
 import Content from '../../components/Content'
 import splitArr from '../../function/splitArr'
-import {InstantSearch, Configure} from 'react-instantsearch-dom'
+import {InstantSearch, Configure} from 'react-instantsearch-hooks-web'
 import searchClient from "../../lib/meilisearch.js";
 import CatalogList from '../../components/CatalogList'
 import CatalogFilterLabels from '../../components/CatalogFilterLabels'
 import SubCategoryMenu from '../../components/SubCategoryMenu'
 import { client } from '../../lib/api'
+import Head from 'next/head'
+
+const DOMAIN = process.env.APP_DOMAIN;
 
 export async function getServerSideProps(ctx) {
 
@@ -75,6 +78,7 @@ const Category = ({
     <InstantSearch 
       indexName="categoryProducts"
       searchClient={searchClient}
+      routing={true}
     >
       <Page>
         <PageTop
@@ -84,6 +88,10 @@ const Category = ({
                   <span><b>{h1Split[0].map(item => `${item} `)}</b> {h1Split[1].map(item => `${item} `)}</span>
                 </h1>}
           />
+
+        <Head>
+          <link rel="alternate" hrefLang="cs" href={`${DOMAIN}/cs${router.asPath}`} />
+        </Head>
 
           {!!category?.sub?.data?.length && <SubCategoryMenu sub={category.sub.data}/>}
 

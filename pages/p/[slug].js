@@ -10,6 +10,10 @@ import getMinPrice from '../../function/getMinPrice'
 import Content from '../../components/Content'
 import ArticleShort from '../../components/ArticleShort'
 import { client } from '../../lib/api'
+import { useRouter } from 'next/router'
+import Head from 'next/head'
+
+const DOMAIN = process.env.APP_DOMAIN;
 
 var startSelectValue = {
   name: 'vybrat variantu',
@@ -56,6 +60,8 @@ const Product = ({
   product,
   productId
 }) => {
+
+  const router = useRouter()
 
   const { dataContextState, dataContextDispatch } = useContext(DataStateContext)
   const [selectValue, setSelectValue] = useState(startSelectValue)
@@ -131,6 +137,9 @@ const Product = ({
 
   return (
     <Page>
+      <Head>
+        <link rel="alternate" hrefLang="cs" href={`${DOMAIN}${router.asPath}`} />
+      </Head>
       <section className="product-base">
         <div className="uk-container uk-container-large">
           <div className="uk-grid uk-child-width-1-1 uk-child-width-1-2@s">
@@ -156,7 +165,9 @@ const Product = ({
                   <ul className="uk-slideshow-nav uk-dotnav uk-flex-center uk-margin"></ul>
                 </div>
               </div>
-              {product.support && <div className="uk-visible@s"><ArticleShort data={global.support} icon="/assets/phone.svg" product /></div>}
+              {product.support && <div className="uk-visible@s">
+                <ArticleShort data={global.support} icon="/assets/phone.svg" product />
+              </div>}
             </div>
             <div>
               <div className="product-info">
@@ -177,7 +188,9 @@ const Product = ({
                   </div>
                   <a href="/" className="button" onClick={e => buy(e, product)}>přidat do košíku</a>
                 </div>}
-                {product.support && <div className="uk-hidden@s"><ArticleShort data={global.support} icon="/assets/phone.svg" product /></div>}
+                {product.support && <div className="uk-hidden@s">
+                  <ArticleShort data={global.support} icon="/assets/phone.svg" product />
+                </div>}
                 <ul>
                   {product.brand?.data && <li>Značka: <a href={`/c/${product.brand.data.attributes.slug}`}>{product.brand.data.attributes.title}</a></li>}
                   <li>Kód výrobku: {product.code}</li>
@@ -198,9 +211,9 @@ const Product = ({
           <div className="uk-grid uk-child-width-1-2 uk-child-width-1-4@s" uk-grid="">
             {product.relateds.data.map((item, index) => <div key={index}><Card data={item.attributes} /></div>)}
           </div>
-          <div className="button-more-wrap">
-            <a href={`/c/${product.category.data[0].attributes?.slug || product.brand?.data?.attributes?.slug}`} className="button">dalši {product.category.data[0].attributes?.title || product.brand.data.attributes?.title}</a>
-          </div>
+          {(!!product.category.data.length || product.brand?.data) && <div className="button-more-wrap">
+            <a href={`/c/${product.category.data[0]?.attributes?.slug || product.brand?.data?.attributes?.slug}`} className="button">dalši {product.category.data[0]?.attributes?.title || product.brand.data.attributes?.title}</a>
+          </div>}
         </div>
       </section>}
 

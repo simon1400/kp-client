@@ -460,6 +460,9 @@ h2.big-head{
   padding-bottom: 100px;
 }
 
+#c-bns button:first-child, #s-bns button:first-child{
+  background-color: $accent!important;
+}
 
 
 @import 'media';

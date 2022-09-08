@@ -5,14 +5,14 @@ const categoryQuery = gql`
   query GetCategory(
     $slug: String!
   ) {
-    categories(filters: { slug: {eq:$slug} }) {
+    categories(filters: { slug: { eq:$slug } }) {
       data{
         id
         attributes{
           title
           add_title
           content
-          sub{
+          sub(sort: "position:desc"){
             data{
               attributes{
                 title
@@ -35,7 +35,7 @@ const categoryQuery = gql`
               }
             }
           }
-          parameters {
+          parameters(sort: "position:desc") {
              data{
               id
               attributes{
@@ -79,7 +79,7 @@ const categoryQuery = gql`
               }
             }
           }
-          parameters {
+          parameters(sort: "position:desc") {
             data{
               id
               attributes{

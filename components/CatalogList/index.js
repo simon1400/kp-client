@@ -1,15 +1,13 @@
-import { connectInfiniteHits } from "react-instantsearch-core";
+import { useInfiniteHits } from "react-instantsearch-hooks-web";
 import Card from "../Card";
 
-const CatalogList = ({
-  hits,
-  refineNext,
-  hasMore
-}) => {
+const CatalogList = (props) => {
+
+  const { hits, isLastPage, showMore } = useInfiniteHits(props);
 
   const handleNext = (e) => {
     e.preventDefault()
-    refineNext()
+    showMore()
   }
 
   return (
@@ -20,7 +18,7 @@ const CatalogList = ({
             <Card data={item} catalog />
           </div>)}
         </div>
-        {hasMore && <div className="button-more-wrap">
+        {!isLastPage && <div className="button-more-wrap">
           <a href="/" onClick={e => handleNext(e)} className="button">načíst další</a>
         </div>}
         <hr />
@@ -29,4 +27,4 @@ const CatalogList = ({
   )
 }
 
-export default connectInfiniteHits(CatalogList)
+export default CatalogList

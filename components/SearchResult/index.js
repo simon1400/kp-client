@@ -1,12 +1,10 @@
-import Link from 'next/link'
 import Image from '../Image'
-import { connectHits } from 'react-instantsearch-dom'
+import { useHits } from 'react-instantsearch-hooks-web'
 
-const SearchResult = ({
-  hits, 
-  square = 80, 
-  title
-}) => {
+const SearchResult = (props) => {
+
+  const { hits } = useHits(props);
+  const {title, square = 80} = props
 
   const getSlug = (data) => {
     if(title === 'Produkty') {
@@ -46,4 +44,4 @@ const SearchResult = ({
   
 }
 
-export default connectHits(SearchResult)
+export default SearchResult

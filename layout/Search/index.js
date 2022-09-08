@@ -1,10 +1,8 @@
 import { useEffect, useRef, useState } from 'react'
 import { offcanvas, util } from 'uikit'
 import SearchResult from '../../components/SearchResult'
-import { Configure, Index, InstantSearch } from 'react-instantsearch-dom'
+import { Configure, InstantSearch } from 'react-instantsearch-hooks-web'
 import searchClient from '../../lib/meilisearch.js'
-import SearchBox from '../../components/SearchBox'
-import HasResult from '../../components/HasResult'
 
 const Search = () => {
 
@@ -31,8 +29,6 @@ const Search = () => {
             </a>
           </div>
           <hr />
-
-          
 
           <div className="input-search-wrap">
             <img className="uk-svg" src="/assets/search.svg" uk-svg="" />

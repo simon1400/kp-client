@@ -1,7 +1,7 @@
-import MenuDropdown from '../../components/MenuDropdown'
 import {useEffect} from 'react'
 import {offcanvas} from 'uikit'
 import Link from 'next/link'
+import MenuDropdownMobile from '../../components/MenuDropdownMobile'
 
 const MobileMenu = ({
   menu,
@@ -26,12 +26,12 @@ const MobileMenu = ({
           {left.map((item, index) => <li key={index}>
             {!item.sub_nav && <Link href={item.slug}><a onClick={() => clickMenu()}>{item.name}</a></Link>}
             {!!item.sub_nav && <a href="/" onClick={e => e.preventDefault()}>{item.name} <img className="uk-svg" src="/assets/plus.svg" uk-svg="" /></a>}
-            {!!item.sub_nav && <MenuDropdown data={item.sub_nav} index={'mob_top_'+index} />}
+            {!!item.sub_nav && <MenuDropdownMobile data={item.sub_nav} index={'mob_top_'+index} />}
           </li>)}
           {right.map((item, index) => <li key={index}>
             {!item.sub_nav && <Link href={item.slug}><a onClick={() => clickMenu()}>{item.name}</a></Link>}
             {!!item.sub_nav && <a href="/" onClick={e => e.preventDefault()}>{item.name} <img className="uk-svg" src="/assets/plus.svg" uk-svg="" /></a>}
-            {!!item.sub_nav && <MenuDropdown data={item.sub_nav} index={'mob_bottom_'+index} />}
+            {!!item.sub_nav && <MenuDropdownMobile data={item.sub_nav} index={'mob_bottom_'+index} />}
           </li>)}
         </ul>
         <a className="bare-button button-reverse" onClick={e => handleMenu(e)} href="/"><img className="uk-svg" src="/assets/angle-left.svg" uk-svg="" />zavřít</a>

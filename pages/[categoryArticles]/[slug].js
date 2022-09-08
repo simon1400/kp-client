@@ -7,6 +7,10 @@ import { AxiosSTRAPI } from '../../restClient';
 import splitArr from '../../function/splitArr';
 import { client } from '../../lib/api';
 import SubCategoryMenu from '../../components/SubCategoryMenu'
+import Head from 'next/head';
+import { useRouter } from 'next/router';
+
+const DOMAIN = process.env.APP_DOMAIN;
 
 export async function getServerSideProps(ctx) {
 
@@ -55,6 +59,8 @@ const BlogFull = ({
   subTitle,
 }) => {  
 
+  const router = useRouter()
+
   return (
     <Page>
       <PageTop
@@ -63,6 +69,11 @@ const BlogFull = ({
                 <span>{title[0].map(item => `${item} `)} <b>{title[1].map(item => `${item} `)}</b></span>
               </h1>}
       />
+
+      <Head>
+        <link rel="alternate" hrefLang="cs" href={`${DOMAIN}/cs${router.asPath}`} />
+      </Head>
+
       <section className={`sec-big ${!!blog?.child?.data?.length ? "uk-padding-remove-top" : ""}`}>
         {!!blog?.child?.data?.length && <SubCategoryMenu small sub={blog.child.data}/>}
         <div className="uk-container uk-container-small">

@@ -4,6 +4,10 @@ import articlesCategory from '../../queries/articlesCategory'
 import Image from '../../components/Image'
 import { client } from '../../lib/api';
 import splitArr from '../../function/splitArr';
+import { useRouter } from 'next/router';
+import Head from 'next/head';
+
+const DOMAIN = process.env.APP_DOMAIN;
 
 export async function getServerSideProps(ctx) {
 
@@ -43,6 +47,8 @@ const Blog = ({
   const h1 = category.title.split(' ')
   const h1Split = splitArr(h1, 2)
 
+  const router = useRouter()
+
   return (
     <Page>
       <PageTop
@@ -54,6 +60,10 @@ const Blog = ({
                 </span>}
               </h1>}
       />
+
+      <Head>
+        <link rel="alternate" hrefLang="cs" href={`${DOMAIN}${router.asPath}`} />
+      </Head>
 
       <section className="sec-big">
         <div className="uk-container uk-container-large">

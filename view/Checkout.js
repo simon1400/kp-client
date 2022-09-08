@@ -3,6 +3,7 @@ import loadable from '@loadable/component'
 import AnimateHeight from 'react-animate-height';
 import errorMessages from '../data/errorMessages'
 import RadioState from '../components/RadioState';
+import Head from 'next/head';
 
 const Page = loadable(() => import('../layout/Page'))
 const Sale = loadable(() => import('../components/Sale'))
@@ -10,6 +11,8 @@ const Methods = loadable(() => import('../components/Methods'))
 const CanvasItem = loadable(() => import('../components/CanvasItem'))
 const InfoForm = loadable(() => import('../components/InfoForm'))
 const FirmInfo = loadable(() => import('../components/FirmInfo'))
+
+const DOMAIN = process.env.APP_DOMAIN;
 
 const Checkout = ({
   send,
@@ -63,6 +66,9 @@ const Checkout = ({
 
   return(
     <Page>
+      <Head>
+        <link rel="alternate" hrefLang="cs" href={`${DOMAIN}/objednavka`} />
+      </Head>
       <div className="checkout uk-position-relative">
         <div className="uk-container uk-container-large">
           <div className="uk-grid" uk-grid="">

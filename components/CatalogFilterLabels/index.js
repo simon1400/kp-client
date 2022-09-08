@@ -1,6 +1,8 @@
-import {connectCurrentRefinements} from "react-instantsearch-core"
+import {useCurrentRefinements} from "react-instantsearch-hooks-web"
 
-const CatalogFilterLabels = ({items, refine}) => {
+const CatalogFilterLabels = (props) => {
+
+  const { items, refine } = useCurrentRefinements(props);
 
   const handle = (e, item) => {
     e.preventDefault()
@@ -16,7 +18,7 @@ const CatalogFilterLabels = ({items, refine}) => {
           </div>
           <div className="filter-selected">
             <ul>
-              {items.map((item, index) => item.items.map((inItem, inIndex) => <li key={index+inIndex}>
+              {items.map((item, index) => item.refinements.map((inItem, inIndex) => <li key={index+inIndex}>
                 <a href="/" onClick={e => handle(e, inItem.value)}>
                   {inItem.label} 
                   <img className="uk-svg" src="/assets/times.svg" uk-svg="" />
@@ -30,4 +32,4 @@ const CatalogFilterLabels = ({items, refine}) => {
   )
 }
 
-export default connectCurrentRefinements(CatalogFilterLabels)
+export default CatalogFilterLabels
