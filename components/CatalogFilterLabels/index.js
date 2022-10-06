@@ -19,7 +19,7 @@ const CatalogFilterLabels = (props) => {
           <div className="filter-selected">
             <ul>
               {items.map((item, index) => item.refinements.map((inItem, inIndex) => <li key={index+inIndex}>
-                <a href="/" onClick={e => handle(e, inItem.value)}>
+                <a href="/" onClick={e => handle(e, inItem)}>
                   {inItem.label} 
                   <img className="uk-svg" src="/assets/times.svg" uk-svg="" />
                 </a>

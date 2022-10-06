@@ -30,7 +30,7 @@ const Card = ({data, catalog = false}) => {
       </Link>}
       {!!catalog && <a href={`/p/${data.slug}`} className="card">
         {data.images && <div className="card-img">
-          <Image image={data.images[0]} width={320} height={320} />
+          <Image image={data.images[0]} width={320} height={320} fit="inside" />
         </div>}
         <div className="card-content">
           {data.brand && <label>{data.brand?.title}</label>}

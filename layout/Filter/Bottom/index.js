@@ -1,14 +1,14 @@
-import {useCurrentRefinements} from "react-instantsearch-hooks-web"
+import {useClearRefinements} from "react-instantsearch-hooks-web"
 
 const BottomControl = (props) => {
 
-  const { items, refine } = useCurrentRefinements(props);
+  const { refine } = useClearRefinements(props);
   const {closeCanvas} = props
 
   const removeAll = (e) => {
     e.preventDefault()
     closeCanvas(e)
-    refine(items)
+    refine()
   }
 
   return (

@@ -1,28 +1,44 @@
 import InfoOrder from '../../../mailTemplate/infoOrder';
-import sgMail from '@sendgrid/mail'
+const Recipient = require("mailersend").Recipient;
+const EmailParams = require("mailersend").EmailParams;
+const MailerSend = require("mailersend");
+
+const mailersend = new MailerSend({
+  api_key: process.env.MAILERSEND_TOKEN,
+});
 
 export default async function handler (req, res) {
   if(req.method === 'POST') {
     console.log('POST /SEND ORDER');
 
-    await sgMail.setApiKey(process.env.SENDGRID_API_KEY)
-
     const data = req.body
 
-    const msg = {
-      to: [data.email, 'info@kralovska-pece.cz'],
-      from: 'Objednávka dokončena - Kralovska peče <info@kralovska-pece.cz>',
-      subject: 'Objednávka č.: ' + data.id,
-      text: "Objednávka dokončena - Kralovska peče",
-      html: InfoOrder(data),
-    }
-
-    await sgMail.send(msg).then(() => {
+    try{
+      const recipients = [
+        new Recipient(data.email, "Recipient")
+      ];
+  
+      const emailParams = new EmailParams()
+          .setFrom("info@kralovska-pece.cz")
+          .setFromName("Kralovska peče")
+          .setRecipients(recipients)
+          .setSubject('Objednávka č.: ' + data.id)
+          .setHtml(InfoOrder(data))
+          .setText("Objednávka dokončena - Kralovska peče");
+  
+      mailersend.send(emailParams);
+  
       console.log('Email send')
       res.status(200).send('Email sent')
-    }).catch((err) => {
+    }catch(err) {
       console.error('ERRORRR --- ', err)
       res.status(err.code).json(err.response.body);
-    })
+    }
   }
 }
+
+
+
+
+
+

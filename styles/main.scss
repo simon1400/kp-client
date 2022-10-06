@@ -451,7 +451,7 @@ h2.big-head{
   padding-bottom: 40px;
   .sub-cat-wrap{
     display: grid;
-    grid-template-columns: repeat( 6, minmax(200px, 1fr) );
+    grid-template-columns: repeat(5, minmax(0, 1fr) );
     gap: 10px;
   }
 }

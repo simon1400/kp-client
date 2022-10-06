@@ -20,6 +20,7 @@ module.exports = (phase) => {
       GP_SECRET_ID: process.env.GP_SECRET_ID,
       PAY_API: process.env.PAY_API,
       SENDGRID_API_KEY: process.env.SENDGRID_API_KEY,
+      MAILERSEND_TOKEN: process.env.MAILERSEND_TOKEN,
     }
   }
 }
