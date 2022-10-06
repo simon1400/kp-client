@@ -51,7 +51,7 @@ const Search = () => {
               <Configure hitsPerPage={4} query={searchValue} />
               <SearchResult title="Značky" />
             </InstantSearch>
-            <InstantSearch indexName="categoryProducts" searchClient={searchClient} >
+            <InstantSearch indexName="produkt" searchClient={searchClient} >
               <Configure hitsPerPage={4} query={searchValue} />
               <SearchResult title="Produkty" />
             </InstantSearch>

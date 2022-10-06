@@ -76,7 +76,7 @@ const Category = ({
 
   return (
     <InstantSearch 
-      indexName="categoryProducts"
+      indexName="produkt"
       searchClient={searchClient}
       routing={true}
     >

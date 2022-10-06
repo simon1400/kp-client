@@ -48,11 +48,11 @@ const Filter = ({
               limit={50}
             />}
             <Sorting
-              defaultRefinement="categoryProducts"
+              defaultRefinement="produkt"
               items={[
-                { value: 'categoryProducts', label: 'podle doporučení' },
-                { value: 'categoryProducts:price:asc', label: 'od nejlevnějšího' },
-                { value: 'categoryProducts:price:desc', label: 'od nejdražšího' },
+                { value: 'produkt', label: 'podle doporučení' },
+                { value: 'produkt:price:asc', label: 'od nejlevnějšího' },
+                { value: 'produkt:price:desc', label: 'od nejdražšího' },
               ]}
             />
           </ul>
