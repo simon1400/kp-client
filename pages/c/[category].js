@@ -98,7 +98,7 @@ const Category = ({
           <CatalogFilterLabels />
 
           <Configure 
-            query={router.query.category+'======'}
+            query={router.query.category+'sgdfhgdhjfghjjfhkjfhdfskjhglks;fjdgdsfoilgjosfigj'}
             hitsPerPage={20}
           />
           
