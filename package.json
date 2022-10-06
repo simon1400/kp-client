@@ -9,7 +9,7 @@
   "dependencies": {
     "@apollo/client": "^3.4.8",
     "@loadable/component": "^5.15.0",
-    "@meilisearch/instant-meilisearch": "^0.8.1",
+    "@meilisearch/instant-meilisearch": "^0.9.0",
     "@sendgrid/mail": "^7.4.7",
     "axios": "^0.21.4",
     "date-fns": "2.22.1",
