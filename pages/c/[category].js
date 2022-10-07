@@ -54,6 +54,7 @@ export async function getServerSideProps(ctx) {
       h1Split,
       subTitleSplit,
       navigation,
+      title: categoryFetch?.attributes?.title,
       global,
       meta: {
         ...category.attributes.meta,
@@ -69,7 +70,8 @@ export async function getServerSideProps(ctx) {
 const Category = ({
   h1Split,
   subTitleSplit,
-  category
+  category,
+  title
 }) => {
 
   const router = useRouter()
@@ -93,34 +95,35 @@ const Category = ({
           <link rel="alternate" hrefLang="cs" href={`${DOMAIN}/cs${router.asPath}`} />
         </Head>
 
-          {!!category?.sub?.data?.length && <SubCategoryMenu sub={category.sub.data}/>}
+        {!!category?.sub?.data?.length && <SubCategoryMenu sub={category.sub.data}/>}
 
-          <CatalogFilterLabels />
+        <CatalogFilterLabels />
 
-          <Configure 
-            query={router.query.category+'sgdfhgdhjfghjjfhkjfhdfskjhglks;fjdgdsfoilgjosfigj'}
-            hitsPerPage={20}
-          />
-          
-          <CatalogList />
-          
-          <section className="additional-sec">
-            <div className="uk-container">
-              {!!subTitleSplit?.length && <h2 className="big-head">
-                <span style={{paddingLeft: '14vw'}}>{subTitleSplit[0].map(item => `${item} `)}</span>
-                <span style={{paddingLeft: '0px'}}>{subTitleSplit[1].map(item => `${item} `)}</span>
-                <span style={{paddingLeft: '7vw'}}>{subTitleSplit[2].map(item => `${item} `)}</span>
-              </h2>}
-              <div>
-                {category.content && <Content data={category.content} />}
-              </div>
+        <Configure 
+          query={router.query.category}
+          filters={`categoryTitles = "${title}"`}
+          hitsPerPage={20}
+        />
+        
+        <CatalogList />
+        
+        <section className="additional-sec">
+          <div className="uk-container">
+            {!!subTitleSplit?.length && <h2 className="big-head">
+              <span style={{paddingLeft: '14vw'}}>{subTitleSplit[0].map(item => `${item} `)}</span>
+              <span style={{paddingLeft: '0px'}}>{subTitleSplit[1].map(item => `${item} `)}</span>
+              <span style={{paddingLeft: '7vw'}}>{subTitleSplit[2].map(item => `${item} `)}</span>
+            </h2>}
+            <div>
+              {category.content && <Content data={category.content} />}
             </div>
-          </section>
+          </div>
+        </section>
 
-          <Filter
-            parameters={category?.parameters.data || []}
-            category={category?.filterCategories.data || []}
-          />
+        <Filter
+          parameters={category?.parameters.data || []}
+          category={category?.filterCategories.data || []}
+        />
 
       </Page>
     </InstantSearch>

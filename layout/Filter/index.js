@@ -44,6 +44,7 @@ const Filter = ({
             </li>}
             {!!parameters.length && <Parameters 
               data={parameters}
+              operator="and"
               attribute="valuesTitles"
               limit={50}
             />}
