@@ -53,7 +53,7 @@ export default async function handler (req, res) {
 
     data.map(item => {
       AxiosSTRAPI.get(`/api/produkties?guid_contains=${item.guid}&_publicationState=preview`).then(res => {
-        console.log('single ---',res.data.data)
+        console.log('single ---', res.data.data)
         if(res.data.data.length){
           // AxiosSTRAPI.put('/api/produkties/'+res.data.data[0].id, {data: {
           //   price: item.price,
@@ -76,7 +76,7 @@ export default async function handler (req, res) {
 
     for (const [key, value] of Object.entries(dataVariantsCombine)) {
       AxiosSTRAPI.get(`/api/produkties?guid_contains=${value[0].guid}&_publicationState=preview`).then(res => {
-        console.log('variant --- ', res.data)
+        console.log('variant --- ', res.data.data)
         if(res.data.data.length){
           // AxiosSTRAPI.put('/api/produkties/'+res.data[0].id, {data: {
           //   price: value[0].price,
