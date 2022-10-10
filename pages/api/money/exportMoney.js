@@ -1,7 +1,8 @@
-import {AxiosSTRAPI} from '../../../restClient';
 import fs from 'fs'
 import convert from 'xml-js';
 import slugify from 'slugify'
+import crudSingleProduct from '../../../function/crudSingleProduct';
+import crudVariableProduct from '../../../function/crudVariableProduct';
 
 export default async function handler (req, res) {
   if(req.method == 'POST') {
@@ -51,85 +52,9 @@ export default async function handler (req, res) {
       }
     })
 
-    data.map(item => {
-      AxiosSTRAPI.get(`/api/produkties?guid_contains=${item.guid}&_publicationState=preview`).then(res => {
-        console.log('single ---', res.data.data)
-        if(res.data.data.length){
-          // AxiosSTRAPI.put('/api/produkties/'+res.data.data[0].id, {data: {
-          //   price: item.price,
-          //   stock: item.stock,
-          // }}).then(res => console.log('Success update --', res.data.data.title))
-          //   .catch(err => console.error(err.response?.data || err.response))
-        }else{
-          // AxiosSTRAPI.post('/api/produkties', {data: item})
-          //   .then(res => console.log('Success created --', res.data.title))
-          //   .catch(err => {
-          //     if(err.response?.data) {
-          //       console.log('Failed created --', err.response.data)
-          //     }else{
-          //       console.log('Failed created --', err.response)
-          //     }
-          //   })
-        }
-      }).catch(err => console.log(err.response?.data || err.response))
-    })
+    crudSingleProduct(data)
 
-    for (const [key, value] of Object.entries(dataVariantsCombine)) {
-      AxiosSTRAPI.get(`/api/produkties?guid_contains=${value[0].guid}&_publicationState=preview`).then(res => {
-        console.log('variant --- ', res.data.data)
-        if(res.data.data.length){
-          // AxiosSTRAPI.put('/api/produkties/'+res.data[0].id, {data: {
-          //   price: value[0].price,
-          //   stock: value[0].stock,
-          //   Variants: value.map(item => ({
-          //     nazev: item.magnetude,
-          //     price: item.price,
-          //     guid: item.guid,
-          //     stock: item.stock,
-          //   })),
-          // }}).then(res => console.log('Success update variant --', res.data?.title))
-          //   .catch(err => console.error(err.response?.data))
-        }else{
-          // AxiosSTRAPI.post('/api/produkties', {data: {
-          //   title: value[0].title,
-          //   slug: slugify(value[0].title, {
-          //     lower: true,
-          //     remove: /[*+~´,.()'"!:@]/g
-          //   }),
-          //   price: value[0].price,
-          //   stock: value[0].stock,
-          //   code: key,
-          //   guid: value.map(item => item.guid).join(),
-          //   Variants: value.map(item => ({
-          //     nazev: item.magnetude,
-          //     price: item.price,
-          //     guid: item.guid,
-          //     stock: item.stock,
-          //   })),
-          //   published_at: null
-          // }}).then(res => console.log('Success created variant --', res.data.title))
-          //   .catch(err => {
-          //     if(err.response?.data?.error?.details) {
-          //       console.error('Failed create variant 1 --', err.response?.data?.error?.details)
-          //     }else if(err.response?.data?.error) {
-          //       console.error('Failed create variant 2 --', err.response?.data?.error)
-          //     }else if(err.response?.data) {
-          //       console.error('Failed create variant 3 --', err.response?.data)
-          //     }else if(err.response?.data) {
-          //       console.error('Failed create variant 4 --', err.response?.data)
-          //     }else{
-          //       console.error('Failed create variant 5 --', err.response)
-          //     }
-          //   })
-        }
-      }).catch(err => {
-        if(err.response?.data) {
-          console.log('Failed get --', err.response.data)
-        }else{
-          console.log('Failed get --', err.response)
-        }
-      })
-    }
+    // crudVariableProduct(dataVariantsCombine)
 
     res.status(200).json({some: 'good'});
 
