@@ -54,13 +54,13 @@ export default async function handler (req, res) {
     data.map(item => {
       AxiosSTRAPI.get(`/api/produkties?guid_contains=${item.guid}&_publicationState=preview`).then(res => {
         if(res.data.length){
-          AxiosSTRAPI.put('/api/produkties/'+res.data[0].id, {
+          AxiosSTRAPI.put('/api/produkties/'+res.data[0].id, {data: {
             price: item.price,
             stock: item.stock,
-          }).then(res => console.log('Success update --', res.data.title))
+          }}).then(res => console.log('Success update --', res.data.title))
             .catch(err => console.error(err.response?.data || err.response))
         }else{
-          AxiosSTRAPI.post('/api/produkties', item)
+          AxiosSTRAPI.post('/api/produkties', {data: item})
             .then(res => console.log('Success created --', res.data.title))
             .catch(err => {
               if(err.response?.data) {
@@ -76,7 +76,7 @@ export default async function handler (req, res) {
     for (const [key, value] of Object.entries(dataVariantsCombine)) {
       AxiosSTRAPI.get(`/api/produkties?guid_contains=${value[0].guid}&_publicationState=preview`).then(res => {
         if(res.data.length){
-          AxiosSTRAPI.put('/api/produkties/'+res.data[0].id, {
+          AxiosSTRAPI.put('/api/produkties/'+res.data[0].id, {data: {
             price: value[0].price,
             stock: value[0].stock,
             Variants: value.map(item => ({
@@ -85,10 +85,10 @@ export default async function handler (req, res) {
               guid: item.guid,
               stock: item.stock,
             })),
-          }).then(res => console.log('Success update variant --', res.data?.title))
+          }}).then(res => console.log('Success update variant --', res.data?.title))
             .catch(err => console.error(err.response?.data))
         }else{
-          AxiosSTRAPI.post('/api/produkties', {
+          AxiosSTRAPI.post('/api/produkties', {data: {
             title: value[0].title,
             slug: slugify(value[0].title, {
               lower: true,
@@ -105,7 +105,7 @@ export default async function handler (req, res) {
               stock: item.stock,
             })),
             published_at: null
-          }).then(res => console.log('Success created variant --', res.data.title))
+          }}).then(res => console.log('Success created variant --', res.data.title))
             .catch(err => {
               if(err.response?.data?.data) {
                 console.error('Failed create variant --', err.response?.data?.data)
