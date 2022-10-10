@@ -1,3 +1,5 @@
+import makeid from './randomString'
+
 export default (data) => {
   const randomId = Math.floor(10000000 + Math.random() * 90000000)
   return `<?xml version="1.0" encoding="UTF-8"?>
@@ -5,7 +7,7 @@ export default (data) => {
       <UpdateHd>1</UpdateHd>
       <SeznamFirem>
         <Firma>
-          <GUID>{13FE548C-1A7C-4896-B648-1AF094AA8492}</GUID>
+          <GUID>{${makeid(8)}-${makeid(4)}-${makeid(4)}-${makeid(4)}-${makeid(12)}}</GUID>
           <Nazev>${data.firmInfo?.nameCompany?.length ? data.firmInfo.nameCompany : data.name+" "+data.surname}</Nazev>
           <Adresa>
             <Ulice>${data.address}</Ulice>
@@ -52,7 +54,7 @@ export default (data) => {
           <Popis>Objednávka z e-shopu (${randomId})</Popis>
           <Poznamka>${data.description}</Poznamka>
           <DodOdb>
-            <GUID>{13FE548C-1A7C-4896-B648-1AF094AA8492}</GUID>
+            <GUID>{${makeid(8)}-${makeid(4)}-${makeid(4)}-${makeid(4)}-${makeid(12)}}</GUID>
             <ObchNazev>${data.firmInfo?.nameCompany?.length ? data.firmInfo.nameCompany : data.name+" "+data.surname}</ObchNazev>
             <ObchAdresa>
               <Ulice>${data.address}</Ulice>
@@ -149,6 +151,14 @@ export default (data) => {
               <GUID>{4F7A6CE9-A84A-4287-98BB-66BA52B81D38}</GUID>
               <CenikSklad>0</CenikSklad>
             </Sklad>
+
+            <KmKarta>
+              <Popis>Doprava</Popis>
+              <Zkrat>Balík</Zkrat>
+              ${data.delivery?.guid ? `<GUID>${data.delivery.guid}</GUID>` : ""}
+              ${data.delivery?.code ? `<Katalog>${data.delivery.code}</Katalog>` : ""}
+              <TypKarty>sluzba</TypKarty>
+            </KmKarta>
             
             <Sleva>0</Sleva>
             <CenaPoSleve>1</CenaPoSleve>
@@ -163,6 +173,15 @@ export default (data) => {
             <SazbaDPH>21</SazbaDPH>
             <TypCeny>1</TypCeny>
             <Sleva>0</Sleva>
+
+            <KmKarta>
+              <Popis>Platba</Popis>
+              <Zkrat>Platba</Zkrat>
+              ${data.payment?.guid ? `<GUID>${data.payment.guid}</GUID>` : ""}
+              ${data.payment?.code ? `<Katalog>${data.payment.code}</Katalog>` : ""}
+              <TypKarty>sluzba</TypKarty>
+            </KmKarta>
+          
             <Sklad>
               <Nazev>Hlavní sklad</Nazev>
               <KodSkladu>HLV</KodSkladu>
