@@ -2,7 +2,6 @@ import {makeid} from './randomString'
 
 export default (data) => {
   const randomId = Math.floor(10000000 + Math.random() * 90000000)
-  const guidUser = `${makeid(8)}-${makeid(4)}-${makeid(4)}-${makeid(4)}-${makeid(12)}`
   return `<?xml version="1.0" encoding="UTF-8"?>
     <MoneyData>
       <UpdateHd>1</UpdateHd>

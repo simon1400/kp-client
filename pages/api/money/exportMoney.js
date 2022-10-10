@@ -14,7 +14,6 @@ export default async function handler (req, res) {
     const data = [], dataVariants = [], dataVariantsCombine = {};
 
     result['MoneyData']['SeznamZasoba']['Zasoba'].map(item => {
-      console.log(item['KmKarta']);
       if(item['KmKarta']['Katalog']._text.indexOf('-') < 0){
         data.push({
           title: item['KmKarta']['Popis']._text,
@@ -53,15 +52,15 @@ export default async function handler (req, res) {
     })
 
     data.map(item => {
-      AxiosSTRAPI.get(`/produkties?guid_contains=${item.guid}&_publicationState=preview`).then(res => {
+      AxiosSTRAPI.get(`/api/produkties?guid_contains=${item.guid}&_publicationState=preview`).then(res => {
         if(res.data.length){
-          AxiosSTRAPI.put('/produkties/'+res.data[0].id, {
+          AxiosSTRAPI.put('/api/produkties/'+res.data[0].id, {
             price: item.price,
             stock: item.stock,
           }).then(res => console.log('Success update --', res.data.title))
             .catch(err => console.error(err.response?.data || err.response))
         }else{
-          AxiosSTRAPI.post('/produkties', item)
+          AxiosSTRAPI.post('/api/produkties', item)
             .then(res => console.log('Success created --', res.data.title))
             .catch(err => {
               if(err.response?.data) {
@@ -75,9 +74,9 @@ export default async function handler (req, res) {
     })
 
     for (const [key, value] of Object.entries(dataVariantsCombine)) {
-      AxiosSTRAPI.get(`/produkties?guid_contains=${value[0].guid}&_publicationState=preview`).then(res => {
+      AxiosSTRAPI.get(`/api/produkties?guid_contains=${value[0].guid}&_publicationState=preview`).then(res => {
         if(res.data.length){
-          AxiosSTRAPI.put('/produkties/'+res.data[0].id, {
+          AxiosSTRAPI.put('/api/produkties/'+res.data[0].id, {
             price: value[0].price,
             stock: value[0].stock,
             Variants: value.map(item => ({
@@ -89,7 +88,7 @@ export default async function handler (req, res) {
           }).then(res => console.log('Success update variant --', res.data?.title))
             .catch(err => console.error(err.response?.data))
         }else{
-          AxiosSTRAPI.post('/produkties', {
+          AxiosSTRAPI.post('/api/produkties', {
             title: value[0].title,
             slug: slugify(value[0].title, {
               lower: true,
