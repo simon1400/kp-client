@@ -1,4 +1,4 @@
-import { AxiosSTRAPI } from "../../../restClient"
+import { AxiosSTRAPI } from "../restClient"
 
 const crudVariableProduct = (dataVariantsCombine) => {
   for (const [key, value] of Object.entries(dataVariantsCombine)) {
