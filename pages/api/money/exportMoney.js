@@ -52,9 +52,9 @@ export default async function handler (req, res) {
       }
     })
 
-    crudSingleProduct(data)
+    // crudSingleProduct(data)
 
-    // crudVariableProduct(dataVariantsCombine)
+    crudVariableProduct(dataVariantsCombine)
 
     res.status(200).json({some: 'good'});
 
