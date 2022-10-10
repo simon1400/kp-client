@@ -12,7 +12,6 @@ export default (data) => {
           <Popis>Objednávka z e-shopu (${randomId})</Popis>
           <Poznamka>${data.description}</Poznamka>
           <DodOdb>
-            <GUID>{${guidUser}}</GUID>
             <ObchNazev>${data.firmInfo?.nameCompany?.length ? data.firmInfo.nameCompany : data.name+" "+data.surname}</ObchNazev>
             <ObchAdresa>
               <Ulice>${data.address}</Ulice>
