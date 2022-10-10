@@ -1,4 +1,4 @@
-import makeid from './randomString'
+import {makeid} from './randomString'
 
 export default (data) => {
   const randomId = Math.floor(10000000 + Math.random() * 90000000)
