@@ -53,6 +53,7 @@ export default async function handler (req, res) {
 
     data.map(item => {
       AxiosSTRAPI.get(`/api/produkties?guid_contains=${item.guid}&_publicationState=preview`).then(res => {
+        console.log('res ---- ', res);
         if(res.data.length){
           AxiosSTRAPI.put('/api/produkties/'+res.data[0].id, {data: {
             price: item.price,
@@ -107,12 +108,12 @@ export default async function handler (req, res) {
             published_at: null
           }}).then(res => console.log('Success created variant --', res.data.title))
             .catch(err => {
-              if(err.response?.data?.data?.error?.details) {
-                console.error('Failed create variant 1 --', err.response?.data?.data?.error?.details)
-              }else if(err.response?.data?.data?.error) {
-                console.error('Failed create variant 2 --', err.response?.data?.data?.error)
-              }else if(err.response?.data?.data) {
-                console.error('Failed create variant 3 --', err.response?.data?.data)
+              if(err.response?.data?.error?.details) {
+                console.error('Failed create variant 1 --', err.response?.data?.error?.details)
+              }else if(err.response?.data?.error) {
+                console.error('Failed create variant 2 --', err.response?.data?.error)
+              }else if(err.response?.data) {
+                console.error('Failed create variant 3 --', err.response?.data)
               }else if(err.response?.data) {
                 console.error('Failed create variant 4 --', err.response?.data)
               }else{
