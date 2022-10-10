@@ -2,12 +2,13 @@ import {makeid} from './randomString'
 
 export default (data) => {
   const randomId = Math.floor(10000000 + Math.random() * 90000000)
+  const guidUser = `${makeid(8)}-${makeid(4)}-${makeid(4)}-${makeid(4)}-${makeid(12)}`
   return `<?xml version="1.0" encoding="UTF-8"?>
     <MoneyData>
       <UpdateHd>1</UpdateHd>
       <SeznamFirem>
         <Firma>
-          <GUID>{${makeid(8)}-${makeid(4)}-${makeid(4)}-${makeid(4)}-${makeid(12)}}</GUID>
+          <GUID>{${guidUser}}</GUID>
           <Nazev>${data.firmInfo?.nameCompany?.length ? data.firmInfo.nameCompany : data.name+" "+data.surname}</Nazev>
           <Adresa>
             <Ulice>${data.address}</Ulice>
@@ -54,7 +55,7 @@ export default (data) => {
           <Popis>Objednávka z e-shopu (${randomId})</Popis>
           <Poznamka>${data.description}</Poznamka>
           <DodOdb>
-            <GUID>{${makeid(8)}-${makeid(4)}-${makeid(4)}-${makeid(4)}-${makeid(12)}}</GUID>
+            <GUID>{${guidUser}}</GUID>
             <ObchNazev>${data.firmInfo?.nameCompany?.length ? data.firmInfo.nameCompany : data.name+" "+data.surname}</ObchNazev>
             <ObchAdresa>
               <Ulice>${data.address}</Ulice>
@@ -77,6 +78,7 @@ export default (data) => {
             <EMail>${data.email}</EMail>
           </DodOdb>
           <KonecPrij>
+            <GUID>{${guidUser}}</GUID>
             <Nazev>${data.name+" "+data.surname}</Nazev>
             <Adresa>
               <Ulice>${data.address}</Ulice>
@@ -143,8 +145,6 @@ export default (data) => {
             <SazbaDPH>21</SazbaDPH>
             <TypCeny>1</TypCeny>
             <CenovaHlad>Základní</CenovaHlad>
-            ${data.delivery?.guid ? `<GUID>${data.delivery.guid}</GUID>` : ""}
-            ${data.delivery?.code ? `<Katalog>${data.delivery.code}</Katalog>` : ""}
             <Sklad>
               <Nazev>Hlavní sklad</Nazev>
               <KodSkladu>HLV</KodSkladu>
@@ -168,8 +168,6 @@ export default (data) => {
             <PocetMJ>1</PocetMJ>
             <ZbyvaMJ>1</ZbyvaMJ>
             <Cena>${data.payment.value}</Cena>
-            ${data.payment?.guid ? `<GUID>${data.payment.guid}</GUID>` : ""}
-            ${data.payment?.code ? `<Katalog>${data.payment.code}</Katalog>` : ""}
             <SazbaDPH>21</SazbaDPH>
             <TypCeny>1</TypCeny>
             <Sleva>0</Sleva>
