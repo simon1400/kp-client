@@ -34,7 +34,6 @@ export default (data) => {
             <EMail>${data.email}</EMail>
           </DodOdb>
           <KonecPrij>
-            <GUID>{${guidUser}}</GUID>
             <Nazev>${data.name+" "+data.surname}</Nazev>
             <Adresa>
               <Ulice>${data.address}</Ulice>
