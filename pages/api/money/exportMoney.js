@@ -53,12 +53,12 @@ export default async function handler (req, res) {
 
     data.map(item => {
       AxiosSTRAPI.get(`/api/produkties?guid_contains=${item.guid}&_publicationState=preview`).then(res => {
-        console.log('res ---- ', res);
-        if(res.data.length){
-          AxiosSTRAPI.put('/api/produkties/'+res.data[0].id, {data: {
+        console.log(res.data.data)
+        if(res.data.data.length){
+          AxiosSTRAPI.put('/api/produkties/'+res.data.data[0].id, {data: {
             price: item.price,
             stock: item.stock,
-          }}).then(res => console.log('Success update --', res.data.title))
+          }}).then(res => console.log('Success update --', res.data.data.title))
             .catch(err => console.error(err.response?.data || err.response))
         }else{
           AxiosSTRAPI.post('/api/produkties', {data: item})
