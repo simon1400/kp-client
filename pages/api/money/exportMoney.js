@@ -107,12 +107,16 @@ export default async function handler (req, res) {
             published_at: null
           }}).then(res => console.log('Success created variant --', res.data.title))
             .catch(err => {
-              if(err.response?.data?.data) {
-                console.error('Failed create variant --', err.response?.data?.data)
+              if(err.response?.data?.data?.error?.details) {
+                console.error('Failed create variant 1 --', err.response?.data?.data?.error?.details)
+              }else if(err.response?.data?.data?.error) {
+                console.error('Failed create variant 2 --', err.response?.data?.data?.error)
+              }else if(err.response?.data?.data) {
+                console.error('Failed create variant 3 --', err.response?.data?.data)
               }else if(err.response?.data) {
-                console.error('Failed create variant --', err.response?.data)
+                console.error('Failed create variant 4 --', err.response?.data)
               }else{
-                console.error('Failed create variant --', err.response)
+                console.error('Failed create variant 5 --', err.response)
               }
             })
         }
