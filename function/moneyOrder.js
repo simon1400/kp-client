@@ -212,15 +212,6 @@ export default (data) => {
               <Cislo>702830774</Cislo>
               <Klap/>
             </Tel>
-            <Fax>
-              <Pred/>
-              <Cislo/>
-              <Klap/>
-            </Fax>
-            <Mobil>
-              <Pred/>
-              <Cislo/>
-            </Mobil>
             <EMail>info@kralovska-pece.cz</EMail>
             <WWW>kralovska-pece.cz</WWW>
             <ICO>03775933</ICO>
