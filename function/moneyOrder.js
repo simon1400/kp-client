@@ -6,49 +6,6 @@ export default (data) => {
   return `<?xml version="1.0" encoding="UTF-8"?>
     <MoneyData>
       <UpdateHd>1</UpdateHd>
-      <SeznamFirem>
-        <Firma>
-          <GUID>{${guidUser}}</GUID>
-          <Nazev>${data.firmInfo?.nameCompany?.length ? data.firmInfo.nameCompany : data.name+" "+data.surname}</Nazev>
-          <Adresa>
-            <Ulice>${data.address}</Ulice>
-            <Misto>${data.city}</Misto>
-            <PSC>${data.zip}</PSC>
-            <Stat>${data.state}</Stat>
-            <KodStatu>CZ</KodStatu>
-          </Adresa>
-          <ObchNazev>${data.firmInfo?.nameCompany?.length ? data.firmInfo.nameCompany : data.name+" "+data.surname}</ObchNazev>
-          <ObchAdresa>
-            <Ulice>${data.address}</Ulice>
-            <Misto>${data.city}</Misto>
-            <PSC>${data.zip}</PSC>
-            <Stat>${data.state}</Stat>
-            <KodStatu>CZ</KodStatu>
-          </ObchAdresa>
-          <FaktNazev>${data.firmInfo?.nameCompany?.length ? data.firmInfo.nameCompany : data.name+" "+data.surname}</FaktNazev>
-          <FaktAdresa>
-            <Ulice>${data.address}</Ulice>
-            <Misto>${data.city}</Misto>
-            <PSC>${data.zip}</PSC>
-            <Stat>${data.state}</Stat>
-            <KodStatu>CZ</KodStatu>
-          </FaktAdresa>
-          <Mobil>
-            <Cislo>${data.phone}</Cislo>
-          </Mobil>
-          <EMail>${data.email}</EMail>
-          <ICO>${data.firmInfo?.ico || ''}</ICO>
-          <DIC>${data.firmInfo?.dic || ''}</DIC>
-          <eshop>
-            <IN_Export>6</IN_Export>
-          </eshop>
-          <Osoba>
-            <Jmeno>${data.name}</Jmeno>
-            <Prijmeni>${data.surname}</Prijmeni>
-            <Jednatel>1</Jednatel>
-          </Osoba>
-        </Firma>
-      </SeznamFirem>
       <SeznamObjPrij>
         <ObjPrij>
           <Doklad>${randomId}</Doklad>
