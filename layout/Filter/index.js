@@ -27,6 +27,7 @@ const Filter = ({
         <hr />
         <div className="catalog-filter">
           <ul className="uk-accordion" uk-accordion="multiple: true">
+
             {!!category.length && <li className="uk-open">
               <a className="uk-accordion-title" href="#">
                 {category[0].attributes.__typename === 'Brand' && 'Značka'}
@@ -37,17 +38,34 @@ const Filter = ({
                 <FilterCategory 
                   attribute={category[0].attributes.__typename === 'Brand' ? "brand.title" : "categoryTitles"}
                   limit={50}
-                  operator="and"
-                  transformItems={items => items.sort(orderBy)}
+                  operator="or"
+                  transformItems={items => {
+                    const data = category.map(item => item.attributes.title)
+                    const filteredItems = items.filter(item => data.indexOf(item.value) >= 0)
+                    filteredItems.sort(orderBy)
+                    return filteredItems
+                  }}
                 />
               </div>
             </li>}
-            {!!parameters.length && <Parameters 
-              data={parameters}
-              operator="and"
-              attribute="valuesTitles"
-              limit={50}
-            />}
+
+            {!!parameters.length && parameters.map((item, index) => <li key={index}>
+              <a className="uk-accordion-title" href="#">{item.attributes.title} <img className="uk-svg" src="/assets/angle-down.svg" uk-svg="" /></a>
+              <div className="uk-accordion-content">
+                <Parameters 
+                  operator="and"
+                  attribute="valuesTitles"
+                  limit={100}
+                  transformItems={items => {
+                    const data = item.attributes.values.data.map(item => item.attributes.title)
+                    const filteredItems = items.filter(item => data.indexOf(item.value) >= 0)
+                    filteredItems.sort(orderBy)
+                    return filteredItems
+                  }}
+                />
+              </div>
+            </li>)}
+
             <Sorting
               defaultRefinement="produkt"
               items={[
@@ -56,6 +74,7 @@ const Filter = ({
                 { value: 'produkt:price:desc', label: 'od nejdražšího' },
               ]}
             />
+
           </ul>
         </div>
         <BottomControl closeCanvas={closeCanvas} />

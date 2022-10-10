@@ -101,7 +101,7 @@ const Category = ({
 
         <Configure 
           query={router.query.category}
-          filters={`categoryTitles = "${title}"`}
+          filters={category.__typename === 'Brand' ? `brand.title = "${title}"` : `categoryTitles = "${title}"`}
           hitsPerPage={20}
         />
         

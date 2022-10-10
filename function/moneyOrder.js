@@ -149,14 +149,6 @@ export default (data) => {
               <GUID>{4F7A6CE9-A84A-4287-98BB-66BA52B81D38}</GUID>
               <CenikSklad>0</CenikSklad>
             </Sklad>
-
-            <KmKarta>
-              <Popis>Doprava</Popis>
-              <Zkrat>Balík</Zkrat>
-              ${data.delivery?.guid ? `<GUID>${data.delivery.guid}</GUID>` : ""}
-              ${data.delivery?.code ? `<Katalog>${data.delivery.code}</Katalog>` : ""}
-              <TypKarty>sluzba</TypKarty>
-            </KmKarta>
             
             <Sleva>0</Sleva>
             <CenaPoSleve>1</CenaPoSleve>
@@ -168,13 +160,6 @@ export default (data) => {
             <Cena>${data.payment.value}</Cena>
             ${data.payment?.guid ? `<GUID>${data.payment.guid}</GUID>` : ""}
             ${data.payment?.code ? `<Katalog>${data.payment.code}</Katalog>` : ""}
-            <KmKarta>
-              <Popis>Platba</Popis>
-              <Zkrat>Balík</Zkrat>
-              ${data.payment?.guid ? `<GUID>${data.payment.guid}</GUID>` : ""}
-              ${data.payment?.code ? `<Katalog>${data.payment.code}</Katalog>` : ""}
-              <TypKarty>sluzba</TypKarty>
-            </KmKarta>
             <SazbaDPH>21</SazbaDPH>
             <TypCeny>1</TypCeny>
             <Sleva>0</Sleva>

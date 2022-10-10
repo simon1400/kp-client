@@ -1,37 +1,8 @@
-import { useEffect, useState } from "react";
 import {useRefinementList} from "react-instantsearch-hooks-web"
 
 const FilterCategory = (props) => {
 
   const { items, refine } = useRefinementList(props);
-
-  const [startItems, setStartItems] = useState(items)
-  const [firstContent, setFirstContent] = useState(false)
-
-  useEffect(() => {
-    if(items.length && !firstContent){
-      setFirstContent(true)
-      const newItems = items.map(item => {
-        item.disabled = false
-        return item
-      })
-      setStartItems(newItems)
-    }
-    if(firstContent) {
-      const filterItems = startItems.map(item => {
-        const showItem = items.find(itemX => itemX.label === item.label)
-        if(showItem) {
-          item = showItem
-          item.disabled = false
-        }else{
-          item.disabled = true
-        }
-        return item
-      })
-
-      setStartItems(filterItems)
-    }
-  }, [items]) 
 
   const handle = (value) => {
     refine(value);
@@ -39,14 +10,14 @@ const FilterCategory = (props) => {
 
   return (
     <ul>
-      {startItems.map((item, index) => <li key={index}>
+      {items.map((item, index) => <li key={index}>
         <label>
           <span>{item.label}</span>
           <input
             onChange={() => handle(item.value)}
             className="uk-checkbox"
             type="checkbox"
-            disabled={item.disabled}
+            disabled={!items.find(itemFind => itemFind.isRefined) && item.count === 0}
             checked={item.isRefined} />
         </label>
       </li>)}
