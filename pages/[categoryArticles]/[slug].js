@@ -82,10 +82,10 @@ const BlogFull = ({
             <Content data={blog.content}/>
             {blog.image.data && <Image image={blog.image.data.attributes} width={900} />}
           </div>
-          <h2 className="big-head uk-text-center uk-margin-large-top uk-margin-large-bottom">
+          {!!subTitle.length && <h2 className="big-head uk-text-center uk-margin-large-top uk-margin-large-bottom">
             <span style={{paddingLeft: '0px'}}>{subTitle[0].map(item => `${item} `)}</span>
-            <span style={{paddingLeft: '6vw'}}>{subTitle[1].map(item => `${item} `)}</span>
-          </h2>
+            <span style={{paddingLeft: '6vw'}}>{subTitle?.[1].map(item => `${item} `)}</span>
+          </h2>}
           {blog.add_content && <div>
             <Content data={blog.add_content}/>
           </div>}
