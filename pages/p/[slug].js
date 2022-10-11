@@ -18,7 +18,9 @@ const DOMAIN = process.env.APP_DOMAIN;
 var startSelectValue = {
   name: 'vybrat variantu',
   id: '',
-  price: ''
+  price: '',
+  guid: '', 
+  code: ''
 }
 
 export async function getServerSideProps(ctx) {
@@ -68,6 +70,29 @@ const Product = ({
   const [errorBuy, setErrorBuy] = useState(false)
   // const [addToCardGTM, setAddToCardGTM] = useState(false)
 
+  const selectVariant = (e, value) => {
+    e.preventDefault()
+    setErrorBuy(false)
+    setSelectValue({
+      name: value.nazev, 
+      id: value.id, 
+      price: value.price,
+      guid: value.guid,
+      code: value.code
+    })
+    dropdown('#variant-select').hide(false);
+  }
+
+  const getPrice = () => {
+    if(selectValue.price){
+      return selectValue.price.toLocaleString()
+    }else if(product.Variants.length) {
+      return 'od '+getMinPrice(product.Variants).price.toLocaleString()
+    }else{
+      return product.price.toLocaleString()
+    }
+  }
+
   const buy = (e, product) => {
     e.preventDefault()
     if(!selectValue.id.length && !!product.Variants?.length) {
@@ -108,6 +133,9 @@ const Product = ({
         newLocalBasket.variantProduct = selectValue.name
         newLocalBasket.price = selectValue.price
         newLocalBasket.id = selectValue.id
+        newLocalBasket.guid = selectValue.guid
+        newLocalBasket.code = selectValue.code
+
       }
       localBasket.push(newLocalBasket)
     }
@@ -116,23 +144,6 @@ const Product = ({
 
     dataContextDispatch({ state: localBasket, type: 'basket' })
     offcanvas('#canvas').show();
-  }
-
-  const selectVariant = (e, value) => {
-    e.preventDefault()
-    setErrorBuy(false)
-    setSelectValue({name: value.nazev, id: value.id, price: value.price})
-    dropdown('#variant-select').hide(false);
-  }
-
-  const getPrice = () => {
-    if(selectValue.price){
-      return selectValue.price.toLocaleString()
-    }else if(product.Variants.length) {
-      return 'od '+getMinPrice(product.Variants).price.toLocaleString()
-    }else{
-      return product.price.toLocaleString()
-    }
   }
 
   return (

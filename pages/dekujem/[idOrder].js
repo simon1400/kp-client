@@ -112,7 +112,6 @@ const ThankYou = ({
 
   useEffect(() => {
     if(status.length){
-      console.log(data.attributes.sendMail)
       if(!data.attributes.sendMail){
         axios.post("/api/mail/order", {...data.attributes, id: data.id}).then(async res => {
           const {data} = await updateOrder({variables: {

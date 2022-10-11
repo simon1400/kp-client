@@ -72,6 +72,8 @@ const productQuery = gql`
             nazev
             price
             id
+            guid
+            code
           }
           meta{
             title

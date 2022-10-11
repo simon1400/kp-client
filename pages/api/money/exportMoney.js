@@ -69,7 +69,7 @@ export default async function handler (req, res) {
           crudSingleProduct(data)
         }
         
-        if(dataVariantsCombine.length) {
+        if(Object.keys(dataVariantsCombine).length) {
           crudVariableProduct(dataVariantsCombine)
         }
         

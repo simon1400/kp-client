@@ -1,6 +1,7 @@
 import { AxiosSTRAPI } from "../restClient"
 
 const crudVariableProduct = (dataVariantsCombine) => {
+  console.log(dataVariantsCombine)
   for (const [key, value] of Object.entries(dataVariantsCombine)) {
     AxiosSTRAPI.get(`/api/produkties?filters[guid][$contains]=${value[0].guid}&publicationState=preview`).then(res => {
       if(res.data.data.length){
@@ -12,9 +13,10 @@ const crudVariableProduct = (dataVariantsCombine) => {
             price: item.price,
             guid: item.guid,
             stock: item.stock,
+            code: item.code
           })),
         }}).then(res => console.log('Success update variant --', res.data?.data?.attributes?.title))
-          .catch(err => console.error(err.response?.data))
+          .catch(err => console.error('Error update variant --', err.response?.data))
       }else{
         AxiosSTRAPI.post('/api/produkties', {data: {
           title: value[0].title,
@@ -31,6 +33,7 @@ const crudVariableProduct = (dataVariantsCombine) => {
             price: item.price,
             guid: item.guid,
             stock: item.stock,
+            code: item.code
           })),
           published_at: null
         }}).then(res => console.log('Success created variant --', res?.data?.data?.attributes?.title))

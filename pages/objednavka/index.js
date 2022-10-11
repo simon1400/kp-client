@@ -1,7 +1,7 @@
 import {useState, useEffect, useContext} from 'react'
 import { DataStateContext } from '../../context/dataStateContext'
 import validationForm from '../../function/validationForm'
-import {useQuery, useMutation} from '@apollo/client'
+import {useQuery} from '@apollo/client'
 import getPayData from '../../function/objednavka/payData'
 import getDeliveryData from '../../function/objednavka/deliveryData'
 import contactData from '../../function/objednavka/contactData'
@@ -11,7 +11,7 @@ import axios from 'axios'
 import {stateObj, errorObj} from '../../function/objednavka/objects'
 import payQuery from '../../queries/pay'
 import deliveryQuery from '../../queries/delivery'
-import {CreateOrder} from '../../queries/order'
+// import {CreateOrder} from '../../queries/order'
 import saleFrom from '../../function/objednavka/saleFrom'
 import { client } from '../../lib/api'
 import globalQuery from '../../queries/global'
@@ -48,7 +48,7 @@ const CheckoutWrap = ({dataGl}) => {
 
   const {data: payData} = useQuery(payQuery)
   const {data: deliveryData} = useQuery(deliveryQuery)
-  const [createOrder] = useMutation(CreateOrder)
+  // const [createOrder] = useMutation(CreateOrder)
 
   const [deliveryMethod, setDeliveryMethod] = useState([])
   const [payMethod, setPayMethod] = useState([])

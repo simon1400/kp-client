@@ -37,7 +37,6 @@ export async function getServerSideProps(ctx) {
     subTitle = blog?.add_title.split(' ') || []
   }
   
-
   title = splitArr(title, 2)
   subTitle = splitArr(subTitle, 2)
 
