@@ -41,8 +41,6 @@ const crudVariableProduct = (dataVariantsCombine) => {
               console.error('Failed create variant 2 --', err.response?.data?.error)
             }else if(err.response?.data) {
               console.error('Failed create variant 3 --', err.response?.data)
-            }else if(err.response?.data) {
-              console.error('Failed create variant 4 --', err.response?.data)
             }else{
               console.error('Failed create variant 5 --', err.response)
             }
