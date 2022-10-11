@@ -32,7 +32,11 @@ export async function getServerSideProps(ctx) {
   let blog = data.articles.data[0].attributes
 
   let title = blog?.title.split(' ') || []
-  let subTitle = blog?.add_title.split(' ') || []
+  let subTitle = []
+  if(blog?.add_title) {
+    subTitle = blog?.add_title.split(' ') || []
+  }
+  
 
   title = splitArr(title, 2)
   subTitle = splitArr(subTitle, 2)
