@@ -72,6 +72,8 @@ function MyApp({ Component, pageProps }) {
           <meta property="og:image" content={theImage} />
           <meta property="og:description" content={theDescription} />
           <meta property="og:site_name" content={defaultData.title} />
+          
+          <meta name="facebook-domain-verification" content="vvu78sihxe46ljw8fstydvnnt3n2au" />
 
           <script src="https://widget.packeta.com/v6/www/js/library.js"></script>
           <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@v2.8.0/dist/cookieconsent.js"></script>
