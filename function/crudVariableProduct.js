@@ -1,7 +1,7 @@
 import { AxiosSTRAPI } from "../restClient"
 
 const crudVariableProduct = (dataVariantsCombine) => {
-  console.log(dataVariantsCombine)
+
   for (const [key, value] of Object.entries(dataVariantsCombine)) {
     AxiosSTRAPI.get(`/api/produkties?filters[guid][$contains]=${value[0].guid}&publicationState=preview`).then(res => {
       if(res.data.data.length){

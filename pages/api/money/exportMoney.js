@@ -16,18 +16,51 @@ export default async function handler (req, res) {
       }
     }).filter(item => item !== undefined)
     
-    splitNameFiles.map(nameFile => {
+    // splitNameFiles.map(nameFile => {
 
-      var xml = readFileSync(`${dir}${nameFile}`, 'utf8');
+      // var xml = readFileSync(`${dir}${nameFile}`, 'utf8');
+      var xml = readFileSync(`${dir}Zasoby.xml`, 'utf8');
       var result = convert.xml2json(xml, {compact: true, spaces: 4});
 
       result = JSON.parse(result)
+      
 
       if(result?.MoneyData?.SeznamZasoba?.Zasoba){
 
         const data = [], dataVariants = [], dataVariantsCombine = {};
 
-        result['MoneyData']['SeznamZasoba']['Zasoba'].map(item => {
+        if(Array.isArray(result['MoneyData']['SeznamZasoba']['Zasoba'])) {
+          result['MoneyData']['SeznamZasoba']['Zasoba'].map(item => {
+            if(item['KmKarta']['Katalog']._text.indexOf('-') < 0){
+              data.push({
+                title: item['KmKarta']['Popis']._text,
+                slug: slugify(item['KmKarta']['Popis']._text, {
+                  lower: true,
+                  remove: /[*+~´,.()'"!:@]/g
+                }),
+                price: item['PC']['Cena1']['Cena']._text,
+                stock: item['StavZasoby']['Zasoba']._text,
+                code: item['KmKarta']['Katalog']._text,
+                guid: item['KmKarta']['GUID']._text,
+                published_at: null
+              })
+            }else{
+              dataVariants.push({
+                title: item['KmKarta']['Popis']._text,
+                slug: slugify(item['KmKarta']['Popis']._text, {
+                  lower: true,
+                  remove: /[*+~´,.()'"!:@]/g
+                }),
+                price: item['PC']['Cena1']['Cena']._text,
+                stock: item['StavZasoby']['Zasoba']._text,
+                code: item['KmKarta']['Katalog']._text,
+                guid: item['KmKarta']['GUID']._text,
+                magnetude: item['KmKarta']['Objem']._text+' ml'
+              })
+            }
+          })
+        }else{
+          const item = result['MoneyData']['SeznamZasoba']['Zasoba']
           if(item['KmKarta']['Katalog']._text.indexOf('-') < 0){
             data.push({
               title: item['KmKarta']['Popis']._text,
@@ -55,8 +88,8 @@ export default async function handler (req, res) {
               magnetude: item['KmKarta']['Objem']._text+' ml'
             })
           }
-        })
-
+        }
+        
         dataVariants.map(item => {
           if(dataVariantsCombine[item.code.split('-')[0]]){
             dataVariantsCombine[item.code.split('-')[0]].push(item)
@@ -75,12 +108,12 @@ export default async function handler (req, res) {
         
       }
 
-      unlink(`${dir}${nameFile}`, (err) => {
-        if (err) throw err;
-        console.log(`successfully deleted ${dir}${nameFile}`);
-      });
+      // unlink(`${dir}${nameFile}`, (err) => {
+      //   if (err) throw err;
+      //   console.log(`successfully deleted ${dir}${nameFile}`);
+      // });
 
-    })
+    // })
 
     res.status(200).json({some: 'good'});
 
