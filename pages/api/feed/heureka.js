@@ -31,14 +31,12 @@ export default async function handler (req, res) {
   if(req.method === 'POST') {
     console.log('POST /GENERATE FEEDS');
 
-    const data = req.body
-
     try{
       
       const productsRes = await axios.get(`${process.env.APP_API}/api/produkties?${query}`)
       const products = productsRes.data.data.map(item => ({id: item.id, ...item.attributes}))
 
-      // products.map(item => console.log(item.brand))
+      console.log(products.length)
       
       let productsData = [];
   
@@ -77,6 +75,8 @@ export default async function handler (req, res) {
         }
         productsData.push(...productVariants)
       }
+
+      console.log(productsData.length);
   
       const xmlHeureka = toXmlHeureka(productsData)
   
