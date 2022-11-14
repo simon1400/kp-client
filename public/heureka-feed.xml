@@ -2,7 +2,7 @@
   <SHOP>
 
 <SHOPITEM>
-     <ITEM_ID>285</ITEM_ID>
+     <ITEM_ID>3235</ITEM_ID>
      <PRODUCTNAME>butter LONDON | QuickFix Moisturizing Cuticle Balm - balzám na nehtovou kůžičku</PRODUCTNAME>
      <PRODUCT>butter LONDON | QuickFix Moisturizing Cuticle Balm - balzám na nehtovou kůžičku</PRODUCT>
      <DESCRIPTION>BUTTER LONDON - QUICKFIX MOISTURIZING CUTICLE BALM
@@ -35,6 +35,7 @@ Objem: 10 ml
      <URL>https://kralovksa-pece.cz/p/butter-london-quickfix-moisturizing-cuticle-balm</URL>
      <IMGURL>https://strapi.kralovska-pece.cz/uploads/Quick_Fix_Moisturizing_Cuticle_Balm_hydratacni_balzam_na_nehtovou_kuzicku_40be77a3d2_d94db6d472.jpg</IMGURL>
      <PRICE_VAT>480</PRICE_VAT>
+     <MANUFACTURER>butter LONDON</MANUFACTURER>
      <DELIVERY_DATE>0</DELIVERY_DATE>
      <CATEGORY>
         <CATEGORY_NAME>královská péče o Vaše nehty</CATEGORY_NAME>
@@ -42,7 +43,7 @@ Objem: 10 ml
    </SHOPITEM>
 
 <SHOPITEM>
-     <ITEM_ID>287</ITEM_ID>
+     <ITEM_ID>2929</ITEM_ID>
      <PRODUCTNAME>OZN | OZN - lak na nehty - CANDICE</PRODUCTNAME>
      <PRODUCT>OZN | OZN - lak na nehty - CANDICE</PRODUCT>
      <DESCRIPTION>OZN - LAK NA NEHTY - CANDICE
@@ -90,6 +91,7 @@ LAKY OZN NEOBSAHUJÍ:
      <URL>https://kralovksa-pece.cz/p/ozn-lak-na-nehty-candice</URL>
      <IMGURL>https://strapi.kralovska-pece.cz/uploads/OZN_lak_na_nehty_Candice_5c601b146f_83069c51d0.jpg</IMGURL>
      <PRICE_VAT>460</PRICE_VAT>
+     <MANUFACTURER>OZN</MANUFACTURER>
      <DELIVERY_DATE>14</DELIVERY_DATE>
      <CATEGORY>
         <CATEGORY_NAME>královská péče o Vaše nehty</CATEGORY_NAME>
@@ -97,7 +99,7 @@ LAKY OZN NEOBSAHUJÍ:
    </SHOPITEM>
 
 <SHOPITEM>
-     <ITEM_ID>288</ITEM_ID>
+     <ITEM_ID>1137</ITEM_ID>
      <PRODUCTNAME>Deborah Lippmann | Deborah Lippmann - Rich Girl - Hydratační krém na ruce SPF 25</PRODUCTNAME>
      <PRODUCT>Deborah Lippmann | Deborah Lippmann - Rich Girl - Hydratační krém na ruce SPF 25</PRODUCT>
      <DESCRIPTION>Deborah Lippmann Rich Girl hydratační krém na ruce zvláčňuje strukturu pokožky a zároveň ji ochraňuje před poškozením nadměrným
@@ -108,6 +110,7 @@ Objem: 85 g</DESCRIPTION>
      <URL>https://kralovksa-pece.cz/p/dl-rich-girl-krem-na-ruce</URL>
      <IMGURL>https://strapi.kralovska-pece.cz/uploads/deborah_lippmann_rich_girl_krem_na_ruce_fda56f7ec1_b2122d79b1.jpg</IMGURL>
      <PRICE_VAT>730</PRICE_VAT>
+     <MANUFACTURER>Deborah Lippmann</MANUFACTURER>
      <DELIVERY_DATE>0</DELIVERY_DATE>
      <CATEGORY>
         <CATEGORY_NAME>péče o tělo</CATEGORY_NAME>
@@ -115,7 +118,7 @@ Objem: 85 g</DESCRIPTION>
    </SHOPITEM>
 
 <SHOPITEM>
-     <ITEM_ID>304</ITEM_ID>
+     <ITEM_ID>0652</ITEM_ID>
      <PRODUCTNAME> | Dárkový poukaz - SALON - v hodnotě 1000 Kč</PRODUCTNAME>
      <PRODUCT> | Dárkový poukaz - SALON - v hodnotě 1000 Kč</PRODUCT>
      <DESCRIPTION>V BOUTIQUE SALONU MAXIMUS LZE DÁRKOVÝMI POUKAZY V HODNOTĚ 500 KČ, 1000 KČ A 2000 KČ ZAKOUPIT:
@@ -172,6 +175,7 @@ Děkujeme.
      <URL>https://kralovksa-pece.cz/p/darkovy-poukaz-salon-v-hodnote-1000-kc</URL>
      <IMGURL>https://strapi.kralovska-pece.cz/uploads/darkovy_poukaz_kralovska_pece_1000_6b5c38a9ab_dfe47a64fe.jpg</IMGURL>
      <PRICE_VAT>1000</PRICE_VAT>
+     <MANUFACTURER></MANUFACTURER>
      <DELIVERY_DATE>14</DELIVERY_DATE>
      <CATEGORY>
         <CATEGORY_NAME>Dárkové poukazy</CATEGORY_NAME>
@@ -179,13 +183,14 @@ Děkujeme.
    </SHOPITEM>
 
 <SHOPITEM>
-     <ITEM_ID>311</ITEM_ID>
-     <PRODUCTNAME>Eight & Bob | Originální kožené pouzdro na parfémy 30 ml - CAMEL</PRODUCTNAME>
-     <PRODUCT>Eight & Bob | Originální kožené pouzdro na parfémy 30 ml - CAMEL</PRODUCT>
-     <DESCRIPTION>Originální kožené pouzdro na parfémy Eight & Bob 30 ml. Krásné zpracování, luxusní a originální doplněk.</DESCRIPTION>
+     <ITEM_ID>1644</ITEM_ID>
+     <PRODUCTNAME>Eight &amp; Bob | Originální kožené pouzdro na parfémy 30 ml - CAMEL</PRODUCTNAME>
+     <PRODUCT>Eight &amp; Bob | Originální kožené pouzdro na parfémy 30 ml - CAMEL</PRODUCT>
+     <DESCRIPTION>Originální kožené pouzdro na parfémy Eight &amp; Bob 30 ml. Krásné zpracování, luxusní a originální doplněk.</DESCRIPTION>
      <URL>https://kralovksa-pece.cz/p/eightandbob-forest-leather-case-set-camel</URL>
      <IMGURL>https://strapi.kralovska-pece.cz/uploads/Eightandbob_kozene_pouzdro_leathercase_hneda_64cde8d555_bf65b21989.png</IMGURL>
      <PRICE_VAT>1490</PRICE_VAT>
+     <MANUFACTURER>Eight &amp; Bob</MANUFACTURER>
      <DELIVERY_DATE>0</DELIVERY_DATE>
      <CATEGORY>
         <CATEGORY_NAME>Niche parfémy</CATEGORY_NAME>
@@ -193,7 +198,7 @@ Děkujeme.
    </SHOPITEM>
 
 <SHOPITEM>
-     <ITEM_ID>323</ITEM_ID>
+     <ITEM_ID>1136</ITEM_ID>
      <PRODUCTNAME>Deborah Lippmann | Deborah Lippmann - Steppin' Out  - hydratační krém na nohy</PRODUCTNAME>
      <PRODUCT>Deborah Lippmann | Deborah Lippmann - Steppin' Out  - hydratační krém na nohy</PRODUCT>
      <DESCRIPTION>Deborah Lippmann Steppin' Out výživný hydratační krém na nohy, který si lehce poradí se suchou a namáhanou pokožkou vašich
@@ -206,6 +211,7 @@ Objem: 147 g</DESCRIPTION>
      <URL>https://kralovksa-pece.cz/p/dl-stepping-out-krem-na-nohy</URL>
      <IMGURL>https://strapi.kralovska-pece.cz/uploads/deborah_lippmann_steppin_out_krem_na_nohy_0645cf1666_759fbaebb0.jpg</IMGURL>
      <PRICE_VAT>750</PRICE_VAT>
+     <MANUFACTURER>Deborah Lippmann</MANUFACTURER>
      <DELIVERY_DATE>0</DELIVERY_DATE>
      <CATEGORY>
         <CATEGORY_NAME>péče o tělo</CATEGORY_NAME>
@@ -213,7 +219,7 @@ Objem: 147 g</DESCRIPTION>
    </SHOPITEM>
 
 <SHOPITEM>
-     <ITEM_ID>324</ITEM_ID>
+     <ITEM_ID>1940</ITEM_ID>
      <PRODUCTNAME>Und Gretel | WINT řasenka - Chestnut 01</PRODUCTNAME>
      <PRODUCT>Und Gretel | WINT řasenka - Chestnut 01</PRODUCT>
      <DESCRIPTION>WINT - PEČUJÍCÍ ŘASENKA, KTERÁ PRODLOUŽÍ A ZAHUSTÍ VAŠE ŘASY. 100% PŘÍRODNÍ, ORGANICKÁ, VEGANSKÁ, V KVALITĚ PRODUKTŮ PRO
@@ -258,6 +264,7 @@ vrstvu lehce zaschnout a pak aplikaci opakujte.</DESCRIPTION>
      <URL>https://kralovksa-pece.cz/p/und-gretel-wint-mascara-chestnut-01</URL>
      <IMGURL>https://strapi.kralovska-pece.cz/uploads/Und_Gretel_WINT_01_Chestnut_rasenka_9f37699cf7_46d264b2b5.jpg</IMGURL>
      <PRICE_VAT>930</PRICE_VAT>
+     <MANUFACTURER>Und Gretel</MANUFACTURER>
      <DELIVERY_DATE>0</DELIVERY_DATE>
      <CATEGORY>
         <CATEGORY_NAME>dekorativní kosmetika pro zářivé líčení</CATEGORY_NAME>
@@ -265,7 +272,7 @@ vrstvu lehce zaschnout a pak aplikaci opakujte.</DESCRIPTION>
    </SHOPITEM>
 
 <SHOPITEM>
-     <ITEM_ID>326</ITEM_ID>
+     <ITEM_ID>1139</ITEM_ID>
      <PRODUCTNAME>Deborah Lippmann | 2 Second Nail Primer - kapky pro dokonale připravené nehty</PRODUCTNAME>
      <PRODUCT>Deborah Lippmann | 2 Second Nail Primer - kapky pro dokonale připravené nehty</PRODUCT>
      <DESCRIPTION>Začněte lakování nehtů s perfektně připraveným podkladem. Před tím, než použijete podkladový lak, aplikujte tyto na proteiny
@@ -278,6 +285,7 @@ Objem: 15 ml</DESCRIPTION>
      <URL>https://kralovksa-pece.cz/p/dl-kapky-na-pripravu-lakovani-odmasteni</URL>
      <IMGURL>https://strapi.kralovska-pece.cz/uploads/deborah_lippmann_2_second_nail_primer_4d2271380d_ced1af0942.jpg</IMGURL>
      <PRICE_VAT>365</PRICE_VAT>
+     <MANUFACTURER>Deborah Lippmann</MANUFACTURER>
      <DELIVERY_DATE>0</DELIVERY_DATE>
      <CATEGORY>
         <CATEGORY_NAME>doplňky pro manikúru</CATEGORY_NAME>
@@ -285,7 +293,7 @@ Objem: 15 ml</DESCRIPTION>
    </SHOPITEM>
 
 <SHOPITEM>
-     <ITEM_ID>327</ITEM_ID>
+     <ITEM_ID>2067</ITEM_ID>
      <PRODUCTNAME>Tiziana Terenzi | svíčka - Spicy Snow - styl Cubic - vánoční vůně</PRODUCTNAME>
      <PRODUCT>Tiziana Terenzi | svíčka - Spicy Snow - styl Cubic - vánoční vůně</PRODUCT>
      <DESCRIPTION>VONNÁ SVÍCE S VŮNÍ NÁDHERNÉHO VÁNOČNÍHO PARFÉMU SPICY SNOW
@@ -325,6 +333,7 @@ Svíčky jsou vyráběny v Itálii.</DESCRIPTION>
      <URL>https://kralovksa-pece.cz/p/cubic-spicy-snow-vonna-svicka</URL>
      <IMGURL>https://strapi.kralovska-pece.cz/uploads/Tiziana_Terenzi_svice_Spicy_Snow_eb6e97cee1_164a452116.jpg</IMGURL>
      <PRICE_VAT>2600</PRICE_VAT>
+     <MANUFACTURER>Tiziana Terenzi</MANUFACTURER>
      <DELIVERY_DATE>0</DELIVERY_DATE>
      <CATEGORY>
         <CATEGORY_NAME>Svíčky a difuzéry</CATEGORY_NAME>
@@ -332,7 +341,7 @@ Svíčky jsou vyráběny v Itálii.</DESCRIPTION>
    </SHOPITEM>
 
 <SHOPITEM>
-     <ITEM_ID>332</ITEM_ID>
+     <ITEM_ID>0650</ITEM_ID>
      <PRODUCTNAME>Linda Meredith | Dárkový poukaz - SALON - Kosmetika - KRÁLOVSKÉ KOSMETICKÉ OŠETŘENÍ LINDA MEREDITH</PRODUCTNAME>
      <PRODUCT>Linda Meredith | Dárkový poukaz - SALON - Kosmetika - KRÁLOVSKÉ KOSMETICKÉ OŠETŘENÍ LINDA MEREDITH</PRODUCT>
      <DESCRIPTION>LINDA MEREDITH - KRÁLOVNA KOSMETICKÉHO OŠETŘENÍ.
@@ -385,9 +394,4005 @@ Děkujeme.
      <URL>https://kralovksa-pece.cz/p/darkovy-poukaz-salon-kosmetika-kralovske-kosmeticke-osetreni-linda-meredith</URL>
      <IMGURL>https://strapi.kralovska-pece.cz/uploads/darkovy_poukaz_kralovska_pece_kralovska_kosmetika_a338db647b_9cf6d848ef.jpg</IMGURL>
      <PRICE_VAT>2190</PRICE_VAT>
+     <MANUFACTURER>Linda Meredith</MANUFACTURER>
      <DELIVERY_DATE>14</DELIVERY_DATE>
      <CATEGORY>
         <CATEGORY_NAME>Dárkové poukazy</CATEGORY_NAME>
+     </CATEGORY>
+   </SHOPITEM>
+
+<SHOPITEM>
+     <ITEM_ID>1480</ITEM_ID>
+     <PRODUCTNAME>Eight &amp; Bob | Nuit de Megéve - Travel Size 20ml</PRODUCTNAME>
+     <PRODUCT>Eight &amp; Bob | Nuit de Megéve - Travel Size 20ml</PRODUCT>
+     <DESCRIPTION>EIGHT &amp; BOB - NUIT DE MEGÉVE - TRAVEL SIZE - NICHE PARFÉM, KTERÝ PŘIPOMÍNÁ MAGICKÉ NOCI V MEGÉVE.
+
+Ve třicátých letech bylo lyžování nový sportem, vyhrazeným pro společenskou smetánku. Ústředním místem pro tento nový sport byl
+St. Moritz, jehož častým návštěvníkem Albert byl.
+
+Albert Fouquet byl pozván do domu jeho přítele Nikolase, kde se potkal s šarmantním krejčím, který každoročně cestoval z Megéve do
+Paříže, aby svým klientům nabídl na míru šité lyžařské oblečení. Když bral Albertovi míry, zmínil se o novém středisku Megéve. Za
+pár měsíců se již v tomto středisku pořádaly pobyty francouzské smetánky. Při svém prvním pobytu se zde Albert setkal s
+nejkrásnější dívkou, kterou kdy viděl. Potkal zde osudovou Annicke.
+
+
+PARFÉM VZNIKL JAKO HOLD TOMUTO SETKÁNÍ. VŮNĚ HORSKÉHO VZDUCHU, DŘEVA PRASKAJÍCÍHO V KRBU, NÁLADA VYBRANÉHO VEČÍRKU, TO JE NUIT DE
+MEGÉVE.
+
+ 
+
+Hlava: hřebíček, grapefruit, petit grain
+Srdce: černá káva, orris, tonka
+Tělo: mošus, tabák, vetiver</DESCRIPTION>
+     <URL>https://kralovksa-pece.cz/p/eightandbob-travel-size-nuit-de-megeve</URL>
+     <IMGURL>https://strapi.kralovska-pece.cz/uploads/eightandbob_nuit_de_megeve_travel_size_babceac888_638c975b0f.jpg</IMGURL>
+     <PRICE_VAT>1300</PRICE_VAT>
+     <MANUFACTURER>Eight &amp; Bob</MANUFACTURER>
+     <DELIVERY_DATE>0</DELIVERY_DATE>
+     <CATEGORY>
+        <CATEGORY_NAME>Niche parfémy</CATEGORY_NAME>
+     </CATEGORY>
+   </SHOPITEM>
+
+<SHOPITEM>
+     <ITEM_ID>1490</ITEM_ID>
+     <PRODUCTNAME>Eight &amp; Bob | svíčka - Varenna</PRODUCTNAME>
+     <PRODUCT>Eight &amp; Bob | svíčka - Varenna</PRODUCT>
+     <DESCRIPTION>VONNÁ SVÍCE VARENNA EIGHT &amp; BOB INSPIROVANÁ NEJKRÁSNĚJŠÍMI KRAJINAMI SVĚTA.
+
+Svíce Eight &amp; Bob jsou vyráběny ručně. Jejich eskluzivitu podtrhuje 100% rostlinný vosk a bezparafínové složení.
+
+
+Objem: 190 g
+
+ 
+
+
+VONNÁ SVÍCE VARENNA EIGHT &amp; BOB
+
+Hlava: geranium, jalovec, zelené lístky
+Srdce: konvalinka, růže, bílé květy
+Tělo: mošus, pačuli, vetiver</DESCRIPTION>
+     <URL>https://kralovksa-pece.cz/p/eightandbob-vonna-svice-varenna</URL>
+     <IMGURL>https://strapi.kralovska-pece.cz/uploads/varenna_eightandbob_svicka_bc0d6ddd93_de0a6f0038.jpg</IMGURL>
+     <PRICE_VAT>1750</PRICE_VAT>
+     <MANUFACTURER>Eight &amp; Bob</MANUFACTURER>
+     <DELIVERY_DATE>0</DELIVERY_DATE>
+     <CATEGORY>
+        <CATEGORY_NAME>Svíčky a difuzéry</CATEGORY_NAME>
+     </CATEGORY>
+   </SHOPITEM>
+
+<SHOPITEM>
+     <ITEM_ID>0908</ITEM_ID>
+     <PRODUCTNAME>Nailberry | lak na nehty - 50 shades</PRODUCTNAME>
+     <PRODUCT>Nailberry | lak na nehty - 50 shades</PRODUCT>
+     <DESCRIPTION>50 SHADES - OXYGENATED SHEER GRAY BLACK - TŘPYTIVÁ ŠEDOČERNÁ
+
+Kolekce L'Oxygéné získala mnoho prestižních ocenění pro své složení a barevnou škálu. Unikátní formule nabízí jedny z
+nejkvalitnějších laků na světě.
+
+12 Free (bez zatěžujících toxických látek)
+
+Vegan
+
+Cruelty Free Certified (není testováno na zvířatech)
+
+Halal Certified
+
+Prodyšnost
+
+Propustný pro vlhkost
+
+Gluten Free (bez lepku)
+
+Patentované technologie jsou použity za účelem zdravější péče o nehty. Kolekce L'Oxygéné neobsahuje ftaláty včetně DBP, toluen,
+formaldehyd ani složky na základě formaldehydu, kafr, xylen, ethyl tosylamid, triphenyl phosphat, alkohol, parabeny, živočišné
+složky a lepek.
+
+
+ 
+
+TIPY PRO PERFEKTNÍ LAKOVÁNÍ:
+
+ * lakujte na čisté, odmaštěné a vyleštěné nehty
+ * aplikujte jednu vrstvu podlaku, následně barevný lak a jednu vrstvu finálního nadlaku
+ * skvěle tvarovaný štěteček Nailberry vám umožní docílit mandlového tvaru nehtu jako od profesionálů
+
+ 
+
+Objem: 15 ml
+
+ </DESCRIPTION>
+     <URL>https://kralovksa-pece.cz/p/nailberry-lak-na-nehty-50-shades</URL>
+     <IMGURL>https://strapi.kralovska-pece.cz/uploads/0908_faa1974737_2793976fa5.jpg</IMGURL>
+     <PRICE_VAT>480</PRICE_VAT>
+     <MANUFACTURER>Nailberry</MANUFACTURER>
+     <DELIVERY_DATE>14</DELIVERY_DATE>
+     <CATEGORY>
+        <CATEGORY_NAME>královská péče o Vaše nehty</CATEGORY_NAME>
+     </CATEGORY>
+   </SHOPITEM>
+
+<SHOPITEM>
+     <ITEM_ID>1491</ITEM_ID>
+     <PRODUCTNAME>Eight &amp; Bob | svíčka - Telluride</PRODUCTNAME>
+     <PRODUCT>Eight &amp; Bob | svíčka - Telluride</PRODUCT>
+     <DESCRIPTION>VONNÁ SVÍCE TELLURIDE EIGHT &amp; BOB INSPIROVANÁ NEJKRÁSNĚJŠÍMI KRAJINAMI SVĚTA.
+
+Svíce Eight &amp; Bob jsou vyráběny ručně. Jejich eskluzivitu podtrhuje 100% rostlinný vosk a bezparafínové složení.
+
+
+Objem: 190 g
+
+ 
+
+
+VONNÁ SVÍCE TELLURIDE EIGHT &amp; BOB
+
+Hlava: karamelizované jablko, citron
+Srdce: bílé květy, pivoňka
+Tělo: pralinky, santalové dřevo, vanilka</DESCRIPTION>
+     <URL>https://kralovksa-pece.cz/p/eightandbob-vonna-svice-telluride</URL>
+     <IMGURL>https://strapi.kralovska-pece.cz/uploads/telluride_eightandbob_svicka_4a5741f298_303745e312.jpg</IMGURL>
+     <PRICE_VAT>1750</PRICE_VAT>
+     <MANUFACTURER>Eight &amp; Bob</MANUFACTURER>
+     <DELIVERY_DATE>0</DELIVERY_DATE>
+     <CATEGORY>
+        <CATEGORY_NAME>Svíčky a difuzéry</CATEGORY_NAME>
+     </CATEGORY>
+   </SHOPITEM>
+
+<SHOPITEM>
+     <ITEM_ID>1941</ITEM_ID>
+     <PRODUCTNAME>Und Gretel | WINT řasenka - Darkest Black 02</PRODUCTNAME>
+     <PRODUCT>Und Gretel | WINT řasenka - Darkest Black 02</PRODUCT>
+     <DESCRIPTION>WINT - PEČUJÍCÍ ŘASENKA, KTERÁ PRODLOUŽÍ A ZAHUSTÍ VAŠE ŘASY. 100% PŘÍRODNÍ, ORGANICKÁ, VEGANSKÁ, V KVALITĚ PRODUKTŮ PRO
+PROFESIONÁLY. HAUTE COUTURE PRO VAŠE OČI.
+
+Řasenka Und Gretel WINT skvěle definuje Váš pohled, prodlouží a zahustí Vaše řasy. Jak už napovídá jméno, krásné řasy budou jako
+vytvarované větrem.
+
+Objem: 5 ml
+
+ 
+
+ODSTÍN DARKEST BLACK 02
+
+Tento odstín má hluboce černou barvu s vysokou pigmentací a matnou texturou. Jsou zde kombinovány ty nejtmavší přírodní pigmenty s
+pečujícím složení. Tento odstín obarví Vaše řasy sytou černou barvou s vysokým krytím.
+
+ 
+
+UNIKÁTNÍ PEČUJÍCÍ SLOŽENÍ
+
+Babasový olej - získává se z jihoamerické palmy, známé jako strom života. Její ořechy jsou považovány za nejtvrdší na světě.
+Získává se z nich ceněný olej, který má uklidňující vlastnosti. Po nadšení na kůži přináší jemná až hedvábný pocit.
+
+Včelí vosk - je jedním z nejstarších balzámů. V porovnání s oleji je pevnější, proto vhodný na příjemnou aplikaci. Včelí vosk
+vytváří na pokožce lehký ochranný film, který chrání před dehydratací. Zároveň vyhlazuje jemné linky.
+
+Bambucké máslo - zanechává kůži elastickou a zabraňuje dehydrataci.
+
+Olej ze slunečnicových semínek - olej obsahuje kyselinu linolovou, která podporuje zdrabí buňky a buněčné membrány.
+
+ 
+
+TIPY PRO POUŽITÍ
+
+Pro objem: kartáček veďte jen koncích řas, lehce přitlačte. Opakujte ještě jednou a kartáček táhněte směrem ke špičkám řas.
+
+Pro maximální objem: kartáček veďte od začátku řas až po jejich konec.
+
+Důležité: nepřejíždějte opakovaně po řasách, odebírali byste přírodní pigmenty. Pokud chcete intenzivnější výsledek, nechte první
+vrstvu lehce zaschnout a pak aplikaci opakujte.</DESCRIPTION>
+     <URL>https://kralovksa-pece.cz/p/und-gretel-wint-mascara-darkest-black-02</URL>
+     <IMGURL>https://strapi.kralovska-pece.cz/uploads/Und_Gretel_WINT_02_Darkest_Black_raseka_3ac9580e0e_f662c21ddc.jpg</IMGURL>
+     <PRICE_VAT>930</PRICE_VAT>
+     <MANUFACTURER>Und Gretel</MANUFACTURER>
+     <DELIVERY_DATE>0</DELIVERY_DATE>
+     <CATEGORY>
+        <CATEGORY_NAME>dekorativní kosmetika pro zářivé líčení</CATEGORY_NAME>
+     </CATEGORY>
+   </SHOPITEM>
+
+<SHOPITEM>
+     <ITEM_ID>1740</ITEM_ID>
+     <PRODUCTNAME>Deborah Lippmann | lak na nehty - Great Balls Of Fire </PRODUCTNAME>
+     <PRODUCT>Deborah Lippmann | lak na nehty - Great Balls Of Fire </PRODUCT>
+     <DESCRIPTION>DEBORAH LIPPMANN - KOLEKCE GEL LAB PRO
+
+Laky na nehty řady Gel Lab Pro patří svými vlastnostmi a způsobem aplikace a odlakování do standardních laků na nehty. Gelovou
+technologii připomínají svým finálním vzhledem (leskem a povrchem). Toto patentované 7FREE složení obsahuje aktivní ingredience,
+které podporují zdraví nehtů. Zároveň nabízí nádherné barvy a dlouhotrvající lesk vaší manikúry.
+
+TIPY PRO PERFEKTNÍ LAKOVÁNÍ:
+
+ * lakujte na čisté, odmaštěné a vyleštěné nehty (pro perfektní výsledky použijte 2 Second Primer a podlaky a nadlaky z řady Gel
+   Lab Pro Debory Lippmann)
+ * aplikujte jednu vrstvu podlaku, následně barevný lak a jednu vrstvu finálního nadlaku.
+
+ 
+
+Objem: 15 ml</DESCRIPTION>
+     <URL>https://kralovksa-pece.cz/p/dl-lak-na-nehty-great-balls-of-fire-glp</URL>
+     <IMGURL>https://strapi.kralovska-pece.cz/uploads/deborah_lippmann_great_balls_of_fire_fff4c56f2c_567794dea1.jpg</IMGURL>
+     <PRICE_VAT>520</PRICE_VAT>
+     <MANUFACTURER>Deborah Lippmann</MANUFACTURER>
+     <DELIVERY_DATE>0</DELIVERY_DATE>
+     <CATEGORY>
+        <CATEGORY_NAME>královská péče o Vaše nehty</CATEGORY_NAME>
+     </CATEGORY>
+   </SHOPITEM>
+
+<SHOPITEM>
+     <ITEM_ID>1493</ITEM_ID>
+     <PRODUCTNAME>Eight &amp; Bob | svíčka - Lord Howe - Mer de Tasman</PRODUCTNAME>
+     <PRODUCT>Eight &amp; Bob | svíčka - Lord Howe - Mer de Tasman</PRODUCT>
+     <DESCRIPTION>VONNÁ SVÍCE LORD HOWE - MER DE TASMAN EIGHT &amp; BOB JE INSPIROVANÁ NEJKRÁSNĚJŠÍMI KRAJINAMI SVĚTA.
+
+Svíce Eight &amp; Bob jsou vyráběny ručně. Jejich eskluzivitu podtrhuje 100% rostlinný vosk a bezparafínové složení.
+
+
+Objem: 190 g
+
+ 
+
+VONNÁ SVÍCE LORD HOWE - MER DE TASMAN EIGHT &amp; BOB
+
+Hlava: geranium, grapefruit, pepř
+Srdce: cyklámen, gardénie, jasmín
+Tělo: cedrové dřevo, mošus, pačuli</DESCRIPTION>
+     <URL>https://kralovksa-pece.cz/p/eightandbob-vonna-svice-lord-howe</URL>
+     <IMGURL>https://strapi.kralovska-pece.cz/uploads/eightandbob_svicka_lord_howe_cista_8db63d25cb_f84273b39a.jpg</IMGURL>
+     <PRICE_VAT>1750</PRICE_VAT>
+     <MANUFACTURER>Eight &amp; Bob</MANUFACTURER>
+     <DELIVERY_DATE>0</DELIVERY_DATE>
+     <CATEGORY>
+        <CATEGORY_NAME>Svíčky a difuzéry</CATEGORY_NAME>
+     </CATEGORY>
+   </SHOPITEM>
+
+<SHOPITEM>
+     <ITEM_ID>1910</ITEM_ID>
+     <PRODUCTNAME>Und Gretel | LIETH Make-Up - Beige 03</PRODUCTNAME>
+     <PRODUCT>Und Gretel | LIETH Make-Up - Beige 03</PRODUCT>
+     <DESCRIPTION>PEČUJÍCÍ LEHKÝ MAKE UP LIETH, KTERÝ OKAMŽITĚ SPLYNE S VAŠÍ PLETÍ. 100% PŘÍRODNÍ, ORGANICKÝ, VEGANSKÝ, V KVALITĚ PRODUKTŮ PRO
+PROFESIONÁLY.
+
+Make up Leith od mimořádné značky Und Gretel má lehkou krémovou strukturu a pečující složení. Jméno LEITH je odvozeno ze staré
+němčiny a znamená "světlo" nebo také "lehkost".
+
+Složením je veganský, organický a samozřejmostí je netestování na zvířatech.
+
+Objem: 30 ml
+
+ 
+
+ODSTÍN BEIGE 03
+
+Make - Up LIETH v barvě BEIGE 03 se perfektně hodí ke středním tónům pleti s růžovými podtóny. Barevné spektrum je od jantarové,
+přes medovou až po karamelovou.
+
+ 
+
+UNIKÁTNÍ PEČUJÍCÍ SLOŽENÍ
+
+Heřmánkový extrakt - ceněný pro své hojivé a uklidňující účinky
+
+Šalvěj muškátová - éterický olej ze šalvěje muškátové působí po celou dobu, kdy je LIETH na Vaší pleti. Uvolňuje napětí v pleti a
+má přirozené antibakteriální a protizánětlivé účinky.
+
+Bílý koaolin - platí za nejjemnější minerální hlínu s úžasnými pečujícími vlastnostmi. Stará se o suchou a citlivou pleť. Jako
+bonus je přirozeným lehkým UV faktorem.
+
+Minerály - doslova se spojí s pletí a tím se krásně propojí barevné pigmenty
+
+Avokádový olej - je pletí dobře přijímaný a působí jako výživa, nezatěžuje pleť. Obsažené mastné kyseliny zlepšují strukturu pleti
+a vyživují buňky vitamínem A a E. Tento ceněný avokádový olej podporuje obnovu buněk a chrání pleť před oxidačním stresem.
+
+ 
+
+TIPY PRO POUŽITÍ
+
+Před použitím vždy lehce protřepte.
+
+Pro nalíčení použijte své prsty. Díky obsahu pečujících olejů a rostlinných extraktů a přírodních pigmentů v kombinaci s teplem
+Vašich rukou se LIETH nádherně a neviditelně spojí s pokožkou.
+
+Pokud si přejete silnější krytí, jednoduše můžete LIETH nanést opakovaně a vrstvením dosáhnout požadovaného výsledku. Mezi
+nanášením jednotlivých vrstev chvilku počkejte, dokud se spodní vrstva Make-Upu dokonale nevstřebá do pokožky. 
+
+Make-Up LIETH Vám vydrží, proto doporučujeme koupit druhý odstín a dva odstíny jednoduše smíchat ve Vaší dlani. Získáte produkt
+pro letní opálení i zimní světlost pokožky.
+
+Pokud chcete získat přirozený rozjasňovač, smíchejte LIETH s trochou očních stínů IMBE SEACHELL 04. Efekt bude nádherný a
+přirozený jas s kapkou pravé perleti.
+
+ 
+
+ 
+
+ 
+
+ </DESCRIPTION>
+     <URL>https://kralovksa-pece.cz/p/und-gretel-lieth-foundation-beige-03</URL>
+     <IMGURL>https://strapi.kralovska-pece.cz/uploads/Und_Gretel_LIETH_03_Beige_odstin_3ccbe27214_fb2a4cf60f.jpg</IMGURL>
+     <PRICE_VAT>1410</PRICE_VAT>
+     <MANUFACTURER>Und Gretel</MANUFACTURER>
+     <DELIVERY_DATE>0</DELIVERY_DATE>
+     <CATEGORY>
+        <CATEGORY_NAME>dekorativní kosmetika pro zářivé líčení</CATEGORY_NAME>
+     </CATEGORY>
+   </SHOPITEM>
+
+<SHOPITEM>
+     <ITEM_ID>0654</ITEM_ID>
+     <PRODUCTNAME> | Dárkový poukaz pro nákup v E-SHOPU Královská péče</PRODUCTNAME>
+     <PRODUCT> | Dárkový poukaz pro nákup v E-SHOPU Královská péče</PRODUCT>
+     <DESCRIPTION>TENTO DÁRKOVÝ POUKAZ SLOUŽÍ K NÁKUPU NA WWW.KRALOVSKA.PECE.CZ, KDE JEDNODUŠE VLOŽÍTE JEHO UNIKÁTNÍ KÓD DO OBJEDNÁVKY A BUDE
+ODEČTENA PŘÍSLUŠNÁ HODNOTA.
+
+
+INFORMACE K DÁRKOVÝM POUKAZŮM:
+
+- Dárkové poukazy zasíláme v dárkové zlaté obálce, jsou tedy ihned připraveny k darování. Pokud chcete dárkový poukaz zaslat
+elektornicky, napište nám požadovanou emailovou adresu do komentáře k objednávce.
+
+- Pokud si přejete do dárkového poukazu věnování, prosím sdělte nám to do komentáře k objednávce.
+
+- Detailní informace o službách je uvedena také na www.boutique-salon-maximus.cz.
+
+- Pro nákup na www.kralovska-pece.cz je na poukazu uveden unikátní kód, který obdarovaný jednoduše použije při platbě v našem
+e-shopu.
+
+- Standardní platnost dárkového poukazu je půl roku od data vystavení. Pokud je třeba se domluvit jinak, prosím kontaktujte nás.
+Děkujeme.
+
+- Pokud si přejete individuální domluvu ohledně dárkových poukazů, prosím kontaktujte nás. O vše se postaráme k Vaší spokojenosti.
+
+- Dárkové poukazy nemohou být proplaceny.</DESCRIPTION>
+     <URL>https://kralovksa-pece.cz/p/darkovy-poukaz-pro-nakup-v-e-shopu-kralovska-pece</URL>
+     <IMGURL>https://strapi.kralovska-pece.cz/uploads/Kralovska_pece_darkovy_poukaz_bafe40ce7d_4efd4f353c.jpg</IMGURL>
+     <PRICE_VAT>2000</PRICE_VAT>
+     <MANUFACTURER></MANUFACTURER>
+     <DELIVERY_DATE>14</DELIVERY_DATE>
+     <CATEGORY>
+        <CATEGORY_NAME>Dárkové poukazy</CATEGORY_NAME>
+     </CATEGORY>
+   </SHOPITEM>
+
+<SHOPITEM>
+     <ITEM_ID>1964</ITEM_ID>
+     <PRODUCTNAME>Und Gretel | LIETH make up - Beige 03 - vzorek</PRODUCTNAME>
+     <PRODUCT>Und Gretel | LIETH make up - Beige 03 - vzorek</PRODUCT>
+     <DESCRIPTION>PEČUJÍCÍ LEHKÝ MAKE UP LIETH, KTERÝ OKAMŽITĚ SPLYNE S VAŠÍ PLETÍ. 100% PŘÍRODNÍ, ORGANICKÝ, VEGANSKÝ, V KVALITĚ PRODUKTŮ PRO
+PROFESIONÁLY.
+
+Make up Leith od mimořádné značky Und Gretel má lehkou krémovou strukturu a pečující složení. Jméno LIETH je odvozeno ze staré
+němčiny a znamená "světlo" nebo také "lehkost".
+
+Složením je veganský, organický a samozřejmostí je netestování na zvířatech.
+
+Objem standardního balení: 30 ml
+
+Objem vzorku: 1 ml
+
+ 
+
+ODSTÍN BEIGE 03
+
+Make - Up LIETH v barvě PORCELAIN ROSE 01 se perfektně hodí k velmi světlé a světlé pleti se studenými nebo růžovými tóny. Barevné
+sperktum je od alabastrové přes porcelánovou. Odstín Porcelain Rose 01 je ideální pro pleť, která na slunci rychle zčevená.
+
+ 
+
+UNIKÁTNÍ PEČUJÍCÍ SLOŽENÍ
+
+Heřmánkový extrakt - ceněný pro své hojivé a uklidňující účinky
+
+Šalvěj muškátová - éterický olej ze šalvěje muškátové působí po celou dobu, kdy je LIETH na Vaší pleti. Uvolňuje napětí v pleti a
+má přirozené antibakteriální a protizánětlivé účinky.
+
+Bílý koaolin - platí za nejjemnější minerální hlínu s úžasnými pečujícími vlastnostmi. Stará se o suchou a citlivou pleť. Jako
+bonus je přirozeným lehkým UV faktorem.
+
+Minerály - doslova se spojí s pletí a tím se krásně propojí barevné pigmenty.
+
+Avokádový olej - je pletí dobře přijímaný a působí jako výživa, nezatěžuje pleť. Obsažené mastné kyseliny zlepšují strukturu pleti
+a vyživují buňky vitamínem A a E. Tento ceněný avokádový olej podporuje obnovu buněk a chrání pleť před oxidačním stresem.
+
+ 
+
+TIPY PRO POUŽITÍ
+
+Před použitím vždy lehce protřepte.
+
+Pro nalíčení použijte své prsty. Díky obsahu pečujících olejů a rostlinných extraktů a přírodních pigmentů v kombinaci s teplem
+Vašich rukou se LIETH nádherně a neviditelně spojí s pokožkou.
+
+Pokud si přejete silnější krytí, jednoduše můžete LIETH nanést opakovaně a vrstvením dosáhnout požadovaného výsledku. Mezi
+nanášením jednotlivých vrstev chvilku počkejte, dokud se spodní vrstva Make-Upu dokonale nevstřebá do pokožky. 
+
+Make-Up LIETH Vám vydrží, proto doporučujeme koupit druhý odstín a dva odstíny jednoduše smíchat ve Vaší dlani. Získáte produkt
+pro letní opálení i zimní světlost pokožky.
+
+Pokud chcete získat přirozený rozjasňovač, smíchejte LIETH s trochou očních stínů IMBE SEACHELL 04. Efekt bude nádherný a
+přirozený jas s kapkou pravé perleti.</DESCRIPTION>
+     <URL>https://kralovksa-pece.cz/p/und-gretel-leith-03-vzorek</URL>
+     <IMGURL>https://strapi.kralovska-pece.cz/uploads/U_Nd_Gretel_LIETH_Sachets_vzorky_915badbf5d_cd4e745e02.jpg</IMGURL>
+     <PRICE_VAT>49</PRICE_VAT>
+     <MANUFACTURER>Und Gretel</MANUFACTURER>
+     <DELIVERY_DATE>0</DELIVERY_DATE>
+     <CATEGORY>
+        <CATEGORY_NAME>dekorativní kosmetika pro zářivé líčení</CATEGORY_NAME>
+     </CATEGORY>
+   </SHOPITEM>
+
+<SHOPITEM>
+     <ITEM_ID>1494</ITEM_ID>
+     <PRODUCTNAME>Eight &amp; Bob | svíčka - Tanganika</PRODUCTNAME>
+     <PRODUCT>Eight &amp; Bob | svíčka - Tanganika</PRODUCT>
+     <DESCRIPTION>VONNÁ SVÍCE TANGANIKA EIGHT &amp; BOB JE INSPIROVANÁ NEJKRÁSNĚJŠÍMI KRAJINAMI SVĚTA.
+
+Svíce Eight &amp; Bob jsou vyráběny ručně. Jejich eskluzivitu podtrhuje 100% rostlinný vosk a bezparafínové složení.
+
+
+Objem: 190 g
+
+ 
+
+
+VONNÁ SVÍCE TAGANIKA EIGHT &amp; BOB
+
+Hlava: kalábrijský bergamot, pomeranč
+Srdce: kosatec, jasmín, růže
+Tělo: cedrové dřevo, mošus, pačuli</DESCRIPTION>
+     <URL>https://kralovksa-pece.cz/p/eightandbob-vonna-svice-tanganika</URL>
+     <IMGURL>https://strapi.kralovska-pece.cz/uploads/taganika_eightandbob_svicka_11b8bda30b_ba0c822981.jpg</IMGURL>
+     <PRICE_VAT>1750</PRICE_VAT>
+     <MANUFACTURER>Eight &amp; Bob</MANUFACTURER>
+     <DELIVERY_DATE>0</DELIVERY_DATE>
+     <CATEGORY>
+        <CATEGORY_NAME>Svíčky a difuzéry</CATEGORY_NAME>
+     </CATEGORY>
+   </SHOPITEM>
+
+<SHOPITEM>
+     <ITEM_ID>0653</ITEM_ID>
+     <PRODUCTNAME> | Dárkový poukaz - SALON - v hodnotě 2000 Kč</PRODUCTNAME>
+     <PRODUCT> | Dárkový poukaz - SALON - v hodnotě 2000 Kč</PRODUCT>
+     <DESCRIPTION>V BOUTIQUE SALONU MAXIMUS LZE DÁRKOVÝMI POUKAZY V HODNOTĚ 500 KČ, 1000 KČ A 2000 KČ ZAKOUPIT:
+
+- ošetření té nejvyšší kvality a výsledku
+
+- všechny profesionální produkty pro domácí péči
+
+- zažít také několik relaxačních terapií- projít se malým výběrem tzv. "niche" parfémů v naší malé boutiqové parfumerii s možností
+zakoupení vzorků či celých flakónů.
+
+
+PÉČI U NÁS MŮŽETE VNÍMAT VŠEMI SMYSLY.
+
+
+ 
+
+
+LINDA MEREDITH - KRÁLOVNA KOSMETICKÉHO OŠETŘENÍ.
+
+Co můžete čekat? Kosmetické ošetření s unikátními produkty a s výsledky, které jsou ihned viditelné. Kosmetika je zaměřená na
+řešení aktuálních problémů pleti. Unavená pleť je prozářená, vyhlazená a prokrvená, dehydratovaná pleť ztratí jemné linky, zralá
+pleť je díky speciálnímu V-TOX ošetření vyplněná, hlubší vrásky se výrazně zjemňují. Ošetření je neinvazivní, ve stylu klasické
+kosmetiky, s výsledky estetického ošetření. Mnohé produkty obsahují nejvíce aktivních látek na světě. Ošetření využívá také
+unikátní kyslíkovou terapii. Terapeutky jsou školené v Londýně, osobně Lindou Meredith. Kosmetika Linda Meredith se řadí mezi
+nejlepší kosmetiky na světě.
+
+
+DEBORAH LIPPMANN - KRÁLOVNA PÉČE O NEHTY.
+
+Co můžete čekat?Absolutní pedikúra, absolutní výživa. Péče je založená na tzv. suché metodě, která umožňuje nastartování
+regeneračních procesů pokožky. Ošetření obsahuje odbornou konzultaci před ošetřením, maximální péči o nehty a nehtového okolí,
+péči o pokožku dle jejich potřeb a regenerační nadstavbu v podobě speciálního peelingu, koupele a masáže. Skvělého výsledu
+dosahujeme také díky produktům, které získaly již mnoho mezinárodních ocenění. Péče o ruce probíhá dle stejné filosofie. Ošetření
+můžeme korunovat netoxickými výživnými laky na nehty Deborah Lippmann, které splňují ta nejpřísnější světová kritéria.
+
+
+INFORMACE K DÁRKOVÝM POUKAZŮM:
+
+- Dárkové poukazy zasíláme v dárkové zlaté obálce, jsou tedy ihned připraveny k darování.
+
+- Pokud si přejete do dárkového poukazu věnování, prosím sdělte nám to do komentáře k objednávce.
+
+- Detailní informace o službách je uvedena také na www.boutique-salon-maximus.cz.
+
+- Standardní platnost dárkového poukazu je půl roku od data vystavení. Pokud je třeba se domluvit jinak, prosím kontaktujte nás.
+Děkujeme.
+
+- Pokud si přejete individuální domluvu ohledně dárkových poukazů, prosím kontaktujte nás. O vše se postaráme k Vaší spokojenosti.
+
+ 
+
+ 
+
+ </DESCRIPTION>
+     <URL>https://kralovksa-pece.cz/p/darkovy-poukaz-salon-v-hodnote-2000-kc</URL>
+     <IMGURL>https://strapi.kralovska-pece.cz/uploads/darkovy_poukaz_kralovska_pece_2000_1a07979e34_0206c16921.jpg</IMGURL>
+     <PRICE_VAT>2000</PRICE_VAT>
+     <MANUFACTURER></MANUFACTURER>
+     <DELIVERY_DATE>14</DELIVERY_DATE>
+     <CATEGORY>
+        <CATEGORY_NAME>Dárkové poukazy</CATEGORY_NAME>
+     </CATEGORY>
+   </SHOPITEM>
+
+<SHOPITEM>
+     <ITEM_ID>1504</ITEM_ID>
+     <PRODUCTNAME>Deborah Lippmann | lak na nehty - Afternoon Delight</PRODUCTNAME>
+     <PRODUCT>Deborah Lippmann | lak na nehty - Afternoon Delight</PRODUCT>
+     <DESCRIPTION>DEBORAH LIPPMANN - KOLEKCE GEL LAB PRO
+
+Laky na nehty řady Gel Lab Pro patří svými vlastnostmi a způsobem aplikace a odlakování do standardních laků na nehty. Gelovou
+technologii připomínají svým finálním vzhledem (leskem a povrchem). Toto patentované 7FREE složení obsahuje aktivní ingredience,
+které podporují zdraví nehtů. Zároveň nabízí nádherné barvy a dlouhotrvající lesk vaší manikúry.
+
+ 
+
+TIPY PRO PERFEKTNÍ LAKOVÁNÍ:
+
+ * lakujte na čisté, odmaštěné a vyleštěné nehty (pro perfektní výsledky použijte 2 Second Primer a podlaky a nadlaky z řady Gel
+   Lab Pro Debory Lippmann)
+ * aplikujte jednu vrstvu podlaku, následně barevný lak a jednu vrstvu finálního nadlaku.
+
+ 
+
+Objem: 15 ml</DESCRIPTION>
+     <URL>https://kralovksa-pece.cz/p/dl-lak-na-nehty-afternoon-delight-glp</URL>
+     <IMGURL>https://strapi.kralovska-pece.cz/uploads/deborah_lippmann_afternoon_delight_934b4c093d_e0eb5e454c.jpg</IMGURL>
+     <PRICE_VAT>520</PRICE_VAT>
+     <MANUFACTURER>Deborah Lippmann</MANUFACTURER>
+     <DELIVERY_DATE>0</DELIVERY_DATE>
+     <CATEGORY>
+        <CATEGORY_NAME>královská péče o Vaše nehty</CATEGORY_NAME>
+     </CATEGORY>
+   </SHOPITEM>
+
+<SHOPITEM>
+     <ITEM_ID>0928</ITEM_ID>
+     <PRODUCTNAME>Nailberry | lak na nehty - Le temps des carises</PRODUCTNAME>
+     <PRODUCT>Nailberry | lak na nehty - Le temps des carises</PRODUCT>
+     <DESCRIPTION>LE TEMPS DES CARISES - OXYGENATED DEP RED BURGUNDY - TEMNĚ ČERVENÁ BURGUNDSKÁ
+
+Kolekce L'Oxygéné získala mnoho prestižních ocenění pro své složení a barevnou škálu. Unikátní formule nabízí jedny z
+nejkvalitnějších laků na světě.
+
+12 Free (bez zatěžujících toxických látek)
+
+Vegan
+
+Cruelty Free Certified (není testováno na zvířatech)
+
+Halal Certified
+
+Prodyšný
+
+Propustný pro vlhkost
+
+Gluten Free (bez lepku)
+
+Patentované technologie jsou použity za účelem zdravější péče o nehty. Kolekce L'Oxygéné neobsahuje ftaláty včetně DBP, toluen,
+formaldehyd ani složky na základě formaldehydu, kafr, xylen, ethyl tosylamid, triphenyl phosphat, alkohol, parabeny, živočišné
+složky a lepek.
+
+
+ 
+
+TIPY PRO PERFEKTNÍ LAKOVÁNÍ:
+
+ * lakujte na čisté, odmaštěné a vyleštěné nehty
+ * aplikujte jednu vrstvu podlaku, následně barevný lak a jednu vrstvu finálního nadlaku
+ * skvěle tvarovaný štěteček Nailberry vám umožní docílit mandlového tvaru nehtu jako od profesionálů
+
+ 
+
+Objem: 15 ml</DESCRIPTION>
+     <URL>https://kralovksa-pece.cz/p/nby-lak-na-nehty-le-temps-des-carises</URL>
+     <IMGURL>https://strapi.kralovska-pece.cz/uploads/0928_91202c0ed6_caab1fd0ae.png</IMGURL>
+     <PRICE_VAT>480</PRICE_VAT>
+     <MANUFACTURER>Nailberry</MANUFACTURER>
+     <DELIVERY_DATE>0</DELIVERY_DATE>
+     <CATEGORY>
+        <CATEGORY_NAME>královská péče o Vaše nehty</CATEGORY_NAME>
+     </CATEGORY>
+   </SHOPITEM>
+
+<SHOPITEM>
+     <ITEM_ID>3151</ITEM_ID>
+     <PRODUCTNAME>Bella Hope London | svíčka - Sicily</PRODUCTNAME>
+     <PRODUCT>Bella Hope London | svíčka - Sicily</PRODUCT>
+     <DESCRIPTION>Luxusní vonná svíčka Bella Hope Sicily je vyrobena ze 100% přírodního sójového vosku, má nebělený bavlněný knot a obsahuje čisté
+esenciální oleje.
+
+Vůni Sicily otevírá šumivý růžový grapefruit a pikantní mandarinka, srdce v sobě nese ovocné jablečné tóny, okořeněné růžovým
+pepřem a kardamomem, který je podpořen tóny malinového listu, jantaru a santalového dřeva.
+
+Svíčka je zasazena do luxusního zlatého skla, které podtrhuje krásu skutečného plamene, má elegantní víko a je zabalena do
+sametového pytlíku.
+
+
+Hmotnost: 260g
+Orientační doba hoření: 50-60 hodin
+ </DESCRIPTION>
+     <URL>https://kralovksa-pece.cz/p/bella-hope-svicka-sicily</URL>
+     <IMGURL>https://strapi.kralovska-pece.cz/uploads/Bella_hope_svicka_Sicily_02_e4aeb4dae3_82b098ebab.jpg</IMGURL>
+     <PRICE_VAT>1790</PRICE_VAT>
+     <MANUFACTURER>Bella Hope London</MANUFACTURER>
+     <DELIVERY_DATE>0</DELIVERY_DATE>
+     <CATEGORY>
+        <CATEGORY_NAME>Svíčky a difuzéry</CATEGORY_NAME>
+     </CATEGORY>
+   </SHOPITEM>
+
+<SHOPITEM>
+     <ITEM_ID>0947</ITEM_ID>
+     <PRODUCTNAME>Nailberry | 2 v 1 Base &amp; Top Coat - Bare Essentials</PRODUCTNAME>
+     <PRODUCT>Nailberry | 2 v 1 Base &amp; Top Coat - Bare Essentials</PRODUCT>
+     <DESCRIPTION>BARE ESSENTIALS JE MULTIFUNČKNÍ 2 V 1 TOP A BASE COAT (NADLAK A PODLAK).
+
+Tento multifunkční zázračný lak je perfektní kombinací vlastností přilnavého podlaku a lesklého nadlaku. Byl vytvořen za použití
+Oxygen technologie, tím zaručuje vašim nehtům prodyšnost i propustnost vlhkosti.
+
+ 
+
+BARE ESSENTIALS 2 V 1 BASE &amp; TOP COAT:
+
+ * prodlužuje odolnost a trvanlivost barevného lakování
+ * poskytuje vysoký lesk
+ * UV filtry chrání před blednutím barvy
+
+ 
+
+Tento multifunkční lak má skvělé složení s následující certifikací:
+
+12 Free (tzn. bez zatěžujících toxických látek)
+
+Vegan
+
+Cruelty Free (netestováno na zvířatech)
+
+Halal Certifikace
+
+Prodyšný
+
+Vodopropustný
+
+Gluten Free (bez lepku)
+
+ 
+
+Použití:
+
+Aplikujte jednu vrstvu pod vaši oblíbenou barvu. Nechte zcela uschnout, až poté aplikujte barevný lak. Aplikujte jednu vrstvu na
+barevný lak pro ochranu barvy a lesklé nehty. Doporučujeme použít tento nadlak v zapojení s laky na nehty z kolekce L’Oxygéné.
+
+Objem: 15 ml</DESCRIPTION>
+     <URL>https://kralovksa-pece.cz/p/nby-podlak-nadlak-kombinace-bare-essentials</URL>
+     <IMGURL>https://strapi.kralovska-pece.cz/uploads/0947_f22de8e083_8088cd83fe.jpg</IMGURL>
+     <PRICE_VAT>530</PRICE_VAT>
+     <MANUFACTURER>Nailberry</MANUFACTURER>
+     <DELIVERY_DATE>14</DELIVERY_DATE>
+     <CATEGORY>
+        <CATEGORY_NAME>královská péče o Vaše nehty</CATEGORY_NAME>
+     </CATEGORY>
+   </SHOPITEM>
+
+<SHOPITEM>
+     <ITEM_ID>1662</ITEM_ID>
+     <PRODUCTNAME>Nailberry | lak na nehty - White Mist</PRODUCTNAME>
+     <PRODUCT>Nailberry | lak na nehty - White Mist</PRODUCT>
+     <DESCRIPTION>WHITE MIST - LIGHT WHITE - PRŮSVITNÁ BÍLÁ
+
+Kolekce L'Oxygéné získala mnoho prestižních ocenění pro své složení a barevnou škálu. Unikátní formule nabízí jedny z
+nejkvalitnějších laků na světě.
+
+12 Free (bez zatěžujících toxických látek)
+
+Vegan
+
+Cruelty Free Certified (není testováno na zvířatech)
+
+Halal Certified
+
+Prodyšný
+
+Propustný pro vlhkost
+
+Gluten Free (bez lepku)
+
+Patentované technologie jsou použity za účelem zdravější péče o nehty. Kolekce L'Oxygéné neobsahuje ftaláty včetně DBP, toluen,
+formaldehyd ani složky na základě formaldehydu, kafr, xylen, ethyl tosylamid, triphenyl phosphat, alkohol, parabeny, živočišné
+složky a lepek.
+
+
+ 
+
+TIPY PRO PERFEKTNÍ LAKOVÁNÍ:
+
+ * lakujte na čisté, odmaštěné a vyleštěné nehty
+ * aplikujte jednu vrstvu podlaku, následně barevný lak a jednu vrstvu finálního nadlaku
+ * skvěle tvarovaný štěteček Nailberry vám umožní docílit mandlového tvaru nehtu jako od profesionálů
+
+ 
+
+Objem: 15 ml</DESCRIPTION>
+     <URL>https://kralovksa-pece.cz/p/nby-lak-na-nehty-white-mist</URL>
+     <IMGURL>https://strapi.kralovska-pece.cz/uploads/Nailberry_White_Mist_2487a0726a_98989238db.jpg</IMGURL>
+     <PRICE_VAT>480</PRICE_VAT>
+     <MANUFACTURER>Nailberry</MANUFACTURER>
+     <DELIVERY_DATE>0</DELIVERY_DATE>
+     <CATEGORY>
+        <CATEGORY_NAME>královská péče o Vaše nehty</CATEGORY_NAME>
+     </CATEGORY>
+   </SHOPITEM>
+
+<SHOPITEM>
+     <ITEM_ID>0913</ITEM_ID>
+     <PRODUCTNAME>Nailberry | lak na nehty - Candy floss</PRODUCTNAME>
+     <PRODUCT>Nailberry | lak na nehty - Candy floss</PRODUCT>
+     <DESCRIPTION>CANDY FLOSS - OXYGENATED PINK FOR FRENCH - RŮŽOVÁ PRO FRANCOUZSKOU MANIKÚRU S LEHKÝM TŘPYTEM
+
+Kolekce L'Oxygéné získala mnoho prestižních ocenění pro své složení a barevnou škálu. Unikátní formule nabízí jedny z
+nejkvalitnějších laků na světě.
+
+12 Free (bez zatěžujících toxických látek)
+
+Vegan
+
+Cruelty Free Certified (není testováno na zvířatech)
+
+Halal Certified
+
+Prodyšný
+
+Propustný pro vlhkost
+
+Gluten Free (bez lepku)
+
+Patentované technologie jsou použity za účelem zdravější péče o nehty. Kolekce L'Oxygéné neobsahuje ftaláty včetně DBP, toluen,
+formaldehyd ani složky na základě formaldehydu, kafr, xylen, ethyl tosylamid, triphenyl phosphat, alkohol, parabeny, živočišné
+složky a lepek.
+
+
+ 
+
+TIPY PRO PERFEKTNÍ LAKOVÁNÍ:
+
+ * lakujte na čisté, odmaštěné a vyleštěné nehty
+ * aplikujte jednu vrstvu podlaku, následně barevný lak a jednu vrstvu finálního nadlaku
+ * skvěle tvarovaný štěteček Nailberry vám umožní docílit mandlového tvaru nehtu jako od profesionálů
+
+ 
+
+Objem: 15 ml
+
+ </DESCRIPTION>
+     <URL>https://kralovksa-pece.cz/p/nailberry-lak-na-nehty-candy-floss</URL>
+     <IMGURL>https://strapi.kralovska-pece.cz/uploads/0913_ae704a1351_7e031e72ac.jpg</IMGURL>
+     <PRICE_VAT>480</PRICE_VAT>
+     <MANUFACTURER>Nailberry</MANUFACTURER>
+     <DELIVERY_DATE>0</DELIVERY_DATE>
+     <CATEGORY>
+        <CATEGORY_NAME>královská péče o Vaše nehty</CATEGORY_NAME>
+     </CATEGORY>
+   </SHOPITEM>
+
+<SHOPITEM>
+     <ITEM_ID>0578</ITEM_ID>
+     <PRODUCTNAME>Deborah Lippmann | Dárkový poukaz - SALON - Pedikúra - KRÁLOVSKÁ PEDIKÚRA DEBORAH LIPPMANN</PRODUCTNAME>
+     <PRODUCT>Deborah Lippmann | Dárkový poukaz - SALON - Pedikúra - KRÁLOVSKÁ PEDIKÚRA DEBORAH LIPPMANN</PRODUCT>
+     <DESCRIPTION>ABSOULUTNÍ PEDIKÚRA. ABSOLUTNÍ VÝŽIVA. STVOŘENA NEJEN PRO DOKONALÝ TVAR NEHTŮ, ALE TAKÉ PRO PÉČI O POKOŽKU NOHY.
+
+ * Ošetření - KRÁLOVSKÁ PEDIKÚRA DEBORAH LIPPMANN zahrnuje:
+ * Úprava nehtů patentovaným pilníkem . Použití profesionální brusky k úpravě nehtových valů a jejich okolí.
+ * Hloubkové vyživení nehtů a jemné odstranění nehtové kůžičky pomocí speciálního rozmělňujícího a léčivého séra.
+ * Leštění nehtů – zapravení nehtové výživy do hlubších částí nehtů, aplikace Intenzivního vyživujícího oleje jako finální
+   ochranné vrstva nehtu.
+ * Odstranění zrohovatělé pokožky pomocí profesionální brusky suchou cestou a dokonalé vyhlazení s použitím pilníku s krystaly ze
+   syntetického diamantu.
+ * Exfoliační peeling DEBORAH LIPPMANN – mikroabrase s vyživením do nejhlubších vrstev pokožky.
+ * Koupel DEBORAH LIPPMANN – pečující, vyživující a silně hydratující lázeň.
+ * Intenzivní hydratační kúra pomocí hydratačního krému. Masáž.
+ * Lakování pečujícím netoxickým lakem DEBORAH LIPPMANN - podkladový lak, barevný lak, nadlak.
+
+ 
+
+Délka ošetření: 90 minut.
+
+
+ 
+
+
+INFORMACE K DÁRKOVÝM POUKAZŮM:
+
+- Dárkové poukazy zasíláme v dárkové zlaté obálce, jsou tedy ihned připraveny k darování. Pokud chcete dárkový poukaz zaslat
+elektornicky, napište nám požadovanou emailovou adresu do komentáře k objednávce.
+
+- Pokud si přejete do dárkového poukazu věnování, prosím sdělte nám to do komentáře k objednávce.
+
+- Detailní informace o službách je uvedena také na www.boutique-salon-maximus.cz.
+
+- Pro nákup na www.kralovska-pece.cz je na poukazu uveden unikátní kód, který obdarovaný jednoduše použije při platbě v našem
+e-shopu.
+
+- Standardní platnost dárkového poukazu je půl roku od data vystavení. Pokud je třeba se domluvit jinak, prosím kontaktujte nás.
+Děkujeme.
+
+- Pokud si přejete individuální domluvu ohledně dárkových poukazů, prosím kontaktujte nás. O vše se postaráme k Vaší spokojenosti.
+
+- Dárkové poukazy nemohou být proplaceny.</DESCRIPTION>
+     <URL>https://kralovksa-pece.cz/p/darkovy-poukaz-salon-pedikura-kralovska-pedikura-deborah-lippmann</URL>
+     <IMGURL>https://strapi.kralovska-pece.cz/uploads/darkovy_poukaz_kralovska_pece_pedikura_69402d4340_214b5bed97.jpg</IMGURL>
+     <PRICE_VAT>1290</PRICE_VAT>
+     <MANUFACTURER>Deborah Lippmann</MANUFACTURER>
+     <DELIVERY_DATE>14</DELIVERY_DATE>
+     <CATEGORY>
+        <CATEGORY_NAME>Dárkové poukazy</CATEGORY_NAME>
+     </CATEGORY>
+   </SHOPITEM>
+
+<SHOPITEM>
+     <ITEM_ID>0967</ITEM_ID>
+     <PRODUCTNAME>Nailberry | lak na nehty - Mystere</PRODUCTNAME>
+     <PRODUCT>Nailberry | lak na nehty - Mystere</PRODUCT>
+     <DESCRIPTION>MYSTERE - OXYGENATED LIGHT CREAMY LILAC - JEMNĚ KRÉMOVÁ LILA
+
+ 
+
+Kolekce L'Oxygéné získala mnoho prestižních ocenění pro své složení a barevnou škálu. Unikátní formule nabízí jedny z
+nejkvalitnějších laků na světě.
+
+12 Free (bez zatěžujících toxických látek)
+
+Vegan
+
+Cruelty Free Certified (není testováno na zvířatech)
+
+Halal Certified
+
+Prodyšný
+
+Propustný pro vlhkost
+
+Gluten Free (bez lepku)
+
+Patentované technologie jsou použity za účelem zdravější péče o nehty. Kolekce L'Oxygéné neobsahuje ftaláty včetně DBP, toluen,
+formaldehyd ani složky na základě formaldehydu, kafr, xylen, ethyl tosylamid, triphenyl phosphat, alkohol, parabeny, živočišné
+složky a lepek.
+
+
+ 
+
+TIPY PRO PERFEKTNÍ LAKOVÁNÍ:
+
+ * lakujte na čisté, odmaštěné a vyleštěné nehty
+ * aplikujte jednu vrstvu podlaku, následně barevný lak a jednu vrstvu finálního nadlaku
+ * skvěle tvarovaný štěteček Nailberry vám umožní docílit mandlového tvaru nehtu jako od profesionálů
+
+ 
+
+Objem: 15 ml</DESCRIPTION>
+     <URL>https://kralovksa-pece.cz/p/nby-lak-na-nehty-mystere</URL>
+     <IMGURL>https://strapi.kralovska-pece.cz/uploads/0967_c4353ee59b_c696cd07e0.jpg</IMGURL>
+     <PRICE_VAT>480</PRICE_VAT>
+     <MANUFACTURER>Nailberry</MANUFACTURER>
+     <DELIVERY_DATE>0</DELIVERY_DATE>
+     <CATEGORY>
+        <CATEGORY_NAME>královská péče o Vaše nehty</CATEGORY_NAME>
+     </CATEGORY>
+   </SHOPITEM>
+
+<SHOPITEM>
+     <ITEM_ID>3145</ITEM_ID>
+     <PRODUCTNAME>Bella Hope London | svíčka - Capri</PRODUCTNAME>
+     <PRODUCT>Bella Hope London | svíčka - Capri</PRODUCT>
+     <DESCRIPTION>Luxusní vonná svíčka Bella Hope Capri je vyrobena ze 100% přírodního sójového vosku, má nebělený bavlněný knot a obsahuje čisté
+esenciální oleje.
+
+Vůni Capri otevírají jiskřivé citrusové vrchní tóny bergamotu, oslazené červenou rebarborou, které následně přecházejí do srdce z
+jasmínu, růže, konvalinky a sladkého hrášku s jemnými podtóny květů Plumérie, bílého pižma a měkkých dřevin.
+
+Svíčka je zasazena do luxusního zlatého skla, které podtrhuje krásu skutečného plamene, má elegantní víko a je zabalena do
+sametového pytlíku.
+
+
+Hmotnost: 260g
+Orientační doba hoření: 50-60 hodin
+
+ 
+
+ </DESCRIPTION>
+     <URL>https://kralovksa-pece.cz/p/bella-hope-svicka-capri</URL>
+     <IMGURL>https://strapi.kralovska-pece.cz/uploads/Bella_hope_svicka_Capri_04_a39e56cfee_07dc829afe.jpg</IMGURL>
+     <PRICE_VAT>1790</PRICE_VAT>
+     <MANUFACTURER>Bella Hope London</MANUFACTURER>
+     <DELIVERY_DATE>0</DELIVERY_DATE>
+     <CATEGORY>
+        <CATEGORY_NAME>Svíčky a difuzéry</CATEGORY_NAME>
+     </CATEGORY>
+   </SHOPITEM>
+
+<SHOPITEM>
+     <ITEM_ID>1918</ITEM_ID>
+     <PRODUCTNAME>Und Gretel | ILGE bezbarvý kompaktní pudr</PRODUCTNAME>
+     <PRODUCT>Und Gretel | ILGE bezbarvý kompaktní pudr</PRODUCT>
+     <DESCRIPTION>BEZBARVÝ KOMPAKTNÍ PUDR ILGE, TO JE PHOTOSHOP PRO VAŠI TVÁŘ. 100% PŘÍRODNÍ, ORGANICKÝ, VEGANSKÝ, V KVALITĚ PRODUKTŮ PRO
+PROFESIONÁLY.
+
+Jméno pudru ILGE pochází ze staroněmčiny a znamená "květ lilie". V pudřence vypadá pudr jako bílý, při aplikaci na pleť se stane
+transparentním závojem. Je vhodný pro všechny barvy pleti.
+
+Hmotnost: 6,5 g
+
+ 
+
+UNIKÁTNÍ PEČUJÍCÍ SLOŽENÍ
+
+Heřmánkový extrakt - ceněný pro své hojivé a uklidňující účinky.
+
+Avokádový olej - je pletí dobře přijímaný a působí jako výživa, nezatěžuje pleť. Obsažené mastné kyseliny zlepšují strukturu pleti
+a vyživují buňky vitamínem A a E. Tento ceněný avokádový olej podporuje obnovu buněk a chrání pleť před oxidačním stresem.
+
+Vitamín E - nazývaný také jako vitamín krásy. Je podstatný pro regeneraci pleti.
+
+
+ 
+
+TIPY PRO POUŽITÍ
+
+Ultrajemné částečky pudru působí jako závoj pro Vaši pleť. Matují T-zónu nebo fixují make-up. Nanášejte nejlépe štětcem na pudr.
+Pudr může v první momentu vypadat trochu bílý, za okamžik dokonale splyne s Vaší pletí.
+
+Pudr neobsahuje žádné zatěžují látky, aplikujte ho libovolně podle potřeby.
+
+
+
+
+ </DESCRIPTION>
+     <URL>https://kralovksa-pece.cz/p/und-gretel-ilge-translucent-clear-powder</URL>
+     <IMGURL>https://strapi.kralovska-pece.cz/uploads/Und_Gretel_ILGE_Clear_pudr_f982d261d9_ae0fc4fa8e.jpg</IMGURL>
+     <PRICE_VAT>1210</PRICE_VAT>
+     <MANUFACTURER>Und Gretel</MANUFACTURER>
+     <DELIVERY_DATE>0</DELIVERY_DATE>
+     <CATEGORY>
+        <CATEGORY_NAME>dekorativní kosmetika pro zářivé líčení</CATEGORY_NAME>
+     </CATEGORY>
+   </SHOPITEM>
+
+<SHOPITEM>
+     <ITEM_ID>1113</ITEM_ID>
+     <PRODUCTNAME>Deborah Lippmann | lak na nehty - I'm Too Sexy</PRODUCTNAME>
+     <PRODUCT>Deborah Lippmann | lak na nehty - I'm Too Sexy</PRODUCT>
+     <DESCRIPTION>DEBORAH LIPPMANN - KOLEKCE GEL LAB PRO
+
+Laky na nehty řady Gel Lab Pro patří svými vlastnostmi a způsobem aplikace a odlakování do standardních laků na nehty. Gelovou
+technologii připomínají svým finálním vzhledem (leskem a povrchem). Toto patentované 7FREE složení obsahuje aktivní ingredience,
+které podporují zdraví nehtů. Zároveň nabízí nádherné barvy a dlouhotrvající lesk vaší manikúry.
+
+TIPY PRO PERFEKTNÍ LAKOVÁNÍ:
+
+ * lakujte na čisté, odmaštěné a vyleštěné nehty (pro perfektní výsledky použijte 2 Second Primer a podlaky a nadlaky z řady Gel
+   Lab Pro Debory Lippmann)
+ * aplikujte jednu vrstvu podlaku, následně barevný lak a jednu vrstvu finálního nadlaku.
+
+ 
+
+Objem: 15 ml</DESCRIPTION>
+     <URL>https://kralovksa-pece.cz/p/dl-lak-na-nehty-im-too-sexy-glp</URL>
+     <IMGURL>https://strapi.kralovska-pece.cz/uploads/deborah_lippmann_i_m_too_sexy_lak_na_nehty_d54e188b5a_7925868474.jpg</IMGURL>
+     <PRICE_VAT>520</PRICE_VAT>
+     <MANUFACTURER>Deborah Lippmann</MANUFACTURER>
+     <DELIVERY_DATE>0</DELIVERY_DATE>
+     <CATEGORY>
+        <CATEGORY_NAME>královská péče o Vaše nehty</CATEGORY_NAME>
+     </CATEGORY>
+   </SHOPITEM>
+
+<SHOPITEM>
+     <ITEM_ID>0922</ITEM_ID>
+     <PRODUCTNAME>Nailberry | lak na nehty - Gold Leaf</PRODUCTNAME>
+     <PRODUCT>Nailberry | lak na nehty - Gold Leaf</PRODUCT>
+     <DESCRIPTION>GOLD LEAF - OXYGENATED METALLIC GOLD - METALICKÁ ZLATÁ
+
+Kolekce L'Oxygéné získala mnoho prestižních ocenění pro své složení a barevnou škálu. Unikátní formule nabízí jedny z
+nejkvalitnějších laků na světě.
+
+12 Free (bez zatěžujících toxických látek)
+
+Vegan
+
+Cruelty Free Certified (není testováno na zvířatech)
+
+Halal Certified
+
+Prodyšný
+
+Propustný pro vlhkost
+
+Gluten Free (bez lepku)
+
+Patentované technologie jsou použity za účelem zdravější péče o nehty. Kolekce L'Oxygéné neobsahuje ftaláty včetně DBP, toluen,
+formaldehyd ani složky na základě formaldehydu, kafr, xylen, ethyl tosylamid, triphenyl phosphat, alkohol, parabeny, živočišné
+složky a lepek.
+
+
+ 
+
+TIPY PRO PERFEKTNÍ LAKOVÁNÍ:
+
+ * lakujte na čisté, odmaštěné a vyleštěné nehty
+ * aplikujte jednu vrstvu podlaku, následně barevný lak a jednu vrstvu finálního nadlaku
+ * skvěle tvarovaný štěteček Nailberry vám umožní docílit mandlového tvaru nehtu jako od profesionálů
+
+ 
+
+Objem: 15 ml
+
+ </DESCRIPTION>
+     <URL>https://kralovksa-pece.cz/p/nby-lak-na-nehty-gold-leaf</URL>
+     <IMGURL>https://strapi.kralovska-pece.cz/uploads/0922_75d4daf2f0_0be0131ac8.png</IMGURL>
+     <PRICE_VAT>480</PRICE_VAT>
+     <MANUFACTURER>Nailberry</MANUFACTURER>
+     <DELIVERY_DATE>14</DELIVERY_DATE>
+     <CATEGORY>
+        <CATEGORY_NAME>královská péče o Vaše nehty</CATEGORY_NAME>
+     </CATEGORY>
+   </SHOPITEM>
+
+<SHOPITEM>
+     <ITEM_ID>0935</ITEM_ID>
+     <PRODUCTNAME>Nailberry | lak na nehty - Ring a Posie</PRODUCTNAME>
+     <PRODUCT>Nailberry | lak na nehty - Ring a Posie</PRODUCT>
+     <DESCRIPTION>METALLIC ROSE GOLD - METALICKÁ ZLATORŮŽOVÁ
+
+Kolekce L'Oxygéné získala mnoho prestižních ocenění pro své složení a barevnou škálu. Unikátní formule nabízí jedny z
+nejkvalitnějších laků na světě.
+
+12 Free (bez zatěžujících toxických látek)
+
+Vegan
+
+Cruelty Free Certified (není testováno na zvířatech)
+
+Halal Certified
+
+Prodyšnost
+
+Propustný pro vlhkost
+
+Gluten Free (bez lepku)
+
+Patentované technologie jsou použity za účelem zdravější péče o nehty. Kolekce L'Oxygéné neobsahuje ftaláty včetně DBP, toluen,
+formaldehyd ani složky na základě formaldehydu, kafr, xylen, ethyl tosylamid, triphenyl phosphat, alkohol, parabeny, živočišné
+složky a lepek.
+
+
+ 
+
+TIPY PRO PERFEKTNÍ LAKOVÁNÍ:
+
+ * lakujte na čisté, odmaštěné a vyleštěné nehty
+ * aplikujte jednu vrstvu podlaku, následně barevný lak a jednu vrstvu finálního nadlaku
+ * skvěle tvarovaný štěteček Nailberry vám umožní docílit mandlového tvaru nehtu jako od profesionálů
+
+ 
+
+Objem: 15 ml</DESCRIPTION>
+     <URL>https://kralovksa-pece.cz/p/nby-lak-na-nehty-ring-a-posle</URL>
+     <IMGURL>https://strapi.kralovska-pece.cz/uploads/0935_bcc691e904_c1986c377f.png</IMGURL>
+     <PRICE_VAT>480</PRICE_VAT>
+     <MANUFACTURER>Nailberry</MANUFACTURER>
+     <DELIVERY_DATE>0</DELIVERY_DATE>
+     <CATEGORY>
+        <CATEGORY_NAME>královská péče o Vaše nehty</CATEGORY_NAME>
+     </CATEGORY>
+   </SHOPITEM>
+
+<SHOPITEM>
+     <ITEM_ID>0936</ITEM_ID>
+     <PRODUCTNAME>Nailberry | lak na nehty - Romance</PRODUCTNAME>
+     <PRODUCT>Nailberry | lak na nehty - Romance</PRODUCT>
+     <DESCRIPTION>ROMANCE - OXYGENATED NUDE PINK - TĚLOVÁ RŮŽOVÁ
+
+Kolekce L'Oxygéné získala mnoho prestižních ocenění pro své složení a barevnou škálu. Unikátní formule nabízí jedny z
+nejkvalitnějších laků na světě.
+
+12 Free (bez zatěžujících toxických látek)
+
+Vegan
+
+Cruelty Free Certified (není testováno na zvířatech)
+
+Halal Certified
+
+Prodyšnost
+
+Propustný pro vlhkost
+
+Gluten Free (bez lepku)
+
+Patentované technologie jsou použity za účelem zdravější péče o nehty. Kolekce L'Oxygéné neobsahuje ftaláty včetně DBP, toluen,
+formaldehyd ani složky na základě formaldehydu, kafr, xylen, ethyl tosylamid, triphenyl phosphat, alkohol, parabeny, živočišné
+složky a lepek.
+
+
+ 
+
+TIPY PRO PERFEKTNÍ LAKOVÁNÍ:
+
+ * lakujte na čisté, odmaštěné a vyleštěné nehty
+ * aplikujte jednu vrstvu podlaku, následně barevný lak a jednu vrstvu finálního nadlaku
+ * skvěle tvarovaný štěteček Nailberry vám umožní docílit mandlového tvaru nehtu jako od profesionálů
+
+ 
+
+Objem: 15 ml
+
+ </DESCRIPTION>
+     <URL>https://kralovksa-pece.cz/p/nby-lak-na-nehty-romance</URL>
+     <IMGURL>https://strapi.kralovska-pece.cz/uploads/0936_62ddb8553e_56239d7997.jpg</IMGURL>
+     <PRICE_VAT>480</PRICE_VAT>
+     <MANUFACTURER>Nailberry</MANUFACTURER>
+     <DELIVERY_DATE>14</DELIVERY_DATE>
+     <CATEGORY>
+        <CATEGORY_NAME>královská péče o Vaše nehty</CATEGORY_NAME>
+     </CATEGORY>
+   </SHOPITEM>
+
+<SHOPITEM>
+     <ITEM_ID>3288</ITEM_ID>
+     <PRODUCTNAME>butter LONDON | lesk na rty - Fairy Dust Glazen</PRODUCTNAME>
+     <PRODUCT>butter LONDON | lesk na rty - Fairy Dust Glazen</PRODUCT>
+     <DESCRIPTION>BUTTER LONDON - LESK NA RTY - FAIRY DUST GLAZEN
+
+Perleťově duhový, sladce vonící lesk na rty Fairy Dust Glazen zanechá Vaše rty vyživené, hedvábně hebké a dodá jim jedinečný lesk.
+Můžete jej používat samostatně nebo jako vrchní vrstvu na svou oblíbenou rtěnku. Dodejte svému líčení šmrnc s tímto dokonalým
+leskem na rty v hravé barvě.
+
+Pro získání barvy otevřete uzávěr a otočte horní částí lesku doprava, aplikujte potřebné množství na Vaše rty. 
+
+Objem: 2,4 ml
+ 
+
+UNIKÁTNÍ PEČUJÍCÍ SLOŽENÍ
+
+ * dodává rtům lesklý vícerozměrný vzhled
+ * výrazný 3D efekt lesku
+ * zanechává na rtech hladký a měkký pocit
+ * obsahuje jojobový a avokádový olej, které vyživují a chrání rty
+ * bezlepkové a veganské složení</DESCRIPTION>
+     <URL>https://kralovksa-pece.cz/p/butter-london-glazen-lip-glaze-fairy-dust</URL>
+     <IMGURL>https://strapi.kralovska-pece.cz/uploads/Butter_London_lesk_na_rty_Fairy_Dust_Glazen_cdefc2b617_dbf53688f8.jpg</IMGURL>
+     <PRICE_VAT>485</PRICE_VAT>
+     <MANUFACTURER>butter LONDON</MANUFACTURER>
+     <DELIVERY_DATE>0</DELIVERY_DATE>
+     <CATEGORY>
+        <CATEGORY_NAME>dekorativní kosmetika pro zářivé líčení</CATEGORY_NAME>
+     </CATEGORY>
+   </SHOPITEM>
+
+<SHOPITEM>
+     <ITEM_ID>0723</ITEM_ID>
+     <PRODUCTNAME>Castelbel | Castelbel - kolekce Rosé Blush - Dámská cestovní sada</PRODUCTNAME>
+     <PRODUCT>Castelbel | Castelbel - kolekce Rosé Blush - Dámská cestovní sada</PRODUCT>
+     <DESCRIPTION>KOLEKCE ROSÉ BLUSH
+
+"Rosé Blush", elegantní řada určená pro ženy v romantickém růžovém designu. Zahalte se do této nasládlé intenzivní vůně, kterou si
+zajisté zamilujete.
+
+Dámská cestovní sada v luxusní taštičce s jemnou květinovou vůní připomínající červené ovoce, ananas, mandarinky, karamboli,
+jasmín, gardénii, lotosový květ, jantar, santalové dřevo, vanilku a karamel.
+
+
+Sada obsahuje:
+- sprchový gel, 100ml
+- toaletní vodu EDT, 10ml
+- tělové mléko, 100ml
+- mýdlo, 40g
+- ručníček, 30x32cm
+- uzavíratelný průhledný obal
+
+Rozměry sady: 27cm x 16cm
+
+
+- Sprchový gel, 100ml: Naneste na vlhkou pokožku, vetřete do pokožky a poté důkladně opláchněte.
+
+- toaletní voda EDT, 10ml: Hořlavina! Nastříkejte na pulzová místa. Uchovávejte v suchu a chladu. Zamezte kontaktu s očima a
+podrážděnou pokožkou. Nevystavujte slunci či ohni.
+
+- Tělové mléko, 100ml: Naneste na čistou pokožku a důkladně rozetřete.
+
+- Mýdlo, 40g: Napěňte v dlaních a poté důkladně opláchněte. Zamezte kontaktu s očima.
+
+- Ručníček, 30x32cm: 100% bavlna. Perte s tmavým oblečením.
+
+Praktický průhledný obal navíc umožňuje vzít vaší oblíbenou kosmetiku na palubu letadla.
+
+Vyrobeno v Portugalsku.
+
+ </DESCRIPTION>
+     <URL>https://kralovksa-pece.cz/p/castelbel-kolekce-rose-blush-damska-cestovni-sada</URL>
+     <IMGURL>https://strapi.kralovska-pece.cz/uploads/Castelbel_Rose_Blush_cestovni_sada_a674709471_e98c2ea22a.jpg</IMGURL>
+     <PRICE_VAT>1119</PRICE_VAT>
+     <MANUFACTURER>Castelbel</MANUFACTURER>
+     <DELIVERY_DATE>0</DELIVERY_DATE>
+     <CATEGORY>
+        <CATEGORY_NAME>tělová péče</CATEGORY_NAME>
+     </CATEGORY>
+   </SHOPITEM>
+
+<SHOPITEM>
+     <ITEM_ID>1659</ITEM_ID>
+     <PRODUCTNAME>Nailberry | lak na nehty - Moonlight</PRODUCTNAME>
+     <PRODUCT>Nailberry | lak na nehty - Moonlight</PRODUCT>
+     <DESCRIPTION>MOONLIGHT - OXYGENATED MIDNIGHT BLUE - PŮLNOČNÍ MODRÁ
+
+Kolekce L'Oxygéné získala mnoho prestižních ocenění pro své složení a barevnou škálu. Unikátní formule nabízí jedny z
+nejkvalitnějších laků na světě.
+
+12 Free (bez zatěžujících toxických látek)
+
+Vegan
+
+Cruelty Free Certified (není testováno na zvířatech)
+
+Halal Certified
+
+Prodyšný
+
+Propustný pro vlhkost
+
+Gluten Free (bez lepku)
+
+Patentované technologie jsou použity za účelem zdravější péče o nehty. Kolekce L'Oxygéné neobsahuje ftaláty včetně DBP, toluen,
+formaldehyd ani složky na základě formaldehydu, kafr, xylen, ethyl tosylamid, triphenyl phosphat, alkohol, parabeny, živočišné
+složky a lepek.
+
+
+ 
+
+TIPY PRO PERFEKTNÍ LAKOVÁNÍ:
+
+ * lakujte na čisté, odmaštěné a vyleštěné nehty
+ * aplikujte jednu vrstvu podlaku, následně barevný lak a jednu vrstvu finálního nadlaku
+ * skvěle tvarovaný štěteček Nailberry vám umožní docílit mandlového tvaru nehtu jako od profesionálů
+
+ 
+
+Objem: 15 ml</DESCRIPTION>
+     <URL>https://kralovksa-pece.cz/p/nby-lak-na-nehty-moonlight</URL>
+     <IMGURL>https://strapi.kralovska-pece.cz/uploads/nailberry_moonlight_0047a8cf08_57ae90f30b.jpg</IMGURL>
+     <PRICE_VAT>480</PRICE_VAT>
+     <MANUFACTURER>Nailberry</MANUFACTURER>
+     <DELIVERY_DATE>0</DELIVERY_DATE>
+     <CATEGORY>
+        <CATEGORY_NAME>královská péče o Vaše nehty</CATEGORY_NAME>
+     </CATEGORY>
+   </SHOPITEM>
+
+<SHOPITEM>
+     <ITEM_ID>0997</ITEM_ID>
+     <PRODUCTNAME>Valeur Absolue | Dárková kolekce - 7 x 14 ml</PRODUCTNAME>
+     <PRODUCT>Valeur Absolue | Dárková kolekce - 7 x 14 ml</PRODUCT>
+     <DESCRIPTION>Nádherná dárková kolekce, která obsahuje všech 7 parfémů Valeur Absolue. Sedm nádherných vůní v cestovní velikosti. Flakony jsou
+obohacené o polodrahokamy.
+
+Objem jednoho parfému: 14 ml</DESCRIPTION>
+     <URL>https://kralovksa-pece.cz/p/valeur-absolue-collection-7-x-14-ml</URL>
+     <IMGURL>https://strapi.kralovska-pece.cz/uploads/Valeur_Absolue_Discovery_c4f9b5cb26_3555db3820.jpg</IMGURL>
+     <PRICE_VAT>3490</PRICE_VAT>
+     <MANUFACTURER>Valeur Absolue</MANUFACTURER>
+     <DELIVERY_DATE>14</DELIVERY_DATE>
+     <CATEGORY>
+        <CATEGORY_NAME></CATEGORY_NAME>
+     </CATEGORY>
+   </SHOPITEM>
+
+<SHOPITEM>
+     <ITEM_ID>0930</ITEM_ID>
+     <PRODUCTNAME>Nailberry | lak na nehty - No Regrets</PRODUCTNAME>
+     <PRODUCT>Nailberry | lak na nehty - No Regrets</PRODUCT>
+     <DESCRIPTION>NO REGRETS - OXYGENATED RICH RED WINE - PLNÁ TMAVÁ ČERVENÁ
+
+Kolekce L'Oxygéné získala mnoho prestižních ocenění pro své složení a barevnou škálu. Unikátní formule nabízí jedny z
+nejkvalitnějších laků na světě.
+
+12 Free (bez zatěžujících toxických látek)
+
+Vegan
+
+Cruelty Free Certified (není testováno na zvířatech)
+
+Halal Certified
+
+Prodyšný
+
+Propustný pro vlhkost
+
+Gluten Free (bez lepku)
+
+Patentované technologie jsou použity za účelem zdravější péče o nehty. Kolekce L'Oxygéné neobsahuje ftaláty včetně DBP, toluen,
+formaldehyd ani složky na základě formaldehydu, kafr, xylen, ethyl tosylamid, triphenyl phosphat, alkohol, parabeny, živočišné
+složky a lepek.
+
+
+ 
+
+TIPY PRO PERFEKTNÍ LAKOVÁNÍ:
+
+ * lakujte na čisté, odmaštěné a vyleštěné nehty
+ * aplikujte jednu vrstvu podlaku, následně barevný lak a jednu vrstvu finálního nadlaku
+ * skvěle tvarovaný štěteček Nailberry vám umožní docílit mandlového tvaru nehtu jako od profesionálů
+
+ 
+
+Objem: 15 ml</DESCRIPTION>
+     <URL>https://kralovksa-pece.cz/p/nby-lak-na-nehty-no-regrets</URL>
+     <IMGURL>https://strapi.kralovska-pece.cz/uploads/0930_67260a8f92_1f097fc127.jpg</IMGURL>
+     <PRICE_VAT>480</PRICE_VAT>
+     <MANUFACTURER>Nailberry</MANUFACTURER>
+     <DELIVERY_DATE>14</DELIVERY_DATE>
+     <CATEGORY>
+        <CATEGORY_NAME>královská péče o Vaše nehty</CATEGORY_NAME>
+     </CATEGORY>
+   </SHOPITEM>
+
+<SHOPITEM>
+     <ITEM_ID>0942</ITEM_ID>
+     <PRODUCTNAME>Nailberry | lak na nehty - Star Dust</PRODUCTNAME>
+     <PRODUCT>Nailberry | lak na nehty - Star Dust</PRODUCT>
+     <DESCRIPTION>STAR DUST - OXYGENATED IRIDESCENT FINE GLITTERS - DUHOVÉ JEMNÉ GLITRY
+
+Kolekce L'Oxygéné získala mnoho prestižních ocenění pro své složení a barevnou škálu. Unikátní formule nabízí jedny z
+nejkvalitnějších laků na světě.
+
+12 Free (bez zatěžujících toxických látek)
+
+Vegan
+
+Cruelty Free Certified (není testováno na zvířatech)
+
+Halal Certified
+
+Prodyšnost
+
+Propustný pro vlhkost
+
+Gluten Free (bez lepku)
+
+Patentované technologie jsou použity za účelem zdravější péče o nehty. Kolekce L'Oxygéné neobsahuje ftaláty včetně DBP, toluen,
+formaldehyd ani složky na základě formaldehydu, kafr, xylen, ethyl tosylamid, triphenyl phosphat, alkohol, parabeny, živočišné
+složky a lepek.
+
+
+ 
+
+TIPY PRO PERFEKTNÍ LAKOVÁNÍ:
+
+ * lakujte na čisté, odmaštěné a vyleštěné nehty
+ * aplikujte jednu vrstvu podlaku, následně barevný lak a jednu vrstvu finálního nadlaku
+ * skvěle tvarovaný štěteček Nailberry vám umožní docílit mandlového tvaru nehtu jako od profesionálů
+
+ 
+
+Objem: 15 ml
+
+ </DESCRIPTION>
+     <URL>https://kralovksa-pece.cz/p/nby-lak-na-nehty-star-dust</URL>
+     <IMGURL>https://strapi.kralovska-pece.cz/uploads/0942_5afeceaee8_9d2d9dd3c0.jpg</IMGURL>
+     <PRICE_VAT>480</PRICE_VAT>
+     <MANUFACTURER>Nailberry</MANUFACTURER>
+     <DELIVERY_DATE>14</DELIVERY_DATE>
+     <CATEGORY>
+        <CATEGORY_NAME>královská péče o Vaše nehty</CATEGORY_NAME>
+     </CATEGORY>
+   </SHOPITEM>
+
+<SHOPITEM>
+     <ITEM_ID>2937</ITEM_ID>
+     <PRODUCTNAME>Und Gretel | LUSTEC - konturovací tužka na rty - Natural Light 01</PRODUCTNAME>
+     <PRODUCT>Und Gretel | LUSTEC - konturovací tužka na rty - Natural Light 01</PRODUCT>
+     <DESCRIPTION>LUSTEC - KONTUROVACÍ TUŽKA NA RTY. 100% PŘÍRODNÍ, ORGANICKÁ, VEGANSKÁ, V KVALITĚ PRODUKTŮ PRO PROFESIONÁLY. PRO KRÁSNÝ TVAR A
+PROTI VRÁSKÁM NA RTECH.
+
+ 
+
+Jméno LUSTEC pochází ze staré němčiny a znamená „šťastný, živý“ - ale také „potěšení“. Potěšení pro Vaše rty. Konturuje Vaše rty
+jako silné duo: Se stranou CLEAR vizuálně redukuje vrásky Vašich rtů pomocí jojobového oleje a bambuckého másla - s barevnou
+stranou vykouzlíte perfektní konturu rtů nebo plný základ rtů pro rtěnku TAGAROT nebo KNUTZEN lesk na rty.
+
+Hmotnost: 2 x 0,65 g
+
+ 
+
+ODSTÍN NATURAL LIGHT 01
+
+Odstín Nautral Light je světlý a neutrální odstín béžové barvy, který zvýrazní a podtrhne přirozenou barvu Vašich rtů. Tato
+konturavací matná barva je ideální v kombinaci s jemnými rtěnkami. Odstín Natural Light je také vhodný pro drobné korekce tvaru
+Vašich rtů.
+ 
+
+ 
+
+UNIKÁTNÍ PEČUJÍCÍ SLOŽENÍ
+
+Jojoba - tekutý vosk se dokonale přizpůsobuje přirozenému lipidovému filmu pokožky, pečuje o ni a chrání před dehydratací. Zároveň
+nepůsobí mastně.
+
+Bambucké máslo - složky bambuckého másla udržují pokožku pružnou a kompenzují nedostatek vlhkosti a udržují jemnou pokožku rtů
+velmi pružnou.
+
+ 
+
+TIPY PRO POUŽITÍ
+
+KROK 1
+Průhledná strana je „optickým zabijákem vrásek“ a tvoří neviditelnou bariéru, která zabraňuje prosakování a rozmazávání rtěnky
+nebo lesku na rty. Jako první krok vždy aplikujte stranu CLEAR na horní a dolní část kontury rtu. Můžete také použít průhlednou
+stranu po celém rtu jako základ.
+
+KROK 2
+Natáhněte okraj rtu barevnou stranou a poté naneste rtěnku nebo lesk na rty.
+
+TIPY &amp; HACKY
+Průhlednou strabu můžete také použít jako základ pro rtěnku nebo lesk na rty po celém rtu. Díky svým výživným složkám, jako je
+bambucké máslo a jojobový olej, poskytuje vlhkost a bohatý matný povrch rtů.</DESCRIPTION>
+     <URL>https://kralovksa-pece.cz/p/und-gretel-lustec-konturka-1-natural-light</URL>
+     <IMGURL>https://strapi.kralovska-pece.cz/uploads/Und_Gretel_LUSTEC_natural_light_01_c82ec88563_6fae2ae467.jpg</IMGURL>
+     <PRICE_VAT>660</PRICE_VAT>
+     <MANUFACTURER>Und Gretel</MANUFACTURER>
+     <DELIVERY_DATE>14</DELIVERY_DATE>
+     <CATEGORY>
+        <CATEGORY_NAME>dekorativní kosmetika pro zářivé líčení</CATEGORY_NAME>
+     </CATEGORY>
+   </SHOPITEM>
+
+<SHOPITEM>
+     <ITEM_ID>1660</ITEM_ID>
+     <PRODUCTNAME>Nailberry | lak na nehty - Purple Rain</PRODUCTNAME>
+     <PRODUCT>Nailberry | lak na nehty - Purple Rain</PRODUCT>
+     <DESCRIPTION>PURPLE RAIN - PURPLE - PURPUROVÁ
+
+Kolekce L'Oxygéné získala mnoho prestižních ocenění pro své složení a barevnou škálu. Unikátní formule nabízí jedny z
+nejkvalitnějších laků na světě.
+
+12 Free (bez zatěžujících toxických látek)
+
+Vegan
+
+Cruelty Free Certified (není testováno na zvířatech)
+
+Halal Certified
+
+Prodyšný
+
+Propustný pro vlhkost
+
+Gluten Free (bez lepku)
+
+Patentované technologie jsou použity za účelem zdravější péče o nehty. Kolekce L'Oxygéné neobsahuje ftaláty včetně DBP, toluen,
+formaldehyd ani složky na základě formaldehydu, kafr, xylen, ethyl tosylamid, triphenyl phosphat, alkohol, parabeny, živočišné
+složky a lepek.
+
+
+ 
+
+TIPY PRO PERFEKTNÍ LAKOVÁNÍ:
+
+ * lakujte na čisté, odmaštěné a vyleštěné nehty
+ * aplikujte jednu vrstvu podlaku, následně barevný lak a jednu vrstvu finálního nadlaku
+ * skvěle tvarovaný štěteček Nailberry vám umožní docílit mandlového tvaru nehtu jako od profesionálů
+
+ 
+
+Objem: 15 ml</DESCRIPTION>
+     <URL>https://kralovksa-pece.cz/p/nby-lak-na-nehty-purple-rain</URL>
+     <IMGURL>https://strapi.kralovska-pece.cz/uploads/Nailberry_Purple_Rain_83ad4bf094_792b8d1724.jpg</IMGURL>
+     <PRICE_VAT>480</PRICE_VAT>
+     <MANUFACTURER>Nailberry</MANUFACTURER>
+     <DELIVERY_DATE>0</DELIVERY_DATE>
+     <CATEGORY>
+        <CATEGORY_NAME>královská péče o Vaše nehty</CATEGORY_NAME>
+     </CATEGORY>
+   </SHOPITEM>
+
+<SHOPITEM>
+     <ITEM_ID>1125</ITEM_ID>
+     <PRODUCTNAME>Deborah Lippmann | lak na nehty - Sexy Back</PRODUCTNAME>
+     <PRODUCT>Deborah Lippmann | lak na nehty - Sexy Back</PRODUCT>
+     <DESCRIPTION>DEBORAH LIPPMANN LAKY NA NEHTY
+
+Laky na nehty patří svými vlastnostmi mezi nejlepší laky na nehty na světě. Mají patentované 7FREE složení obsahuje aktivní
+ingredience, které podporují zdraví nehtů. Zároveň nabízí nádherné barvy a dlouhotrvající lesk vaší manikúry.
+
+TIPY PRO PERFEKTNÍ LAKOVÁNÍ:
+
+ * lakujte na čisté, odmaštěné a vyleštěné nehty (pro perfektní výsledky použijte 2 Second Primer a podlaky a nadlaky z řady Gel
+   Lab Pro Debory Lippmann)
+ * aplikujte jednu vrstvu podlaku, následně barevný lak a jednu vrstvu finálního nadlaku.
+
+ 
+
+Objem: 15 ml</DESCRIPTION>
+     <URL>https://kralovksa-pece.cz/p/dl-lak-na-nehty-sexy-back-glp</URL>
+     <IMGURL>https://strapi.kralovska-pece.cz/uploads/deborah_lippmann_sexyback_lak_na_nehty_bd91fea958_ba604d42c3.jpg</IMGURL>
+     <PRICE_VAT>520</PRICE_VAT>
+     <MANUFACTURER>Deborah Lippmann</MANUFACTURER>
+     <DELIVERY_DATE>14</DELIVERY_DATE>
+     <CATEGORY>
+        <CATEGORY_NAME>královská péče o Vaše nehty</CATEGORY_NAME>
+     </CATEGORY>
+   </SHOPITEM>
+
+<SHOPITEM>
+     <ITEM_ID>0538</ITEM_ID>
+     <PRODUCTNAME>Linda Meredith | Oxygen mask - Aktivní zpevňující maska na obličej</PRODUCTNAME>
+     <PRODUCT>Linda Meredith | Oxygen mask - Aktivní zpevňující maska na obličej</PRODUCT>
+     <DESCRIPTION>AKTIVNÍ ZPEVŇUJÍCÍ MASKA BOHATÁ NA VITAMÍNY
+
+Tento profesionální produkt je teď možné vychutnat si v domácí péči. Na bavlněný základ je naneseno Oxygen Serum - Kyslíkové
+sérum. Přiložením na obličej pleť snadno absorbuje maximální množství účinných látek. LM Oxygen Mask - Kyslíková maska obsahuje
+kyselinu hyaluronovou a Beta-Glucan. Tyto složky viditělně zpevňují pleť. Dodatečné vitamíny také pronikají hlouběji do pleti, tím
+je dosahováno lepších výsledků. Zelený čaj a vitamín B pleť projasňují. LM Oxygen Mask - Kyslíková maska může být používána
+jedenkrát za týden jako intenzivní péče nebo příležitostně pro skvělý "look" před významnými příležitostmi.
+
+ 
+
+DOPORUČENÍ
+
+Skvělý produkt pro všechny cestovatele.
+
+Maska může být používána jedenkrát za týden jako intenzivní péče nebo příležitostně pro skvělý "look" před významnými
+příležitostmi. Pro redukci jemných vrásek nebo při aplikaci na zralou pleť aplikujte na pleť nejprve V-Tox. Dosáhnete tak skvělých
+výsledků. 
+
+Poté, co maska zaschne a vy ji odstraníte, můžete použít zbylé sérum ze sáčku a opět ho aplikovat na obličej včetně očního okolí. 
+
+Oxygen Serum - Kyslíkové sérum nechává na pleti jemný závoj přirozeného vzhledu. Podobného efektu docílíte používáním krému  LM2.
+
+
+Obsah: 3 sáčky s maskou.</DESCRIPTION>
+     <URL>https://kralovksa-pece.cz/p/linda-meredith-oxygen-mask-aktivni-zpevnujici-maska-na-oblicej</URL>
+     <IMGURL>https://strapi.kralovska-pece.cz/uploads/lm_oxygen_mask_white_processed_72d12ed1f1_057cc1f2f1.jpg</IMGURL>
+     <PRICE_VAT>3850</PRICE_VAT>
+     <MANUFACTURER>Linda Meredith</MANUFACTURER>
+     <DELIVERY_DATE>0</DELIVERY_DATE>
+     <CATEGORY>
+        <CATEGORY_NAME>pleťová kosmetika</CATEGORY_NAME>
+     </CATEGORY>
+   </SHOPITEM>
+
+<SHOPITEM>
+     <ITEM_ID>0933</ITEM_ID>
+     <PRODUCTNAME>Nailberry | lak na nehty - Pink Berry</PRODUCTNAME>
+     <PRODUCT>Nailberry | lak na nehty - Pink Berry</PRODUCT>
+     <DESCRIPTION>PINK BERRY - OXYGENATED FUCHSIA PINK - FUCHSIOVÁ RŮŽOVÁ
+
+Kolekce L'Oxygéné získala mnoho prestižních ocenění pro své složení a barevnou škálu. Unikátní formule nabízí jedny z
+nejkvalitnějších laků na světě.
+
+12 Free (bez zatěžujících toxických látek)
+
+Vegan
+
+Cruelty Free Certified (není testováno na zvířatech)
+
+Halal Certified
+
+Prodyšný
+
+Propustný pro vlhkost
+
+Gluten Free (bez lepku)
+
+Patentované technologie jsou použity za účelem zdravější péče o nehty. Kolekce L'Oxygéné neobsahuje ftaláty včetně DBP, toluen,
+formaldehyd ani složky na základě formaldehydu, kafr, xylen, ethyl tosylamid, triphenyl phosphat, alkohol, parabeny, živočišné
+složky a lepek.
+
+
+ 
+
+TIPY PRO PERFEKTNÍ LAKOVÁNÍ:
+
+ * lakujte na čisté, odmaštěné a vyleštěné nehty
+ * aplikujte jednu vrstvu podlaku, následně barevný lak a jednu vrstvu finálního nadlaku
+ * skvěle tvarovaný štěteček Nailberry vám umožní docílit mandlového tvaru nehtu jako od profesionálů
+
+ 
+
+Objem: 15 ml</DESCRIPTION>
+     <URL>https://kralovksa-pece.cz/p/nby-lak-na-nehty-pink-berry</URL>
+     <IMGURL>https://strapi.kralovska-pece.cz/uploads/0933_6f29e7f635_bde0337f68.jpg</IMGURL>
+     <PRICE_VAT>480</PRICE_VAT>
+     <MANUFACTURER>Nailberry</MANUFACTURER>
+     <DELIVERY_DATE>14</DELIVERY_DATE>
+     <CATEGORY>
+        <CATEGORY_NAME>královská péče o Vaše nehty</CATEGORY_NAME>
+     </CATEGORY>
+   </SHOPITEM>
+
+<SHOPITEM>
+     <ITEM_ID>1643</ITEM_ID>
+     <PRODUCTNAME>Eight &amp; Bob | Originální kožené pouzdro na parfémy 30 ml - CITRON</PRODUCTNAME>
+     <PRODUCT>Eight &amp; Bob | Originální kožené pouzdro na parfémy 30 ml - CITRON</PRODUCT>
+     <DESCRIPTION>Originální kožené pouzdro na parfémy Eight &amp; Bob 30 ml. Krásné zpracování, luxusní a originální doplněk.</DESCRIPTION>
+     <URL>https://kralovksa-pece.cz/p/eightandbob-forest-leather-case-set-citron</URL>
+     <IMGURL>https://strapi.kralovska-pece.cz/uploads/Eightandbob_kozene_pouzdro_leathercase_zluta_da0846fd56_d07c900b80.png</IMGURL>
+     <PRICE_VAT>1490</PRICE_VAT>
+     <MANUFACTURER>Eight &amp; Bob</MANUFACTURER>
+     <DELIVERY_DATE>0</DELIVERY_DATE>
+     <CATEGORY>
+        <CATEGORY_NAME>Niche parfémy</CATEGORY_NAME>
+     </CATEGORY>
+   </SHOPITEM>
+
+<SHOPITEM>
+     <ITEM_ID>1953</ITEM_ID>
+     <PRODUCTNAME>Und Gretel | KNUTZEN lesk na rty - Matte Nude 03</PRODUCTNAME>
+     <PRODUCT>Und Gretel | KNUTZEN lesk na rty - Matte Nude 03</PRODUCT>
+     <DESCRIPTION>KNUTZEN - LEHKÝ, PEČUJÍCÍ A SLOŽENÍM ČISTÝ LESK NA RTY. 100% PŘÍRODNÍ, ORGANICKÝ, VEGANSKÝ, V KVALITĚ PRODUKTŮ PRO PROFESIONÁLY.
+
+Jméno lesku na rty KNUTZEN pochází ze staroněmčiny a znamená "stlačit k sobě, držet u sebe", jak tušíte, jde o polibek. Je skvělé
+lesk používat samostatně nebo ve spojení se rtěnkami TAGAROT.
+
+Objem: 6 ml
+
+ 
+
+ODSTÍN MATTE NUDE 03
+
+Tento krycí a vysoce pigmentovaný odstín je v pastelové tělové barvě. Tento odstín lesku Und Gretel Knutzen se hodí ke každému
+typu pleti, je maximálně přirozený. Jde o lesk bez třpytivých částeček. Je perfektní pro efekt zrcadlových rtů s 3D efektem,
+podtrhne Váš svěží a zdravý vzhled.
+
+Nude efekt na rtech se hodí především ke kouřovému líčení.
+
+ 
+
+UNIKÁTNÍ PEČUJÍCÍ SLOŽENÍ
+
+Skočec obecný - z jeho semínek se získává cenný olej, který je známý jako ricínový olej. Podporuje hydrataci pleti a stará se o
+její vyhlazení.
+
+Včelí vosk - je jedním z nejstarších balzámů. V porovnání s oleji je pevnější, proto vhodný na příjemnou aplikaci. Včelí vosk
+vytváří na pokožce lehký ochranný film, který chrání před dehydratací. Zároveň vyhlazuje jemné linky.
+
+Vitamín E - nazývaný také jako vitamín krásy. Je podstatný pro regeneraci pleti.
+
+ 
+
+TIPY PRO POUŽITÍ
+
+Lesk na rty Und Gretel KNUTZEN podtrhne průsvitným barevný akcentem Vaše rty. Lze ho použít také jako vrchní lesklou vrstvu přes
+rtěnky TAGAROT. Barevný efekt pak bude zvláště intenzivní.
+
+Lesky Und Gretel KNUTZEN v "matte" variantě neobsahují viditelné třpytivé částečky. Rty pokryjí krémovou, vysoce pigmentovou
+texturou s plastickým 3D efektem.
+
+Pro svěží a lehký barevný výsledek použijte k aplikaci konečky svých prstů. Pro intenzivnější barevný výsledek nanášejte na rty
+přímo aplikátorem.</DESCRIPTION>
+     <URL>https://kralovksa-pece.cz/p/und-gretel-knutzen-lip-gloss-matte-nude-03</URL>
+     <IMGURL>https://strapi.kralovska-pece.cz/uploads/Und_Gretel_KNUTZEN_03_Matte_Nude_lesk_84e5280f00_9722490baa.jpg</IMGURL>
+     <PRICE_VAT>960</PRICE_VAT>
+     <MANUFACTURER>Und Gretel</MANUFACTURER>
+     <DELIVERY_DATE>0</DELIVERY_DATE>
+     <CATEGORY>
+        <CATEGORY_NAME>dekorativní kosmetika pro zářivé líčení</CATEGORY_NAME>
+     </CATEGORY>
+   </SHOPITEM>
+
+<SHOPITEM>
+     <ITEM_ID>0906</ITEM_ID>
+     <PRODUCTNAME>Nailberry | lak na nehty - Pink Tulip</PRODUCTNAME>
+     <PRODUCT>Nailberry | lak na nehty - Pink Tulip</PRODUCT>
+     <DESCRIPTION>PINK TULIP - OXYGENATED POP CANDY PINK - CUKROVĚ RŮŽOVÁ
+
+Kolekce L'Oxygéné získala mnoho prestižních ocenění pro své složení a barevnou škálu. Unikátní formule nabízí jedny z
+nejkvalitnějších laků na světě.
+
+12 Free (bez zatěžujících toxických látek)
+
+Vegan
+
+Cruelty Free Certified (není testováno na zvířatech)
+
+Halal Certified
+
+Prodyšný
+
+Propustný pro vlhkost
+
+Gluten Free (bez lepku)
+
+Patentované technologie jsou použity za účelem zdravější péče o nehty. Kolekce L'Oxygéné neobsahuje ftaláty včetně DBP, toluen,
+formaldehyd ani složky na základě formaldehydu, kafr, xylen, ethyl tosylamid, triphenyl phosphat, alkohol, parabeny, živočišné
+složky a lepek.
+
+
+ 
+
+TIPY PRO PERFEKTNÍ LAKOVÁNÍ:
+
+ * lakujte na čisté, odmaštěné a vyleštěné nehty
+ * aplikujte jednu vrstvu podlaku, následně barevný lak a jednu vrstvu finálního nadlaku
+ * skvěle tvarovaný štěteček Nailberry vám umožní docílit mandlového tvaru nehtu jako od profesionálů
+
+ 
+
+Objem: 15 ml</DESCRIPTION>
+     <URL>https://kralovksa-pece.cz/p/nailberry-lak-na-nehty-pink-tulip</URL>
+     <IMGURL>https://strapi.kralovska-pece.cz/uploads/0906_fdbd52890a_afbba71a16.png</IMGURL>
+     <PRICE_VAT>480</PRICE_VAT>
+     <MANUFACTURER>Nailberry</MANUFACTURER>
+     <DELIVERY_DATE>0</DELIVERY_DATE>
+     <CATEGORY>
+        <CATEGORY_NAME>královská péče o Vaše nehty</CATEGORY_NAME>
+     </CATEGORY>
+   </SHOPITEM>
+
+<SHOPITEM>
+     <ITEM_ID>0575</ITEM_ID>
+     <PRODUCTNAME>Deborah Lippmann | Dárkový poukaz - SALON - Manikúra - KRÁLOVSKÁ MANIKÚRA Deborah Lippmann</PRODUCTNAME>
+     <PRODUCT>Deborah Lippmann | Dárkový poukaz - SALON - Manikúra - KRÁLOVSKÁ MANIKÚRA Deborah Lippmann</PRODUCT>
+     <DESCRIPTION>ABSOLUTNÍ MANIKÚRA, ABSOLUTNÍ VÝŽIVA STVOŘENA NEJEN PRO DOKONALÝ TVAR NEHTŮ, ALE TAKÉ PRO PÉČI O POKOŽKU RUKY.
+
+Ošetření - Královská manikúra Deborah Lippmann zahrnuje:
+
+ * Úprava nehtů patentovaným pilníkem.
+ * Hloubkové vyživení nehtů a jemné odstranění nehtové kůžičky pomocí speciálního rozmělňujícího a léčivého removeru.
+ * Leštění nehtů podle Deborah Lippmann – zapravení nehtové výživy do hlubších částí nehtů, aplikace Intenzivního vyživujícího
+   oleje jako finální ochranné vrstva nehtu.
+ * Exfoliační peeling na ruce a nehtovou kůžičku – mikroabrase, vyživení unikátním legendárním peelingem Marshmallow .
+ * Koupel pomocí výživné a pečujícího koupele Deborah Lippmann – zklidní a vyživí pokožku.
+ * Vmasírování Intenzivního hydratačního krému do celé oblasti rukou.
+ * Lakování pečujícím netoxickým lakem Deborah Lippmann - podkladový lak, barevný lak, nadlak.
+
+
+INFORMACE K DÁRKOVÝM POUKAZŮM:
+
+- Dárkové poukazy zasíláme v dárkové zlaté obálce, jsou tedy ihned připraveny k darování. Pokud chcete dárkový poukaz zaslat
+elektornicky, napište nám požadovanou emailovou adresu do komentáře k objednávce.
+
+- Pokud si přejete do dárkového poukazu věnování, prosím sdělte nám to do komentáře k objednávce.
+
+- Detailní informace o službách je uvedena také na www.boutique-salon-maximus.cz.
+
+- Pro nákup na www.kralovska-pece.cz je na poukazu uveden unikátní kód, který obdarovaný jednoduše použije při platbě v našem
+e-shopu.
+
+- Standardní platnost dárkového poukazu je půl roku od data vystavení. Pokud je třeba se domluvit jinak, prosím kontaktujte nás.
+Děkujeme.
+
+- Pokud si přejete individuální domluvu ohledně dárkových poukazů, prosím kontaktujte nás. O vše se postaráme k Vaší spokojenosti.
+
+- Dárkové poukazy nemohou být proplaceny.</DESCRIPTION>
+     <URL>https://kralovksa-pece.cz/p/darkovy-poukaz-salon-manikura-kralovska-manikura-deborah-lippmann</URL>
+     <IMGURL>https://strapi.kralovska-pece.cz/uploads/darkovy_poukaz_kralovska_pece_manikura_2_ec49174437_efe728e692.jpg</IMGURL>
+     <PRICE_VAT>790</PRICE_VAT>
+     <MANUFACTURER>Deborah Lippmann</MANUFACTURER>
+     <DELIVERY_DATE>14</DELIVERY_DATE>
+     <CATEGORY>
+        <CATEGORY_NAME>Dárkové poukazy</CATEGORY_NAME>
+     </CATEGORY>
+   </SHOPITEM>
+
+<SHOPITEM>
+     <ITEM_ID>1603</ITEM_ID>
+     <PRODUCTNAME>Deborah Lippmann | sada laků na nehty - Undressed</PRODUCTNAME>
+     <PRODUCT>Deborah Lippmann | sada laků na nehty - Undressed</PRODUCT>
+     <DESCRIPTION>Perfektní sada pro milovnice nude odstínů. Šest kusů módních odstínů v kvalitě Gel Lab Pro pro dokonale upravený přirozený vzhled
+vašich nehtů.
+
+SADA OBSAHUJE TYTO ODSTÍNY:
+
+ * Flesh For Fantasy - plně krycí lak, barva alabastrová
+ * Totally Nude - plně krycí béžově růžový lak
+ * Born This Way - plně krycí broskvově béžový lak
+ * Bare It All - plně krycí fialkově béžový lak
+ * Natural Woman - plně krycí mandlově béžový lak
+ * Skin Deep - plně krycí béžový lak
+
+Objem: 6 x 8 ml
+
+
+DEBORAH LIPPMANN - KOLEKCE GEL LAB PRO
+
+Laky na nehty řady Gel Lab Pro patří svými vlastnostmi a způsobem aplikace a odlakování do standardních laků na nehty. Gelovou
+technologii připomínají svým finálním vzhledem (leskem a povrchem). Toto patentované 10FREE složení obsahuje aktivní ingredience,
+které podporují zdraví nehtů. Zároveň nabízí nádherné barvy a dlouhotrvající lesk vaší manikúry.
+
+TIPY PRO PERFEKTNÍ LAKOVÁNÍ:
+
+ * lakujte na čisté, odmaštěné a vyleštěné nehty (pro perfektní výsledky použijte 2 Second Primer a podlaky a nadlaky z řady Gel
+   Lab Pro Debory Lippmann)
+ * aplikujte jednu vrstvu podlaku, následně barevný lak a jednu vrstvu finálního nadlaku.</DESCRIPTION>
+     <URL>https://kralovksa-pece.cz/p/dl-lak-na-nehty-undressed-6ks</URL>
+     <IMGURL>https://strapi.kralovska-pece.cz/uploads/deborah_lippmann_undressed_86eba593f0_20a1659d5e.jpg</IMGURL>
+     <PRICE_VAT>990</PRICE_VAT>
+     <MANUFACTURER>Deborah Lippmann</MANUFACTURER>
+     <DELIVERY_DATE>0</DELIVERY_DATE>
+     <CATEGORY>
+        <CATEGORY_NAME>zvýhodněné sady laků na nehty</CATEGORY_NAME>
+     </CATEGORY>
+   </SHOPITEM>
+
+<SHOPITEM>
+     <ITEM_ID>1585</ITEM_ID>
+     <PRODUCTNAME>Deborah Lippmann | lak na nehty - Break For Love </PRODUCTNAME>
+     <PRODUCT>Deborah Lippmann | lak na nehty - Break For Love </PRODUCT>
+     <DESCRIPTION>DEBORAH LIPPMANN - KOLEKCE GEL LAB PRO
+
+Laky na nehty řady Gel Lab Pro patří svými vlastnostmi a způsobem aplikace a odlakování do standardních laků na nehty. Gelovou
+technologii připomínají svým finálním vzhledem (leskem a povrchem). Toto patentované 7FREE složení obsahuje aktivní ingredience,
+které podporují zdraví nehtů. Zároveň nabízí nádherné barvy a dlouhotrvající lesk vaší manikúry.
+
+TIPY PRO PERFEKTNÍ LAKOVÁNÍ:
+
+ * lakujte na čisté, odmaštěné a vyleštěné nehty (pro perfektní výsledky použijte 2 Second Primer a podlaky a nadlaky z řady Gel
+   Lab Pro Debory Lippmann)
+ * aplikujte jednu vrstvu podlaku, následně barevný lak a jednu vrstvu finálního nadlaku.
+
+ 
+
+Objem: 15 ml</DESCRIPTION>
+     <URL>https://kralovksa-pece.cz/p/dl-lak-na-nehty-break-4-love-glp</URL>
+     <IMGURL>https://strapi.kralovska-pece.cz/uploads/Deborah_Lippmann_break_4_love_6557f86b15_1af61388d8.jpg</IMGURL>
+     <PRICE_VAT>520</PRICE_VAT>
+     <MANUFACTURER>Deborah Lippmann</MANUFACTURER>
+     <DELIVERY_DATE>14</DELIVERY_DATE>
+     <CATEGORY>
+        <CATEGORY_NAME>královská péče o Vaše nehty</CATEGORY_NAME>
+     </CATEGORY>
+   </SHOPITEM>
+
+<SHOPITEM>
+     <ITEM_ID>3227</ITEM_ID>
+     <PRODUCTNAME>butter LONDON | Toff Patent Shine 10X</PRODUCTNAME>
+     <PRODUCT>butter LONDON | Toff Patent Shine 10X</PRODUCT>
+     <DESCRIPTION>BUTTER LONDON - TOFF PATENT SHINE 10X
+
+Tento lak na nehty butter LONDON v zaprášené fialové barvě dodá Vašim nehtům jedinečný elegantní vzhled.
+
+Laky butter LONDON mají složení Patent Shine 10X, které je pro nehty velmi prospěšné, prokazatelně podporuje jasnější, silnější a
+zdravější vzhled nehtů. Patentovaná polymerová technologie Shock Resistance poskytuje povrch podobný gelu s vynikajícím leskem,
+zatímco technologie Radiant Curing pomáhá vytvrzovat a zasychat lak s lehkostí přirozeného světla.
+
+Dosáhněte plně krycí barvy jediným tahem pomocí unikátního štětcového aplikátoru butter LONDON - hustého a zakřiveného, který
+obejme nehty, zajistí bezchybně vypadající barvu a výdrž až po dobu 10 dnů!
+ 
+
+KLÍČOVÉ SLOŽKY:
+
+ * technologie polymerů – zajišťuje dlouhou životnost a odolnost proti nárazům a odlupování laku
+ * diamantový prášek – rozjasňuje barvu
+ * absorbéry UV záření – chrání barvu před vyblednutím
+ * výtažek z bambusu - pomáhá nehty zpevňovat, zabraňuje lámání a třepení nehtů
+    
+
+TIPY PRO LAKOVÁNÍ:
+
+ * naneste jednu vrstvu laku na nehty, nechte zaschnout, poté naneste druhou vrstvu
+ * není potřeba žádná podkladová vrstva ani vrchní lak
+   
+    
+
+Objem: 11 ml
+
+ </DESCRIPTION>
+     <URL>https://kralovksa-pece.cz/p/butter-london-toff-patent-shine10x</URL>
+     <IMGURL>https://strapi.kralovska-pece.cz/uploads/Butter_London_Toff_Patent_Shine_10_X_9107d004f1_4befad8d15.jpg</IMGURL>
+     <PRICE_VAT>480</PRICE_VAT>
+     <MANUFACTURER>butter LONDON</MANUFACTURER>
+     <DELIVERY_DATE>0</DELIVERY_DATE>
+     <CATEGORY>
+        <CATEGORY_NAME>královská péče o Vaše nehty</CATEGORY_NAME>
+     </CATEGORY>
+   </SHOPITEM>
+
+<SHOPITEM>
+     <ITEM_ID>1840</ITEM_ID>
+     <PRODUCTNAME>Tiziana Terenzi | svíčka - Kirké - styl Camino</PRODUCTNAME>
+     <PRODUCT>Tiziana Terenzi | svíčka - Kirké - styl Camino</PRODUCT>
+     <DESCRIPTION>VONNÁ SVÍCE S VŮNÍ PARFÉMU KIRKÉ
+
+Vůně: broskev, cassis, heliotrop, hruška, konvalinka, malina, pačuli, pižmo, santalové dřevo, teplý písek, vanilka
+
+Hmotnost: 1000 g
+
+Doba hoření: 86 hodin
+
+Součástí nádherného balení v podobě muránského skla je skleněný poklop, který slouží pro bezpečnější zhasínání ohně, jako ochrana
+proti prachu a také zachovává uvnitř svíce vůni.
+
+Rozměry: Svíčky Camino mají 3 cedrová dřívka, Ø skleněné nádoby 128 mm a Ø 143 mm, výška 167 mm.
+
+ 
+
+SVÍČKY OD TIZIANY TERENZI JSOU VŽDY ŠPERKY V TOMTO OBORU.
+
+Jsou vyráběné patentovanou technikou tak s důrazem na maximální čistotu hoření.
+
+Svíčky se vyznačují vysokým podílem vonných složek až ve výši 20% (běžně se do luxusních svíček používá koncentrace 8%). Tyto
+aromaterapeutické svíčky při hoření uvolňují esence, které jemný prach ve vzduchu katalyzují zápornými ionty, a tím se vytváří
+nejen nádherně provoněné, ale i zdravější prostředí.
+
+Svíčky se také vyznačují velkou dobou hoření a celý objem je koncipovát tak, aby dohořely beze zbytku. Knoty jsou vyrobeny z
+čistého cedrového dřeva, tím je zajištěna čistota hoření, žádné saze a také není nutné odřezávat knot. Cedrové knoty také praskají
+jako oheň v krbu, tím svíčku nádherně oživují.
+
+Svíčky od Tiziany Terenzi nevytváří žádné škodlivé látky. Všechny suroviny splňují evropské normy REACH a byly oceněny známkou
+kvality RAL. Tiziana Terenzi používá do svíček pouze rotlinný vosk, který je 100% pročištěný a zpevněný, neobsahuje benzen ani
+technický toluen a odpovídá potravinářským normám.
+
+Svíčky jsou vyráběny v Itálii.
+
+ 
+
+ </DESCRIPTION>
+     <URL>https://kralovksa-pece.cz/p/camino-kirke-vonna-svicka</URL>
+     <IMGURL>https://strapi.kralovska-pece.cz/uploads/Tiziana_Terenzi_Kirke_svice_Camino_90bf233861_5fbd754340.jpg</IMGURL>
+     <PRICE_VAT>4500</PRICE_VAT>
+     <MANUFACTURER>Tiziana Terenzi</MANUFACTURER>
+     <DELIVERY_DATE>14</DELIVERY_DATE>
+     <CATEGORY>
+        <CATEGORY_NAME>Svíčky a difuzéry</CATEGORY_NAME>
+     </CATEGORY>
+   </SHOPITEM>
+
+<SHOPITEM>
+     <ITEM_ID>1536</ITEM_ID>
+     <PRODUCTNAME>Deborah Lippmann | lak na nehty - Ibiza </PRODUCTNAME>
+     <PRODUCT>Deborah Lippmann | lak na nehty - Ibiza </PRODUCT>
+     <DESCRIPTION>DEBORAH LIPPMANN - KOLEKCE GEL LAB PRO
+
+Laky na nehty řady Gel Lab Pro patří svými vlastnostmi a způsobem aplikace a odlakování do standardních laků na nehty. Gelovou
+technologii připomínají svým finálním vzhledem (leskem a povrchem). Toto patentované 7FREE složení obsahuje aktivní ingredience,
+které podporují zdraví nehtů. Zároveň nabízí nádherné barvy a dlouhotrvající lesk vaší manikúry.
+
+TIPY PRO PERFEKTNÍ LAKOVÁNÍ:
+
+ * lakujte na čisté, odmaštěné a vyleštěné nehty (pro perfektní výsledky použijte 2 Second Primer a podlaky a nadlaky z řady Gel
+   Lab Pro Debory Lippmann)
+ * aplikujte jednu vrstvu podlaku, následně barevný lak a jednu vrstvu finálního nadlaku.
+
+ 
+
+Objem: 15 ml</DESCRIPTION>
+     <URL>https://kralovksa-pece.cz/p/dl-lak-na-nehty-ibiza-glp</URL>
+     <IMGURL>https://strapi.kralovska-pece.cz/uploads/Deborah_Lippann_Ibiza_06e5daf9af_d03ca9642c.jpg</IMGURL>
+     <PRICE_VAT>520</PRICE_VAT>
+     <MANUFACTURER>Deborah Lippmann</MANUFACTURER>
+     <DELIVERY_DATE>0</DELIVERY_DATE>
+     <CATEGORY>
+        <CATEGORY_NAME>královská péče o Vaše nehty</CATEGORY_NAME>
+     </CATEGORY>
+   </SHOPITEM>
+
+<SHOPITEM>
+     <ITEM_ID>2910</ITEM_ID>
+     <PRODUCTNAME>Giardino Benessere | Air Therapy - Spice Harmony - interiérový parfém</PRODUCTNAME>
+     <PRODUCT>Giardino Benessere | Air Therapy - Spice Harmony - interiérový parfém</PRODUCT>
+     <DESCRIPTION>GIARDINO BENESSERE - SPICE HARMONY- INTERIÉROVÝ PARFÉM
+
+Interiérový parfém Giardino Benessere krásně provoní vnitřní prostory Vašeho domova, kanceláře nebo auta. Vůně má dlouhotrvající
+účinek a zaručuje neustálé uvolňování vzácných vonných esencí ve vzduchu. Interiérový parfém můžete použít do skříně, nebo na
+bytové textilie, koberce a podobně.
+
+Vůně Spicy Harmony navodí teplou a povzbudivou atmosféru. Má příjemnou pikantní vůni.
+
+Suroviny jsou certifikované podle přísných nařízení REACH a IFRA. Vše vytvořeno z přírodních produktů. Obsahuje 20% vonných
+esencí. 
+
+Objem: 100 ml
+
+
+GIARDINO BENESSERE - SPICE HARMONY - INTERIÉROVÝ PARFÉM
+
+Typ vůně: pikantní
+Těžkost: těžká
+ </DESCRIPTION>
+     <URL>https://kralovksa-pece.cz/p/gb-air-therapy-spice-h-int-parf-100-ml</URL>
+     <IMGURL>https://strapi.kralovska-pece.cz/uploads/Giardino_Benessere_interierovy_parfem_Spicy_Harmony_89f5767aea_51c2f2a972.jpg</IMGURL>
+     <PRICE_VAT>890</PRICE_VAT>
+     <MANUFACTURER>Giardino Benessere</MANUFACTURER>
+     <DELIVERY_DATE>0</DELIVERY_DATE>
+     <CATEGORY>
+        <CATEGORY_NAME>Svíčky a difuzéry</CATEGORY_NAME>
+     </CATEGORY>
+   </SHOPITEM>
+
+<SHOPITEM>
+     <ITEM_ID>0910</ITEM_ID>
+     <PRODUCTNAME>Nailberry | lak na nehty - Au naturel</PRODUCTNAME>
+     <PRODUCT>Nailberry | lak na nehty - Au naturel</PRODUCT>
+     <DESCRIPTION>AU NATUREL - OXYGENATED LIGHT BEIGE WITH HINT OF PINK - JEMNĚ BÉŽOVÁ S DOTEKEM RŮŽOVÉ
+
+Kolekce L'Oxygéné získala mnoho prestižních ocenění pro své složení a barevnou škálu. Unikátní formule nabízí jedny z
+nejkvalitnějších laků na světě.
+
+12 Free (bez zatěžujících toxických látek)
+
+Vegan
+
+Cruelty Free Certified (není testováno na zvířatech)
+
+Halal Certified
+
+Prodyšný
+
+Propustný pro vlhkost
+
+Gluten Free (bez lepku)
+
+Patentované technologie jsou použity za účelem zdravější péče o nehty. Kolekce L'Oxygéné neobsahuje ftaláty včetně DBP, toluen,
+formaldehyd ani složky na základě formaldehydu, kafr, xylen, ethyl tosylamid, triphenyl phosphat, alkohol, parabeny, živočišné
+složky a lepek.
+
+
+ 
+
+TIPY PRO PERFEKTNÍ LAKOVÁNÍ:
+
+ * lakujte na čisté, odmaštěné a vyleštěné nehty
+ * aplikujte jednu vrstvu podlaku, následně barevný lak a jednu vrstvu finálního nadlaku
+ * skvěle tvarovaný štěteček Nailberry vám umožní docílit mandlového tvaru nehtu jako od profesionálů
+
+ </DESCRIPTION>
+     <URL>https://kralovksa-pece.cz/p/nailberry-lak-na-nehty-au-naturel</URL>
+     <IMGURL>https://strapi.kralovska-pece.cz/uploads/0910_d9a4431821_6d8813cd5c.jpg</IMGURL>
+     <PRICE_VAT>480</PRICE_VAT>
+     <MANUFACTURER>Nailberry</MANUFACTURER>
+     <DELIVERY_DATE>0</DELIVERY_DATE>
+     <CATEGORY>
+        <CATEGORY_NAME>královská péče o Vaše nehty</CATEGORY_NAME>
+     </CATEGORY>
+   </SHOPITEM>
+
+<SHOPITEM>
+     <ITEM_ID>1917</ITEM_ID>
+     <PRODUCTNAME>Und Gretel | SUNNE  liftingový modelovací pudr a tvářenka - Bero</PRODUCTNAME>
+     <PRODUCT>Und Gretel | SUNNE  liftingový modelovací pudr a tvářenka - Bero</PRODUCT>
+     <DESCRIPTION>TVÁŘENKA SUNNE, TO JE PŘIROZENÝ VZHLED, PERFEKTNĚ KONTUROVANÝ OBLIČEJ JAKO OD MAKE-UP ARTISTY. 100% PŘÍRODNÍ, ORGANICKÁ, VEGANSKÁ,
+V KVALITĚ PRODUKTŮ PRO PROFESIONÁLY.
+
+Tvářenka Sunne od Und Gretel není jen pudr ve třech různých barevných kombinacích. Kvalitou jde o liftingový modelovací
+konturovací pudr. Díky dokonale vyváženým texturám dosáhnete výsledků jako profesionálové. Podtrhnete přirozené kontury obličeje,
+které budou jako políbené sluncem. Ne nadarmo jméno tvářenky SUNNE pochází ze staroněmčiny a znamená "slunce".
+
+Hmotnost: 13 g
+
+
+ 
+
+ODSTÍN BERO
+
+Prvním odstínem tvářenky Bero je tmavší hnědočervený odstín, který se nanáší na lícní kosti, spánky a čelo. Bero je tvářenka v
+teplém slunečném bronzovém tónu s lehkými světelnými odlesky.
+
+Jde o perfektní bronzer pro opálenou pokožku nebo opálený vzhled. Tvářenka SUNNE má tu správnou kombinaci matných a reflexních
+barevných pigmentů. Působí velmi přirozeně a je to vlastně multifunkční líčidlo. Pokud chcete dosáhnout opáleného vzhledu, naneste
+tvářenku na celý obličej. Toto použití při tmavém typu pleti vytvoří liftingový efekt, který vyrovná drobné nedokonalosti a
+vrásky.
+
+Pudr je veganský, přiložené štětce jsou z kozí srsti.
+
+DRUHÝ ODSTÍN V BALENÍ
+
+Jde vždy o tmavší odstín, který plní funkci konturovacího pudru. Nanášejte ho pod lícní kosti, pod bradu podle krajů obličeje.
+Tento pudr je v matném tónu s kamenně šedými tóny pro vytvoření dokonalého efektu stínování. Pigmenty z přírodních látek se hodí
+ke všem barvám pleti. Tak jako všechny přírodní pigmenty lze i tento pudr opakovaně nanášet a vytvořit požadovanou intenzitu.
+
+ 
+
+UNIKÁTNÍ PEČUJÍCÍ SLOŽENÍ
+
+Olej z citrónové kůry - přirozené vypíná pleť, pečuje a stará se o hydrataci.
+
+Avokádový olej - je pletí dobře přijímaný a působí jako výživa, nezatěžuje pleť. Obsažené mastné kyseliny zlepšují strukturu pleti
+a vyživují buňky vitamínem A a E. Tento ceněný avokádový olej podporuje obnovu buněk a chrání pleť před oxidačním stresem.
+
+Vitamín E - nazývaný také jako vitamín krásy. Je podstatný pro regeneraci pleti.</DESCRIPTION>
+     <URL>https://kralovksa-pece.cz/p/und-gretel-sunne-lifting-modellage-powder-bero</URL>
+     <IMGURL>https://strapi.kralovska-pece.cz/uploads/Und_Gretel_SUNNE_Bero_tvarenka_7e22cbc1ab_c8c5254869.jpg</IMGURL>
+     <PRICE_VAT>2170</PRICE_VAT>
+     <MANUFACTURER>Und Gretel</MANUFACTURER>
+     <DELIVERY_DATE>0</DELIVERY_DATE>
+     <CATEGORY>
+        <CATEGORY_NAME>dekorativní kosmetika pro zářivé líčení</CATEGORY_NAME>
+     </CATEGORY>
+   </SHOPITEM>
+
+<SHOPITEM>
+     <ITEM_ID>0025-A</ITEM_ID>
+     <PRODUCTNAME>James Heeley | L` Amandiere | 50 ml</PRODUCTNAME>
+     <PRODUCT>James Heeley | L` Amandiere | 50 ml</PRODUCT>
+     <DESCRIPTION>Jaro. Jaro - již mnohokrát a možná příliš často bylo tématem ve světě vůní a přesto ještě existují způsoby, jak k tomuto tématu
+přistoupit. Příkladem je tento extrakt. Tak vyjadřuje parfém L` Amandiere komplexní charakter tohoto ročního období. Představte
+si, že stojíte v zahradě plné květin - a mlhavě si u dokážete představit, jak byla zahrada vytvářena a jaký vliv má na chod věcí
+to, když se někdo něčemu plně oddá. Kvetoucí mandlovníky a lípy, hyacint a růže - svým vnitřním zrakem můžete tyto vonné světy
+navnímat. Jednoduše v té zahradě stojíte a se zavřenýma očima vdechujete vůně, které vás obklopují.
+
+Kterému typu může vůně sedět?
+
+Tato vůně je určena především ženám. Svěží, co si ráda občas vyměňuje náhodné pohledy. Tajné polibky....možná si pamatujete?
+
+Hlavní tóny:
+
+zelené mandle, růže, jasmín, tilia</DESCRIPTION>
+     <URL>https://kralovska-pece.cz/p/l-amandiere-james-heeley?variant=50-ml</URL>
+     <IMGURL>https://strapi.kralovska-pece.cz/uploads/0025_c438e13aab_aa13a31d68.jpg</IMGURL>
+     <PRICE_VAT>3990</PRICE_VAT>
+     <MANUFACTURER>James Heeley</MANUFACTURER>
+     <DELIVERY_DATE>14</DELIVERY_DATE>
+     <CATEGORY>
+        <CATEGORY_NAME>Niche parfémy</CATEGORY_NAME>
+     </CATEGORY>
+   </SHOPITEM>
+
+<SHOPITEM>
+     <ITEM_ID>0025-C</ITEM_ID>
+     <PRODUCTNAME>James Heeley | L` Amandiere | 3 ml</PRODUCTNAME>
+     <PRODUCT>James Heeley | L` Amandiere | 3 ml</PRODUCT>
+     <DESCRIPTION>Jaro. Jaro - již mnohokrát a možná příliš často bylo tématem ve světě vůní a přesto ještě existují způsoby, jak k tomuto tématu
+přistoupit. Příkladem je tento extrakt. Tak vyjadřuje parfém L` Amandiere komplexní charakter tohoto ročního období. Představte
+si, že stojíte v zahradě plné květin - a mlhavě si u dokážete představit, jak byla zahrada vytvářena a jaký vliv má na chod věcí
+to, když se někdo něčemu plně oddá. Kvetoucí mandlovníky a lípy, hyacint a růže - svým vnitřním zrakem můžete tyto vonné světy
+navnímat. Jednoduše v té zahradě stojíte a se zavřenýma očima vdechujete vůně, které vás obklopují.
+
+Kterému typu může vůně sedět?
+
+Tato vůně je určena především ženám. Svěží, co si ráda občas vyměňuje náhodné pohledy. Tajné polibky....možná si pamatujete?
+
+Hlavní tóny:
+
+zelené mandle, růže, jasmín, tilia</DESCRIPTION>
+     <URL>https://kralovska-pece.cz/p/l-amandiere-james-heeley?variant=3-ml</URL>
+     <IMGURL>https://strapi.kralovska-pece.cz/uploads/0025_c438e13aab_aa13a31d68.jpg</IMGURL>
+     <PRICE_VAT>295</PRICE_VAT>
+     <MANUFACTURER>James Heeley</MANUFACTURER>
+     <DELIVERY_DATE>0</DELIVERY_DATE>
+     <CATEGORY>
+        <CATEGORY_NAME>Niche parfémy</CATEGORY_NAME>
+     </CATEGORY>
+   </SHOPITEM>
+
+<SHOPITEM>
+     <ITEM_ID>1735</ITEM_ID>
+     <PRODUCTNAME>Deborah Lippmann | lak na nehty - Candy Shop</PRODUCTNAME>
+     <PRODUCT>Deborah Lippmann | lak na nehty - Candy Shop</PRODUCT>
+     <DESCRIPTION>DEBORAH LIPPMANN - KOLEKCE GEL LAB PRO
+
+Laky na nehty řady Gel Lab Pro patří svými vlastnostmi a způsobem aplikace a odlakování do standardních laků na nehty. Gelovou
+technologii připomínají svým finálním vzhledem (leskem a povrchem). Toto patentované 7FREE složení obsahuje aktivní ingredience,
+které podporují zdraví nehtů. Zároveň nabízí nádherné barvy a dlouhotrvající lesk vaší manikúry.
+
+TIPY PRO PERFEKTNÍ LAKOVÁNÍ:
+
+ * lakujte na čisté, odmaštěné a vyleštěné nehty (pro perfektní výsledky použijte 2 Second Primer a podlaky a nadlaky z řady Gel
+   Lab Pro Debory Lippmann)
+ * aplikujte jednu vrstvu podlaku, následně barevný lak a jednu vrstvu finálního nadlaku.
+
+ 
+
+Objem: 15 ml</DESCRIPTION>
+     <URL>https://kralovksa-pece.cz/p/dl-lak-na-nehty-candy-shop-glp</URL>
+     <IMGURL>https://strapi.kralovska-pece.cz/uploads/Deborah_Lippmann_Candy_shop_53e7446859_4a7c9c5bef.jpg</IMGURL>
+     <PRICE_VAT>520</PRICE_VAT>
+     <MANUFACTURER>Deborah Lippmann</MANUFACTURER>
+     <DELIVERY_DATE>0</DELIVERY_DATE>
+     <CATEGORY>
+        <CATEGORY_NAME>královská péče o Vaše nehty</CATEGORY_NAME>
+     </CATEGORY>
+   </SHOPITEM>
+
+<SHOPITEM>
+     <ITEM_ID>1933</ITEM_ID>
+     <PRODUCTNAME>Und Gretel | IMBE oční stíny - Patina 06</PRODUCTNAME>
+     <PRODUCT>Und Gretel | IMBE oční stíny - Patina 06</PRODUCT>
+     <DESCRIPTION>LUXUSNÍ VYSOCE PIGMENTOVANÉ OČNÍ STÍNY. 100% PŘÍRODNÍ, ORGANICKÉ, VEGANSKÉ, V KVALITĚ PRODUKTŮ PRO PROFESIONÁLY. HAUTE COUTURE PRO
+VAŠE OČI.
+
+Oční stíny IMBE od mimořádné značky Und Gretel mají perleťovou strukturu a neuvěřitelné pečující složení. Jméno IMBE je odvozeno
+ze staré němčiny a znamená "roj včel".
+
+Hmotnost: 3,5 g
+
+ 
+
+ODSTÍN PATINA 06
+
+Sytý světle šedý odstín se zelenými podtóny s vysokým podílem pigmentů a třpytivou texturou. Tento stín Vám poskytne metalický
+look a neuvěřitelné krytí. Barva osvěží Váš pohled a hodí se ke všem barvám očí.
+
+ 
+
+UNIKÁTNÍ PEČUJÍCÍ SLOŽENÍ
+
+Řešetlák - bylina se zázračnými léčivými vlastnostmi. Má silné protizánětlivé účinky, řešetlák je považován za přírodní
+antibiotikum.
+
+Skočec obecný - z jeho semínek se získává cenný olej, který je známý jako ricínový olej. Podporuje hydrataci pleti a stará se o
+její vyhlazení.
+
+Bílý koaolin - platí za nejjemnější minerální hlínu s úžasnými pečujícími vlastnostmi. Stará se o suchou a citlivou pleť. Jako
+bonus je přirozeným lehkým UV faktorem.
+
+Minerály - doslova se spojí s pletí a tím se krásně propojí barevné pigmenty.
+
+
+ 
+
+TIPY PRO POUŽITÍ
+
+Dokonale vyvážené barevné odstíny Vám umožní libovolně kombinovat všech osm stínů IMBE. Vrstvením jednotlivých barev můžete
+docílit 3D efektu, který dá Vašim očím více hloubky. Pro nanášení použijte štětce nebo i své prsty, kterými stíny krásně
+zapracujete do pleti a vynikne tak ještě více jejich textura. Stíny můžete také namíchat do make-upu LEITH, získáte tak
+rozjasňovač.</DESCRIPTION>
+     <URL>https://kralovksa-pece.cz/p/und-gretel-imbe-eyeshadow-patina-06</URL>
+     <IMGURL>https://strapi.kralovska-pece.cz/uploads/Und_Gretel_IMBE_06_Patina_ocni_stiny_1065174b72_fa82a945d4.jpg</IMGURL>
+     <PRICE_VAT>860</PRICE_VAT>
+     <MANUFACTURER>Und Gretel</MANUFACTURER>
+     <DELIVERY_DATE>14</DELIVERY_DATE>
+     <CATEGORY>
+        <CATEGORY_NAME>dekorativní kosmetika pro zářivé líčení</CATEGORY_NAME>
+     </CATEGORY>
+   </SHOPITEM>
+
+<SHOPITEM>
+     <ITEM_ID>1763</ITEM_ID>
+     <PRODUCTNAME>Deborah Lippmann | lak na nehty - Red blooded woman</PRODUCTNAME>
+     <PRODUCT>Deborah Lippmann | lak na nehty - Red blooded woman</PRODUCT>
+     <DESCRIPTION>DEBORAH LIPPMANN - KOLEKCE GEL LAB PRO
+
+Laky na nehty řady Gel Lab Pro patří svými vlastnostmi a způsobem aplikace a odlakování do standardních laků na nehty. Gelovou
+technologii připomínají svým finálním vzhledem (leskem a povrchem). Toto patentované 7FREE složení obsahuje aktivní ingredience,
+které podporují zdraví nehtů. Zároveň nabízí nádherné barvy a dlouhotrvající lesk vaší manikúry.
+
+TIPY PRO PERFEKTNÍ LAKOVÁNÍ:
+
+ * lakujte na čisté, odmaštěné a vyleštěné nehty (pro perfektní výsledky použijte 2 Second Primer a podlaky a nadlaky z řady Gel
+   Lab Pro Debory Lippmann)
+ * aplikujte jednu vrstvu podlaku, následně barevný lak a jednu vrstvu finálního nadlaku.
+
+ 
+
+Objem: 15 ml</DESCRIPTION>
+     <URL>https://kralovksa-pece.cz/p/dl-lak-na-nehty-red-blooded-woman-glp</URL>
+     <IMGURL>https://strapi.kralovska-pece.cz/uploads/REDBLOODED_56f06207fa_2c50829f03.jpg</IMGURL>
+     <PRICE_VAT>520</PRICE_VAT>
+     <MANUFACTURER>Deborah Lippmann</MANUFACTURER>
+     <DELIVERY_DATE>0</DELIVERY_DATE>
+     <CATEGORY>
+        <CATEGORY_NAME>královská péče o Vaše nehty</CATEGORY_NAME>
+     </CATEGORY>
+   </SHOPITEM>
+
+<SHOPITEM>
+     <ITEM_ID>0071-A</ITEM_ID>
+     <PRODUCTNAME>James Heeley | Bubblegum Chic | 50 ml</PRODUCTNAME>
+     <PRODUCT>James Heeley | Bubblegum Chic | 50 ml</PRODUCT>
+     <DESCRIPTION>Čistá radost.
+
+Jasmín je jedna z Jamesových fetiš vůní. Ačkoli je jasmín z své podstaty esence notoricky prchavá, cílem zde bylo zachytit její
+intenzitu a výdrž bez toho, aniž by byla poničena její přirozená krása. Koncentrace jasmínu abolute a tuberózy podtrhují tento
+parfém akcentem červeného ovoce, především jakoby jahod. Vůně má přímý charakter, je intenzivní a opojná, jako sexuální fantazie.
+
+Hlavní tóny:
+
+Jasmín Sambac, tuberóza, bílý mošus, ovoce</DESCRIPTION>
+     <URL>https://kralovska-pece.cz/p/james-heeley-bubblegum-chic?variant=50-ml</URL>
+     <IMGURL>https://strapi.kralovska-pece.cz/uploads/0071_3d091102f1_f707cef876.jpg</IMGURL>
+     <PRICE_VAT>3990</PRICE_VAT>
+     <MANUFACTURER>James Heeley</MANUFACTURER>
+     <DELIVERY_DATE>14</DELIVERY_DATE>
+     <CATEGORY>
+        <CATEGORY_NAME>Niche parfémy</CATEGORY_NAME>
+     </CATEGORY>
+   </SHOPITEM>
+
+<SHOPITEM>
+     <ITEM_ID>0071-D</ITEM_ID>
+     <PRODUCTNAME>James Heeley | Bubblegum Chic | 3 ml</PRODUCTNAME>
+     <PRODUCT>James Heeley | Bubblegum Chic | 3 ml</PRODUCT>
+     <DESCRIPTION>Čistá radost.
+
+Jasmín je jedna z Jamesových fetiš vůní. Ačkoli je jasmín z své podstaty esence notoricky prchavá, cílem zde bylo zachytit její
+intenzitu a výdrž bez toho, aniž by byla poničena její přirozená krása. Koncentrace jasmínu abolute a tuberózy podtrhují tento
+parfém akcentem červeného ovoce, především jakoby jahod. Vůně má přímý charakter, je intenzivní a opojná, jako sexuální fantazie.
+
+Hlavní tóny:
+
+Jasmín Sambac, tuberóza, bílý mošus, ovoce</DESCRIPTION>
+     <URL>https://kralovska-pece.cz/p/james-heeley-bubblegum-chic?variant=3-ml</URL>
+     <IMGURL>https://strapi.kralovska-pece.cz/uploads/0071_3d091102f1_f707cef876.jpg</IMGURL>
+     <PRICE_VAT>299</PRICE_VAT>
+     <MANUFACTURER>James Heeley</MANUFACTURER>
+     <DELIVERY_DATE>0</DELIVERY_DATE>
+     <CATEGORY>
+        <CATEGORY_NAME>Niche parfémy</CATEGORY_NAME>
+     </CATEGORY>
+   </SHOPITEM>
+
+<SHOPITEM>
+     <ITEM_ID>0071-E</ITEM_ID>
+     <PRODUCTNAME>James Heeley | Bubblegum Chic | 10 ml</PRODUCTNAME>
+     <PRODUCT>James Heeley | Bubblegum Chic | 10 ml</PRODUCT>
+     <DESCRIPTION>Čistá radost.
+
+Jasmín je jedna z Jamesových fetiš vůní. Ačkoli je jasmín z své podstaty esence notoricky prchavá, cílem zde bylo zachytit její
+intenzitu a výdrž bez toho, aniž by byla poničena její přirozená krása. Koncentrace jasmínu abolute a tuberózy podtrhují tento
+parfém akcentem červeného ovoce, především jakoby jahod. Vůně má přímý charakter, je intenzivní a opojná, jako sexuální fantazie.
+
+Hlavní tóny:
+
+Jasmín Sambac, tuberóza, bílý mošus, ovoce</DESCRIPTION>
+     <URL>https://kralovska-pece.cz/p/james-heeley-bubblegum-chic?variant=10-ml</URL>
+     <IMGURL>https://strapi.kralovska-pece.cz/uploads/0071_3d091102f1_f707cef876.jpg</IMGURL>
+     <PRICE_VAT>750</PRICE_VAT>
+     <MANUFACTURER>James Heeley</MANUFACTURER>
+     <DELIVERY_DATE>14</DELIVERY_DATE>
+     <CATEGORY>
+        <CATEGORY_NAME>Niche parfémy</CATEGORY_NAME>
+     </CATEGORY>
+   </SHOPITEM>
+
+<SHOPITEM>
+     <ITEM_ID>0911</ITEM_ID>
+     <PRODUCTNAME>Nailberry | lak na nehty - Black Berry</PRODUCTNAME>
+     <PRODUCT>Nailberry | lak na nehty - Black Berry</PRODUCT>
+     <DESCRIPTION>BLACK BERRY - OXYGENATED DEEP BLACK - SYTĚ ČERNÁ
+
+Kolekce L'Oxygéné získala mnoho prestižních ocenění pro své složení a barevnou škálu. Unikátní formule nabízí jedny z
+nejkvalitnějších laků na světě.
+
+12 Free (bez zatěžujících toxických látek)
+
+Vegan
+
+Cruelty Free Certified (není testováno na zvířatech)
+
+Halal Certified
+
+Prodyšný
+
+Propustný pro vlhkost
+
+Gluten Free (bez lepku)
+
+Patentované technologie jsou použity za účelem zdravější péče o nehty. Kolekce L'Oxygéné neobsahuje ftaláty včetně DBP, toluen,
+formaldehyd ani složky na základě formaldehydu, kafr, xylen, ethyl tosylamid, triphenyl phosphat, alkohol, parabeny, živočišné
+složky a lepek.
+
+
+ 
+
+TIPY PRO PERFEKTNÍ LAKOVÁNÍ:
+
+ * lakujte na čisté, odmaštěné a vyleštěné nehty
+ * aplikujte jednu vrstvu podlaku, následně barevný lak a jednu vrstvu finálního nadlaku
+ * skvěle tvarovaný štěteček Nailberry vám umožní docílit mandlového tvaru nehtu jako od profesionálů
+
+ </DESCRIPTION>
+     <URL>https://kralovksa-pece.cz/p/nailberry-lak-na-nehty-black-berry</URL>
+     <IMGURL>https://strapi.kralovska-pece.cz/uploads/0911_eacbda9427_2fc3932db4.jpg</IMGURL>
+     <PRICE_VAT>480</PRICE_VAT>
+     <MANUFACTURER>Nailberry</MANUFACTURER>
+     <DELIVERY_DATE>14</DELIVERY_DATE>
+     <CATEGORY>
+        <CATEGORY_NAME>královská péče o Vaše nehty</CATEGORY_NAME>
+     </CATEGORY>
+   </SHOPITEM>
+
+<SHOPITEM>
+     <ITEM_ID>2219</ITEM_ID>
+     <PRODUCTNAME>Und Gretel | WEGEN - primer pod make-up s lehkým shimmer efektem</PRODUCTNAME>
+     <PRODUCT>Und Gretel | WEGEN - primer pod make-up s lehkým shimmer efektem</PRODUCT>
+     <DESCRIPTION>DOKONALÝ PRIMER PRO SUŠŠÍ NEBO ZRALOU POKOŽKU. PRO SVĚŽEST A ZÁŘIVOU PLEŤ.
+
+Jméno WEGEN je odvozeno ze staré němčiny a znamená "zvážit" nebo také "přivést do rovnováhy". A to je přesně úkol primeru Wegen.
+Jeho cenné oleje jako například šípkový olej, mandlový olej, geranium a rostlinné extrakty jsou perfektními ingrediencemi pro
+oživení suché a unavené pleti.
+
+Se svýmu pigmenty, které odrážejí světlo, se Wegen stará o přirozený a jemně třpytivý vzhled. Vyhlazuje pokožku a přináší pleti
+rovnováhu. Výsledkem je zářivám svěží a mladistvá pleť. Wegen poskytne perfektní podklad pod make-up, který díky obsaženým olejům
+ještě lépe přilne k pleti.
+
+Složením je veganský, organický a samozřejmostí je netestování na zvířatech.
+
+Objem: 40 ml
+
+ 
+
+UNIKÁTNÍ PEČUJÍCÍ SLOŽENÍ
+
+Olej z šípkové růže - ceněný pro své účinné látky. Velmi dobře se vstřebává do pleti a je bohatý na vitamíny, minerály,
+antioxidanty a nenasycené mastné kyseliny.
+
+Konopný olej - patří spolu se sezamem k nejstarším kulturním plodinám. Vyznačuje se cennými silně regeneračním složkami, obnovuje
+buňky. Tím je předurčen pro zralou nebo suchou pokožku.
+
+Mandlový olej - je velmi dobře snášený rostlinný olej, který je vhodný pro všechny typy pleti, včetně citlivé. Je považován za
+vynikající zesilovač pro aktivní složky díky specifické struktuře své kyseliny olejové. Tato charakteristická flexibilita umožňuje
+snadný průchod bariérovou vrstvou horní keratinové vrstvy. Jeho vysoká tolerance nabízí jemnou péči zejména pro citlivou pokožku a
+pomáhá jí vrátit se zpět do rovnováhy.
+
+ 
+
+TIPY PRO POUŽITÍ
+
+Primer Wegen použijte jako první krok líčení jako základ pro make-up. Před použitím důkladně protřepejte. Tím způsobem mohou být
+jemné třpytivé minerály rovnoměrně rozloženy v cenných olejích. Poté si dejte do rukou malé množství primeru a jemně si ho
+vmasírujte do pokožky obličeje. Nechte ho úplně vstřebat, než použijete svůj make-up. Samozřejmě můžete Wegen použít i bez
+make-upu, dodá vaší pokožce jemnou záři.
+
+ </DESCRIPTION>
+     <URL>https://kralovksa-pece.cz/p/und-gretel-wegen-priming-oil</URL>
+     <IMGURL>https://strapi.kralovska-pece.cz/uploads/WEGEN_pack02_cc49d38573_fcc429270c.jpg</IMGURL>
+     <PRICE_VAT>1240</PRICE_VAT>
+     <MANUFACTURER>Und Gretel</MANUFACTURER>
+     <DELIVERY_DATE>0</DELIVERY_DATE>
+     <CATEGORY>
+        <CATEGORY_NAME>dekorativní kosmetika pro zářivé líčení</CATEGORY_NAME>
+     </CATEGORY>
+   </SHOPITEM>
+
+<SHOPITEM>
+     <ITEM_ID>3516</ITEM_ID>
+     <PRODUCTNAME>Under Your Skin | krém na ruce – Ostropestřec &amp; Yuzu</PRODUCTNAME>
+     <PRODUCT>Under Your Skin | krém na ruce – Ostropestřec &amp; Yuzu</PRODUCT>
+     <DESCRIPTION>Hydratační krém na ruce obsahuje organické složky jako je mandlový olej, bambucké máslo a extrakt z yuzu a ostropestřce. Je
+obohacen o vitaminy a antioxidanty, které chrání a hydratují pokožku. 
+
+Voní povzbudivě po citrusech a nezklame ani ty nejsušší ruce!
+
+Objem: 60 ml</DESCRIPTION>
+     <URL>https://kralovksa-pece.cz/p/under-your-skin-krem-na-ruce-ostropestrec-yuzu</URL>
+     <IMGURL>https://strapi.kralovska-pece.cz/uploads/Under_Your_Skin_bio_krem_na_ruce_thistle_yuzu_f82e2eaa82_c1306f95c7.jpg</IMGURL>
+     <PRICE_VAT>350</PRICE_VAT>
+     <MANUFACTURER>Under Your Skin</MANUFACTURER>
+     <DELIVERY_DATE>0</DELIVERY_DATE>
+     <CATEGORY>
+        <CATEGORY_NAME>péče o tělo</CATEGORY_NAME>
+     </CATEGORY>
+   </SHOPITEM>
+
+<SHOPITEM>
+     <ITEM_ID>2905</ITEM_ID>
+     <PRODUCTNAME>Giardino Benessere | Air Therapy - White Musk - interiérový parfém</PRODUCTNAME>
+     <PRODUCT>Giardino Benessere | Air Therapy - White Musk - interiérový parfém</PRODUCT>
+     <DESCRIPTION>GIARDINO BENESSERE - WHITE MUSK - INTERIÉROVÝ PARFÉM
+
+Interiérový parfém Giardino Benessere krásně provoní vnitřní prostory Vašeho domova, kanceláře nebo auta. Vůně má dlouhotrvající
+účinek a zaručuje neustálé uvolňování vzácných vonných esencí ve vzduchu. Interiérový parfém můžete použít do skříně, nebo na
+bytové textilie, koberce a podobně.
+
+White Musk je směsicí vůní jemných bílých květin a citlivého jasmínu, doplněná o příjemné aroma pižma a dřevité vůně. Tato
+relaxační a osvěžující vůně je ideální pro ty, kteří hledají svůj vnitřní klid a pohodu.
+
+Suroviny jsou certifikované podle přísných nařízení REACH a IFRA. Vše vytvořeno z přírodních produktů. Obsahuje 20% vonných
+esencí. 
+
+Objem: 100 ml
+
+
+GIARDINO BENESSERE - WHITE MUSK - INTERIÉROVÝ PARFÉM
+
+Typ vůně: květinová, pižmová
+Ingredience: bergamot, broskev, bílá orchidej, bílé pižmo, cedrové dřevo, frézie, guaiakové dřevo, jasmín, ylang-ylang</DESCRIPTION>
+     <URL>https://kralovksa-pece.cz/p/gb-air-therapy-white-m-int-parf-100-ml</URL>
+     <IMGURL>https://strapi.kralovska-pece.cz/uploads/Giardino_Benessere_interierovy_parfem_White_Musk_ff25344a6d_20ff688b42.jpg</IMGURL>
+     <PRICE_VAT>890</PRICE_VAT>
+     <MANUFACTURER>Giardino Benessere</MANUFACTURER>
+     <DELIVERY_DATE>14</DELIVERY_DATE>
+     <CATEGORY>
+        <CATEGORY_NAME>Svíčky a difuzéry</CATEGORY_NAME>
+     </CATEGORY>
+   </SHOPITEM>
+
+<SHOPITEM>
+     <ITEM_ID>2939</ITEM_ID>
+     <PRODUCTNAME>Und Gretel | LUSTEC - konturovací tužka na rty - Soft Pink 03</PRODUCTNAME>
+     <PRODUCT>Und Gretel | LUSTEC - konturovací tužka na rty - Soft Pink 03</PRODUCT>
+     <DESCRIPTION>LUSTEC - KONTUROVACÍ TUŽKA NA RTY. 100% PŘÍRODNÍ, ORGANICKÁ, VEGANSKÁ, V KVALITĚ PRODUKTŮ PRO PROFESIONÁLY. PRO KRÁSNÝ TVAR A
+PROTI VRÁSKÁM NA RTECH.
+
+Jméno LUSTEC pochází ze staré němčiny a znamená „šťastný, živý“ - ale také „potěšení“. Potěšení pro Vaše rty. Konturuje Vaše rty
+jako silné duo: Se stranou CLEAR vizuálně redukuje vrásky Vašich rtů pomocí jojobového oleje a bambuckého másla - s barevnou
+stranou vykouzlíte perfektní konturu rtů nebo plný základ rtů pro rtěnku TAGAROT nebo KNUTZEN lesk na rty.
+
+Hmotnost: 2 x 0,65 g
+
+ 
+
+ODSTÍN SOFT PINK 03
+
+Odstín Soft Pink je jemný, matný a velice lichotivý odstín růžové barvy připomínající květy divoké růže. Tento odstín je
+elegantní, zářivý a zároveň ženský. Splývá s různými odstíny TAGAROT a KNUTZEN a vytváří svěží odstíny se zvýrazněnou konturou
+rtů. 
+ 
+
+UNIKÁTNÍ PEČUJÍCÍ SLOŽENÍ
+
+Jojoba - tekutý vosk se dokonale přizpůsobuje přirozenému lipidovému filmu pokožky, pečuje o ni a chrání před dehydratací. Zároveň
+nepůsobí mastně.
+
+Bambucké máslo - složky bambuckého másla udržují pokožku pružnou a kompenzují nedostatek vlhkosti a udržují jemnou pokožku rtů
+velmi pružnou.
+
+ 
+
+TIPY PRO POUŽITÍ
+
+KROK 1
+Průhledná strana je „optickým zabijákem vrásek“ a tvoří neviditelnou bariéru, která zabraňuje prosakování a rozmazávání rtěnky
+nebo lesku na rty. Jako první krok vždy aplikujte stranu CLEAR na horní a dolní část kontury rtu. Můžete také použít průhlednou
+stranu po celém rtu jako základ.
+
+KROK 2
+Natáhněte okraj rtu barevnou stranou a poté naneste rtěnku nebo lesk na rty.
+
+TIPY &amp; HACKY
+Průhlednou strabu můžete také použít jako základ pro rtěnku nebo lesk na rty po celém rtu. Díky svým výživným složkám, jako je
+bambucké máslo a jojobový olej, poskytuje vlhkost a bohatý matný povrch rtů.</DESCRIPTION>
+     <URL>https://kralovksa-pece.cz/p/und-gretel-lustec-konturka-3-soft-pink</URL>
+     <IMGURL>https://strapi.kralovska-pece.cz/uploads/Und_Gretel_LUSTEC_soft_pink_03_661c1a6901_68b29905a8.jpg</IMGURL>
+     <PRICE_VAT>660</PRICE_VAT>
+     <MANUFACTURER>Und Gretel</MANUFACTURER>
+     <DELIVERY_DATE>0</DELIVERY_DATE>
+     <CATEGORY>
+        <CATEGORY_NAME>dekorativní kosmetika pro zářivé líčení</CATEGORY_NAME>
+     </CATEGORY>
+   </SHOPITEM>
+
+<SHOPITEM>
+     <ITEM_ID>1961</ITEM_ID>
+     <PRODUCTNAME>Und Gretel | LUK krémové oční stíny - Sapphire 02</PRODUCTNAME>
+     <PRODUCT>Und Gretel | LUK krémové oční stíny - Sapphire 02</PRODUCT>
+     <DESCRIPTION>LUK = ŠTĚSTÍ Z PŘÍRODY PRO VAŠE OČI. 100% PŘÍRODNÍ, ORGANICKÉ, VEGANSKÉ, V KVALITĚ PRODUKTŮ PRO PROFESIONÁLY. HAUTE COUTURE PRO
+VAŠE OČI.
+
+Oční stíny LUK od mimořádné značky Und Gretel nechají Vaše oči zazářit. Jméno LUK je odvozeno ze staré němčiny a znamená "štěstí".
+Tyto stíny dokáží vytvořit nespočet stylů na Vašich očích.
+
+Hmotnost: 2 g
+
+ 
+
+ODSTÍN SAPPHIRE 02
+
+Vysoký podíl pigmentů ve studeném safírově modrém tónu s jemně zářivý efektem. Barva se hodí ke všem barvám očí.
+
+ 
+
+UNIKÁTNÍ PEČUJÍCÍ SLOŽENÍ
+
+Kafr - patří do rodiny vavřínovitých a ceněný je pro prášek, který se ze stromu získává. U dekorativní kosmetiky, zvláště u
+kajalových tužek, je přidáván kafr v nepatrném množství. Využívá se jeho antibakteriálních vlastností, což je vždy skvělá
+vlastnost u produktů určených pro oči.
+
+Karnaubský vosk - je jedním z nejtvrdších přírodních vosků. Produktům dodává lesk a při vyšších teplotách požadovanou výdrž, což
+je především v létě velkou výhodou.
+
+Včelí vosk - je jedním z nejstarších balzámů. V porovnání s oleji je pevnější, proto vhodný na příjemnou aplikaci. Včelí vosk
+vytváří na pokožce lehký ochranný film, který chrání před dehydratací. Zároveň vyhlazuje jemné linky.
+
+Vitamín E - nazývaný také jako vitamín krásy. Je podstatný pro regeneraci pleti.
+
+ 
+
+TIPY PRO POUŽITÍ
+
+Studený safírový tón stínů Und Gretel LUK je vhodný pro všechny barvy očí. Nechá vyniknout především hnědé a zelené oči. Dokonale
+vyvážený odstín opticky projasňuje oční bělmo. Díky vysoké míře pigmentů lze stín nanášet intenzivně pro efekt kočičích očí nebo
+kouřového líčení, či jemně po denní look.
+
+Stíny LUK je možné použít také jako bázi pod oční stíny IMBE.
+
+ 
+
+ </DESCRIPTION>
+     <URL>https://kralovksa-pece.cz/p/und-gretel-luk-creme-eye-stick-sapphire-02</URL>
+     <IMGURL>https://strapi.kralovska-pece.cz/uploads/Und_Gretel_LUK_02_Sapphire_ocni_stiny_dcb371d88c_f0853d2f99.jpg</IMGURL>
+     <PRICE_VAT>990</PRICE_VAT>
+     <MANUFACTURER>Und Gretel</MANUFACTURER>
+     <DELIVERY_DATE>0</DELIVERY_DATE>
+     <CATEGORY>
+        <CATEGORY_NAME>dekorativní kosmetika pro zářivé líčení</CATEGORY_NAME>
+     </CATEGORY>
+   </SHOPITEM>
+
+<SHOPITEM>
+     <ITEM_ID>1642</ITEM_ID>
+     <PRODUCTNAME>Eight &amp; Bob | Originální kožené pouzdro na parfémy 30 ml - POMODORO</PRODUCTNAME>
+     <PRODUCT>Eight &amp; Bob | Originální kožené pouzdro na parfémy 30 ml - POMODORO</PRODUCT>
+     <DESCRIPTION>Originální kožené pouzdro na parfémy Eight &amp; Bob 30 ml. Krásné zpracování, luxusní a originální doplněk.</DESCRIPTION>
+     <URL>https://kralovksa-pece.cz/p/eightandbob-forest-leather-case-set-pomodoro</URL>
+     <IMGURL>https://strapi.kralovska-pece.cz/uploads/Eightandbob_kozene_pouzdro_leathercase_cervena_f851386076_8b6535a89f.png</IMGURL>
+     <PRICE_VAT>1490</PRICE_VAT>
+     <MANUFACTURER>Eight &amp; Bob</MANUFACTURER>
+     <DELIVERY_DATE>0</DELIVERY_DATE>
+     <CATEGORY>
+        <CATEGORY_NAME>Niche parfémy</CATEGORY_NAME>
+     </CATEGORY>
+   </SHOPITEM>
+
+<SHOPITEM>
+     <ITEM_ID>3492</ITEM_ID>
+     <PRODUCTNAME>Marie Jeanne | dětský parfém Léon - 100 ml</PRODUCTNAME>
+     <PRODUCT>Marie Jeanne | dětský parfém Léon - 100 ml</PRODUCT>
+     <DESCRIPTION>Parfém Léon kombinuje příjemný akord zimolezu a pomerančových květů, které připomínají lahodnou vůni čistoty a také vůni miminek.
+Vonný zážitek dotváří dřevitá a pižmová vůně.  Jemný a uklidňující parfém je vhodný pro děti od 6let i pro dospělé.
+
+Hlava: bergamot (Itálie), Cedrat Heart (Itálie)
+Srdce: zimolez, neroli (Tunisko)
+Tělo: bílé pižmo, santalové dřevo (Indie)
+
+Objem: 100 ml</DESCRIPTION>
+     <URL>https://kralovksa-pece.cz/p/marie-jeanne-detsky-parfem-leon-100-ml</URL>
+     <IMGURL>https://strapi.kralovska-pece.cz/uploads/Marie_Jeanne_detsky_parfem_Leon_6f91ad8fb0_aa744698d2.jpg</IMGURL>
+     <PRICE_VAT>2250</PRICE_VAT>
+     <MANUFACTURER>Marie Jeanne</MANUFACTURER>
+     <DELIVERY_DATE>0</DELIVERY_DATE>
+     <CATEGORY>
+        <CATEGORY_NAME>Niche parfémy</CATEGORY_NAME>
+     </CATEGORY>
+   </SHOPITEM>
+
+<SHOPITEM>
+     <ITEM_ID>0912</ITEM_ID>
+     <PRODUCTNAME>Nailberry | lak na nehty - Bubble gum</PRODUCTNAME>
+     <PRODUCT>Nailberry | lak na nehty - Bubble gum</PRODUCT>
+     <DESCRIPTION>BUBBLE GUM - OXYGENATED PINK CORAL - RŮŽOVĚ KORÁLOVÁ
+
+Kolekce L'Oxygéné získala mnoho prestižních ocenění pro své složení a barevnou škálu. Unikátní formule nabízí jedny z
+nejkvalitnějších laků na světě.
+
+12 Free (bez zatěžujících toxických látek)
+
+Vegan
+
+Cruelty Free Certified (není testováno na zvířatech)
+
+Halal Certified
+
+Prodyšný
+
+Propustný pro vlhkost
+
+Gluten Free (bez lepku)
+
+Patentované technologie jsou použity za účelem zdravější péče o nehty. Kolekce L'Oxygéné neobsahuje ftaláty včetně DBP, toluen,
+formaldehyd ani složky na základě formaldehydu, kafr, xylen, ethyl tosylamid, triphenyl phosphat, alkohol, parabeny, živočišné
+složky a lepek.
+
+
+ 
+
+TIPY PRO PERFEKTNÍ LAKOVÁNÍ:
+
+ * lakujte na čisté, odmaštěné a vyleštěné nehty
+ * aplikujte jednu vrstvu podlaku, následně barevný lak a jednu vrstvu finálního nadlaku
+ * skvěle tvarovaný štěteček Nailberry vám umožní docílit mandlového tvaru nehtu jako od profesionálů
+
+ 
+
+Objem: 15 ml</DESCRIPTION>
+     <URL>https://kralovksa-pece.cz/p/nailberry-lak-na-nehty-bubble-gum</URL>
+     <IMGURL>https://strapi.kralovska-pece.cz/uploads/0912_37a7204c47_285dfce10d.jpg</IMGURL>
+     <PRICE_VAT>480</PRICE_VAT>
+     <MANUFACTURER>Nailberry</MANUFACTURER>
+     <DELIVERY_DATE>14</DELIVERY_DATE>
+     <CATEGORY>
+        <CATEGORY_NAME>královská péče o Vaše nehty</CATEGORY_NAME>
+     </CATEGORY>
+   </SHOPITEM>
+
+<SHOPITEM>
+     <ITEM_ID>2932</ITEM_ID>
+     <PRODUCTNAME>OZN | OZN - lak na nehty - ROSIE</PRODUCTNAME>
+     <PRODUCT>OZN | OZN - lak na nehty - ROSIE</PRODUCT>
+     <DESCRIPTION>OZN - LAK NA NEHTY - ROSIE
+
+Rychleschnoucí lak Rosie má krémový růžový odstín s pudrovými podtóny, poskytuje dokonalé krytí, perfektní lesk, optimálně se
+roztírá a má vynikající trvanlivost. Tato barva v nás evokuje krásné letní dny se spoustou jahodové zmrzliny se smetanou.
+
+OZN laky jsou obohacené o vitamíny A, C, E a provitamín B5. Všechny výrobky OZN jsou 100% veganské a 90 % použitých ingrediencí
+pochází z ekologických surovin z udržitelných zdrojů, jako je dřevo, brambory, červená řepa, špalda, cukrová třtina, maniok nebo
+kukuřice. Laky OZN jsou tzv. 22 free , tedy neobsahují 22 nejvíce toxických složek, které se používají v lakovacím kosmetickém
+odvětví.
+
+
+Tipy pro perfektní lakování:
+
+- lakujte na čisté, odmaštěné a vyleštěné nehty,
+
+- začněte lakováním od středu nehtu a poté naneste lak po bocích
+
+- pro zvýšení odolnosti aplikujte jednu vrstvu podlaku, následně barevný lak a jednu vrstvu finálního nadlaku,
+
+- lak obsahuje dva vyměnitelné štětečky - úzký a široký, takže si štěteček můžete libovolně zvolit podle Vašich preferencí nebo
+podle typu manikúry.
+
+Objem: 12 ml
+
+
+
+
+LAKY OZN NEOBSAHUJÍ:
+
+ * Formaldehyd - považuje se za karcinogen, nicméně v EU je stále povolen v koncentraci nižší než 1%.
+ * Formaldehydovou pryskyřici
+ * Toluen - rozpouštědlo, odmašťuje pokožku, může způsobovat záněty.
+ * Colophonium - škodlivá pryskyřice, může způsobit kontaktní ekzém.
+ * DBP, dibutyl ftalát - změkčovadlo, jeho vdechnutí nebo požití může vést ke zdravotním problémům a dočasným příznakům, jako jsou
+   závratě, nevolnost a bolesti hlavy. Evropská unie považuje DBP za toxický pro reprodukční orgány.
+ * Parabeny - konzervační látky.
+ * Xylol - rozpouštědlo, které může při vstřebání kůží a dýchacími cestami představovat zdravotní riziko, může způsobit bolesti
+   hlavy, problémy s pamětí a orientací, závratě a dušnost.
+ * Aceton - chemická sloučenina, která může dráždit pokožku. Jeho výpary mohou způsobit nevolnost.
+ * TPHP, trifenylfosfát - může negativně ovlivnit hormonální rovnováhu, reprodukci a metabolismus.
+ * Minerální oleje
+ * Silikon</DESCRIPTION>
+     <URL>https://kralovksa-pece.cz/p/ozn-lak-na-nehty-rosie</URL>
+     <IMGURL>https://strapi.kralovska-pece.cz/uploads/OZN_lak_na_nehty_Rosie_7d0b5f5dca_7b355c8cda.jpg</IMGURL>
+     <PRICE_VAT>460</PRICE_VAT>
+     <MANUFACTURER>OZN</MANUFACTURER>
+     <DELIVERY_DATE>14</DELIVERY_DATE>
+     <CATEGORY>
+        <CATEGORY_NAME>královská péče o Vaše nehty</CATEGORY_NAME>
+     </CATEGORY>
+   </SHOPITEM>
+
+<SHOPITEM>
+     <ITEM_ID>0969</ITEM_ID>
+     <PRODUCTNAME>Nailberry | nehtový elixír - Acai Nail Elixir</PRODUCTNAME>
+     <PRODUCT>Nailberry | nehtový elixír - Acai Nail Elixir</PRODUCT>
+     <DESCRIPTION>ELIXÍR PRO VAŠE NEHTY 5 V 1. PODLAK I INTENZIVNÍ PÉČE ZÁROVEŇ. 
+
+ 
+
+Acai elixír je velmi mocný a účinný regenerační lak. V jeho složení se prolíná věda s přírodou. Aktivně regeneruje suché a
+poškozené nehty.
+
+1. Podporuje pevnost a sílu nehtů. Patentovaná technologie zlepšuje kondici nehtů a redukuje jejich lámavost až od 90%. Směs
+přírodních látek zároveň posiluje nehtové lůžko.
+
+2. Podporuje růst nehtů. Amino kyseliny energizují a stimulují vitalitu a růst nehtů.
+
+3. Hydratace a výživa. Arganový a baobabový olej aktivně hydratují a vyživují nehty do hloubky.
+
+4. Ochrana. Extrakt z Acai a macešky plus vitamín E poskytují ochranu jako silné antioxidanty.
+
+5. Vyhlazení. Složení vyhlazuje jemné nehtové rýhy. Pokud se tento elixír použije jako nadlak, poskytne nádherně hladký nehet pro
+perfektní barevnou vrstvu.
+
+ 
+
+Tento lak má skvělé složení s následující certifikací:
+
+12 Free (tzn. bez zatěžujících toxických látek)
+
+Vegan
+
+Cruelty Free (netestováno na zvířatech)
+
+Halal Certifikace
+
+Prodyšný
+
+Vodopropustný
+
+Gluten Free (bez lepku)
+
+Obohacený o esenci růže pro příjemnou vůni
+
+ 
+
+POUŽITÍ:
+
+Aplikujte jednu vrstvu pod vaši oblíbenou barvu jako podlak nebo dvě vrstvy dvakrát týdně pro intenzivní regeneraci vašich nehtů.
+
+ 
+
+Objem: 15 ml
+
+ </DESCRIPTION>
+     <URL>https://kralovksa-pece.cz/p/nby-podlak-acai-nail-elixir-new</URL>
+     <IMGURL>https://strapi.kralovska-pece.cz/uploads/0969_2c411f2146_a2727b0b69.jpg</IMGURL>
+     <PRICE_VAT>590</PRICE_VAT>
+     <MANUFACTURER>Nailberry</MANUFACTURER>
+     <DELIVERY_DATE>14</DELIVERY_DATE>
+     <CATEGORY>
+        <CATEGORY_NAME>výživa nehtů</CATEGORY_NAME>
+     </CATEGORY>
+   </SHOPITEM>
+
+<SHOPITEM>
+     <ITEM_ID>0023-C</ITEM_ID>
+     <PRODUCTNAME>James Heeley | Verveine d`Eugene - EdP | 3 ml</PRODUCTNAME>
+     <PRODUCT>James Heeley | Verveine d`Eugene - EdP | 3 ml</PRODUCT>
+     <DESCRIPTION>Majestátní, elegantní. Signifikantní vůně s ambicí stát se vaší osobní. Svěží vůně patří k osobnosti a bytí Jamese Heeley.
+Verveine d' Eugene je další velkou svěží vůní, kterou zkomponoval. Bergamot, poupata jahod a bílý mošus - trojjedinost svěžesti,
+doprovázená elegancí jasmínu vytváří vůni mnoha vrstev.
+
+Kterému typu může vůně sedět?
+
+Muži: přímočarý a prostě chic.
+
+Dámy: přes týden elegantní business žena, o víkendu ráda mezi květinami.
+
+Hlava: bergamot, rebarbora, kardamon
+Srdce: citrónová verbena, černý rybíz, jasmín
+Tělo: bílý mošus</DESCRIPTION>
+     <URL>https://kralovska-pece.cz/p/james-heeley-verveine-deugene?variant=3-ml</URL>
+     <IMGURL>https://strapi.kralovska-pece.cz/uploads/Verveine_d_Eugene_f4560d9c4a_bcacbf6d1f.jpg</IMGURL>
+     <PRICE_VAT>125</PRICE_VAT>
+     <MANUFACTURER>James Heeley</MANUFACTURER>
+     <DELIVERY_DATE>0</DELIVERY_DATE>
+     <CATEGORY>
+        <CATEGORY_NAME>Niche parfémy</CATEGORY_NAME>
+     </CATEGORY>
+   </SHOPITEM>
+
+<SHOPITEM>
+     <ITEM_ID>0023-A</ITEM_ID>
+     <PRODUCTNAME>James Heeley | Verveine d`Eugene - EdP | 100 ml</PRODUCTNAME>
+     <PRODUCT>James Heeley | Verveine d`Eugene - EdP | 100 ml</PRODUCT>
+     <DESCRIPTION>Majestátní, elegantní. Signifikantní vůně s ambicí stát se vaší osobní. Svěží vůně patří k osobnosti a bytí Jamese Heeley.
+Verveine d' Eugene je další velkou svěží vůní, kterou zkomponoval. Bergamot, poupata jahod a bílý mošus - trojjedinost svěžesti,
+doprovázená elegancí jasmínu vytváří vůni mnoha vrstev.
+
+Kterému typu může vůně sedět?
+
+Muži: přímočarý a prostě chic.
+
+Dámy: přes týden elegantní business žena, o víkendu ráda mezi květinami.
+
+Hlava: bergamot, rebarbora, kardamon
+Srdce: citrónová verbena, černý rybíz, jasmín
+Tělo: bílý mošus</DESCRIPTION>
+     <URL>https://kralovska-pece.cz/p/james-heeley-verveine-deugene?variant=100-ml</URL>
+     <IMGURL>https://strapi.kralovska-pece.cz/uploads/Verveine_d_Eugene_f4560d9c4a_bcacbf6d1f.jpg</IMGURL>
+     <PRICE_VAT>3450</PRICE_VAT>
+     <MANUFACTURER>James Heeley</MANUFACTURER>
+     <DELIVERY_DATE>14</DELIVERY_DATE>
+     <CATEGORY>
+        <CATEGORY_NAME>Niche parfémy</CATEGORY_NAME>
+     </CATEGORY>
+   </SHOPITEM>
+
+<SHOPITEM>
+     <ITEM_ID>0023-D</ITEM_ID>
+     <PRODUCTNAME>James Heeley | Verveine d`Eugene - EdP | 10 ml</PRODUCTNAME>
+     <PRODUCT>James Heeley | Verveine d`Eugene - EdP | 10 ml</PRODUCT>
+     <DESCRIPTION>Majestátní, elegantní. Signifikantní vůně s ambicí stát se vaší osobní. Svěží vůně patří k osobnosti a bytí Jamese Heeley.
+Verveine d' Eugene je další velkou svěží vůní, kterou zkomponoval. Bergamot, poupata jahod a bílý mošus - trojjedinost svěžesti,
+doprovázená elegancí jasmínu vytváří vůni mnoha vrstev.
+
+Kterému typu může vůně sedět?
+
+Muži: přímočarý a prostě chic.
+
+Dámy: přes týden elegantní business žena, o víkendu ráda mezi květinami.
+
+Hlava: bergamot, rebarbora, kardamon
+Srdce: citrónová verbena, černý rybíz, jasmín
+Tělo: bílý mošus</DESCRIPTION>
+     <URL>https://kralovska-pece.cz/p/james-heeley-verveine-deugene?variant=10-ml</URL>
+     <IMGURL>https://strapi.kralovska-pece.cz/uploads/Verveine_d_Eugene_f4560d9c4a_bcacbf6d1f.jpg</IMGURL>
+     <PRICE_VAT>410</PRICE_VAT>
+     <MANUFACTURER>James Heeley</MANUFACTURER>
+     <DELIVERY_DATE>0</DELIVERY_DATE>
+     <CATEGORY>
+        <CATEGORY_NAME>Niche parfémy</CATEGORY_NAME>
+     </CATEGORY>
+   </SHOPITEM>
+
+<SHOPITEM>
+     <ITEM_ID>0925</ITEM_ID>
+     <PRODUCTNAME>Nailberry | lak na nehty - Honesty</PRODUCTNAME>
+     <PRODUCT>Nailberry | lak na nehty - Honesty</PRODUCT>
+     <DESCRIPTION>HONESTY - OXYGENATED CREAMY DARK BEIGE - TEPLÁ TMAVÁ KRÉMOVÁ
+
+Kolekce L'Oxygéné získala mnoho prestižních ocenění pro své složení a barevnou škálu. Unikátní formule nabízí jedny z
+nejkvalitnějších laků na světě.
+
+12 Free (bez zatěžujících toxických látek)
+
+Vegan
+
+Cruelty Free Certified (není testováno na zvířatech)
+
+Halal Certified
+
+Prodyšný
+
+Propustný pro vlhkost
+
+Gluten Free (bez lepku)
+
+Patentované technologie jsou použity za účelem zdravější péče o nehty. Kolekce L'Oxygéné neobsahuje ftaláty včetně DBP, toluen,
+formaldehyd ani složky na základě formaldehydu, kafr, xylen, ethyl tosylamid, triphenyl phosphat, alkohol, parabeny, živočišné
+složky a lepek.
+
+
+ 
+
+TIPY PRO PERFEKTNÍ LAKOVÁNÍ:
+
+ * lakujte na čisté, odmaštěné a vyleštěné nehty
+ * aplikujte jednu vrstvu podlaku, následně barevný lak a jednu vrstvu finálního nadlaku
+ * skvěle tvarovaný štěteček Nailberry vám umožní docílit mandlového tvaru nehtu jako od profesionálů
+
+ 
+
+Objem: 15 ml</DESCRIPTION>
+     <URL>https://kralovksa-pece.cz/p/nby-lak-na-nehty-honesty</URL>
+     <IMGURL>https://strapi.kralovska-pece.cz/uploads/0925_1c819852a2_fd5edd504f.jpg</IMGURL>
+     <PRICE_VAT>480</PRICE_VAT>
+     <MANUFACTURER>Nailberry</MANUFACTURER>
+     <DELIVERY_DATE>14</DELIVERY_DATE>
+     <CATEGORY>
+        <CATEGORY_NAME>královská péče o Vaše nehty</CATEGORY_NAME>
+     </CATEGORY>
+   </SHOPITEM>
+
+<SHOPITEM>
+     <ITEM_ID>3211</ITEM_ID>
+     <PRODUCTNAME>butter LONDON | Broody Patent Shine 10X</PRODUCTNAME>
+     <PRODUCT>butter LONDON | Broody Patent Shine 10X</PRODUCT>
+     <DESCRIPTION>BUTTER LONDON - BROODY PATENT SHINE 10X
+
+Tento zářivý lak na nehty butter LONDON v malinové barvě dodá Vašim nehtům noblesní a lesklý vzhled.
+
+Laky butter LONDON mají složení Patent Shine 10X, které je pro nehty velmi prospěšné, prokazatelně podporuje jasnější, silnější a
+zdravější vzhled nehtů. Patentovaná polymerová technologie Shock Resistance poskytuje povrch podobný gelu s vynikajícím leskem,
+zatímco technologie Radiant Curing pomáhá vytvrzovat a zasychat lak s lehkostí přirozeného světla.
+
+Dosáhněte plně krycí barvy jediným tahem pomocí unikátního štětcového aplikátoru butter LONDON - hustého a zakřiveného, který
+obejme nehty, zajistí bezchybně vypadající barvu a výdrž až po dobu 10 dnů!
+ 
+
+KLÍČOVÉ SLOŽKY:
+
+ * technologie polymerů – zajišťuje dlouhou životnost a odolnost proti nárazům a odlupování laku
+ * diamantový prášek – rozjasňuje barvu
+ * absorbéry UV záření – chrání barvu před vyblednutím
+ * výtažek z bambusu - pomáhá nehty zpevňovat, zabraňuje lámání a třepení nehtů
+    
+
+TIPY PRO LAKOVÁNÍ:
+
+ * naneste jednu vrstvu laku na nehty, nechte zaschnout, poté naneste druhou vrstvu
+ * není potřeba žádná podkladová vrstva ani vrchní lak
+   
+    
+
+Objem: 11 ml
+
+ </DESCRIPTION>
+     <URL>https://kralovksa-pece.cz/p/butter-london-broody-patent-shine10x</URL>
+     <IMGURL>https://strapi.kralovska-pece.cz/uploads/Butter_London_Broody_Patent_Shine_10_X_7046d3d214_864ead6f19.jpg</IMGURL>
+     <PRICE_VAT>480</PRICE_VAT>
+     <MANUFACTURER>butter LONDON</MANUFACTURER>
+     <DELIVERY_DATE>0</DELIVERY_DATE>
+     <CATEGORY>
+        <CATEGORY_NAME>královská péče o Vaše nehty</CATEGORY_NAME>
+     </CATEGORY>
+   </SHOPITEM>
+
+<SHOPITEM>
+     <ITEM_ID>1930</ITEM_ID>
+     <PRODUCTNAME>Und Gretel | IMBE oční stíny - Bronze 03</PRODUCTNAME>
+     <PRODUCT>Und Gretel | IMBE oční stíny - Bronze 03</PRODUCT>
+     <DESCRIPTION>LUXUSNÍ VYSOCE PIGMENTOVANÉ OČNÍ STÍNY. 100% PŘÍRODNÍ, ORGANICKÉ, VEGANSKÉ, V KVALITĚ PRODUKTŮ PRO PROFESIONÁLY. HAUTE COUTURE PRO
+VAŠE OČI.
+
+Oční stíny IMBE od mimořádné značky Und Gretel mají perleťovou strukturu a neuvěřitelné pečující složení. Jméno IMBE je odvozeno
+ze staré němčiny a znamená "roj včel".
+
+Hmotnost: 3,5 g
+
+ 
+
+ODSTÍN BRONZE 03
+
+Sytý lesklý bronzovo-zlatý odstín s vysokým podílem pigmentů a třpytivou texturou. Tento stín je multifunkční a dá se použít jako
+rozjasňovač, buď samostatně nebo mícháním s make-upem LEITH. Barva se hodí ke všem barvám očí.
+
+ 
+
+UNIKÁTNÍ PEČUJÍCÍ SLOŽENÍ
+
+Řešetlák - bylina se zázračnými léčivými vlastnostmi. Má silné protizánětlivé účinky, řešetlák je považován za přírodní
+antibiotikum.
+
+Skočec obecný - z jeho semínek se získává cenný olej, který je známý jako ricínový olej. Podporuje hydrataci pleti a stará se o
+její vyhlazení.
+
+Bílý koaolin - platí za nejjemnější minerální hlínu s úžasnými pečujícími vlastnostmi. Stará se o suchou a citlivou pleť. Jako
+bonus je přirozeným lehkým UV faktorem.
+
+Minerály - doslova se spojí s pletí a tím se krásně propojí barevné pigmenty.
+
+
+TIPY PRO POUŽITÍ
+
+Dokonale vyvážené barevné odstíny Vám umožní libovolně kombinovat všech osm stínů IMBE. Vrstvením jednotlivých barev můžete
+docílit 3D efektu, který dá Vašim očím více hloubky. Pro nanášení použijte štětce nebo i své prsty, kterými stíny krásně
+zapracujete do pleti a vynikne tak ještě více jejich textura. Stíny můžete také namíchat do make-upu LEITH, získáte tak
+rozjasňovač.
+
+ </DESCRIPTION>
+     <URL>https://kralovksa-pece.cz/p/und-gretel-imbe-eyeshadow-bronze-03</URL>
+     <IMGURL>https://strapi.kralovska-pece.cz/uploads/Und_Gretel_IMBE_03_Bronze_ocni_stiny_6045aa3fb7_4ceab07cbe.jpg</IMGURL>
+     <PRICE_VAT>860</PRICE_VAT>
+     <MANUFACTURER>Und Gretel</MANUFACTURER>
+     <DELIVERY_DATE>0</DELIVERY_DATE>
+     <CATEGORY>
+        <CATEGORY_NAME>dekorativní kosmetika pro zářivé líčení</CATEGORY_NAME>
+     </CATEGORY>
+   </SHOPITEM>
+
+<SHOPITEM>
+     <ITEM_ID>2931</ITEM_ID>
+     <PRODUCTNAME>OZN | OZN - lak na nehty - CAECILIA</PRODUCTNAME>
+     <PRODUCT>OZN | OZN - lak na nehty - CAECILIA</PRODUCT>
+     <DESCRIPTION>OZN - LAK NA NEHTY - CAECILIA
+
+Rychleschnoucí lak Caecilia má tmavší meruňkový odstín, poskytuje dokonalé krytí, perfektní lesk, optimálně se roztírá a má
+vynikající trvanlivost. Tato barva působí jemně, svěže, a přesto výrazně. Ideální pro letní slunečné dny strávené venku.
+
+OZN laky jsou obohacené o vitamíny A, C, E a provitamín B5. Všechny výrobky OZN jsou 100% veganské a 90 % použitých ingrediencí
+pochází z ekologických surovin z udržitelných zdrojů, jako je dřevo, brambory, červená řepa, špalda, cukrová třtina, maniok nebo
+kukuřice. Laky OZN jsou tzv. 22 free , tedy neobsahují 22 nejvíce toxických složek, které se používají v lakovacím kosmetickém
+odvětví.
+
+
+Tipy pro perfektní lakování:
+
+- lakujte na čisté, odmaštěné a vyleštěné nehty,
+
+- začněte lakováním od středu nehtu a poté naneste lak po bocích
+
+- pro zvýšení odolnosti aplikujte jednu vrstvu podlaku, následně barevný lak a jednu vrstvu finálního nadlaku,
+
+- lak obsahuje dva vyměnitelné štětečky - úzký a široký, takže si štěteček můžete libovolně zvolit podle Vašich preferencí nebo
+podle typu manikúry.
+
+Objem: 12 ml
+
+
+
+
+LAKY OZN NEOBSAHUJÍ:
+
+ * Formaldehyd - považuje se za karcinogen, nicméně v EU je stále povolen v koncentraci nižší než 1%.
+ * Formaldehydovou pryskyřici
+ * Toluen - rozpouštědlo, odmašťuje pokožku, může způsobovat záněty.
+ * Colophonium - škodlivá pryskyřice, může způsobit kontaktní ekzém.
+ * DBP, dibutyl ftalát - změkčovadlo, jeho vdechnutí nebo požití může vést ke zdravotním problémům a dočasným příznakům, jako jsou
+   závratě, nevolnost a bolesti hlavy. Evropská unie považuje DBP za toxický pro reprodukční orgány.
+ * Parabeny - konzervační látky.
+ * Xylol - rozpouštědlo, které může při vstřebání kůží a dýchacími cestami představovat zdravotní riziko, může způsobit bolesti
+   hlavy, problémy s pamětí a orientací, závratě a dušnost.
+ * Aceton - chemická sloučenina, která může dráždit pokožku. Jeho výpary mohou způsobit nevolnost.
+ * TPHP, trifenylfosfát - může negativně ovlivnit hormonální rovnováhu, reprodukci a metabolismus.
+ * Minerální oleje
+ * Silikon</DESCRIPTION>
+     <URL>https://kralovksa-pece.cz/p/ozn-lak-na-nehty-caecilia</URL>
+     <IMGURL>https://strapi.kralovska-pece.cz/uploads/OZN_lak_na_nehty_Caecilia_ed32144322_37d5ecf80a.jpg</IMGURL>
+     <PRICE_VAT>460</PRICE_VAT>
+     <MANUFACTURER>OZN</MANUFACTURER>
+     <DELIVERY_DATE>14</DELIVERY_DATE>
+     <CATEGORY>
+        <CATEGORY_NAME>královská péče o Vaše nehty</CATEGORY_NAME>
+     </CATEGORY>
+   </SHOPITEM>
+
+<SHOPITEM>
+     <ITEM_ID>3223</ITEM_ID>
+     <PRODUCTNAME>butter LONDON | Piece of Cake Patent Shine 10X</PRODUCTNAME>
+     <PRODUCT>butter LONDON | Piece of Cake Patent Shine 10X</PRODUCT>
+     <DESCRIPTION>BUTTER LONDON - PIECE OF CAKE SHINE 10X
+
+Tento okouzlující lak na nehty butter LONDON v pudrově růžové barvě dodá Vašim nehtům hravost a nápaditý vzhled.
+
+Laky butter LONDON mají složení Patent Shine 10X, které je pro nehty velmi prospěšné, prokazatelně podporuje jasnější, silnější a
+zdravější vzhled nehtů. Patentovaná polymerová technologie Shock Resistance poskytuje povrch podobný gelu s vynikajícím leskem,
+zatímco technologie Radiant Curing pomáhá vytvrzovat a zasychat lak s lehkostí přirozeného světla.
+
+Dosáhněte plně krycí barvy jediným tahem pomocí unikátního štětcového aplikátoru butter LONDON - hustého a zakřiveného, který
+obejme nehty, zajistí bezchybně vypadající barvu a výdrž až po dobu 10 dnů!
+ 
+
+KLÍČOVÉ SLOŽKY:
+
+ * technologie polymerů – zajišťuje dlouhou životnost a odolnost proti nárazům a odlupování laku
+ * diamantový prášek – rozjasňuje barvu
+ * absorbéry UV záření – chrání barvu před vyblednutím
+ * výtažek z bambusu - pomáhá nehty zpevňovat, zabraňuje lámání a třepení nehtů
+    
+
+TIPY PRO LAKOVÁNÍ:
+
+ * naneste jednu vrstvu laku na nehty, nechte zaschnout, poté naneste druhou vrstvu
+ * není potřeba žádná podkladová vrstva ani vrchní lak
+   
+    
+
+Objem: 11 ml
+
+ </DESCRIPTION>
+     <URL>https://kralovksa-pece.cz/p/butter-london-piece-of-cake-patent-shine10x</URL>
+     <IMGURL>https://strapi.kralovska-pece.cz/uploads/Butter_London_Piece_of_Cake_Patent_Shine_10_X_3f29622a4b_def1cab58a.jpg</IMGURL>
+     <PRICE_VAT>480</PRICE_VAT>
+     <MANUFACTURER>butter LONDON</MANUFACTURER>
+     <DELIVERY_DATE>0</DELIVERY_DATE>
+     <CATEGORY>
+        <CATEGORY_NAME>královská péče o Vaše nehty</CATEGORY_NAME>
+     </CATEGORY>
+   </SHOPITEM>
+
+<SHOPITEM>
+     <ITEM_ID>0651</ITEM_ID>
+     <PRODUCTNAME> | Dárkový poukaz - SALON - v hodnotě 500 Kč</PRODUCTNAME>
+     <PRODUCT> | Dárkový poukaz - SALON - v hodnotě 500 Kč</PRODUCT>
+     <DESCRIPTION>V BOUTIQUE SALONU MAXIMUS LZE DÁRKOVÝMI POUKAZY V HODNOTĚ 500 KČ, 1000 KČ A 2000 KČ ZAKOUPIT:
+
+- ošetření té nejvyšší kvality a výsledku
+
+- všechny profesionální produkty pro domácí péči
+
+- zažít také několik relaxačních terapií- projít se malým výběrem tzv. "niche" parfémů v naší malé boutiqové parfumerii s možností
+zakoupení vzorků či celých flakónů.
+
+
+PÉČI U NÁS MŮŽETE VNÍMAT VŠEMI SMYSLY.
+
+
+ 
+
+
+LINDA MEREDITH - KRÁLOVNA KOSMETICKÉHO OŠETŘENÍ.
+
+Co můžete čekat? Kosmetické ošetření s unikátními produkty a s výsledky, které jsou ihned viditelné. Kosmetika je zaměřená na
+řešení aktuálních problémů pleti. Unavená pleť je prozářená, vyhlazená a prokrvená, dehydratovaná pleť ztratí jemné linky, zralá
+pleť je díky speciálnímu V-TOX ošetření vyplněná, hlubší vrásky se výrazně zjemňují. Ošetření je neinvazivní, ve stylu klasické
+kosmetiky, s výsledky estetického ošetření. Mnohé produkty obsahují nejvíce aktivních látek na světě. Ošetření využívá také
+unikátní kyslíkovou terapii. Terapeutky jsou školené v Londýně, osobně Lindou Meredith. Kosmetika Linda Meredith se řadí mezi
+nejlepší kosmetiky na světě.
+
+
+DEBORAH LIPPMANN - KRÁLOVNA PÉČE O NEHTY.
+
+Co můžete čekat?Absolutní pedikúra, absolutní výživa. Péče je založená na tzv. suché metodě, která umožňuje nastartování
+regeneračních procesů pokožky. Ošetření obsahuje odbornou konzultaci před ošetřením, maximální péči o nehty a nehtového okolí,
+péči o pokožku dle jejich potřeb a regenerační nadstavbu v podobě speciálního peelingu, koupele a masáže. Skvělého výsledu
+dosahujeme také díky produktům, které získaly již mnoho mezinárodních ocenění. Péče o ruce probíhá dle stejné filosofie. Ošetření
+můžeme korunovat netoxickými výživnými laky na nehty Deborah Lippmann, které splňují ta nejpřísnější světová kritéria.
+
+
+INFORMACE K DÁRKOVÝM POUKAZŮM:
+
+- Dárkové poukazy zasíláme v dárkové zlaté obálce, jsou tedy ihned připraveny k darování.
+
+- Pokud si přejete do dárkového poukazu věnování, prosím sdělte nám to do komentáře k objednávce.
+
+- Detailní informace o službách je uvedena také na www.boutique-salon-maximus.cz.
+
+- Standardní platnost dárkového poukazu je půl roku od data vystavení. Pokud je třeba se domluvit jinak, prosím kontaktujte nás.
+Děkujeme.
+
+- Pokud si přejete individuální domluvu ohledně dárkových poukazů, prosím kontaktujte nás. O vše se postaráme k Vaší spokojenosti.
+
+ </DESCRIPTION>
+     <URL>https://kralovksa-pece.cz/p/darkovy-poukaz-salon-v-hodnote-500-kc</URL>
+     <IMGURL>https://strapi.kralovska-pece.cz/uploads/darkovy_poukaz_kralovska_pece_500_7879d37a61_001c071810.jpg</IMGURL>
+     <PRICE_VAT>500</PRICE_VAT>
+     <MANUFACTURER></MANUFACTURER>
+     <DELIVERY_DATE>14</DELIVERY_DATE>
+     <CATEGORY>
+        <CATEGORY_NAME>Dárkové poukazy</CATEGORY_NAME>
+     </CATEGORY>
+   </SHOPITEM>
+
+<SHOPITEM>
+     <ITEM_ID>0919</ITEM_ID>
+     <PRODUCTNAME>Nailberry | lak na nehty - Fashionista</PRODUCTNAME>
+     <PRODUCT>Nailberry | lak na nehty - Fashionista</PRODUCT>
+     <DESCRIPTION>FASHIONISTA - OXYGENATED WARM AND CREAMY LILAC - TEPLÁ KRÉMOVÁ LILA
+
+Kolekce L'Oxygéné získala mnoho prestižních ocenění pro své složení a barevnou škálu. Unikátní formule nabízí jedny z
+nejkvalitnějších laků na světě.
+
+12 Free (bez zatěžujících toxických látek)
+
+Vegan
+
+Cruelty Free Certified (není testováno na zvířatech)
+
+Halal Certified
+
+Prodyšný
+
+Propustný pro vlhkost
+
+Gluten Free (bez lepku)
+
+Patentované technologie jsou použity za účelem zdravější péče o nehty. Kolekce L'Oxygéné neobsahuje ftaláty včetně DBP, toluen,
+formaldehyd ani složky na základě formaldehydu, kafr, xylen, ethyl tosylamid, triphenyl phosphat, alkohol, parabeny, živočišné
+složky a lepek.
+
+
+ 
+
+TIPY PRO PERFEKTNÍ LAKOVÁNÍ:
+
+ * lakujte na čisté, odmaštěné a vyleštěné nehty
+ * aplikujte jednu vrstvu podlaku, následně barevný lak a jednu vrstvu finálního nadlaku
+ * skvěle tvarovaný štěteček Nailberry vám umožní docílit mandlového tvaru nehtu jako od profesionálů
+
+ 
+
+Objem: 15 ml
+
+ </DESCRIPTION>
+     <URL>https://kralovksa-pece.cz/p/nby-lak-na-nehty-fashionista</URL>
+     <IMGURL>https://strapi.kralovska-pece.cz/uploads/0919_264b488b17_56e5afc40a.jpg</IMGURL>
+     <PRICE_VAT>480</PRICE_VAT>
+     <MANUFACTURER>Nailberry</MANUFACTURER>
+     <DELIVERY_DATE>0</DELIVERY_DATE>
+     <CATEGORY>
+        <CATEGORY_NAME>královská péče o Vaše nehty</CATEGORY_NAME>
+     </CATEGORY>
+   </SHOPITEM>
+
+<SHOPITEM>
+     <ITEM_ID>0931</ITEM_ID>
+     <PRODUCTNAME>Nailberry | lak na nehty - Noirberry</PRODUCTNAME>
+     <PRODUCT>Nailberry | lak na nehty - Noirberry</PRODUCT>
+     <DESCRIPTION>NOIRBERRY - OXYGENATED A GLAMOUROUS DEEP BLACK/RED - GLAMOUR ČERNO ČERVENÁ
+
+Kolekce L'Oxygéné získala mnoho prestižních ocenění pro své složení a barevnou škálu. Unikátní formule nabízí jedny z
+nejkvalitnějších laků na světě.
+
+12 Free (bez zatěžujících toxických látek)
+
+Vegan
+
+Cruelty Free Certified (není testováno na zvířatech)
+
+Halal Certified
+
+Prodyšný
+
+Propustný pro vlhkost
+
+Gluten Free (bez lepku)
+
+Patentované technologie jsou použity za účelem zdravější péče o nehty. Kolekce L'Oxygéné neobsahuje ftaláty včetně DBP, toluen,
+formaldehyd ani složky na základě formaldehydu, kafr, xylen, ethyl tosylamid, triphenyl phosphat, alkohol, parabeny, živočišné
+složky a lepek.
+
+
+ 
+
+TIPY PRO PERFEKTNÍ LAKOVÁNÍ:
+
+ * lakujte na čisté, odmaštěné a vyleštěné nehty
+ * aplikujte jednu vrstvu podlaku, následně barevný lak a jednu vrstvu finálního nadlaku
+ * skvěle tvarovaný štěteček Nailberry vám umožní docílit mandlového tvaru nehtu jako od profesionálů
+
+ 
+
+Objem: 15 ml</DESCRIPTION>
+     <URL>https://kralovksa-pece.cz/p/nby-lak-na-nehty-noirberry</URL>
+     <IMGURL>https://strapi.kralovska-pece.cz/uploads/0931_a0fbe799a5_5bc204d5e1.jpg</IMGURL>
+     <PRICE_VAT>480</PRICE_VAT>
+     <MANUFACTURER>Nailberry</MANUFACTURER>
+     <DELIVERY_DATE>0</DELIVERY_DATE>
+     <CATEGORY>
+        <CATEGORY_NAME>královská péče o Vaše nehty</CATEGORY_NAME>
+     </CATEGORY>
+   </SHOPITEM>
+
+<SHOPITEM>
+     <ITEM_ID>2221</ITEM_ID>
+     <PRODUCTNAME>Und Gretel | LIETH Foundation - Soft Light 1,5</PRODUCTNAME>
+     <PRODUCT>Und Gretel | LIETH Foundation - Soft Light 1,5</PRODUCT>
+     <DESCRIPTION>PEČUJÍCÍ LEHKÝ MAKE UP LIETH, KTERÝ OKAMŽITĚ SPLYNE S VAŠÍ PLETÍ. 100% PŘÍRODNÍ, ORGANICKÝ, VEGANSKÝ, V KVALITĚ PRODUKTŮ PRO
+PROFESIONÁLY.
+
+Make up Lieth od mimořádné značky Und Gretel má lehkou krémovou strukturu a pečující složení. Jméno LIETH je odvozeno ze staré
+němčiny a znamená "světlo" nebo také "lehkost".
+
+Složením je veganský, organický a samozřejmostí je netestování na zvířatech.
+
+Objem: 30 ml
+
+ 
+
+ODSTÍN SOFT LIGHT 1,5
+
+Make - Up LIETH v barvě LIGHT 0,5 se perfektně hodí ke světlé pleti.
+
+ 
+
+UNIKÁTNÍ PEČUJÍCÍ SLOŽENÍ
+
+Heřmánkový extrakt - ceněný pro své hojivé a uklidňující účinky
+
+Šalvěj muškátová - éterický olej ze šalvěje muškátové působí po celou dobu, kdy je LIETH na Vaší pleti. Uvolňuje napětí v pleti a
+má přirozené antibakteriální a protizánětlivé účinky.
+
+Bílý koaolin - platí za nejjemnější minerální hlínu s úžasnými pečujícími vlastnostmi. Stará se o suchou a citlivou pleť. Jako
+bonus je přirozeným lehkým UV faktorem.
+
+Minerály - doslova se spojí s pletí a tím se krásně propojí barevné pigmenty
+
+Avokádový olej - je pletí dobře přijímaný a působí jako výživa, nezatěžuje pleť. Obsažené mastné kyseliny zlepšují strukturu pleti
+a vyživují buňky vitamínem A a E. Tento ceněný avokádový olej podporuje obnovu buněk a chrání pleť před oxidačním stresem.
+
+ 
+
+TIPY PRO POUŽITÍ
+
+Před použitím vždy lehce protřepte.
+
+Pro nalíčení použijte své prsty. Díky obsahu pečujících olejů a rostlinných extraktů a přírodních pigmentů v kombinaci s teplem
+Vašich rukou se LIETH nádherně a neviditelně spojí s pokožkou.
+
+Pokud si přejete silnější krytí, jednoduše můžete LIETH nanést opakovaně a vrstvením dosáhnout požadovaného výsledku. Mezi
+nanášením jednotlivých vrstev chvilku počkejte, dokud se spodní vrstva Make-Upu dokonale nevstřebá do pokožky. 
+
+Make-Up LIETH Vám vydrží, proto doporučujeme koupit druhý odstín a dva odstíny jednoduše smíchat ve Vaší dlani. Získáte produkt
+pro letní opálení i zimní světlost pokožky.
+
+Pokud chcete získat přirozený rozjasňovač, smíchejte LIETH s trochou očních stínů IMBE SEACHELL 04. Efekt bude nádherný a
+přirozený jas s kapkou pravé perleti.</DESCRIPTION>
+     <URL>https://kralovksa-pece.cz/p/und-gretel-lieth-foundation-soft-light-15</URL>
+     <IMGURL>https://strapi.kralovska-pece.cz/uploads/Und_Gretele_LIETH_1_5_box_89b25a8ad4_8189569a8e.jpg</IMGURL>
+     <PRICE_VAT>1410</PRICE_VAT>
+     <MANUFACTURER>Und Gretel</MANUFACTURER>
+     <DELIVERY_DATE>0</DELIVERY_DATE>
+     <CATEGORY>
+        <CATEGORY_NAME>dekorativní kosmetika pro zářivé líčení</CATEGORY_NAME>
+     </CATEGORY>
+   </SHOPITEM>
+
+<SHOPITEM>
+     <ITEM_ID>1915</ITEM_ID>
+     <PRODUCTNAME>Und Gretel | SUNNE liftingový modelovací pudr a tvářenka - Wide</PRODUCTNAME>
+     <PRODUCT>Und Gretel | SUNNE liftingový modelovací pudr a tvářenka - Wide</PRODUCT>
+     <DESCRIPTION>TVÁŘENKA SUNNE, TO JE PŘIROZENÝ VZHLED, PERFEKTNĚ KONTUROVANÝ OBLIČEJ JAKO OD MAKE-UP ARTISTY. 100% PŘÍRODNÍ, ORGANICKÁ, VEGANSKÁ,
+V KVALITĚ PRODUKTŮ PRO PROFESIONÁLY.
+
+Tvářenka Sunne od Und Gretel není jen pudr ve třech různých barevných kombinacích. Kvalitou jde o liftingový modelovací
+konturovací pudr. Díky dokonale vyváženým texturám dosáhnete výsledků jako profesionálové. Podtrhnete přirozené kontury obličeje,
+které budou jako políbené sluncem. Ne nadarmo jméno tvářenky SUNNE pochází ze staroněmčiny a znamená "slunce".
+
+Hmotnost: 13 g
+
+
+ 
+
+ODSTÍN WIDE
+
+Prvním odstínem pudru a tvářenky Wide je velmi světlá barva, kterou lze nanášet jednoduše na celý obličej. Pudr má jemný
+broskovo-růžový tón, s vyváženou kombinací matných a reflexních barevných pigmentů. Pudr působí velmi přirozeně a je primárně
+určený pro světlé tóny pleti. Pro tmavé tóny pleti lze pudr Wide použít jako rozjasňovač, který se zároveň postará o optický
+liftingový efekt.
+
+Pudr je veganský, přiložené štětce jsou z kozí srsti.
+
+DRUHÝ ODSTÍN V BALENÍ
+
+Jde vždy o tmavší odstín, který plní funkci konturovacího pudru. Nanášejte ho pod lícní kosti, pod bradu podle krajů obličeje.
+Tento pudr je v matném tónu s kamenně šedými tóny pro vytvoření dokonalého efektu stínování. Pigmenty z přírodních látek se hodí
+ke všem barvám pleti. Tak jako všechny přírodní pigmenty lze i tento pudr opakovaně nanášet a vytvořit požadovanou intenzitu.
+
+ 
+
+UNIKÁTNÍ PEČUJÍCÍ SLOŽENÍ
+
+Olej z citrónové kůry - přirozené vypíná pleť, pečuje a stará se o hydrataci.
+
+Avokádový olej - je pletí dobře přijímaný a působí jako výživa, nezatěžuje pleť. Obsažené mastné kyseliny zlepšují strukturu pleti
+a vyživují buňky vitamínem A a E. Tento ceněný avokádový olej podporuje obnovu buněk a chrání pleť před oxidačním stresem.
+
+Vitamín E - nazývaný také jako vitamín krásy. Je podstatný pro regeneraci pleti.</DESCRIPTION>
+     <URL>https://kralovksa-pece.cz/p/und-gretel-sunne-lifting-modellage-powder-wide</URL>
+     <IMGURL>https://strapi.kralovska-pece.cz/uploads/Und_Gretel_SUNNE_Wide_tvarenka_13b5ec5ed7_3e88d8d74c.jpg</IMGURL>
+     <PRICE_VAT>2170</PRICE_VAT>
+     <MANUFACTURER>Und Gretel</MANUFACTURER>
+     <DELIVERY_DATE>0</DELIVERY_DATE>
+     <CATEGORY>
+        <CATEGORY_NAME>dekorativní kosmetika pro zářivé líčení</CATEGORY_NAME>
+     </CATEGORY>
+   </SHOPITEM>
+
+<SHOPITEM>
+     <ITEM_ID>1951</ITEM_ID>
+     <PRODUCTNAME>Und Gretel | KNUTZEN lesk na rty - Matte Apricot 01</PRODUCTNAME>
+     <PRODUCT>Und Gretel | KNUTZEN lesk na rty - Matte Apricot 01</PRODUCT>
+     <DESCRIPTION>KNUTZEN - LEHKÝ, PEČUJÍCÍ A SLOŽENÍM ČISTÝ LESK NA RTY. 100% PŘÍRODNÍ, ORGANICKÝ, VEGANSKÝ, V KVALITĚ PRODUKTŮ PRO PROFESIONÁLY.
+
+Jméno lesku na rty KNUTZEN pochází ze staroněmčiny a znamená "stlačit k sobě, držet u sebe", jak tušíte, jde o polibek. Je skvělé
+lesk používat samostatně nebo ve spojení se rtěnkami TAGAROT.
+
+Objem: 6 ml
+
+ 
+
+ODSTÍN MATTE APRICOT 01
+
+Tento krycí a vysoce pigmentovaný odstín je v cihlově červené barvě. Tento odstín lesku Und Gretel Knutzen se hodí ke každému typu
+pleti, je zářivý a elegantní. Jde o lesk bez třpytivých částeček. Je perfektní pro efekt zrcadlových rtů s 3D efektem, podtrhne
+Váš ušlechtilý vzhled.
+
+ 
+
+UNIKÁTNÍ PEČUJÍCÍ SLOŽENÍ
+
+Skočec obecný - z jeho semínek se získává cenný olej, který je známý jako ricínový olej. Podporuje hydrataci pleti a stará se o
+její vyhlazení.
+
+Včelí vosk - je jedním z nejstarších balzámů. V porovnání s oleji je pevnější, proto vhodný na příjemnou aplikaci. Včelí vosk
+vytváří na pokožce lehký ochranný film, který chrání před dehydratací. Zároveň vyhlazuje jemné linky.
+
+Vitamín E - nazývaný také jako vitamín krásy. Je podstatný pro regeneraci pleti.
+
+ 
+
+TIPY PRO POUŽITÍ
+
+Lesk na rty Und Gretel KNUTZEN podtrhne průsvitným barevný akcentem Vaše rty. Lze ho použít také jako vrchní lesklou vrstvu přes
+rtěnky TAGAROT. Barevný efekt pak bude zvláště intenzivní.
+
+Lesky Und Gretel KNUTZEN v "matte" variantě neobsahují viditelné třpytivé částečky. Rty pokryjí krémovou, vysoce pigmentovou
+texturou s plastickým 3D efektem.
+
+Pro svěží a lehký barevný výsledek použijte k aplikaci konečky svých prstů. Pro intenzivnější barevný výsledek nanášejte na rty
+přímo aplikátorem. 
+
+ </DESCRIPTION>
+     <URL>https://kralovksa-pece.cz/p/und-gretel-knutzen-lip-gloss-matte-apricot-01</URL>
+     <IMGURL>https://strapi.kralovska-pece.cz/uploads/Und_Gretel_KNUTZEN_01_Matte_Apricot_lesk_9f787f8a93_a4b0298a17.jpg</IMGURL>
+     <PRICE_VAT>960</PRICE_VAT>
+     <MANUFACTURER>Und Gretel</MANUFACTURER>
+     <DELIVERY_DATE>0</DELIVERY_DATE>
+     <CATEGORY>
+        <CATEGORY_NAME>dekorativní kosmetika pro zářivé líčení</CATEGORY_NAME>
+     </CATEGORY>
+   </SHOPITEM>
+
+<SHOPITEM>
+     <ITEM_ID>0932</ITEM_ID>
+     <PRODUCTNAME>Nailberry | lak na nehty - Number 69</PRODUCTNAME>
+     <PRODUCT>Nailberry | lak na nehty - Number 69</PRODUCT>
+     <DESCRIPTION>NUMBER 69 - OXYGENATED DARK BLUE NEARLY BLACK - TEMNĚ ČERNO MODRÁ
+
+Kolekce L'Oxygéné získala mnoho prestižních ocenění pro své složení a barevnou škálu. Unikátní formule nabízí jedny z
+nejkvalitnějších laků na světě.
+
+12 Free (bez zatěžujících toxických látek)
+
+Vegan
+
+Cruelty Free Certified (není testováno na zvířatech)
+
+Halal Certified
+
+Prodyšný
+
+Propustný pro vlhkost
+
+Gluten Free (bez lepku)
+
+Patentované technologie jsou použity za účelem zdravější péče o nehty. Kolekce L'Oxygéné neobsahuje ftaláty včetně DBP, toluen,
+formaldehyd ani složky na základě formaldehydu, kafr, xylen, ethyl tosylamid, triphenyl phosphat, alkohol, parabeny, živočišné
+složky a lepek.
+
+
+ 
+
+TIPY PRO PERFEKTNÍ LAKOVÁNÍ:
+
+ * lakujte na čisté, odmaštěné a vyleštěné nehty
+ * aplikujte jednu vrstvu podlaku, následně barevný lak a jednu vrstvu finálního nadlaku
+ * skvěle tvarovaný štěteček Nailberry vám umožní docílit mandlového tvaru nehtu jako od profesionálů
+
+ 
+
+Objem: 15 mlv</DESCRIPTION>
+     <URL>https://kralovksa-pece.cz/p/nby-lak-na-nehty-number-69</URL>
+     <IMGURL>https://strapi.kralovska-pece.cz/uploads/0932_ab1761f480_5164dd44aa.jpg</IMGURL>
+     <PRICE_VAT>480</PRICE_VAT>
+     <MANUFACTURER>Nailberry</MANUFACTURER>
+     <DELIVERY_DATE>14</DELIVERY_DATE>
+     <CATEGORY>
+        <CATEGORY_NAME>královská péče o Vaše nehty</CATEGORY_NAME>
+     </CATEGORY>
+   </SHOPITEM>
+
+<SHOPITEM>
+     <ITEM_ID>1963</ITEM_ID>
+     <PRODUCTNAME>Und Gretel | LIETH Make Up - Porcelain Rose 01 - vzorek</PRODUCTNAME>
+     <PRODUCT>Und Gretel | LIETH Make Up - Porcelain Rose 01 - vzorek</PRODUCT>
+     <DESCRIPTION>PEČUJÍCÍ LEHKÝ MAKE UP LIETH, KTERÝ OKAMŽITĚ SPLYNE S VAŠÍ PLETÍ. 100% PŘÍRODNÍ, ORGANICKÝ, VEGANSKÝ, V KVALITĚ PRODUKTŮ PRO
+PROFESIONÁLY.
+
+Make up Lieth od mimořádné značky Und Gretel má lehkou krémovou strukturu a pečující složení. Jméno LIETH je odvozeno ze staré
+němčiny a znamená "světlo" nebo také "lehkost".
+
+Složením je veganský, organický a samozřejmostí je netestování na zvířatech.
+
+Objem standardního balení: 30 ml
+
+Objem vzorku: 1 ml
+
+ 
+
+ODSTÍN PORCELAIN ROSE 01
+
+Make - Up LIETH v barvě PORCELAIN ROSE 01 se perfektně hodí k velmi světlé a světlé pleti se studenými nebo růžovými tóny. Barevné
+sperktum je od alabastrové přes porcelánovou. Odstín Porcelain Rose 01 je ideální pro pleť, která na slunci rychle zčevená.
+
+ 
+
+UNIKÁTNÍ PEČUJÍCÍ SLOŽENÍ
+
+Heřmánkový extrakt - ceněný pro své hojivé a uklidňující účinky
+
+Šalvěj muškátová - éterický olej ze šalvěje muškátové působí po celou dobu, kdy je LIETH na Vaší pleti. Uvolňuje napětí v pleti a
+má přirozené antibakteriální a protizánětlivé účinky.
+
+Bílý koaolin - platí za nejjemnější minerální hlínu s úžasnými pečujícími vlastnostmi. Stará se o suchou a citlivou pleť. Jako
+bonus je přirozeným lehkým UV faktorem.
+
+Minerály - doslova se spojí s pletí a tím se krásně propojí barevné pigmenty.
+
+Avokádový olej - je pletí dobře přijímaný a působí jako výživa, nezatěžuje pleť. Obsažené mastné kyseliny zlepšují strukturu pleti
+a vyživují buňky vitamínem A a E. Tento ceněný avokádový olej podporuje obnovu buněk a chrání pleť před oxidačním stresem.
+
+ 
+
+TIPY PRO POUŽITÍ
+
+Před použitím vždy lehce protřepte.
+
+Pro nalíčení použijte své prsty. Díky obsahu pečujících olejů a rostlinných extraktů a přírodních pigmentů v kombinaci s teplem
+Vašich rukou se LIETH nádherně a neviditelně spojí s pokožkou.
+
+Pokud si přejete silnější krytí, jednoduše můžete LIETH nanést opakovaně a vrstvením dosáhnout požadovaného výsledku. Mezi
+nanášením jednotlivých vrstev chvilku počkejte, dokud se spodní vrstva Make-Upu dokonale nevstřebá do pokožky. 
+
+Make-Up LIETH Vám vydrží, proto doporučujeme koupit druhý odstín a dva odstíny jednoduše smíchat ve Vaší dlani. Získáte produkt
+pro letní opálení i zimní světlost pokožky.
+
+Pokud chcete získat přirozený rozjasňovač, smíchejte LIETH s trochou očních stínů IMBE SEACHELL 04. Efekt bude nádherný a
+přirozený jas s kapkou pravé perleti.</DESCRIPTION>
+     <URL>https://kralovksa-pece.cz/p/und-gretel-leith-01-vzorek</URL>
+     <IMGURL>https://strapi.kralovska-pece.cz/uploads/U_Nd_Gretel_LIETH_Sachets_vzorky_915badbf5d_cd4e745e02.jpg</IMGURL>
+     <PRICE_VAT>49</PRICE_VAT>
+     <MANUFACTURER>Und Gretel</MANUFACTURER>
+     <DELIVERY_DATE>0</DELIVERY_DATE>
+     <CATEGORY>
+        <CATEGORY_NAME>dekorativní kosmetika pro zářivé líčení</CATEGORY_NAME>
+     </CATEGORY>
+   </SHOPITEM>
+
+<SHOPITEM>
+     <ITEM_ID>1025</ITEM_ID>
+     <PRODUCTNAME>Deborah Lippmann | The Cure rich girl</PRODUCTNAME>
+     <PRODUCT>Deborah Lippmann | The Cure rich girl</PRODUCT>
+     <DESCRIPTION></DESCRIPTION>
+     <URL>https://kralovksa-pece.cz/p/dl-the-cure-serum-pro-nehty</URL>
+     <IMGURL>https://strapi.kralovska-pece.cz/uploads/the_cure_deborah_lippmann_fb7b152e8c_8b51cc4af9.jpg</IMGURL>
+     <PRICE_VAT>620</PRICE_VAT>
+     <MANUFACTURER>Deborah Lippmann</MANUFACTURER>
+     <DELIVERY_DATE>0</DELIVERY_DATE>
+     <CATEGORY>
+        <CATEGORY_NAME>královská péče o Vaše nehty</CATEGORY_NAME>
+     </CATEGORY>
+   </SHOPITEM>
+
+<SHOPITEM>
+     <ITEM_ID>3256</ITEM_ID>
+     <PRODUCTNAME>butter LONDON | rtěnka Impulsive Plush Rush - Red</PRODUCTNAME>
+     <PRODUCT>butter LONDON | rtěnka Impulsive Plush Rush - Red</PRODUCT>
+     <DESCRIPTION>BUTTER LONDON - RTĚNKA IMPULSIVE PLUSH RUSH - RED
+
+Zahalte svoje rty do sametového závoje s rtěnkou butter LONDON, která dodá Vašim rtům jedinečný a moderní vzhled. 
+
+Rtěnka Impulsive Plush Rush ve výrazném červeném odstínu má vysoce pigmentovanou a sametovou texturu, která dokonale tvaruje a
+vyplňuje rty. Intenzivně pečuje a hydratuje jemnou pokožku rtů a navíc má přírodní složení. Rtěnka je zasazena v elegantním
+pouzdře a má magnetický uzávěr. Rtěnku naneste na rty jedním tahem.
+
+Hmotnost: 3,5 g</DESCRIPTION>
+     <URL>https://kralovksa-pece.cz/p/butter-london-impulsive-plush-rush-lipstick</URL>
+     <IMGURL>https://strapi.kralovska-pece.cz/uploads/Butter_London_rtenka_Impulsive_Plush_Rush_Red_de68c22d46_3bc54c9e02.jpg</IMGURL>
+     <PRICE_VAT>540</PRICE_VAT>
+     <MANUFACTURER>butter LONDON</MANUFACTURER>
+     <DELIVERY_DATE>14</DELIVERY_DATE>
+     <CATEGORY>
+        <CATEGORY_NAME>dekorativní kosmetika pro zářivé líčení</CATEGORY_NAME>
+     </CATEGORY>
+   </SHOPITEM>
+
+<SHOPITEM>
+     <ITEM_ID>0937</ITEM_ID>
+     <PRODUCTNAME>Nailberry | lak na nehty - Serendipity</PRODUCTNAME>
+     <PRODUCT>Nailberry | lak na nehty - Serendipity</PRODUCT>
+     <DESCRIPTION>SERENDIPITY - OXYGENATED MUTED LILAC - JEMNÁ LILA
+
+Kolekce L'Oxygéné získala mnoho prestižních ocenění pro své složení a barevnou škálu. Unikátní formule nabízí jedny z
+nejkvalitnějších laků na světě.
+
+12 Free (bez zatěžujících toxických látek)
+
+Vegan
+
+Cruelty Free Certified (není testováno na zvířatech)
+
+Halal Certified
+
+Prodyšnost
+
+Propustný pro vlhkost
+
+Gluten Free (bez lepku)
+
+Patentované technologie jsou použity za účelem zdravější péče o nehty. Kolekce L'Oxygéné neobsahuje ftaláty včetně DBP, toluen,
+formaldehyd ani složky na základě formaldehydu, kafr, xylen, ethyl tosylamid, triphenyl phosphat, alkohol, parabeny, živočišné
+složky a lepek.
+
+
+ 
+
+TIPY PRO PERFEKTNÍ LAKOVÁNÍ:
+
+ * lakujte na čisté, odmaštěné a vyleštěné nehty
+ * aplikujte jednu vrstvu podlaku, následně barevný lak a jednu vrstvu finálního nadlaku
+ * skvěle tvarovaný štěteček Nailberry vám umožní docílit mandlového tvaru nehtu jako od profesionálů
+
+ 
+
+Objem: 15 ml
+
+ </DESCRIPTION>
+     <URL>https://kralovksa-pece.cz/p/nby-lak-na-nehty-serendipity</URL>
+     <IMGURL>https://strapi.kralovska-pece.cz/uploads/0937_dcef7e3fa2_161f778586.jpg</IMGURL>
+     <PRICE_VAT>480</PRICE_VAT>
+     <MANUFACTURER>Nailberry</MANUFACTURER>
+     <DELIVERY_DATE>14</DELIVERY_DATE>
+     <CATEGORY>
+        <CATEGORY_NAME>královská péče o Vaše nehty</CATEGORY_NAME>
+     </CATEGORY>
+   </SHOPITEM>
+
+<SHOPITEM>
+     <ITEM_ID>1814</ITEM_ID>
+     <PRODUCTNAME>Nailberry | lak na nehty - Berry Fizz</PRODUCTNAME>
+     <PRODUCT>Nailberry | lak na nehty - Berry Fizz</PRODUCT>
+     <DESCRIPTION>BERRY FIZZ - SHIMMERING FUCHSIA - TŘPYTIVÁ FUCHSIOVÁ
+
+Kolekce L'Oxygéné získala mnoho prestižních ocenění pro své složení a barevnou škálu. Unikátní formule nabízí jedny z
+nejkvalitnějších laků na světě.
+
+12 Free (bez zatěžujících toxických látek)
+
+Vegan
+
+Cruelty Free Certified (není testováno na zvířatech)
+
+Halal Certified
+
+Prodyšný
+
+Propustný pro vlhkost
+
+Gluten Free (bez lepku)
+
+Patentované technologie jsou použity za účelem zdravější péče o nehty. Kolekce L'Oxygéné neobsahuje ftaláty včetně DBP, toluen,
+formaldehyd ani složky na základě formaldehydu, kafr, xylen, ethyl tosylamid, triphenyl phosphat, alkohol, parabeny, živočišné
+složky a lepek.
+
+
+ 
+
+TIPY PRO PERFEKTNÍ LAKOVÁNÍ:
+
+ * lakujte na čisté, odmaštěné a vyleštěné nehty
+ * aplikujte jednu vrstvu podlaku, následně barevný lak a jednu vrstvu finálního nadlaku
+ * skvěle tvarovaný štěteček Nailberry vám umožní docílit mandlového tvaru nehtu jako od profesionálů
+
+ </DESCRIPTION>
+     <URL>https://kralovksa-pece.cz/p/nby-lak-na-nehty-berry-fizz</URL>
+     <IMGURL>https://strapi.kralovska-pece.cz/uploads/Nailberry_Berry_Fizz_3c600d2f48_3fff951ba5.jpg</IMGURL>
+     <PRICE_VAT>480</PRICE_VAT>
+     <MANUFACTURER>Nailberry</MANUFACTURER>
+     <DELIVERY_DATE>0</DELIVERY_DATE>
+     <CATEGORY>
+        <CATEGORY_NAME>královská péče o Vaše nehty</CATEGORY_NAME>
+     </CATEGORY>
+   </SHOPITEM>
+
+<SHOPITEM>
+     <ITEM_ID>2884</ITEM_ID>
+     <PRODUCTNAME>V Canto | Irae - extrakt parfému, 100 ml</PRODUCTNAME>
+     <PRODUCT>V Canto | Irae - extrakt parfému, 100 ml</PRODUCT>
+     <DESCRIPTION>V CANTO IRAE - ČISTÝ PARFÉM UNISEX S AROMATICKOU DŘEVITOU VŮNÍ
+
+Tento majestátní parfém vypráví o nejhlubších pocitech, které jsou ukryty v lidských srdcíh, je jako něžný polibek s tóny kakaa a
+tonkových bobů ponořenými v moři, pikantní jako pepř a sladký jako koriandr.
+
+Irae je tajemný a provokativní parfém, který nás skrze svou strukturu zavede do nepřiznaných a skrytých hlubin naší duše. Parfém
+pro ty, kteří se nebojí ničeho a plně chápou svou hodnotu. Parfém obsahuje 40% vonných esencí.
+
+Objem: 100 ml
+ 
+
+
+SPECIFIKACE - V CANTO IRAE
+
+Hlava: bergamot, kakaové boby, tonka boby
+Srdce: sečuánský pepř, pelyněk, koriandr, železo, rez
+Tělo: růžové dřevo, dubové dřevo, ambra
+
+Typ vůně: chyprová, aromatická
+Těžkost: lehká
+Orientační doba trvání vůně: 24 hodin</DESCRIPTION>
+     <URL>https://kralovksa-pece.cz/p/v-canto-irae</URL>
+     <IMGURL>https://strapi.kralovska-pece.cz/uploads/V_Canto_IRAE_extrakt_parfemu_100ml_705c9e0771_80e411365f.jpg</IMGURL>
+     <PRICE_VAT>4400</PRICE_VAT>
+     <MANUFACTURER>V Canto</MANUFACTURER>
+     <DELIVERY_DATE>14</DELIVERY_DATE>
+     <CATEGORY>
+        <CATEGORY_NAME>Niche parfémy</CATEGORY_NAME>
+     </CATEGORY>
+   </SHOPITEM>
+
+<SHOPITEM>
+     <ITEM_ID>2921</ITEM_ID>
+     <PRODUCTNAME>OZN | OZN - lak na nehty - MERVE</PRODUCTNAME>
+     <PRODUCT>OZN | OZN - lak na nehty - MERVE</PRODUCT>
+     <DESCRIPTION>OZN - LAK NA NEHTY - MERVE
+
+Rychleschnoucí lak Merve má intenzivní červenooranžový odstín, poskytuje dokonalé krytí, perfektní lesk, optimálně se roztírá a má
+vynikající trvanlivost. Tato barva je elegantní, sportovní, moderní a skvěle se doplňuje s opálenou pokožkou.
+
+OZN laky jsou obohacené o vitamíny A, C, E a provitamín B5. Všechny výrobky OZN jsou 100% veganské a 90 % použitých ingrediencí
+pochází z ekologických surovin z udržitelných zdrojů, jako je dřevo, brambory, červená řepa, špalda, cukrová třtina, maniok nebo
+kukuřice. Laky OZN jsou tzv. 22 free , tedy neobsahují 22 nejvíce toxických složek, které se používají v lakovacím kosmetickém
+odvětví.
+
+
+Tipy pro perfektní lakování:
+
+- lakujte na čisté, odmaštěné a vyleštěné nehty,
+
+- začněte lakováním od středu nehtu a poté naneste lak po bocích
+
+- pro zvýšení odolnosti aplikujte jednu vrstvu podlaku, následně barevný lak a jednu vrstvu finálního nadlaku,
+
+- lak obsahuje dva vyměnitelné štětečky - úzký a široký, takže si štěteček můžete libovolně zvolit podle Vašich preferencí nebo
+podle typu manikúry.
+
+Objem: 12 ml
+
+
+
+
+LAKY OZN NEOBSAHUJÍ:
+
+ * Formaldehyd - považuje se za karcinogen, nicméně v EU je stále povolen v koncentraci nižší než 1%.
+ * Formaldehydovou pryskyřici
+ * Toluen - rozpouštědlo, odmašťuje pokožku, může způsobovat záněty.
+ * Colophonium - škodlivá pryskyřice, může způsobit kontaktní ekzém.
+ * DBP, dibutyl ftalát - změkčovadlo, jeho vdechnutí nebo požití může vést ke zdravotním problémům a dočasným příznakům, jako jsou
+   závratě, nevolnost a bolesti hlavy. Evropská unie považuje DBP za toxický pro reprodukční orgány.
+ * Parabeny - konzervační látky.
+ * Xylol - rozpouštědlo, které může při vstřebání kůží a dýchacími cestami představovat zdravotní riziko, může způsobit bolesti
+   hlavy, problémy s pamětí a orientací, závratě a dušnost.
+ * Aceton - chemická sloučenina, která může dráždit pokožku. Jeho výpary mohou způsobit nevolnost.
+ * TPHP, trifenylfosfát - může negativně ovlivnit hormonální rovnováhu, reprodukci a metabolismus.
+ * Minerální oleje
+ * Silikon</DESCRIPTION>
+     <URL>https://kralovksa-pece.cz/p/ozn-lak-na-nehty-merve</URL>
+     <IMGURL>https://strapi.kralovska-pece.cz/uploads/OZN_lak_na_nehty_Merve_214c95e916_a543b27de2.jpg</IMGURL>
+     <PRICE_VAT>460</PRICE_VAT>
+     <MANUFACTURER>OZN</MANUFACTURER>
+     <DELIVERY_DATE>0</DELIVERY_DATE>
+     <CATEGORY>
+        <CATEGORY_NAME>královská péče o Vaše nehty</CATEGORY_NAME>
+     </CATEGORY>
+   </SHOPITEM>
+
+<SHOPITEM>
+     <ITEM_ID>0934</ITEM_ID>
+     <PRODUCTNAME>Nailberry | lak na nehty - Raspberry</PRODUCTNAME>
+     <PRODUCT>Nailberry | lak na nehty - Raspberry</PRODUCT>
+     <DESCRIPTION>RASPBERRY - OXYGENATED RED FUCHSIA - ČERVENÁ FUCHSIE
+
+Kolekce L'Oxygéné získala mnoho prestižních ocenění pro své složení a barevnou škálu. Unikátní formule nabízí jedny z
+nejkvalitnějších laků na světě.
+
+12 Free (bez zatěžujících toxických látek)
+
+Vegan
+
+Cruelty Free Certified (není testováno na zvířatech)
+
+Halal Certified
+
+Prodyšný
+
+Propustný pro vlhkost
+
+Gluten Free (bez lepku)
+
+Patentované technologie jsou použity za účelem zdravější péče o nehty. Kolekce L'Oxygéné neobsahuje ftaláty včetně DBP, toluen,
+formaldehyd ani složky na základě formaldehydu, kafr, xylen, ethyl tosylamid, triphenyl phosphat, alkohol, parabeny, živočišné
+složky a lepek.
+
+
+ 
+
+TIPY PRO PERFEKTNÍ LAKOVÁNÍ:
+
+ * lakujte na čisté, odmaštěné a vyleštěné nehty
+ * aplikujte jednu vrstvu podlaku, následně barevný lak a jednu vrstvu finálního nadlaku
+ * skvěle tvarovaný štěteček Nailberry vám umožní docílit mandlového tvaru nehtu jako od profesionálů
+
+ 
+
+Objem: 15 ml</DESCRIPTION>
+     <URL>https://kralovksa-pece.cz/p/nby-lak-na-nehty-raspberry</URL>
+     <IMGURL>https://strapi.kralovska-pece.cz/uploads/0934_1208616b2e_addcc3bb07.jpg</IMGURL>
+     <PRICE_VAT>480</PRICE_VAT>
+     <MANUFACTURER>Nailberry</MANUFACTURER>
+     <DELIVERY_DATE>0</DELIVERY_DATE>
+     <CATEGORY>
+        <CATEGORY_NAME>královská péče o Vaše nehty</CATEGORY_NAME>
+     </CATEGORY>
+   </SHOPITEM>
+
+<SHOPITEM>
+     <ITEM_ID>3147</ITEM_ID>
+     <PRODUCTNAME>Bella Hope London | svíčka - Muscat</PRODUCTNAME>
+     <PRODUCT>Bella Hope London | svíčka - Muscat</PRODUCT>
+     <DESCRIPTION>Luxusní vonná svíčka Bella Hope Muscat je vyrobena ze 100% přírodního sójového vosku, má nebělený bavlněný knot a obsahuje čisté
+esenciální oleje.
+
+Dekadentní a bohatá vůně plná opojného koření. Dominantní tóny oudového dřeva a luxusního koňaku se mísí se sladkým aromatickým
+tabákem a kouřovými dřevy, doplněné o podtóny kořeněného šafránu a agarového dřeva.
+
+Svíčka je zasazena do luxusního zlatého skla, které podtrhuje krásu skutečného plamene, má elegantní víko a je zabalena do
+sametového pytlíku.
+
+
+Hmotnost: 260g
+Orientační doba hoření: 50-60 hodin</DESCRIPTION>
+     <URL>https://kralovksa-pece.cz/p/bella-hope-svicka-muscat</URL>
+     <IMGURL>https://strapi.kralovska-pece.cz/uploads/Bella_Hope_svicka_Muscat_02_ff89639723_754bce5166.jpg</IMGURL>
+     <PRICE_VAT>1790</PRICE_VAT>
+     <MANUFACTURER>Bella Hope London</MANUFACTURER>
+     <DELIVERY_DATE>0</DELIVERY_DATE>
+     <CATEGORY>
+        <CATEGORY_NAME>Svíčky a difuzéry</CATEGORY_NAME>
+     </CATEGORY>
+   </SHOPITEM>
+
+<SHOPITEM>
+     <ITEM_ID>3252</ITEM_ID>
+     <PRODUCTNAME>butter LONDON | rtěnka Buzzed Plush Rush - Cocoa</PRODUCTNAME>
+     <PRODUCT>butter LONDON | rtěnka Buzzed Plush Rush - Cocoa</PRODUCT>
+     <DESCRIPTION>BUTTER LONDON - RTĚNKA BUZZED PLUSH RUSH - COCOA
+
+Zahalte svoje rty do sametového závoje s rtěnkou butter LONDON, která dodá Vašim rtům jedinečný a moderní vzhled. 
+
+Rtěnka Buzzed Plush Rush v krémovém kakaovém odstínu má vysoce pigmentovanou a sametovou texturu, která dokonale tvaruje a
+vyplňuje rty. Intenzivně pečuje a hydratuje jemnou pokožku rtů a navíc má přírodní složení. Rtěnka je zasazena v elegantním
+pouzdře a má magnetický uzávěr. Rtěnku naneste na rty jedním tahem.
+
+Hmotnost: 3,5 g</DESCRIPTION>
+     <URL>https://kralovksa-pece.cz/p/butter-london-buzzed-plush-rush-lipstick</URL>
+     <IMGURL>https://strapi.kralovska-pece.cz/uploads/Butter_London_rtenka_Buzzed_Plush_Rush_Cocoa_62b3a046c1_2db2d22f7d.jpg</IMGURL>
+     <PRICE_VAT>540</PRICE_VAT>
+     <MANUFACTURER>butter LONDON</MANUFACTURER>
+     <DELIVERY_DATE>0</DELIVERY_DATE>
+     <CATEGORY>
+        <CATEGORY_NAME>dekorativní kosmetika pro zářivé líčení</CATEGORY_NAME>
+     </CATEGORY>
+   </SHOPITEM>
+
+<SHOPITEM>
+     <ITEM_ID>1733</ITEM_ID>
+     <PRODUCTNAME>Deborah Lippmann | lak na nehty - Bright Lights </PRODUCTNAME>
+     <PRODUCT>Deborah Lippmann | lak na nehty - Bright Lights </PRODUCT>
+     <DESCRIPTION>DEBORAH LIPPMANN - KOLEKCE GEL LAB PRO
+
+Laky na nehty řady Gel Lab Pro patří svými vlastnostmi a způsobem aplikace a odlakování do standardních laků na nehty. Gelovou
+technologii připomínají svým finálním vzhledem (leskem a povrchem). Toto patentované 7FREE složení obsahuje aktivní ingredience,
+které podporují zdraví nehtů. Zároveň nabízí nádherné barvy a dlouhotrvající lesk vaší manikúry.
+
+TIPY PRO PERFEKTNÍ LAKOVÁNÍ:
+
+ * lakujte na čisté, odmaštěné a vyleštěné nehty (pro perfektní výsledky použijte 2 Second Primer a podlaky a nadlaky z řady Gel
+   Lab Pro Debory Lippmann)
+ * aplikujte jednu vrstvu podlaku, následně barevný lak a jednu vrstvu finálního nadlaku.
+
+ 
+
+Objem: 15 ml</DESCRIPTION>
+     <URL>https://kralovksa-pece.cz/p/dl-lak-na-nehty-bright-lights-glp</URL>
+     <IMGURL>https://strapi.kralovska-pece.cz/uploads/Deborah_Lippmann_bright_lights_21d25da6c6_37f5d9bc66.jpg</IMGURL>
+     <PRICE_VAT>520</PRICE_VAT>
+     <MANUFACTURER>Deborah Lippmann</MANUFACTURER>
+     <DELIVERY_DATE>0</DELIVERY_DATE>
+     <CATEGORY>
+        <CATEGORY_NAME>královská péče o Vaše nehty</CATEGORY_NAME>
+     </CATEGORY>
+   </SHOPITEM>
+
+<SHOPITEM>
+     <ITEM_ID>0966</ITEM_ID>
+     <PRODUCTNAME>Nailberry | lak na nehty - Pop my Berry</PRODUCTNAME>
+     <PRODUCT>Nailberry | lak na nehty - Pop my Berry</PRODUCT>
+     <DESCRIPTION>POP MY BERRY - OXYGENATED BRIGHT ORANGE NEARLY RED - SVĚTLÁ ORANŽOVO - ČERVENÁ
+
+ 
+
+Kolekce L'Oxygéné získala mnoho prestižních ocenění pro své složení a barevnou škálu. Unikátní formule nabízí jedny z
+nejkvalitnějších laků na světě.
+
+12 Free (bez zatěžujících toxických látek)
+
+Vegan
+
+Cruelty Free Certified (není testováno na zvířatech)
+
+Halal Certified
+
+Prodyšný
+
+Propustný pro vlhkost
+
+Gluten Free (bez lepku)
+
+Patentované technologie jsou použity za účelem zdravější péče o nehty. Kolekce L'Oxygéné neobsahuje ftaláty včetně DBP, toluen,
+formaldehyd ani složky na základě formaldehydu, kafr, xylen, ethyl tosylamid, triphenyl phosphat, alkohol, parabeny, živočišné
+složky a lepek.
+
+
+ 
+
+TIPY PRO PERFEKTNÍ LAKOVÁNÍ:
+
+ * lakujte na čisté, odmaštěné a vyleštěné nehty
+ * aplikujte jednu vrstvu podlaku, následně barevný lak a jednu vrstvu finálního nadlaku
+ * skvěle tvarovaný štěteček Nailberry vám umožní docílit mandlového tvaru nehtu jako od profesionálů
+
+ 
+
+Objem: 15 ml</DESCRIPTION>
+     <URL>https://kralovksa-pece.cz/p/nby-lak-na-nehty-pop-my-berry</URL>
+     <IMGURL>https://strapi.kralovska-pece.cz/uploads/0966_09257a7f6c_8906630dcd.jpg</IMGURL>
+     <PRICE_VAT>480</PRICE_VAT>
+     <MANUFACTURER>Nailberry</MANUFACTURER>
+     <DELIVERY_DATE>14</DELIVERY_DATE>
+     <CATEGORY>
+        <CATEGORY_NAME>královská péče o Vaše nehty</CATEGORY_NAME>
      </CATEGORY>
    </SHOPITEM>
 </SHOP>

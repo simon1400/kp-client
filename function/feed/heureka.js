@@ -11,6 +11,7 @@ const toXml = data => {
      <URL>${item.link}</URL>
      <IMGURL>${item.image_link}</IMGURL>
      <PRICE_VAT>${item.price}</PRICE_VAT>
+     <MANUFACTURER>${item.brand}</MANUFACTURER>
      <DELIVERY_DATE>${item.stock > 0 ? '0' : '14'}</DELIVERY_DATE>
      <CATEGORY>
         <CATEGORY_NAME>${item.category}</CATEGORY_NAME>
