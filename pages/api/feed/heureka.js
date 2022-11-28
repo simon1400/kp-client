@@ -54,6 +54,7 @@ export default async function handler (req, res) {
               image_link: process.env.APP_API+products[i].images?.data?.[0].attributes.url,
               stock: products[i].Variants[a].stock,
               price: products[i].Variants[a].price,
+              ean: products[i].Variants[a]?.ean || '',
               category: replaceSymbol(products[i]?.category?.data?.[0]?.attributes?.title) || '',
               brand: replaceSymbol(products[i].brand?.data?.attributes?.title) || ''
             }
@@ -68,6 +69,7 @@ export default async function handler (req, res) {
             image_link: process.env.APP_API+products[i]?.images?.data?.[0]?.attributes?.url,
             stock: products[i].stock,
             price: products[i].price,
+            ean: products[i]?.ean || '',
             category: replaceSymbol(products[i].category?.data?.[0]?.attributes?.title) || '',
             brand: replaceSymbol(products[i].brand?.data?.attributes?.title) || ''
           }
@@ -75,8 +77,6 @@ export default async function handler (req, res) {
         }
         productsData.push(...productVariants)
       }
-
-      console.log(productsData.length);
   
       const xmlHeureka = toXmlHeureka(productsData)
   
