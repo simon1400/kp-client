@@ -65,7 +65,7 @@ export default async function handler (req, res) {
             id: products[i].code,
             title: replaceSymbol(products[i].title),
             description: replaceSymbol(toPlainText(products[i].content)),
-            link: 'https://kralovksa-pece.cz/p/' + products[i].slug,
+            link: 'https://kralovska-pece.cz/p/' + products[i].slug,
             image_link: process.env.APP_API+products[i]?.images?.data?.[0]?.attributes?.url,
             stock: products[i].stock,
             price: products[i].price,
