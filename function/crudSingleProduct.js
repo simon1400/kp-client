@@ -7,7 +7,7 @@ const crudSingleProduct = (data) => {
         AxiosSTRAPI.put('/api/produkties/'+res.data.data[0].id, {data: {
           price: item.price,
           stock: item.stock,
-          ean: item.ean,
+          ean: item.ean
         }})
           .then(res => console.log('Success update --', res.data.data.attributes.title))
           .catch(err => console.error(err.response?.data || err.response))

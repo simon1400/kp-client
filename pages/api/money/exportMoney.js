@@ -9,17 +9,17 @@ export default async function handler (req, res) {
 
     const dir = 'moneyData/export/'
 
-    const files = readdirSync(dir)
-    const splitNameFiles = files.map(name => {
-      if(name.indexOf('_') >= 0){
-        return name
-      }
-    }).filter(item => item !== undefined)
+    // const files = readdirSync(dir)
+    // const splitNameFiles = files.map(name => {
+    //   if(name.indexOf('_') >= 0){
+    //     return name
+    //   }
+    // }).filter(item => item !== undefined)
     
-    splitNameFiles.map(nameFile => {
+    // splitNameFiles.map(nameFile => {
 
-      var xml = readFileSync(`${dir}${nameFile}`, 'utf8');
-      // var xml = readFileSync(`${dir}Zasoby.xml`, 'utf8');
+      // var xml = readFileSync(`${dir}${nameFile}`, 'utf8');
+      var xml = readFileSync(`${dir}Zasoby.xml`, 'utf8');
       var result = convert.xml2json(xml, {compact: true, spaces: 4});
 
       result = JSON.parse(result)
@@ -111,12 +111,12 @@ export default async function handler (req, res) {
         
       }
 
-      unlink(`${dir}${nameFile}`, (err) => {
-        if (err) throw err;
-        console.log(`successfully deleted ${dir}${nameFile}`);
-      });
+      // unlink(`${dir}${nameFile}`, (err) => {
+      //   if (err) throw err;
+      //   console.log(`successfully deleted ${dir}${nameFile}`);
+      // });
 
-    })
+    // })
 
     res.status(200).json({some: 'good'});
 

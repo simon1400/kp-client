@@ -35,8 +35,6 @@ export default async function handler (req, res) {
       
       const productsRes = await axios.get(`${process.env.APP_API}/api/produkties?${query}`)
       const products = productsRes.data.data.map(item => ({id: item.id, ...item.attributes}))
-
-      console.log(products.length)
       
       let productsData = [];
   

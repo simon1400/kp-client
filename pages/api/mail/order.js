@@ -15,16 +15,18 @@ export default async function handler (req, res) {
 
     try{
       const recipients = [
-        new Recipient(data.email, "Recipient")
+        new Recipient(data.email, "Recipient"),
+        new Recipient('info@kralovska-pece.cz', "Owner"),
+        new Recipient('pechunka11@gmail.com', "Dev"),
       ];
   
       const emailParams = new EmailParams()
           .setFrom("info@kralovska-pece.cz")
-          .setFromName("Kralovska peče")
+          .setFromName("Královská Peče")
           .setRecipients(recipients)
           .setSubject('Objednávka č.: ' + data.id)
           .setHtml(InfoOrder(data))
-          .setText("Objednávka dokončena - Kralovska peče");
+          .setText("Objednávka dokončena - Královská Peče");
   
       mailersend.send(emailParams);
   
