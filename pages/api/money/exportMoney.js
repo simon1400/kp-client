@@ -9,17 +9,17 @@ export default async function handler (req, res) {
 
     const dir = 'moneyData/export/'
 
-    const files = readdirSync(dir)
-    const splitNameFiles = files.map(name => {
-      if(name.indexOf('_') >= 0){
-        return name
-      }
-    }).filter(item => item !== undefined)
+    // const files = readdirSync(dir)
+    // const splitNameFiles = files.map(name => {
+    //   if(name.indexOf('_') >= 0){
+    //     return name
+    //   }
+    // }).filter(item => item !== undefined)
     
-    splitNameFiles.map(nameFile => {
+    // splitNameFiles.map(nameFile => {
 
-      var xml = readFileSync(`${dir}${nameFile}`, 'utf8');
-      // var xml = readFileSync(`${dir}Zasoby.xml`, 'utf8');
+      // var xml = readFileSync(`${dir}${nameFile}`, 'utf8');
+      var xml = readFileSync(`${dir}Zasoby.xml`, 'utf8');
       var result = convert.xml2json(xml, {compact: true, spaces: 4});
 
       result = JSON.parse(result)
@@ -41,7 +41,8 @@ export default async function handler (req, res) {
                 stock: item['StavZasoby']['Zasoba']._text,
                 code: item['KmKarta']['Katalog']._text,
                 guid: item['KmKarta']['GUID']._text,
-                published_at: null
+                ean: item['KmKarta']['BarCode']._text,
+                publishedAt: null
               })
             }else{
               dataVariants.push({
@@ -54,6 +55,7 @@ export default async function handler (req, res) {
                 stock: item['StavZasoby']['Zasoba']._text,
                 code: item['KmKarta']['Katalog']._text,
                 guid: item['KmKarta']['GUID']._text,
+                ean: item['KmKarta']['BarCode']._text,
                 magnetude: item['KmKarta']['Objem']._text+' ml'
               })
             }
@@ -71,7 +73,8 @@ export default async function handler (req, res) {
               stock: item['StavZasoby']['Zasoba']._text,
               code: item['KmKarta']['Katalog']._text,
               guid: item['KmKarta']['GUID']._text,
-              published_at: null
+              ean: item['KmKarta']['BarCode']._text,
+              publishedAt: null
             })
           }else{
             dataVariants.push({
@@ -84,6 +87,7 @@ export default async function handler (req, res) {
               stock: item['StavZasoby']['Zasoba']._text,
               code: item['KmKarta']['Katalog']._text,
               guid: item['KmKarta']['GUID']._text,
+              ean: item['KmKarta']['BarCode']._text,
               magnetude: item['KmKarta']['Objem']._text+' ml'
             })
           }
@@ -112,7 +116,7 @@ export default async function handler (req, res) {
       //   console.log(`successfully deleted ${dir}${nameFile}`);
       // });
 
-    })
+    // })
 
     res.status(200).json({some: 'good'});
 

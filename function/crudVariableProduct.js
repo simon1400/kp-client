@@ -35,7 +35,7 @@ const crudVariableProduct = (dataVariantsCombine) => {
             stock: item.stock,
             code: item.code
           })),
-          published_at: null
+          publishedAt: null
         }}).then(res => console.log('Success created variant --', res?.data?.data?.attributes?.title))
           .catch(err => {
             if(err.response?.data?.error?.details) {
