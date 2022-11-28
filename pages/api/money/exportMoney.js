@@ -41,7 +41,7 @@ export default async function handler (req, res) {
                 stock: item['StavZasoby']['Zasoba']._text,
                 code: item['KmKarta']['Katalog']._text,
                 guid: item['KmKarta']['GUID']._text,
-                ean: item['KmKarta']['BarCode']._text,
+                ean: item['KmKarta']['BarCode']?._text || '',
                 publishedAt: null
               })
             }else{
@@ -55,7 +55,7 @@ export default async function handler (req, res) {
                 stock: item['StavZasoby']['Zasoba']._text,
                 code: item['KmKarta']['Katalog']._text,
                 guid: item['KmKarta']['GUID']._text,
-                ean: item['KmKarta']['BarCode']._text,
+                ean: item['KmKarta']['BarCode']?._text || '',
                 magnetude: item['KmKarta']['Objem']._text+' ml'
               })
             }
@@ -73,7 +73,7 @@ export default async function handler (req, res) {
               stock: item['StavZasoby']['Zasoba']._text,
               code: item['KmKarta']['Katalog']._text,
               guid: item['KmKarta']['GUID']._text,
-              ean: item['KmKarta']['BarCode']._text,
+              ean: item['KmKarta']['BarCode']?._text || '',
               publishedAt: null
             })
           }else{
@@ -87,7 +87,7 @@ export default async function handler (req, res) {
               stock: item['StavZasoby']['Zasoba']._text,
               code: item['KmKarta']['Katalog']._text,
               guid: item['KmKarta']['GUID']._text,
-              ean: item['KmKarta']['BarCode']._text,
+              ean: item['KmKarta']['BarCode']?._text || '',
               magnetude: item['KmKarta']['Objem']._text+' ml'
             })
           }
