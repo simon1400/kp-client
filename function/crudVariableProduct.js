@@ -25,6 +25,7 @@ const crudVariableProduct = (dataVariantsCombine) => {
             remove: /[*+~´,.()'"!:@]/g
           }),
           price: value[0].price,
+          ean: value[0].ean,
           stock: value[0].stock,
           code: key,
           guid: value.map(item => item.guid).join(),
