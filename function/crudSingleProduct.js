@@ -15,10 +15,14 @@ const crudSingleProduct = (data) => {
         AxiosSTRAPI.post('/api/produkties', {data: item})
           .then(res => console.log('Success created --', res.data?.data?.attributes?.title))
           .catch(err => {
-            if(err.response?.data) {
-              console.log('Failed created --', err.response.data)
+            if(err.response?.data?.error?.details){
+              console.log('Failed created 1 --', err.response?.data?.error?.details)
+            }else if(err.response?.data?.error){
+              console.log('Failed created 2 --', err.response.data.error)
+            }else if(err.response?.data) {
+              console.log('Failed created 3 --', err.response.data)
             }else{
-              console.log('Failed created --', err.response)
+              console.log('Failed created 4 --', err.response)
             }
           })
       }

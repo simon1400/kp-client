@@ -107,10 +107,10 @@ export default async function handler (req, res) {
         
       }
 
-      unlink(`${dir}${nameFile}`, (err) => {
-        if (err) throw err;
-        console.log(`successfully deleted ${dir}${nameFile}`);
-      });
+      // unlink(`${dir}${nameFile}`, (err) => {
+      //   if (err) throw err;
+      //   console.log(`successfully deleted ${dir}${nameFile}`);
+      // });
 
     })
 
