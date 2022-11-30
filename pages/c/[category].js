@@ -76,6 +76,11 @@ const Category = ({
 
   const router = useRouter()
 
+  // Using items and results
+  const transformItems = (items) => {
+    return items.filter(item => item.available).filter(item => item !== undefined)
+  };
+
   return (
     <InstantSearch 
       indexName="produkt"
@@ -102,10 +107,10 @@ const Category = ({
         <Configure 
           query={router.query.category}
           filters={category.__typename === 'Brand' ? `brand.title = "${title}"` : `categoryTitles = "${title}"`}
-          hitsPerPage={20}
+          hitsPerPage={40}
         />
         
-        <CatalogList />
+        <CatalogList transformItems={transformItems} />
         
         <section className="additional-sec">
           <div className="uk-container">
