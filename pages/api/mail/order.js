@@ -16,11 +16,9 @@ export default async function handler (req, res) {
     try{
       const recipients = [
         new Recipient(data.email, "Recipient"),
-        // new Recipient('info@kralovska-pece.cz', "Owner"),
-        // new Recipient('dmytro@pechunka.com', "Dimi"),
-        new Recipient('daniel.kokes@gmail.com', "Dan"),
-        // new Recipient('lucie@kralovska-pece.cz ', "Lucie"),
-        // new Recipient('martina@kralovska-pece.cz', "Martina")
+        new Recipient('info@kralovska-pece.cz', "Owner"),
+        new Recipient('lucie@kralovska-pece.cz ', "Lucie"),
+        new Recipient('martina@kralovska-pece.cz', "Martina")
       ];
   
       const emailParams = new EmailParams()
