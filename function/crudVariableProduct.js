@@ -16,7 +16,10 @@ const crudVariableProduct = (dataVariantsCombine) => {
             code: item.code
           })),
         }}).then(res => console.log('Success update variant --', res.data?.data?.attributes?.title))
-          .catch(err => console.error('Error update variant --', err.response?.data))
+          .catch(err => {
+            console.error('Error update variant --', err.response?.data)
+            console.log('ERROR -- ', value)
+          })
       }else{
         AxiosSTRAPI.post('/api/produkties', {data: {
           title: value[0].title,
@@ -39,6 +42,7 @@ const crudVariableProduct = (dataVariantsCombine) => {
           publishedAt: null
         }}).then(res => console.log('Success created variant --', res?.data?.data?.attributes?.title))
           .catch(err => {
+            console.log('ERROR -- ', value)
             if(err.response?.data?.error?.details) {
               console.error('Failed create variant 1 --', err.response?.data?.error?.details)
             }else if(err.response?.data?.error) {

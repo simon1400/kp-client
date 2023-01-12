@@ -10,12 +10,15 @@ const crudSingleProduct = (data) => {
           ean: item.ean
         }})
           .then(res => console.log('Success update --', res.data.data.attributes.title))
-          .catch(err => console.error(err.response?.data || err.response))
-  
+          .catch(err => {
+            console.error('Error update product - ', err.response?.data || err.response)
+            console.log('ERROR -- ', item)
+          })
       }else{
         AxiosSTRAPI.post('/api/produkties', {data: item})
           .then(res => console.log('Success created --', res.data?.data?.attributes?.title))
           .catch(err => {
+            console.log('ERROR -- ', item)
             if(err.response?.data?.error?.details){
               console.log('Failed created 1 --', err.response?.data?.error?.details)
             }else if(err.response?.data?.error){
