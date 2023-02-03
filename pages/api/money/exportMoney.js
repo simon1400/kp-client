@@ -16,20 +16,23 @@ export default async function handler (req, res) {
       }
     }).filter(item => item !== undefined)
     
-    splitNameFiles.map(nameFile => {
-
-      var xml = readFileSync(`${dir}${nameFile}`, 'utf8');
+    for(let i = 0; i < splitNameFiles.length; i++) {
+      var xml = readFileSync(`${dir}${splitNameFiles[i]}`, 'utf8');
       // var xml = readFileSync(`${dir}Zasoby.xml`, 'utf8');
       var result = convert.xml2json(xml, {compact: true, spaces: 4});
 
       result = JSON.parse(result)
 
       if(result?.MoneyData?.SeznamZasoba?.Zasoba) {
-
+        
         const data = [], dataVariants = [], dataVariantsCombine = {};
 
         if(Array.isArray(result['MoneyData']['SeznamZasoba']['Zasoba'])) {
-          result['MoneyData']['SeznamZasoba']['Zasoba'].map(item => {
+
+          const arrProductsXml = result['MoneyData']['SeznamZasoba']['Zasoba']
+          let a = 0;
+          while(a < arrProductsXml.length) {
+            let item = arrProductsXml[a]
             if(item['KmKarta']['Katalog']._text.indexOf('-') < 0){
               data.push({
                 title: item['KmKarta']['Popis']._text,
@@ -44,6 +47,7 @@ export default async function handler (req, res) {
                 ean: item['KmKarta']['BarCode']?._text || '',
                 publishedAt: null
               })
+              a++;
             }else{
               dataVariants.push({
                 title: item['KmKarta']['Popis']._text,
@@ -58,8 +62,10 @@ export default async function handler (req, res) {
                 ean: item['KmKarta']['BarCode']?._text || '',
                 magnetude: item['KmKarta']['Objem']._text+' ml'
               })
+              a++;
             }
-          })
+          }
+
         }else{
           const item = result['MoneyData']['SeznamZasoba']['Zasoba']
           if(item['KmKarta']['Katalog']._text.indexOf('-') < 0){
@@ -102,21 +108,20 @@ export default async function handler (req, res) {
         })
 
         if(data.length) {
-          crudSingleProduct(data)
+          await crudSingleProduct(data)
         }
         
         if(Object.keys(dataVariantsCombine).length) {
-          crudVariableProduct(dataVariantsCombine)
+          await crudVariableProduct(dataVariantsCombine)
         }
         
       }
 
-      unlink(`${dir}${nameFile}`, (err) => {
+      unlink(`${dir}${splitNameFiles[i]}`, (err) => {
         if (err) throw err;
-        console.log(`successfully deleted ${dir}${nameFile}`);
+        console.log(`successfully deleted ${dir}${splitNameFiles[i]}`);
       });
-
-    })
+    }
 
     res.status(200).json({some: 'good'});
 
