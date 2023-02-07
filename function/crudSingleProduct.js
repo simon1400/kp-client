@@ -35,6 +35,8 @@ const crudSingleProduct = async (data) => {
           }
         }else{
           console.log("Single product not update, because NOTHING -- ", res.data?.data[0].attributes.title)
+          i++;
+          countUpdatedSP++;
         }
     }else{
       const resCreate = await AxiosSTRAPI.post('/api/produkties', {data: item}).catch(err => {
