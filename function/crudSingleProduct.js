@@ -12,22 +12,30 @@ const crudSingleProduct = async (data) => {
       console.log('Error GET single product --- ', err.response?.data || err?.response || err)
       i++;
     })
+
     if(res.data?.data?.length){
-      const resUpdate = await AxiosSTRAPI.put('/api/produkties/'+res.data.data[0].id, {data: {
-        price: item.price,
-        stock: item.stock,
-        ean: item.ean
-      }}).catch(err => {
-        console.error('Error update product - ', err.response?.data || err.response)
-        console.log('ERROR -- ', item)
-        i++;
-        countErrorUpdateSP++;
-      })
-      if(resUpdate.data.data) {
-        console.log('Success update --', resUpdate.data.data.attributes?.title)
-        i++;
-        countUpdatedSP++;
-      }
+
+      if(res.data?.data[0].attributes.price !== item.price
+        || res.data?.data[0].attributes.stock !== item.stock
+        || res.data?.data[0].attributes.ean !== item.ean) {
+          const resUpdate = await AxiosSTRAPI.put('/api/produkties/'+res.data.data[0].id, {data: {
+            price: item.price,
+            stock: item.stock,
+            ean: item.ean
+          }}).catch(err => {
+            console.error('Error update product -- ', err.response?.data || err.response)
+            console.log('ERROR -- ', item)
+            i++;
+            countErrorUpdateSP++;
+          })
+          if(resUpdate.data.data) {
+            console.log('Success update --', resUpdate.data.data.attributes?.title)
+            i++;
+            countUpdatedSP++;
+          }
+        }else{
+          console.log("Single product not update, because NOTHING -- ", res.data?.data[0].attributes.title)
+        }
     }else{
       const resCreate = await AxiosSTRAPI.post('/api/produkties', {data: item}).catch(err => {
         console.log('ERROR -- ', item)
