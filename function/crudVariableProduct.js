@@ -30,7 +30,7 @@ const crudVariableProduct = async (dataVariantsCombine) => {
       })
 
       console.log('changedValue', changedValue)
-      console.log('resGetData.Variants', resGetData.Variants)
+      console.log('resGetData.Variants', resGetData)
 
       const onlyInA = onlyInLeft(changedValue, resGetData.Variants, isSameVariant);
       const onlyInB = onlyInLeft(resGetData.Variants, changedValue, isSameVariant);
