@@ -21,6 +21,9 @@ const crudVariableProduct = async (dataVariantsCombine) => {
         && a.stock === b.stock
         && a.code === b.code;
 
+      console.log('changedValue', changedValue)
+      console.log('resGetData.Variants', resGetData.Variants)
+
       const onlyInLeft = (left, right, compareFunction) => left.filter(leftValue => !right.some(rightValue => compareFunction(leftValue, rightValue)))
 
       const changedValue = value.map(item => {
