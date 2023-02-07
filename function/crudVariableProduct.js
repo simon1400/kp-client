@@ -1,9 +1,26 @@
 import { AxiosSTRAPI } from "../restClient"
+const qs = require('qs');
 
 const crudVariableProduct = async (dataVariantsCombine) => {
 
   for (const [key, value] of Object.entries(dataVariantsCombine)) {
-    const res = await AxiosSTRAPI.get(`/api/produkties?filters[guid][$contains]=${value[0].guid}&publicationState=preview`).catch(err => {
+    const query = qs.stringify({
+      filters: {
+        guid: {
+          $contains: value[0].guid,
+        },
+      },
+      fields: [
+        'title', 
+        'price', 
+        "stock", 
+        "Variants"
+      ],
+      populate: ['Variants'],
+    }, {
+      encodeValuesOnly: true, // prettify URL
+    });
+    const res = await AxiosSTRAPI.get(`/api/produkties?${query}&publicationState=preview`).catch(err => {
       if(err.response?.data) {
         console.log('Failed get --', err.response.data)
       }else{
