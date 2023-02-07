@@ -107,9 +107,9 @@ export default async function handler (req, res) {
           }
         })
 
-        // if(data.length) {
-        //   await crudSingleProduct(data)
-        // }
+        if(data.length) {
+          await crudSingleProduct(data)
+        }
         
         if(Object.keys(dataVariantsCombine).length) {
           await crudVariableProduct(dataVariantsCombine)
