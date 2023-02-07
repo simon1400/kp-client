@@ -12,23 +12,52 @@ const crudVariableProduct = async (dataVariantsCombine) => {
     })
 
     if(res?.data?.data?.length){
-      const resUpdate = await AxiosSTRAPI.put('/api/produkties/'+res.data.data[0].id, {data: {
-        price: value[0].price,
-        stock: value[0].stock,
-        Variants: value.map(item => ({
-          nazev: item.magnetude,
-          price: item.price,
-          guid: item.guid,
-          stock: item.stock,
-          code: item.code
-        })),
-      }}).catch(err => {
-        console.error('Error update variant --', err.response?.data)
-        console.log('ERROR -- ', value)
+
+      const resGetData = res.data.data[0].attributes
+      const isSameVariant = (a, b) => 
+        a.nazev === b.nazev 
+        && a.price === b.price 
+        && a.guid === b.guid 
+        && a.stock === b.stock
+        && a.code === b.code;
+
+      const onlyInLeft = (left, right, compareFunction) => left.filter(leftValue => !right.some(rightValue => compareFunction(leftValue, rightValue)))
+
+      const changedValue = value.map(item => {
+        item.nazev = item.magnetude
+        return item
       })
 
-      if(resUpdate?.data?.data?.attributes) {
-        console.log('Success update variant --', resUpdate.data?.data?.attributes?.title)
+      const onlyInA = onlyInLeft(changedValue, resGetData.Variants, isSameVariant);
+      const onlyInB = onlyInLeft(resGetData.Variants, changedValue, isSameVariant);
+
+      const result = [...onlyInA, ...onlyInB];
+
+      if(
+        resGetData.price !== value[0].price 
+        || resGetData.stock !== value[0].stock
+        || result.length
+      ) {
+        const resUpdate = await AxiosSTRAPI.put('/api/produkties/'+res.data.data[0].id, {data: {
+          price: value[0].price,
+          stock: value[0].stock,
+          Variants: value.map(item => ({
+            nazev: item.magnetude,
+            price: item.price,
+            guid: item.guid,
+            stock: item.stock,
+            code: item.code
+          })),
+        }}).catch(err => {
+          console.error('Error update variant --', err.response?.data)
+          console.log('ERROR -- ', value)
+        })
+  
+        if(resUpdate?.data?.data?.attributes) {
+          console.log('Success update variant --', resUpdate.data?.data?.attributes?.title)
+        }
+      }else{
+        console.log("No must update variant becose NOTHING -- ", resGetData.title)
       }
 
     }else{
