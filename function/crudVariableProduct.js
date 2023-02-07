@@ -10,13 +10,7 @@ const crudVariableProduct = async (dataVariantsCombine) => {
           $contains: value[0].guid,
         },
       },
-      fields: [
-        'title', 
-        'price', 
-        "stock", 
-        "Variants"
-      ],
-      populate: ['Variants'],
+      populate: "*",
     }, {
       encodeValuesOnly: true, // prettify URL
     });
