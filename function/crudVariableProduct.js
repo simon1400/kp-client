@@ -1,5 +1,5 @@
 import { AxiosSTRAPI } from "../restClient"
-const qs = require('qs');
+import qs from 'qs'
 
 const crudVariableProduct = async (dataVariantsCombine) => {
 
@@ -20,6 +20,8 @@ const crudVariableProduct = async (dataVariantsCombine) => {
     }, {
       encodeValuesOnly: true, // prettify URL
     });
+
+    console.log(query)
     const res = await AxiosSTRAPI.get(`/api/produkties?${query}&publicationState=preview`).catch(err => {
       if(err.response?.data) {
         console.log('Failed get --', err.response.data)
